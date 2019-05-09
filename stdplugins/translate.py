@@ -32,7 +32,7 @@ async def _(event):
 
         text = previous_message.message
 
-        lan = input_str or "hi"
+        lan = input_str or "en"
 
     elif "|" in input_str:
 
