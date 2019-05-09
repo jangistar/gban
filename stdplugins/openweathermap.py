@@ -34,9 +34,9 @@ clouds: {}hpa
                 response_api["clouds"]["all"],
                 # response_api["main"]["pressure"],
                 time.strftime("%Y-%m-%d %H:%M:%S", time.localtime(response_api["sys"]["sunrise"])),
-                response_api["sys"]{cityname}, {fullc_n},
+                response_api["sys"]["country"],
                 time.strftime("%Y-%m-%d %H:%M:%S", time.localtime(response_api["sys"]["sunset"])),
-                response_api["sys"][cityname], [fullc_n]
+                response_api["sys"]["country"]
             )
         )
     else:
