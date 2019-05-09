@@ -28,10 +28,10 @@ async def _(event):
         os.makedirs(Config.TMP_DOWNLOAD_DIRECTORY)  # pylint:disable=E0602
     # pylint:disable=E0602
     required_file_name = Config.TMP_DOWNLOAD_DIRECTORY + " " + str(datetime.now()) + ".webp"
-    img = Image.new("RGBA", (350, 200), color=(76, 251, 184, 115))
+    img = Image.new("RGBA", (350, 200), color=(0, 0, 0, 115))
     fnt = ImageFont.truetype(FONT_FILE_TO_USE, 30)
     drawn_text = ImageDraw.Draw(img)
-    drawn_text.text((10, 10), current_time, font=fnt, fill=(255, 255, 77))
+    drawn_text.text((10, 10), current_time, font=fnt, fill=(255, 255, 255))
     img.save(required_file_name)
     await borg.send_file(  # pylint:disable=E0602
         event.chat_id,
