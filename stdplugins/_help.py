@@ -57,7 +57,7 @@ async def _(event):
     if event.fwd_from:
         return 
     start = datetime.now()
-    await event.edit("```Collecting UserBot Stats...```")
+    await event.edit("```🇨 🇴 🇱 🇱 🇪 🇨 🇹 🇮 🇳 🇬  🇺 🇸 🇪 🇷 🇧 🇴 🇹  🇸 🇹 🇦 🇹 🇸 ...```")
     end = datetime.now()
     ms = (end - start).microseconds / 1000
     with open('/proc/uptime', 'r') as f: 
@@ -66,9 +66,9 @@ async def _(event):
         cpu = cpuinfo.get_cpu_info()['brand'] #psutil.cpu_freq(percpu=False)
         d = psutil.disk_usage('/')
     start_string = """
-    🔥UserBot Stats🔥
+    🔥🇺 🇸 🇪 🇷 🇧 🇴 🇹  🇸 🇹 🇦 🇹 🇸 🔥
 
-    __Owner__ : [r4v4n4](https://t.me/r4v4n4)
+    __Owner__ : [🇷 🇦 🇻 🇦 🇳 🇦 ](https://t.me/r4v4n4)
     ```Status :``` Online
 PING:  ```{}```ms
 ```Dc : 5 IE``` 
