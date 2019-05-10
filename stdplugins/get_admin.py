@@ -23,7 +23,7 @@ async def _(event):
     if not input_str:
         chat = to_write_chat
     else:
-        mentions_heading = "Admins in {} Group: \n".format(input_str)
+        mentions_heading = "Welcome To {} Kingdom: \n".format(input_str)
         mentions = mentions_heading
         try:
             chat = await borg.get_entity(input_str)
@@ -34,7 +34,7 @@ async def _(event):
         async for x in borg.iter_participants(chat, filter=ChannelParticipantsAdmins):
             if not x.deleted:
                 if isinstance(x.participant, ChannelParticipantCreator):
-                    mentions += "\n Owner [{}](tg://user?id={}) `{}`".format(x.first_name, x.id, x.id)
+                    mentions += "\n King [{}](tg://user?id={}) `{}`".format(x.first_name, x.id, x.id)
         mentions += "\n"
         async for x in borg.iter_participants(chat, filter=ChannelParticipantsAdmins):
             if not x.deleted:
