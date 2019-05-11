@@ -1,4 +1,4 @@
-""" Google Text to Speech
+""" Google Translate
 
 Available Commands:
 
