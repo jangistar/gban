@@ -1,10 +1,12 @@
 import sys 
 import psutil 
 import cpuinfo
+from datetime import datetime, timedelta
 from telethon import events, functions, __version__
 from uniborg.util import admin_cmd
-
-
+from telethon.utils import get_input_location
+ 
+ 
 @borg.on(admin_cmd(pattern="helpme ?(.*)", allow_sudo=True))  # pylint:disable=E0602
 async def _(event):
     if event.fwd_from:
@@ -17,7 +19,7 @@ async def _(event):
     help_string = """@UniBorg
 Python {}
 Telethon {}
-
+ 
 UserBot Forked from https://github.com/expectocode/uniborg""".format(
         sys.version,
         __version__
@@ -37,16 +39,16 @@ UserBot Forked from https://github.com/expectocode/uniborg""".format(
     else:
         await event.reply(help_string + "\n\n" + s_help_string)
         await event.delete()
-
-
+ 
+ 
 @borg.on(admin_cmd(pattern="dc"))  # pylint:disable=E0602
 async def _(event):
     if event.fwd_from:
         return
     result = await borg(functions.help.GetNearestDcRequest())  # pylint:disable=E0602
     await event.edit(result.stringify())
-
-
+ 
+ 
 @borg.on(admin_cmd(pattern="config"))  # pylint:disable=E0602
 async def _(event):
     if event.fwd_from:
@@ -70,7 +72,7 @@ async def _(event):
         d = psutil.disk_usage('/')
     start_string = """
     🔥🇺 🇸 🇪 🇷 🇧 🇴 🇹  🇸 🇹 🇦 🇹 🇸 🔥
-
+ 
     __Owner__ : [🇷 🇦 🇻 🇦 🇳 🇦 ](https://t.me/r4v4n4)
     ```Status :``` Online
 PING:  ```{}```ms
