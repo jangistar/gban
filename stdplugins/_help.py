@@ -55,8 +55,6 @@ async def _(event):
     result = result.stringify()
     logger.info(result)  # pylint:disable=E0602
     await event.edit("""Telethon UserBot powered by @UniBorg""")
-
-
 @borg.on(admin_cmd("server")) 
 async def _(event):
     if event.fwd_from:
