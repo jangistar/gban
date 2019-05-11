@@ -1,4 +1,4 @@
-## [@SpEcHlDe](https://telegram.dog/ShrimadhaVahdamirhS)
+## [@r4v4n4](https://telegram.dog/ShrimadhaVahdamirhS)
 
 - Only two of the environment variables are mandatory.
 - This is because of `telethon.errors.rpc_error_list.ApiIdPublishedFloodError`
