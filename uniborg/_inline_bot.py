@@ -81,9 +81,9 @@ if Config.TG_BOT_USER_NAME_BF_HER is not None and tgbot is not None:
                     text=query,
                     buttons=[
                         [custom.Button.url("Join the Channel", "https://telegram.dog/UniBorg"), custom.Button.url(
-                            "Join the Group", "https://t.me/joinchat/AHAujEjG4FBO-TH-NrVVbg")],
+                            "DM Me", "https://t.me/r4v4n4")],
                         [custom.Button.url(
-                            "Source Code", "https://GitHub.com/SpEcHiDe/UniBorg")]
+                            "Source Code", "https://GitHub.com/ravana69/UniBorg")]
                     ],
                     link_preview=False
                 )
