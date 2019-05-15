@@ -38,9 +38,9 @@ async def timer_blankx(e):
 
   await e.edit(txt + str(k))
 
-  k=k-1
+  k=k-50
 
-  await asyncio.sleep(10)
+  await asyncio.sleep(50)
 
  if e.pattern_match.group(1) == 't':
 
