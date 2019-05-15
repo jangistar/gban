@@ -30,7 +30,7 @@ async def timer_blankx(e):
 
  txt=e.text[7:] + '\nDeleting in '
 
- j=9000
+ j=86400
 
  k=j
 
@@ -41,6 +41,33 @@ async def timer_blankx(e):
   k=k-50
 
   await asyncio.sleep(50)
+
+ if e.pattern_match.group(1) == 't':
+
+  await e.delete()
+
+ else:
+
+  await e.edit(txt + 'NaN')
+
+
+@borg.on(events.NewMessage(outgoing=True, pattern='^\.(f?s)cd '))
+
+async def timer_blankx(e):
+
+ txt=e.text[7:] + '\nDeleting in '
+
+ j=10
+
+ k=j
+
+ for j in range(j):
+
+  await e.edit(txt + str(k))
+
+  k=k-1
+
+  await asyncio.sleep(1)
 
  if e.pattern_match.group(1) == 't':
 
