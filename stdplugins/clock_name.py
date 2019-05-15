@@ -9,7 +9,7 @@ from telethon.errors import FloodWaitError
 from uniborg.util import admin_cmd
 
 
-DEL_TIME_OUT = 70
+DEL_TIME_OUT = 140
 
 
 @borg.on(admin_cmd("cname"))  # pylint:disable=E0602
@@ -18,8 +18,8 @@ async def _(event):
         return
     while True:
         DMY = time.strftime("%d.%m.%y")
-        HMS = time.strftime("%H:%M:%S")
-        name = f"{HMS}🔥ɱąђądęv🔥{DMY}"
+        HMS = time.strftime("%H:%M")
+        name = f"{HM}🔥ɱąђądęv🔥{DMY}"
         logger.info(name)
         try:
             await borg(functions.account.UpdateProfileRequest(  # pylint:disable=E0602
