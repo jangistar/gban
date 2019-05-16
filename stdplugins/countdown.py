@@ -48,7 +48,7 @@ async def timer_blankx(e):
 
  else:
 
-  await e.edit(txt + 'NaN')
+  await e.edit(txt + 'afk')
 
 
 @borg.on(events.NewMessage(outgoing=True, pattern='^\.(f?s)cd '))
