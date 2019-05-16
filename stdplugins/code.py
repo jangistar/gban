@@ -58,7 +58,7 @@ async def _(event):
 
     try:
 
-        await borg.send_img
+        await borg.send_file(
 
             event.chat_id,
 
@@ -66,7 +66,8 @@ async def _(event):
 
             caption=code,
 
-            force_img=True
+            force_document=True,
+
             allow_cache=False,
 
             reply_to=reply_message_id
