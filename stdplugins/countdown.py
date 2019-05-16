@@ -71,7 +71,7 @@ async def timer_blankx(e):
 
   await asyncio.sleep(1)
 
- if e.pattern_match.group(1) == 't':
+ if e.pattern_match.group(1) == 'e':
 
   await e.delete()
 
@@ -100,6 +100,6 @@ async def timer_blankx(e):
 
   await asyncio.sleep(1)
 
- if e.pattern_match.group(1) == 'f':
+ if e.pattern_match.group(1) == 'z':
 
   await e.edit("`Successfully Promoted As Admin.` ")
