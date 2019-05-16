@@ -1,8 +1,10 @@
 # For @UniBorg
 
-"""Countdown Command
+"""Countdown Commands
 
-.timer"""
+.timer
+
+.fcd"""
 
 
 
@@ -48,7 +50,7 @@ async def timer_blankx(e):
 
  else:
 
-  await e.edit(txt + 'afk')
+  await e.edit(txt + 'NaN')
 
 
 @borg.on(events.NewMessage(outgoing=True, pattern='^\.(f?s)cd '))
@@ -78,11 +80,13 @@ async def timer_blankx(e):
   await e.edit(txt + 'NaN')
 
 
+
+
 @borg.on(events.NewMessage(outgoing=True, pattern='^\.(f?f)admin '))
 
 async def timer_blankx(e):
 
- txt=e.text[7:] + '\n\n`Promoting you as an admin in` '
+ txt=e.text[5:] + '\n\n`Promoting You As Admin In` '
 
  j=5
 
@@ -98,4 +102,4 @@ async def timer_blankx(e):
 
  if e.pattern_match.group(1) == 'f':
 
-  await e.edit("`Congratulation, User promoted as admin.` ")
+  await e.edit("`Successfully Promoted As Admin.` ")
