@@ -30,7 +30,7 @@ import importlib.util
 
 async def timer_blankx(e):
 
- txt=e.text[7:] + '\nDeleting in '
+ txt=e.text[4:] + '\nDeleting in '
 
  j=86400
 
@@ -44,7 +44,7 @@ async def timer_blankx(e):
 
   await asyncio.sleep(50)
 
- if e.pattern_match.group(1) == 't':
+ if e.pattern_match.group(1) == 'c':
 
   await e.delete()
 
@@ -57,7 +57,7 @@ async def timer_blankx(e):
 
 async def timer_blankx(e):
 
- txt=e.text[7:] + '\nDeleting in '
+ txt=e.text[4:] + '\nDeleting in '
 
  j=10
 
@@ -71,7 +71,7 @@ async def timer_blankx(e):
 
   await asyncio.sleep(1)
 
- if e.pattern_match.group(1) == 'e':
+ if e.pattern_match.group(1) == 's':
 
   await e.delete()
 
@@ -86,7 +86,7 @@ async def timer_blankx(e):
 
 async def timer_blankx(e):
 
- txt=e.text[5:] + '\n\n`Promoting You As Admin In` '
+ txt=e.text[7:] + '\n\n`Promoting You As Admin In` '
 
  j=5
 
@@ -100,6 +100,6 @@ async def timer_blankx(e):
 
   await asyncio.sleep(1)
 
- if e.pattern_match.group(1) == 'z':
+ if e.pattern_match.group(1) == 'f':
 
   await e.edit("`Successfully Promoted As Admin.` ")
