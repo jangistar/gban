@@ -8,7 +8,7 @@ Available Commands:
 
 from telethon import events
 
-from mtranslate import translate
+from googletrans import translate
 
 from uniborg.util import admin_cmd
 
