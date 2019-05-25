@@ -28,7 +28,7 @@ async def _(event):
     __maximum__ : {}°С
 **Humidity**: {}%
 **wind**: {}m/s
-clouds: {}hpa
+**clouds**: {}hpa
 **Sunrise**: {} {}
 **Sunset**: {} {}""".format(
                 input_str,
