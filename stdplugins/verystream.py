@@ -76,22 +76,35 @@ async def _(event):
         async with aiohttp.ClientSession() as session:
             resp_zero = await session.get(step_zero_url)
             step_zero_response_text = json.loads(await resp_zero.text())
-            logger.info(step_zero_response_text)
+            # logger.info(step_zero_response_text)
             if step_zero_response_text["status"] == 200:
                 folder_id_e = step_zero_response_text["result"]["folderid"]
+                await mone.edit(f"Created Folder with ID: {folder_id_e}")
                 step_one_url = f"https://api.verystream.com/file/ul?login={login}&key={key}&sha1={sha1}&folder={folder_id_e}"
                 resp = await session.get(step_one_url)
                 # logger.info(resp.status)
                 step_one_response_text = json.loads(await resp.text())
-                logger.info(step_one_response_text)
+                # logger.info(step_one_response_text)
                 if step_one_response_text["status"] == 200:
                     url = step_one_response_text["result"]["url"]
+                    await mone.edit(f"Start Uploading to {url}")
+                    start = datetime.now()
                     files = {"file1": (file_name, open(required_file_name, "rb"))}
                     resp = requests.post(url, files=files)
                     step_two_response_text = resp.json()
-                    logger.info(step_two_response_text)
+                    # logger.info(step_two_response_text)
                     if step_two_response_text["status"] == 200:
-                        logger.info(step_two_response_text)
+                        output_str = json.dumps(step_two_response_text["result"], sort_keys=True, indent=4)
+                        stream_url = step_two_response_text["result"]["url"]
+                        end = datetime.now()
+                        ms = (end - start).seconds
+                        await mone.edit(f"Obtained {stream_url} in {ms} seconds.\n{output_str}")
+                        # cleanup
+                        await event.delete()
+                        try:
+                            os.remove(required_file_name)
+                        except:
+                            pass
                     else:
                         await mone.edit(f"VeryStream returned {step_two_response_text['status']} => {step_two_response_text['msg']}, after STEP ONE")
                 else:
