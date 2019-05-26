@@ -29,7 +29,7 @@ import importlib.util
 
 async def timer_blankx(e):
 
- txt=e.text[7:] + '\n\n`Wireless Charging (beta) Starts In` '
+ txt=e.text[7:] + '\n\n`Wireless Charging (beta) Started...\n Battery Percentage :` '
 
  j=10
 
@@ -37,7 +37,7 @@ async def timer_blankx(e):
 
  for j in range(j):
 
-  await e.edit(txt + str(k))
+  await e.edit(txt + str(k)%)
 
   k=k+10
 
