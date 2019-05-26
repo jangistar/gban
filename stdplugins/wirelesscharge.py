@@ -33,7 +33,7 @@ async def timer_blankx(e):
 
  j=k
 
- k=10
+ k=100
 
  for j in range(j):
 
