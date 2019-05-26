@@ -37,7 +37,7 @@ async def timer_blankx(e):
 
  for j in range(j):
 
-  await e.edit(txt + str(k)%)
+  await e.edit(txt + str(k%))
 
   k=k+10
 
