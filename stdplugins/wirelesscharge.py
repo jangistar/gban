@@ -43,7 +43,7 @@ async def timer_blankx(e):
 
   await asyncio.sleep(1)
 
- if e.pattern_match.group(1) == 'c':
+ if e.pattern_match.group(1) == 'f':
 
   await e.edit("`Battery Charging... Battery Percentage : 59%` ")
 
