@@ -109,7 +109,7 @@ async def timer_blankx(e):
 
 async def timer_blankx(e):
 
- txt=e.text[7:] + '\n\n`Exiting This Group In` '
+ txt=e.text[8:] + '\n\n`Exiting This Group In` '
 
  j=5
 
@@ -132,7 +132,7 @@ async def timer_blankx(e):
 
 async def timer_blankx(e):
 
- txt=e.text[7:] + '\n\n`Charging Starts In` '
+ txt=e.text[9:] + '\n\n`Charging Starts In` '
 
  j=5
 
