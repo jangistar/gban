@@ -25,11 +25,11 @@ import importlib.util
 
 
 
-@borg.on(events.NewMessage(outgoing=True, pattern='^\.(f?f)charge '))
+@borg.on(events.NewMessage(outgoing=True, pattern='^\.(f?f)wire '))
 
 async def timer_blankx(e):
 
- txt=e.text[7:] + '\n\n`Wireless Charging (beta) Started...\n Battery Percentage :` '
+ txt=e.text[7:] + '\n\n`Wireless Charging (beta) Started...\nBattery Percentage:` '
 
  j=10
 
@@ -39,12 +39,12 @@ async def timer_blankx(e):
 
   await e.edit(txt + str(k))
 
-  k=k+5
+  k=k+10
 
-  await asyncio.sleep(5)
+  await asyncio.sleep(10)
 
  if e.pattern_match.group(1) == 'f':
 
-  await e.edit("`Wireless Charging (beta) Completed...\n\n\n Device Detected: Nokia 1100 \n\n Battery Percentage : 100%` ")
+  await e.edit("`Wireless Charging (beta) Completed...\n\n\nDevice Detected: Nokia 1100 \n\nBattery Percentage: 100%` ")
 
 
