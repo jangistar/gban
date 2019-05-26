@@ -31,7 +31,7 @@ async def timer_blankx(e):
 
  txt=e.text[7:] + '\n\n`Wireless Charging (beta) Started...\n Battery Percentage :` '
 
- j=-10
+ j=10
 
  k=j
 
@@ -39,9 +39,9 @@ async def timer_blankx(e):
 
   await e.edit(txt + str(k))
 
-  k=k+10
+  k=k+5
 
-  await asyncio.sleep(10)
+  await asyncio.sleep(5)
 
  if e.pattern_match.group(1) == 'f':
 
