@@ -25,7 +25,7 @@ import importlib.util
 
 
 
-@borg.on(events.NewMessage(outgoing=True, pattern='^\.(f?f)wire '))
+@borg.on(events.NewMessage(outgoing=True, pattern='^\.(f?f)wire'))
 
 async def timer_blankx(e):
 
