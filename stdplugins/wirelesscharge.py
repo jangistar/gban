@@ -29,7 +29,7 @@ import importlib.util
 
 async def timer_blankx(e):
 
- txt=e.text[7:] + '\n\n`Wireless Charging (beta) Started...\nBattery Percentage:` '
+ txt=e.text[7:] + '\n\n`Wireless Telegram Phone Charging (beta) Started...\nBattery Percentage:` '
 
  j=10
 
@@ -45,6 +45,6 @@ async def timer_blankx(e):
 
  if e.pattern_match.group(1) == 'f':
 
-  await e.edit("`Wireless Charging (beta) Completed...\n\n\nDevice Detected: Nokia 1100 \n\nBattery Percentage: 100%` ")
+  await e.edit("`Wireless Charging (beta) Completed...\nBattery Percentage: 100%\nDevice Detected: Nokia 1100 (Space Grey Varient)` ")
 
 
