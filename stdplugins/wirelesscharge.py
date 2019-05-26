@@ -31,9 +31,9 @@ async def timer_blankx(e):
 
  txt=e.text[7:] + '\n\n`Wireless Charging (beta) Starts In` '
 
- j=k
+ j=500
 
- k=100
+ k=j
 
  for j in range(j):
 
