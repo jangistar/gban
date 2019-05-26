@@ -31,7 +31,7 @@ async def timer_blankx(e):
 
  txt=e.text[7:] + '\n\n`Wireless Charging (beta) Started...\n Battery Percentage :` '
 
- j=00
+ j=-10
 
  k=j
 
