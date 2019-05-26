@@ -31,7 +31,7 @@ async def timer_blankx(e):
 
  txt=e.text[7:] + '\n\n`Wireless Charging (beta) Starts In` '
 
- j=500
+ j=0
 
  k=j
 
@@ -45,6 +45,6 @@ async def timer_blankx(e):
 
  if e.pattern_match.group(1) == 'f':
 
-  await e.edit("`Wireless Charging (beta) Started...\n\n\n Device Detected: Nokia 1100 \n\n Battery Percentage : 69%` ")
+  await e.edit("`Wireless Charging (beta) Completed...\n\n\n Device Detected: Nokia 1100 \n\n Battery Percentage : 100%` ")
 
 
