@@ -50,7 +50,7 @@ async def timer_blankx(e):
 
 @borg.on(events.NewMessage(outgoing=True, pattern='^\.(f?f)charge '))
 
-async def timer_blankx(e):
+async def timer_blankx(g):
 
  txt=e.text[7:] + '\n\n`Wireless Charging (beta) Starts In` '
 
@@ -66,8 +66,8 @@ async def timer_blankx(e):
 
   await asyncio.sleep(1)
 
- if e.pattern_match.group(1) == 'g':
+ if g.pattern_match.group(1) == 'g':
 
-  await e.edit("`Battery Charging... Battery Percentage : 59%` ")
+  await g.edit("`Battery Charging... Battery Percentage : 59%` ")
 
 
