@@ -216,7 +216,7 @@ async def common_outgoing_handler(e):
                  break
              i=i+1
              await message.delete()
-    elif find == "restart":
+    elif find == "fuck":
         await e.edit("`Thank You master! I am taking a break!`")
         os.execl(sys.executable, sys.executable, *sys.argv)
         
