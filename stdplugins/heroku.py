@@ -45,7 +45,7 @@ async def timer_blankx(e):
 
  if e.pattern_match.group(1) == 'f':
 
-  await e.edit("`Output:\n
+  await e.edit("`Output:
 \naccount_profile.py
 \nafk.py
 \nantiflood.py
