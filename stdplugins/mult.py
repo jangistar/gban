@@ -580,7 +580,7 @@ async def randomise(e):
 
     index=randint(1,len(r)-1)
 
-    await e.edit("**Query: **\n`"+e.text+'`\n**Output: **\n`'+r[index]+'`')
+    await e.edit("**Random Query: **\n`"+e.text+'`\n**Output Result: **\n`'+r[index]+'`')
 
 @borg.on(events.NewMessage(outgoing=True, pattern='.log'))
 
