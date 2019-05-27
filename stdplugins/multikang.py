@@ -353,15 +353,6 @@ async def terminal_runner(e):
     result=str(result.stdout.decode())
     await e.edit("**Query: **\n`"+str(command[6:])+'`\n**Output: **\n`'+result+'`')
 
-@borg.on(events.NewMessage(outgoing=True, pattern='.spam'))
-@borg.on(events.MessageEdited(outgoing=True, pattern='.spam'))
-async def spammer(e):
-    message= e.text
-    counter=int(message[6:8])
-    spam_message=str(e.text[8:])
-    await asyncio.wait([e.respond(spam_message) for i in range(counter)])
-    await e.delete()
-
 
 @borg.on(events.NewMessage(pattern=r'.google (.*)'))
 @borg.on(events.MessageEdited(pattern=r'.google (.*)'))
