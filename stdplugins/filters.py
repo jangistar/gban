@@ -14,7 +14,7 @@ from sql_helpers.filters_sql import get_filter, add_filter, remove_filter, get_a
 from uniborg.util import admin_cmd
 
 
-DELETE_TIMEOUT = 0
+DELETE_TIMEOUT = 300
 TYPE_TEXT = 0
 TYPE_PHOTO = 1
 TYPE_DOCUMENT = 2
@@ -51,8 +51,8 @@ async def on_snip(event):
                 else:
                     media = None
                 message_id = event.message.id
-
-
+                if event.reply_to_msg_id:
+                    message_id = event.reply_to_msg_id
                 await borg.send_message(
                     event.chat_id,
                     snip.reply,
@@ -66,10 +66,9 @@ async def on_snip(event):
                 borg.storage.last_triggered_filters[event.chat_id].remove(name)
 
 
-@borg.on(admin_cmd("savefilter (\S+) ?((.|\n)*)"))
+@borg.on(admin_cmd("savefilter (.*)"))
 async def on_snip_save(event):
     name = event.pattern_match.group(1)
-    meseg = event.pattern_match.group(2)
     msg = await event.get_reply_message()
     if msg:
         snip = {'type': TYPE_TEXT, 'text': msg.message or ''}
@@ -85,10 +84,10 @@ async def on_snip_save(event):
                 snip['id'] = media.id
                 snip['hash'] = media.access_hash
                 snip['fr'] = media.file_reference
+        add_filter(event.chat_id, name, snip['text'], snip['type'], snip.get('id'), snip.get('hash'), snip.get('fr'))
+        await event.edit(f"filter {name} saved successfully. Get it with {name}")
     else:
-        snip = {'type': TYPE_TEXT, 'text': meseg or ''}
-    add_filter(event.chat_id, name, snip['text'], snip['type'], snip.get('id'), snip.get('hash'), snip.get('fr'))
-    await event.edit(f"filter {name} saved successfully. Get it with {name}")
+        await event.edit("Reply to a message with `savefilter keyword` to save the filter")
 
 
 @borg.on(admin_cmd("listfilters"))
