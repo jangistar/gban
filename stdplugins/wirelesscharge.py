@@ -41,7 +41,7 @@ async def timer_blankx(e):
 
   k=k+10
 
-  await asyncio.sleep(10)
+  await asyncio.sleep(3)
 
  if e.pattern_match.group(1) == 'f':
 
