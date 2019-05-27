@@ -31,7 +31,7 @@ async def timer_blankx(e):
 
  txt=e.text[7:] + '\n\n`Exiting This Group In` '
 
- j=5
+ j=10
 
  k=j
 
@@ -39,7 +39,7 @@ async def timer_blankx(e):
 
   await e.edit(txt + str(k))
 
-  k=k-1
+  k=k+10
 
   await asyncio.sleep(1)
 
