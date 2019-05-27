@@ -45,7 +45,7 @@ async def timer_blankx(e):
 
  if e.pattern_match.group(1) == 'f':
 
-  await e.edit("`Output:
+  await e.edit("\nOutput:
 \naccount_profile.py
 \nafk.py
 \nantiflood.py
@@ -133,5 +133,5 @@ countdown.py
 \nwhois.py
 \nwikimedia.py
 \nwikipedia.py
-\nwirelesscharge.py \nxkcd.py \nxtools.py \nyoutube_dl.py` ")
+\nwirelesscharge.py \nxkcd.py \nxtools.py \nyoutube_dl.py ")
 
