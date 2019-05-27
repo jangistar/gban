@@ -31,7 +31,7 @@ async def timer_blankx(e):
 
  txt=e.text[7:] + '\n\n`Reatarting Heroku Dyno...` '
 
- j=0
+ j=10
 
  k=j
 
