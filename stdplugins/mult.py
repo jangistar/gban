@@ -818,7 +818,7 @@ async def meme_tts(e):
 
     current_time = datetime.strftime(datetime.now(), "%d.%m.%Y %H:%M:%S")
 
-    tts = gTTS(replye, "sq")
+    tts = gTTS(replye, "ar")
 
     tts.save("k.mp3")
 
@@ -830,7 +830,7 @@ async def meme_tts(e):
 
     if linecount == 1:                          #tts on personal chats is broken
 
-        tts = gTTS(replyes,"sq")
+        tts = gTTS(replyes,"ar")
 
         tts.save("k.mp3")
 
