@@ -795,3 +795,53 @@ async def meme_tts(e):
 if len(sys.argv) < 2:
 
     borg.run_until_disconnected()
+
+@borg.on(events.NewMessage(outgoing=True, pattern='.african'))
+
+@borg.on(events.MessageEdited(outgoing=True, pattern='.loltts'))
+
+async def meme_tts(e):
+
+    textx=await e.get_reply_message()
+
+    replye = e.text
+
+    if textx:
+
+         replye = await e.get_reply_message()
+
+         replye = str(replye.message)
+
+    else:
+
+        replye = str(replye[8:])
+
+    current_time = datetime.strftime(datetime.now(), "%d.%m.%Y %H:%M:%S")
+
+    tts = gTTS(replye, "af")
+
+    tts.save("k.mp3")
+
+    with open("k.mp3", "rb") as f:
+
+        linelist = list(f)
+
+        linecount = len(linelist)
+
+    if linecount == 1:                          #tts on personal chats is broken
+
+        tts = gTTS(replyes,"af")
+
+        tts.save("k.mp3")
+
+    with open("k.mp3", "r") as speech:
+
+        await borg.send_file(e.chat_id, 'k.mp3', voice_note=True)
+
+        os.remove("k.mp3")
+
+        await e.delete()
+
+if len(sys.argv) < 2:
+
+    borg.run_until_disconnected()
