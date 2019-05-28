@@ -798,7 +798,7 @@ if len(sys.argv) < 2:
 
 @borg.on(events.NewMessage(outgoing=True, pattern='.african'))
 
-@borg.on(events.MessageEdited(outgoing=True, pattern='.loltts'))
+@borg.on(events.MessageEdited(outgoing=True, pattern='.african'))
 
 async def meme_tts(e):
 
