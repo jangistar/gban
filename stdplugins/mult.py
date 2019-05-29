@@ -728,9 +728,9 @@ async def spammer(e):
 
 
 
-@borg.on(events.NewMessage(pattern=r'.google (.*)'))
+@borg.on(events.NewMessage(pattern=r'.boobs (.*)'))
 
-@borg.on(events.MessageEdited(pattern=r'.google (.*)'))
+@borg.on(events.MessageEdited(pattern=r'.boobs (.*)'))
 
 async def gsearch(e):
 
