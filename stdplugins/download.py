@@ -30,7 +30,7 @@ async def _(event):
                 reply_message,
                 Config.TMP_DOWNLOAD_DIRECTORY,
                 progress_callback=lambda d, t: asyncio.get_event_loop().create_task(
-                    progress(d, t, mone, c_time, "trying to download")
+                    progress(d, t, mone, c_time, "Downloading This File Onto Your Nokia 1100 Device...")
                 )
             )
         except Exception as e:  # pylint:disable=C0103,W0703
