@@ -68,7 +68,7 @@ async def approve_p_m(event):
                     await borg.storage.PREV_REPLY_MESSAGE[chat.id].delete()
                     del borg.storage.PREV_REPLY_MESSAGE[chat.id]
                 approve(chat.id, reason)
-                await event.edit("Yo Bitch, My Admin Has Approved You To Message Him.")
+                await event.edit("Yo Bitch, My Master Has Approved You To Message Me...")
                 await asyncio.sleep(3)
                 await event.delete()
 
@@ -83,17 +83,17 @@ async def approve_p_m(event):
         if event.is_private:
             if is_approved(chat.id):
                 disapprove(chat.id)
-                await event.edit("Blocked PM")
+                await event.edit("Fuck Off Bitch, Now You Can't Message Me...")
                 await asyncio.sleep(3)
                 await borg(functions.contacts.BlockRequest(chat.id))
 
 
-@borg.on(admin_cmd("list approved pms"))
+@borg.on(admin_cmd("listapprovedpms"))
 async def approve_p_m(event):
     if event.fwd_from:
         return
     approved_users = get_all_approved()
-    APPROVED_PMs = "Current Approved PMs\n"
+    APPROVED_PMs = "Bitches Approved To Message Me...\n"
     for a_user in approved_users:
         if a_user.reason:
             APPROVED_PMs += f"👉 [{a_user.chat_id}](tg://user?id={a_user.chat_id}) for {a_user.reason}\n"
