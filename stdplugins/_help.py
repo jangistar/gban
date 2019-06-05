@@ -11,8 +11,8 @@ async def _(event):
     if splugin_name in borg._plugins:
         s_help_string = borg._plugins[splugin_name].__doc__
     else:
-        s_help_string = "My Fork: https://github.com/ravana69/UniBorg"
-    help_string = """@UniBorg ( **Custom Build By** @r4v4n4 ) \n**Verified Account**: ✅\n
+        s_help_string = "**My Fork**: https://github.com/ravana69/UniBorg"
+    help_string = """@UniBorg ( **Custom Build By** @r4v4n4 ) \n**Verified Account**: ✅\n**Official Website**: https://ravanaisdrunk.site.live
 Python {}
 Telethon {}
 
