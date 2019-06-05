@@ -249,7 +249,7 @@ All instaructions to run @UniBorg in your PC has been explained in https://githu
             0:125]  # pylint:disable=E0602
         reply_pop_up_alert = help_string if help_string is not None else \
             "No DOCSTRING has been setup for {} plugin".format(plugin_name)
-        reply_pop_up_alert += "\n
+        reply_pop_up_alert +=⠀"\n
             © @R4V4N4".format(plugin_name)
         await event.answer(reply_pop_up_alert, cache_time=0, alert=True)
 
