@@ -16,7 +16,7 @@ async def _(event):
 Python {}
 Telethon {}
 
-UserBot Forked from https://github.com/expectocode/uniborg""".format(
+[Click Here To Contact Me](https://t.me/r4v4n4)""".format(
         sys.version,
         __version__
     )
