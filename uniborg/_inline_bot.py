@@ -21,21 +21,20 @@ async def _(event):
     try:
         output_message = ""
         bot_results = await borg.inline_query(  # pylint:disable=E0602
-            bot_username,
-            search_query
+            bot_username
         )
         i = 0
         for result in bot_results:
             output_message += "{} {} `{}`\n\n".format(
                 result.title,
                 result.description,
-                ".icb " + bot_username + " " + str(i + 1) + " " + search_query
+                ".icb " + bot_username,search_query + " " + str(i + 1) + " " + search_query
             )
             i = i + 1
         await event.edit(output_message)
     except Exception as e:
         await event.edit("{} did not respond correctly, for **{}**!\n\
-            `{}`".format(bot_username, search_query, str(e)))
+            `{}`".format(bot_username, str(e)))
 
 
 @borg.on(admin_cmd(  # pylint:disable=E0602
