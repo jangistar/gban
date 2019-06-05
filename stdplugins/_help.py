@@ -16,7 +16,7 @@ async def _(event):
 Python {}
 Telethon {}
 
-UserBot Forked from https://github.com/expectocode/uniborg""".format(
+UniBorg Hosted On: https://www.heroku.com""".format(
         sys.version,
         __version__
     )
