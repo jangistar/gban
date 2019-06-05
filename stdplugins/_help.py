@@ -16,7 +16,9 @@ async def _(event):
 Python {}
 Telethon {}
 
-"""[Click Here To Contact Me](https://t.me/r4v4n4)
+UserBot Forked from https://github.com/expectocode/uniborg""".format(
+        sys.version,
+        __version__
     )
     tgbotusername = Config.TG_BOT_USER_NAME_BF_HER  # pylint:disable=E0602
     if tgbotusername is not None:
