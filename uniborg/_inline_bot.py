@@ -21,20 +21,21 @@ async def _(event):
     try:
         output_message = ""
         bot_results = await borg.inline_query(  # pylint:disable=E0602
-            bot_username
+            bot_username,
+            search_query
         )
         i = 0
         for result in bot_results:
             output_message += "{} {} `{}`\n\n".format(
                 result.title,
                 result.description,
-                ".icb " + bot_username,search_query + " " + str(i + 1) + " " + search_query
+                ".icb " + bot_username + " " + str(i + 1) + " " + search_query
             )
             i = i + 1
         await event.edit(output_message)
     except Exception as e:
         await event.edit("{} did not respond correctly, for **{}**!\n\
-            `{}`")
+            `{}`".format(bot_username, search_query, str(e)))
 
 
 @borg.on(admin_cmd(  # pylint:disable=E0602
@@ -212,8 +213,7 @@ All instaructions to run @UniBorg in your PC has been explained in https://githu
             current_page_number = int(
                 event.data_match.group(1).decode("UTF-8"))
             buttons = paginate_help(
-                current_page_number + 1, borg._plugi
-, "helpme")
+                current_page_number + 1, borg._plugins, "helpme")
             # https://t.me/TelethonChat/115200
             await event.edit(buttons=buttons)
         else:
@@ -249,20 +249,21 @@ All instaructions to run @UniBorg in your PC has been explained in https://githu
             0:125]  # pylint:disable=E0602
         reply_pop_up_alert = help_string if help_string is not None else \
             "No DOCSTRING has been setup for {} plugin".format(plugin_name)
-            © @R4V4N4".format(plugin_name)
+        reply_pop_up_alert += "\n\n Use .unload {} to remove this plugin\n\
+            © @UniBorg".format(plugin_name)
         await event.answer(reply_pop_up_alert, cache_time=0, alert=True)
 
 
 def paginate_help(page_number, loaded_plugins, prefix):
     number_of_rows = Config.NO_OF_BUTTONS_DISPLAYED_IN_H_ME_CMD
-    number_of_cols = 7
+    number_of_cols = 2
     helpable_plugins = []
     for p in loaded_plugins:
         if not p.startswith("_"):
             helpable_plugins.append(p)
     helpable_plugins = sorted(helpable_plugins)
     modules = [custom.Button.inline(
-        "{} {}".format("⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀", x),
+        "{} {}".format("⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀", x),
         data="ub_plugin_{}".format(x))
         for x in helpable_plugins]
     pairs = list(zip(modules[::number_of_cols], modules[1::number_of_cols]))
