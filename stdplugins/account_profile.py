@@ -1,7 +1,4 @@
-"""Profile Updation Commands
-.pbio <Bio>
-.pname <Name>
-.ppic"""
+
 import os
 from telethon import events
 from telethon.tl import functions
