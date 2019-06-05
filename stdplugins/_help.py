@@ -16,9 +16,7 @@ async def _(event):
 Python {}
 Telethon {}
 
-""".format(
-        sys.version,
-        __version__[Click Here To Contact Me](https://t.me/r4v4n4)
+"""[Click Here To Contact Me](https://t.me/r4v4n4)
     )
     tgbotusername = Config.TG_BOT_USER_NAME_BF_HER  # pylint:disable=E0602
     if tgbotusername is not None:
