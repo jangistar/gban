@@ -255,7 +255,7 @@ All instaructions to run @UniBorg in your PC has been explained in https://githu
 
 
 def paginate_help(page_number, loaded_plugins, prefix):
-    number_of_rows = 80
+    number_of_rows = Config.NO_OF_BUTTONS_DISPLAYED_IN_H_ME_CMD
     number_of_cols = 7
     helpable_plugins = []
     for p in loaded_plugins:
