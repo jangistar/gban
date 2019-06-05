@@ -212,7 +212,8 @@ All instaructions to run @UniBorg in your PC has been explained in https://githu
             current_page_number = int(
                 event.data_match.group(1).decode("UTF-8"))
             buttons = paginate_help(
-                current_page_number + 1, borg._plugins, "helpme")
+                current_page_number + 1, borg._plugi
+, "helpme")
             # https://t.me/TelethonChat/115200
             await event.edit(buttons=buttons)
         else:
