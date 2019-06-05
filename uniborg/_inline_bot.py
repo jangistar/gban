@@ -34,7 +34,7 @@ async def _(event):
         await event.edit(output_message)
     except Exception as e:
         await event.edit("{} did not respond correctly, for **{}**!\n\
-            `{}`".format(bot_username, str(e)))
+            `{}`".format(bot_username))
 
 
 @borg.on(admin_cmd(  # pylint:disable=E0602
