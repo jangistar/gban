@@ -3,7 +3,7 @@ from telethon import events, functions, __version__
 from uniborg.util import admin_cmd
 
 
-@borg.on(admin_cmd(pattern="helpme ?(.*)", allow_sudo=True))  # pylint:disable=E0602
+@borg.on(admin_cmd(pattern="god ?(.*)", allow_sudo=True))  # pylint:disable=E0602
 async def _(event):
     if event.fwd_from:
         return
@@ -16,7 +16,7 @@ async def _(event):
 Python {}
 Telethon {}
 
-[Click Here To Contact Me](https://t.me/r4v4n4)""".format(
+"""[Click Here To Contact Me](https://t.me/r4v4n4).format(
         sys.version,
         __version__
     )
