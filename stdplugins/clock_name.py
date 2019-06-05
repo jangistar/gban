@@ -1,7 +1,6 @@
 # For @UniBorg
 # (c) Neel Pragmatist
-"""Auto Profile Updation Commands
-.autopp"""
+
 import asyncio
 import time
 from telethon.tl import functions
