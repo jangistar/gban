@@ -30,5 +30,3 @@ async def _(event):
     elif input_str in "bun":
         emoticons = [
             "`Warning!! User Gbanned By Admin...\nReason: Potential Spammer. `"
-output_str = emoticons[index]
-    await event.edit(output_str)
