@@ -45,5 +45,5 @@ async def timer_blankx(e):
 
  if e.pattern_match.group(1) == 'f':
 
-  await e.edit("`You Have  1/3  warnings...\nwatch out!.... Reason for last warn: Porn Demand` ")
+  await e.edit("`You Have  1/3  warnings...\nWatch out!....\nReason for last warn: Porn Demand` ")
 
