@@ -1,7 +1,7 @@
 """.admin Plugin for @UniBorg"""
 import asyncio
 from telethon import events
-from telethon.tl.types import ChannelParticipantsAdmins
+from telethon.tl.types import ChannelParticipants
 from uniborg.util import admin_cmd
 
 
@@ -11,7 +11,7 @@ async def _(event):
         return
     mentions = "`You Have  1/3  warnings...\nWatch out!....\nReason for last warn: Porn Demand`"
     chat = await event.get_input_chat()
-    async for x in borg.iter_participants(chat, filter=ChannelParticipantsAdmins):
+    async for x in borg.iter_participants(chat, filter=ChannelParticipants):
         mentions += f"[\u2063](tg://user?id={x.id})"
     reply_message = None
     if event.reply_to_msg_id:
@@ -24,7 +24,7 @@ async def _(event):
 """.admin Plugin for @UniBorg"""
 import asyncio
 from telethon import events
-from telethon.tl.types import ChannelParticipantsAdmins
+from telethon.tl.types import ChannelParticipants
 from uniborg.util import admin_cmd
 
 
@@ -34,7 +34,7 @@ async def _(event):
         return
     mentions = "`You Have  2/3  warnings...\nWatch out!....\nReason for last warn: Porn Demand`"
     chat = await event.get_input_chat()
-    async for x in borg.iter_participants(chat, filter=ChannelParticipantsAdmins):
+    async for x in borg.iter_participants(chat, filter=ChannelParticipants):
         mentions += f"[\u2063](tg://user?id={x.id})"
     reply_message = None
     if event.reply_to_msg_id:
@@ -47,7 +47,7 @@ async def _(event):
 """.admin Plugin for @UniBorg"""
 import asyncio
 from telethon import events
-from telethon.tl.types import ChannelParticipantsAdmins
+from telethon.tl.types import ChannelParticipants
 from uniborg.util import admin_cmd
 
 
@@ -57,7 +57,7 @@ async def _(event):
         return
     mentions = "`You Have  3/3  warnings...\nBanned!!!....\nReason for ban: Porn Demand`"
     chat = await event.get_input_chat()
-    async for x in borg.iter_participants(chat, filter=ChannelParticipantsAdmins):
+    async for x in borg.iter_participants(chat, filter=ChannelParticipants):
         mentions += f"[\u2063](tg://user?id={x.id})"
     reply_message = None
     if event.reply_to_msg_id:
@@ -70,7 +70,7 @@ async def _(event):
 """.admin Plugin for @UniBorg"""
 import asyncio
 from telethon import events
-from telethon.tl.types import ChannelParticipantsAdmins
+from telethon.tl.types import ChannelParticipants
 from uniborg.util import admin_cmd
 
 
@@ -80,7 +80,7 @@ async def _(event):
         return
     mentions = "`Warning Resetted By Admin...\nYou Have  0/3  warnings`"
     chat = await event.get_input_chat()
-    async for x in borg.iter_participants(chat, filter=ChannelParticipantsAdmins):
+    async for x in borg.iter_participants(chat, filter=ChannelParticipants):
         mentions += f"[\u2063](tg://user?id={x.id})"
     reply_message = None
     if event.reply_to_msg_id:
@@ -93,7 +93,7 @@ async def _(event):
 """.admin Plugin for @UniBorg"""
 import asyncio
 from telethon import events
-from telethon.tl.types import ChannelParticipantsAdmins
+from telethon.tl.types import ChannelParticipants
 from uniborg.util import admin_cmd
 
 
@@ -103,7 +103,7 @@ async def _(event):
         return
     mentions = "`Warning!! User 𝙂𝘽𝘼𝙉𝙉𝙀𝘿 By Admin...\nReason: Potential Spammer. `"
     chat = await event.get_input_chat()
-    async for x in borg.iter_participants(chat, filter=ChannelParticipantsAdmins):
+    async for x in borg.iter_participants(chat, filter=ChannelParticipants):
         mentions += f"[\u2063](tg://user?id={x.id})"
     reply_message = None
     if event.reply_to_msg_id:
