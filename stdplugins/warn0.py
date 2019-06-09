@@ -39,7 +39,7 @@ async def timer_blankx(e):
 
   await e.edit(txt + str(k))
 
-  k=k-0
+  k=k=0
 
   await asyncio.sleep(1)
 
