@@ -30,20 +30,6 @@ async def _(event):
     elif input_str in "bun":
         emoticons = [
             "`Warning!! User Gbanned By Admin...\nReason: Potential Spammer. `"
-    else:    
-        emoticons = [
-            "( ͡° ͜ʖ ͡°)",
-            "¯\_(ツ)_/¯",
-            "( ͡°( ͡° ͜ʖ( ͡° ͜ʖ ͡°)ʖ ͡°) ͡°)",
-            "ʕ•ᴥ•ʔ",
-            "(▀̿Ĺ̯▀̿ ̿)",
-            "(ง ͠° ͟ل͜ ͡°)ง",
-            "༼ つ ◕_◕ ༽つ",
-            "ಠ_ಠ",
-            "(☞ ͡° ͜ʖ ͡°)☞",
-            "¯\_༼ ି ~ ି ༽_/¯",
-            "c༼ ͡° ͜ʖ ͡° ༽⊃",
-        ]
     index = random.randint(0, len(emoticons))
     output_str = emoticons[index]
     await event.edit(output_str)
