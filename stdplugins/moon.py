@@ -32,7 +32,7 @@ async def _(event):
 
     input_str = event.pattern_match.group(1)
 
-    if input_str == "moon":
+    if input_str == "smoon":
 
         await event.edit(input_str)
 
