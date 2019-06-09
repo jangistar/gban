@@ -26,9 +26,9 @@ async def _(event):
 
         return
 
-    animation_interval = 0.3
+    animation_interval = 0.1
 
-    animation_ttl = range(0, 24)
+    animation_ttl = range(0, 100)
 
     input_str = event.pattern_match.group(1)
 
