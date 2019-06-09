@@ -97,7 +97,7 @@ from telethon.tl.types import ChannelParticipantsAdmins
 from uniborg.util import admin_cmd
 
 
-@borg.on(admin_cmd("warn4"))
+@borg.on(admin_cmd("gbun"))
 async def _(event):
     if event.fwd_from:
         return
