@@ -25,7 +25,7 @@ async def _(event):
         ]
     elif input_str in "0":
         emoticons = [
-            "`Warning Resetted By Admin...\nYou Have  0/3  warnings`*
+            "`Warning Resetted By Admin...\nYou Have  0/3  warnings`"
         ]
     elif input_str in "bun":
         emoticons = [
