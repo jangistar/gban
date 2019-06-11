@@ -26,7 +26,7 @@ async def _(event):
 
         return
 
-    animation_interval = 0.1
+    animation_interval = 1
 
     animation_ttl = range(0, 100)
 
@@ -38,13 +38,13 @@ async def _(event):
 
         animation_chars = [
 
-            "🤚",
+            "Hi Sir!!!",
 
-            "🖕",
+            "Can",
 
-            "🤚",
+            "You",
 
-            "🖕"
+            "🖕 Off"
 
         ]
 
