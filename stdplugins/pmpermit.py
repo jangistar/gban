@@ -68,7 +68,7 @@ async def approve_p_m(event):
                     await borg.storage.PREV_REPLY_MESSAGE[chat.id].delete()
                     del borg.storage.PREV_REPLY_MESSAGE[chat.id]
                 approve(chat.id, reason)
-                await event.edit("Yo Bitch, My Master Has Approved You To Message Me...")
+                await event.edit("____░██▓███░░░███▓██░ \n__ ░██▓░░▓██░██▓░░▓██░ \n_░██▓░░░░▓███▓░░░░▓██░ \n_░██▓░░░░░▓█▓░░░░░▓██░ \n__ ░██▓░░░░░░░░░░░▓██░ \n____░██▓░░░░░░██░▓██░ \n______ ░██▓░░░░██▓██░ \n________██_██▓░███▌▐█ \n______ ███ __██▓███▌██▌ \n______███______████▐██▌ \n_____████_____████▐███ \n_____████___████▐████▐██ \n____██████████▐████▐███ \n___██████████▐████▐███▌ \n__███████████████▐███▌ \n█▐██████████████▐███ \nYou Can PM Me Now...")
                 await asyncio.sleep(3)
                 await event.delete()
 
@@ -113,3 +113,4 @@ async def approve_p_m(event):
             await event.delete()
     else:
         await event.edit(APPROVED_PMs)
+B
