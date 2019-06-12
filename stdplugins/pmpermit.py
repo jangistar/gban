@@ -93,7 +93,7 @@ async def approve_p_m(event):
     if event.fwd_from:
         return
     approved_users = get_all_approved()
-    APPROVED_PMs = "Bitches Approved To Message Me...\n"
+    APPROVED_PMs = "───────────────▄▄───▐█\n───▄▄▄───▄██▄──█▀───█─▄\n─▄██▀█▌─██▄▄──▐█▀▄─▐█▀\n▐█▀▀▌───▄▀▌─▌─█─▌──▌─▌\n▌▀▄─▐──▀▄─▐▄─▐▄▐▄─▐▄─▐▄\nApproved PMs...."
     for a_user in approved_users:
         if a_user.reason:
             APPROVED_PMs += f"👉 [{a_user.chat_id}](tg://user?id={a_user.chat_id}) for {a_user.reason}\n"
