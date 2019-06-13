@@ -18,7 +18,7 @@ borg.storage.PREV_REPLY_MESSAGE = {}
 BAALAJI_TG_USER_BOT = "My Master hasn't approved you to PM."
 TG_COMPANION_USER_BOT = "Please wait for his response and don't spam his PM."
 UNIBORG_USER_BOT_WARN_ZERO = "I am currently offline. Please do not SPAM me."
-UNIBORG_USER_BOT_NO_WARN = "──▄█▀█▄─────────██ \n▄████████▄───▄▀█▄▄▄▄ \n██▀▼▼▼▼▼─▄▀──█▄▄ \n█████▄▲▲▲─▄▄▄▀───▀▄ \n██████▀▀▀▀─▀────────▀▀ \nI Am Offline Now....."
+UNIBORG_USER_BOT_NO_WARN = "──▄█▀█▄─────────██ \n▄████████▄───▄▀█▄▄▄▄ \n██▀▼▼▼▼▼─▄▀──█▄▄ \n█████▄▲▲▲─▄▄▄▀───▀▄ \n██████▀▀▀▀─▀────────▀▀ \n\nI Am Offline Now....."
 
 
 @borg.on(events.NewMessage(incoming=True, func=lambda e: e.is_private))
@@ -83,7 +83,7 @@ async def approve_p_m(event):
         if event.is_private:
             if is_approved(chat.id):
                 disapprove(chat.id)
-                await event.edit("Fuck Off Bitch, Now You Can't Message Me...")
+                await event.edit("........................./´¯/)\n......................,/¯..//\n...................../..../ /\n............./´¯/'...'/´¯¯`·¸\n........../'/.../..../......./¨¯\\n........('(...´(..´......,~/'...')\n.........\.................\/..../\n..........''...\.......... _.·´\n............\..............(\n..............\.............\ \n\nFuck Off Bitch, Now You Can't Message Me...")
                 await asyncio.sleep(3)
                 await borg(functions.contacts.BlockRequest(chat.id))
 
