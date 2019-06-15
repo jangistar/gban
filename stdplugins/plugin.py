@@ -26,7 +26,7 @@ async def _(event):
 
         return
 
-    animation_interval = 0.5
+    animation_interval = 0.3
 
     animation_ttl = range(0, 11)
 
@@ -40,14 +40,14 @@ async def _(event):
         
             "`Downloading Plugin..`",
             "`Downloading Plugin....`",
-            "`Loading... 0%\n▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒ `",
-            "`Loading... 4%\n█▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒ `",
-            "`Loading... 8%\n██▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒ `",    
-            "`Loading... 20%\n█████▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒ `",
-            "`Loading... 36%\n█████████▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒ `",
-            "`Loading... 52%\n█████████████▒▒▒▒▒▒▒▒▒▒▒▒ `",
-            "`Loading... 84%\n█████████████████████▒▒▒▒ `",
-            "`Loading... 100%\n█████████████████████████ `",
+            "`Uploading To GitHub\nLoading... 0%\n▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒ `",
+            "`Uploading To GitHub\nLoading... 4%\n█▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒ `",
+            "`Uploading To GitHub\nLoading... 8%\n██▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒ `",    
+            "`Uploading To GitHub\nLoading... 20%\n█████▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒ `",
+            "`Uploading To GitHub\nLoading... 36%\n█████████▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒ `",
+            "`Uploading To GitHub\nLoading... 52%\n█████████████▒▒▒▒▒▒▒▒▒▒▒▒ `",
+            "`Uploading To GitHub\nLoading... 84%\n█████████████████████▒▒▒▒ `",
+            "`Uploading To GitHub\nLoading... 100%\n█████████████████████████ `",
             "`Plugin Uploaded To GitHub...\n\nRun Your Installed Pligin With Correct Trigger...`"
         ]
 
