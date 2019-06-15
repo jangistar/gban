@@ -49,7 +49,7 @@ async def _(event):
     packname = f"{userid}'s @UniBorg Pack"
     packshortname = f"Uni_Borg_{userid}"  # format: Uni_Borg_userid
 
-    await event.edit("Processing this sticker. Please Wait!")
+    await event.edit("Stealing this sticker. Please Wait!")
 
     async with borg.conversation("@Stickers") as bot_conv:
         now = datetime.datetime.now()
@@ -110,7 +110,7 @@ async def _(event):
                 await silently_send_message(bot_conv, sticker_emoji)
                 await silently_send_message(bot_conv, "/done")
 
-    await event.edit(f"sticker added! Your pack can be found [here](t.me/addstickers/{packshortname})")
+    await event.edit(f"sticker stolen! Your pack can be found [here](t.me/addstickers/{packshortname})")
 
 
 @borg.on(admin_cmd("packinfo"))
