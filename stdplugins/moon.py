@@ -64,9 +64,9 @@ async def _(event):
 
         return
 
-    animation_interval = 1
+    animation_interval = 0.1
 
-    animation_ttl = range(0, 1000000000)
+    animation_ttl = range(0, 64)
 
     input_str = event.pattern_match.group(1)
 
@@ -90,5 +90,5 @@ async def _(event):
 
             await asyncio.sleep(animation_interval)
 
-            await event.edit(animation_chars[i % 8])
+            await event.edit(animation_chars[i % 64])
 
