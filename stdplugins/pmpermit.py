@@ -93,12 +93,12 @@ async def approve_p_m(event):
     if event.fwd_from:
         return
     approved_users = get_all_approved()
-    APPROVED_PMs = "───────────────▄▄───▐█\n───▄▄▄───▄██▄──█▀───█─▄\n─▄██▀█▌─██▄▄──▐█▀▄─▐█▀\n▐█▀▀▌───▄▀▌─▌─█─▌──▌─▌\n▌▀▄─▐──▀▄─▐▄─▐▄▐▄─▐▄─▐▄ \n\nApproved PMs....\n"
+    APPROVED_PMs = "[───────────────▄▄───▐█\n───▄▄▄───▄██▄──█▀───█─▄\n─▄██▀█▌─██▄▄──▐█▀▄─▐█▀\n▐█▀▀▌───▄▀▌─▌─█─▌──▌─▌\n▌▀▄─▐──▀▄─▐▄─▐▄▐▄─▐▄─▐▄](t.me/r4v4n4) \n\nApproved PMs....\n"
     for a_user in approved_users:
         if a_user.reason:
-            APPROVED_PMs += f"⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀👉 [{a_user.chat_id}](tg://user?id={a_user.chat_id}) for {a_user.reason}\n"
+            APPROVED_PMs += f"👉 [{a_user.chat_id}](tg://user?id={a_user.chat_id}) for {a_user.reason}\n"
         else:
-            APPROVED_PMs += f"⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀👉 [{a_user.chat_id}](tg://user?id={a_user.chat_id})\n"
+            APPROVED_PMs += f"👉 [{a_user.chat_id}](tg://user?id={a_user.chat_id})\n"
     if len(APPROVED_PMs) > Config.MAX_MESSAGE_SIZE_LIMIT:
         with io.BytesIO(str.encode(APPROVED_PMs)) as out_file:
             out_file.name = "approved.pms.text"
