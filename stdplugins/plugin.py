@@ -48,7 +48,7 @@ async def _(event):
             "`Uploading To GitHub\nLoading... 52%\n█████████████▒▒▒▒▒▒▒▒▒▒▒▒ `",
             "`Uploading To GitHub\nLoading... 84%\n█████████████████████▒▒▒▒ `",
             "`Uploading To GitHub\nLoading... 100%\n█████████████████████████ `",
-            "`Plugin Uploaded To GitHub...\n\nRun Your Installed Pligin With Correct Trigger...`"
+            "`Plugin Uploaded To GitHub...\n\nRun Your Installed Plugin With Correct Trigger...`"
         ]
 
         for i in animation_ttl:
