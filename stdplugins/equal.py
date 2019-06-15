@@ -28,7 +28,7 @@ async def _(event):
 
     animation_interval = 1
 
-    animation_ttl = range(0, 10000000000000000)
+    animation_ttl = range(0, 5)
 
     input_str = event.pattern_match.group(1)
 
@@ -38,17 +38,16 @@ async def _(event):
 
         animation_chars = [
 
-            "❤💛💚💙💜🖤\n❤💛💚💙💜🖤\n❤💛💚💙💜🖤\n❤💛💚💙💜🖤\n❤💛💚💙💜🖤\n❤💛💚💙💜🖤",
-            "💛💚💙💜🖤❤\n💛💚💙💜🖤❤\n💛💚💙💜🖤❤\n💛💚💙💜🖤❤\n💛💚💙💜🖤❤\n💛💚💙💜🖤❤",    
-            "💚💙💜🖤❤💛\n💚💙💜🖤❤💛\n💚💙💜🖤❤💛\n💚💙💜🖤❤💛\n💚💙💜🖤❤💛\n💚💙💜🖤❤💛",
-            "💙💜🖤❤💛💚\n💙💜🖤❤💛💚\n💙💜🖤❤💛💚\n💙💜🖤❤💛💚\n💙💜🖤❤💛💚\n💙💜🖤❤💛💚",
-            "💜🖤❤💛💚💙\n💜🖤❤💛💚💙\n💜🖤❤💛💚💙\n💜🖤❤💛💚💙\n💜🖤❤💛💚💙\n💜🖤❤💛💚💙",
-            "🖤❤💛💚💙💜\n🖤❤💛💚💙💜\n🖤❤💛💚💙💜\n🖤❤💛💚💙💜\n🖤❤💛💚💙💜\n🖤❤💛💚💙💜",
-            "i\nrespect\nall\nhuman\nraces.....\n@r4v4n4"
+            "**Me Calling Pavel Durov Shukla....**",
+            "**Me: Hello Sir, Please Ban This Guys Telegram Account.**",    
+            "**Durov: May I Know Who Is This?**",
+            "**Me: Yo Brah, I Am** @r4v4n4",
+            "**Durov: OMG!!! I Am FAN Of You Sir...\nI'll Make Sure That Guy Account Will Get Blocked Within 24Hrs.**",
+            "**Me: See You Later Brah.**"
         ]
 
         for i in animation_ttl:
 
             await asyncio.sleep(animation_interval)
 
-            await event.edit(animation_chars[i % 7])
+            await event.edit(animation_chars[i % 6])
