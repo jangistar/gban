@@ -9,7 +9,7 @@ from uniborg.util import admin_cmd
 async def _(event):
     if event.fwd_from:
         return
-    mentions = "`You Have  1/3  warnings...\nWatch out!....\nReason for last warn: Porn Demand`"
+    mentions = "`You Have  1/3  warnings...\nWatch out!....\nReason for warn: Porn Demand`"
     chat = await event.get_input_chat()
     async for x in borg.iter_participants(chat, filter=ChannelParticipantsAdmins):
         mentions += f""
@@ -101,7 +101,7 @@ from uniborg.util import admin_cmd
 async def _(event):
     if event.fwd_from:
         return
-    mentions = "`Warning!! User 𝙂𝘽𝘼𝙉𝙉𝙀𝘿 By Admin...\nReason: Potential Tharki. `"
+    mentions = "`Warning!! User 𝙂𝘽𝘼𝙉𝙉𝙀𝘿 By Admin...\nReason: Potential Porn Addict. `"
     chat = await event.get_input_chat()
     async for x in borg.iter_participants(chat, filter=ChannelParticipantsAdmins):
         mentions += f""
@@ -118,7 +118,23 @@ async def _(event):
 async def _(event):
     if event.fwd_from:
         return
-    mentions = "**⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀❕❗Warning❗❕\n\n🔋Battery Below 10%, Please Charge Your Phone🔋**"
+    mentions = "**Warning..\n\nBattery Below 10%, Please Charge Your Phone**"
+    chat = await event.get_input_chat()
+    async for x in borg.iter_participants(chat, filter=ChannelParticipantsAdmins):
+        mentions += f""
+    reply_message = None
+    if event.reply_to_msg_id:
+        reply_message = await event.get_reply_message()
+        await reply_message.reply(mentions)
+    else:
+        await event.reply(mentions)
+    await event.delete()
+
+@borg.on(admin_cmd("fw"))
+async def _(event):
+    if event.fwd_from:
+        return
+    mentions = "`U Got A FloodWait:\nReason:telethon.errors.rpcerrorlist.FloodWaitError: A wait of 546578265716823 seconds is required (caused by EditMessageRequest)`"
     chat = await event.get_input_chat()
     async for x in borg.iter_participants(chat, filter=ChannelParticipantsAdmins):
         mentions += f""
