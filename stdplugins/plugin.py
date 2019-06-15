@@ -32,7 +32,7 @@ async def _(event):
 
     input_str = event.pattern_match.group(1)
 
-    if input_str == "inatall":
+    if input_str == "inatal":
 
         await event.edit(input_str)
 
