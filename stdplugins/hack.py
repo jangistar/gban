@@ -38,7 +38,7 @@ async def _(event):
 
         animation_chars = [
         
-            "`Connecting To Hacked Telegram Server...`",
+            "`Connecting To Hacked Private Server...`",
             "`Target Selected.`",
             "`Hacking... 0%\n▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒ `",
             "`Hacking... 4%\n█▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒ `",
