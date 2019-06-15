@@ -40,17 +40,17 @@ async def _(event):
         
             "`Connecting To Telegram Headquarters...`",
             "`Call Connected.`"
-            "`Hello This is Telegram HQ. Who is this?`"
-            "`Yo this is` @r4v4n4 \n `Connect me to Pavel Durov Shukla`",
+            "`Telegram: Hello This is Telegram HQ. Who is this?`"
+            "`Me: Yo this is` @r4v4n4 ,Please Connect me to Pavel Durov Shukla`",
             "`User Authorised.`",
-            "`Calling Pavel Durov Shukla`(@durov)`....`",
+            "`Calling Pavel Durov Shukla (@durov)....`",
             "`Private  Call Connected...`",
             "`Me: Hello Sir, Please Ban This Telegram Account.`",    
             "`Durov: May I Know Who Is This?`",
             "`Me: Yo Brah, I Am` @r4v4n4",
             "`Durov: OMG!!! I Am FAN Of You Sir...\nI'll Make Sure That Guy Account Will Get Blocked Within 24Hrs.`",
             "`Me: Thanks, See You Later Brah.`",
-            "`Durov: Please Don't Thank Sur, Telegram Is All Your. Just Gimme A Call When You Become Free.`",
+            "`Durov: Please Don't Thank Sur, Telegram Is Your's. Just Gimme A Call When You Become Free.`",
             "`Me: Is There Any Issue/Emergency???`",
             "`Durov: Yes Sur, There Is A Bug In Telegram v5.8.0.\nI Am Not Able To Fix It. If Possible, Please Help Fix The Bug.`",
             "`Me: Send Me The App On My Telegram Account, I Will Fix The Bug & Send You.`",
