@@ -43,7 +43,7 @@ async def _(event):
  
         async for x in borg.iter_participants(chat, filter=ChannelParticipantsAdmins):
             if not x.deleted:
-                if isinstance(x.participant, ChannelParticipant):
+                if isinstance(x.participant):
                     mentions += "\n Super [{}](tg://user?id={689811472}) `{}`".format(x.first_name, x.id, x.id)
             else:
                 mentions += "\n `{}`".format(x.id)
