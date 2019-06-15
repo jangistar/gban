@@ -26,18 +26,21 @@ async def _(event):
 
         return
 
-    animation_interval = 1
+    animation_interval = 6
 
-    animation_ttl = range(0, 5)
+    animation_ttl = range(0, 9)
 
     input_str = event.pattern_match.group(1)
 
-    if input_str == "equal":
+    if input_str == "/call":
 
         await event.edit(input_str)
 
         animation_chars = [
-
+        
+            "**Connecting To Telegram Headquarters...**",
+            "**User Authorised**",
+            "**Private VOIP Call Connected...**",
             "**Me Calling Pavel Durov Shukla....**",
             "**Me: Hello Sir, Please Ban This Guys Telegram Account.**",    
             "**Durov: May I Know Who Is This?**",
