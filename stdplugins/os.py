@@ -169,7 +169,7 @@ async def _(event):
             "`Loading Symbian OS... 52%\n██▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒ `",
             "`Loading Symbian OS... 84%\n█▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒ `",
             "`Loading Symbian OS... 100%\n▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒ `",
-            "`Welcome...\n\nStock OS: Symbian OS\nCurrent OS: Symbian OS"
+            "`Welcome...\n\nStock OS: Symbian OS\nCurrent OS: Symbian OS`"
         ]
 
         for i in animation_ttl:
