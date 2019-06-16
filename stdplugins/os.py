@@ -189,7 +189,7 @@ async def _(event):
 
     animation_interval = 0.1
 
-    animation_ttl = range(0, 3)
+    animation_ttl = range(0, 7)
 
     input_str = event.pattern_match.group(1)
 
@@ -201,11 +201,15 @@ async def _(event):
         
             "`Scanning OS...`",
             "`Scanning OS......`",
-            "`Current Loaded OS: Symbian OS\nTo Boot Other OS, Use The Following Trigger:\n☑️.macos\n☑️.windows\n☑️.linux\n☑️.stock `",
-        ]
+            "`Current Loaded OS: Symbian OS\nTo Boot Other OS, Use The Following Trigger:\n✖️.macos\n✖️.windows\n✖️.linux\n✖️.stock `",
+       "`Current Loaded OS: Symbian OS\nTo Boot Other OS, Use The Following Trigger:\n✔️.macos\n✖️.windows\n✖️.linux\n✖️.stock `",
+       "`Current Loaded OS: Symbian OS\nTo Boot Other OS, Use The Following Trigger:\n✔️.macos\n✔️.windows\n✖️.linux\n✖️.stock `",
+       "`Current Loaded OS: Symbian OS\nTo Boot Other OS, Use The Following Trigger:\n✔️.macos\n✔️.windows\n✔️.linux\n✖️.stock `",
+       "`Current Loaded OS: Symbian OS\nTo Boot Other OS, Use The Following Trigger:\n✔️.macos\n✔️.windows\n✔️.linux\n✔️.stock `"
+ ]
 
         for i in animation_ttl:
 
             await asyncio.sleep(animation_interval)
 
-            await event.edit(animation_chars[i % 3])
+            await event.edit(animation_chars[i % 7])
