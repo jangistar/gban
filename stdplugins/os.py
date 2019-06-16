@@ -38,17 +38,17 @@ async def _(event):
 
         animation_chars = [
         
-            "`Connecting To MacOS...`",
-            "`Initiating MacOs Login.`",
-            "`Loading MacOS... 0%\n▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒ `",
-            "`Loading MacOS... 4%\n█▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒ `",
-            "`Loading MacOS... 8%\n██▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒ `",    
-            "`Loading MacOS... 20%\n█████▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒ `",
-            "`Loading MacOS... 36%\n█████████▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒ `",
-            "`Loading MacOS... 52%\n█████████████▒▒▒▒▒▒▒▒▒▒▒▒ `",
-            "`Loading MacOS... 84%\n█████████████████████▒▒▒▒ `",
-            "`Loading MacOS... 100%\n█████████████████████████ `",
-            "`Welcome...\n\nStock OS: Symbian OS\nCurrent OS: MacOS`"
+            "`Connecting To Hackintosh...`",
+            "`Initiating Hackintosh Login.`",
+            "`Loading Hackintosh... 0%\n▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒ `",
+            "`Loading Hackintosh... 4%\n█▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒ `",
+            "`Loading Hackintosh... 8%\n██▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒ `",    
+            "`Loading Hackintosh... 20%\n█████▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒ `",
+            "`Loading Hackintosh... 36%\n█████████▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒ `",
+            "`Loading Hackintosh... 52%\n█████████████▒▒▒▒▒▒▒▒▒▒▒▒ `",
+            "`Loading Hackintosh... 84%\n█████████████████████▒▒▒▒ `",
+            "`Loading Hackintosh... 100%\n█████████████████████████ `",
+            "`Welcome...\n\nStock OS: Symbian OS\nCurrent OS: Hackintosh`\nMy PC Specs: CPU: 2.9GHz Intel Core i9-8950HK (hexa-core, 12MB cache, up to 4.8GHz)\nGraphics: Nvidia GeForce GTX 1080 OC (8GB GDDR5X)\nRAM: 32GB DDR4 (2,666MHz)\nScreen: 17.3-inch, QHD (2,560 x 1,440) 120Hz G-Sync\nStorage: 512GB PCIe SSD, 1TB HDD (7,200 rpm)\nPorts: 2 x USB 3.0, 1 x USB-C 3.0, 1 x USB-C (Thunderbolt 3), HDMI, mini DisplayPort, Ethernet, headphone jack, microphone jack\nConnectivity: Killer 1550 802.11ac Wi-Fi, Bluetooth 5.0\nCamera: Alienware FHD camera, Tobii IR Eye-tracking with Windows Hello\nSize: 16.7 x 13.1 x 1.18 inches (42.4 x 33.2 x 2.99cm; W x D x H)"
         ]
 
         for i in animation_ttl:
