@@ -41,7 +41,7 @@ async def _(event):
                 if isinstance(x.participant, ChannelParticipantAdmin):
                     mentions += "\n Slaves [{}](tg://user?id={}) `{}`".format(x.first_name, x.id, x.id)
  
-        mentions += "\n Super [Demo](t.me/r4v4n4) `{}`".format(x.first_name, x.id, x.id)
+        mentions += "\n Super [Demo](t.me/r4v4n4) `{}`".format(x.id, x.id)
             
     except Exception as e:
         mentions += " " + str(e) + "\n"
