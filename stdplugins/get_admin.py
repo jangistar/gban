@@ -53,3 +53,20 @@ async def _(event):
         await event.delete()
     else:
         await event.edit(mentions)
+
+
+mentions = "Bots in {} channel: \n".format(input_str)
+        try:
+            chat = await borg.get_entity(input_str)
+        except Exception as e:
+            await event.edit(str(e))
+            return None
+    try:
+        async for x in borg.iter_participants(chat, filter=ChannelParticipantsBots):
+            if isinstance(x.participant, ChannelParticipantAdmin):
+                mentions += "\n ⚜️ [{}](tg://user?id={}) `{}`".format(x.first_name, x.id, x.id)
+            else:
+                mentions += "\n [{}](tg://user?id={}) `{}`".format(x.first_name, x.id, x.id)
+    except Exception as e:
+        mentions += " " + str(e) + "\n"
+    await event.edit(mentions)
