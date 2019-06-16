@@ -28,7 +28,7 @@ def admin_cmd(pattern=None, allow_sudo=False, **args):
         args["outgoing"] = True
     args["blacklist_chats"] = True
     args["chats"] = list(Config.UB_BLACK_LIST_CHAT)
-    return events.EditedMessage(**args)
+    return events.NewMessage(**args)
 
 
 async def is_read(borg, entity, message, is_out=None):
