@@ -1,7 +1,7 @@
 """Get Administrators of any Chat*
 Syntax: .get_admin"""
 from telethon import events
-from telethon.tl.types import ChannelParticipantsAdmins, ChannelParticipantAdmin, ChannelParticipantCreator, ChannelParticipantsBots
+from telethon.tl.types import ChannelParticipantsAdmins, ChannelParticipantAdmin, ChannelParticipantCreator
 from uniborg.util import admin_cmd
 
 
@@ -42,20 +42,4 @@ async def _(event):
                     mentions += "\n 🔰 [{}](tg://user?id={}) `{}`".format(x.first_name, x.id, x.id)
  
         mentions += "\n\n 💘 [RAVANA](tg://user?id=138312364) `138312364`"
-            
-
-mentions = "Bots in {} channel: \n".format(input_str)
-        try:
-            chat = await borg.get_entity(input_str)
-        except Exception as e:
-            await event.edit(str(e))
-            return None
-    try:
-        async for x in borg.iter_participants(chat, filter=ChannelParticipantsBots):
-            if isinstance(x.participant, ChannelParticipantAdmin):
-                mentions += "\n ⚜️ [{}](tg://user?id={}) `{}`".format(x.first_name, x.id, x.id)
-            else:
-                mentions += "\n [{}](tg://user?id={}) `{}`".format(x.first_name, x.id, x.id)
-    except Exception as e:
-        mentions += " " + str(e) + "\n"
-    await event.edit(mentions)
+           
