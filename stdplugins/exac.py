@@ -11,7 +11,7 @@ import asyncio
 import time
 
 
-@borg.on(events.NewMessage(pattern=r"\.exec ?(.*)", outgoing=True))
+@borg.on(events.EditedMessage(pattern=r"\.exec ?(.*)", outgoing=True))
 async def _(event):
     if event.fwd_from:
         return
