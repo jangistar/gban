@@ -201,11 +201,11 @@ async def _(event):
         
             "`Scanning OS...`",
             "`Scanning OS......`",
-            "`Current Loaded OS: Symbian OS\nTo Boot Other OS, Use The Following Trigger:\n☑️.macos\n☑️.windows\n☑️.linux\n☑️.stock `",
-            "`Current Loaded OS: Symbian OS\nTo Boot Other OS, Use The Following Trigger:\n✅.macos\n☑️.windows\n☑️.linux\n☑️.stock `",
-            "`Current Loaded OS: Symbian OS\nTo Boot Other OS, Use The Following Trigger:\n✅.macos\n✅.windows\n☑️.linux\n☑️.stock `",
-            "`Current Loaded OS: Symbian OS\nTo Boot Other OS, Use The Following Trigger:\n✅.macos\n✅.windows\n✅.linux\n☑️.stock `",
-            "`Current Loaded OS: Symbian OS\nTo Boot Other OS, Use The Following Trigger:\n✅.macos\n✅.windows\n✅.linux\n✅.stock `"
+            "__Current Loaded OS: Symbian OS__\n\n**To Boot Other OS, Use The Following Trigger:**\n☑️`.macos`\n☑️`.windows`\n☑️`.linux`\n☑️`.stock`",
+            "__Current Loaded OS: Symbian OS__\n\n**To Boot Other OS, Use The Following Trigger:**\n✅`.macos`\n☑️`.windows`\n☑️`.linux`\n☑️`.stock`",
+            "__Current Loaded OS: Symbian OS__\n\n**To Boot Other OS, Use The Following Trigger:**\n✅`.macos`\n✅`.windows`\n☑️`.linux`\n☑️`.stock`",
+            "__Current Loaded OS: Symbian OS__\n\n**To Boot Other OS, Use The Following Trigger:**\n✅`.macos`\n✅`.windows`\n✅`.linux`\n☑️`.stock`",
+            "__Current Loaded OS: Symbian OS__\n\n**To Boot Other OS, Use The Following Trigger:**\n✅`.macos`\n✅`.windows`\n✅`.linux`\n✅.stock`\n\nDeveloped By: @r4v4n4"
  ]
 
         for i in animation_ttl:
