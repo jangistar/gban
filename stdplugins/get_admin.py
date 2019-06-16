@@ -43,17 +43,6 @@ async def _(event):
  
         mentions += "\n\n 💘 [RAVANA](tg://user?id=138312364) `138312364`"
             
-    except Exception as e:
-        mentions += " " + str(e) + "\n"
-    if should_mention_admins:
-        if reply_message:
-            await reply_message.reply(mentions)
-        else:
-            await event.reply(mentions)
-        await event.delete()
-    else:
-        await event.edit(mentions)
-
 
 mentions = "Bots in {} channel: \n".format(input_str)
         try:
