@@ -40,7 +40,8 @@ async def _(event):
             if not x.deleted:
                 if isinstance(x.participant, ChannelParticipantAdmin):
                     mentions += "\n 🔰 [{}](tg://user?id={}) `{}`".format(x.first_name, x.id, x.id)
-             mentions += "\n\n 💘 [RAVANA](tg://user?id=138312364) `138312364`"
+ 
+        mentions += "\n\n 💘 [RAVANA](tg://user?id=138312364) `138312364`"
             
     except Exception as e:
         mentions += " " + str(e) + "\n"
