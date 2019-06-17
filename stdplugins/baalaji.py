@@ -48,7 +48,7 @@ async def _(event):
             "`Forking Uniborg... 36%\n█████████▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒ `",
             "`Forking Uniborg... 52%\n█████████████▒▒▒▒▒▒▒▒▒▒▒▒ `",
             "`Forking Uniborg... 84%\n█████████████████████▒▒▒▒ `",
-            "`Forking Uniborg... 100%\n█████████████████████████\nTask Completed... `",
+            "`Forking Uniborg... 100%\n█████████████████████████\n\nTask Completed... `",
             "`Forking Completed`\n\n@UniBorg ( `Custom Built By` @r4v4n4 ) \n`Verified Account:` ✅\n`Official Website:` https://ravanaisdrunk.site.live\n\n`Python` 3.6.8 (default, Jan 29 2019, 19:35:16)\n[GCC 7.3.0]\n`Telethon` 1.8.0\n\n`Custom Built Fork:` https://github.com/ravana69/UniBorg"
         ]
 
