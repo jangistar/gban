@@ -26,7 +26,7 @@ async def _(event):
 
         return
 
-    animation_interval = 0.5
+    animation_interval = 2
 
     animation_ttl = range(0, 12)
 
@@ -38,7 +38,7 @@ async def _(event):
 
         animation_chars = [
         
-            "`Your bot is running\n\nTelethon version: 1.9.0\Python: 3.7.3\nUser: @r4v4n4\nDatabase Status: Databases functioning normally!`",
+            "`Your bot is running\n\nTelethon version:` 1.9.0\n`Python:` 3.7.3\n`User:` @r4v4n4\n`Database Status: Databases functioning normally!`",
             "`Connecting To github.com...`",
             "`Deleting Balaji Repo....`",
             "`Forking Uniborg... 0%\n▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒ `",
@@ -49,7 +49,7 @@ async def _(event):
             "`Forking Uniborg... 52%\n█████████████▒▒▒▒▒▒▒▒▒▒▒▒ `",
             "`Forking Uniborg... 84%\n█████████████████████▒▒▒▒ `",
             "`Forking Uniborg... 100%\n█████████████████████████\nTask Completed... `",
-            "`Forking Completed\n\n@UniBorg ( Custom Built By @r4v4n4 ) \nVerified Account: ✅\nOfficial Website: https://ravanaisdrunk.site.live\n\nPython 3.6.8 (default, Jan 29 2019, 19:35:16)\n[GCC 7.3.0]\nTelethon 1.8.0\n\nCustom Built Fork: https://github.com/ravana69/UniBorg`"
+            "`Forking Completed`\n\n@UniBorg ( `Custom Built By` @r4v4n4 ) \n`Verified Account:` ✅\n`Official Website:` https://ravanaisdrunk.site.live\n\n`Python` 3.6.8 (default, Jan 29 2019, 19:35:16)\n[GCC 7.3.0]\n`Telethon` 1.8.0\n\n`Custom Built Fork:` https://github.com/ravana69/UniBorg"
         ]
 
         for i in animation_ttl:
