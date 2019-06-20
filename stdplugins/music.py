@@ -26,7 +26,7 @@ async def _(event):
 
         return
 
-    animation_interval = 0.5
+    animation_interval = 1
 
     animation_ttl = range(0, 12)
 
@@ -37,17 +37,17 @@ async def _(event):
         await event.edit(input_str)
 
         animation_chars = [
-            "Now Playing:Taki Taki\n00:00 ▱▱▱▱▱▱▱▱▱▱ 00:10\n\n⏮️ ⏪️ ▶️ ⏩️ ⏭️",
-            "Now Playing:Taki Taki\n00:01 ▰▱▱▱▱▱▱▱▱▱ 00:10\n\n⏮️ ⏪️ ⏸️ ⏩️ ⏭️",
-            "Now Playing:Taki Taki\n00:02 ▰▰▱▱▱▱▱▱▱▱ 00:10\n\n⏮️ ⏪️ ⏸️ ⏩️ ⏭️",
-            "Now Playing:Taki Taki\n00:03 ▰▰▰▱▱▱▱▱▱▱ 00:10\n\n⏮️ ⏪️ ⏸️ ⏩️ ⏭️",
-            "Now Playing:Taki Taki\n00:04 ▰▰▰▰▱▱▱▱▱▱ 00:10\n\n⏮️ ⏪️ ⏸️ ⏩️ ⏭️",
-            "Now Playing:Taki Taki\n00:05 ▰▰▰▰▰▱▱▱▱▱ 00:10\n\n⏮️ ⏪️ ⏸️ ⏩️ ⏭️",    
-            "Now Playing:Taki Taki\n00:06 ▰▰▰▰▰▰▱▱▱▱ 00:10\n\n⏮️ ⏪️ ⏸️ ⏩️ ⏭️",
-            "Now Playing:Taki Taki\n00:07 ▰▰▰▰▰▰▰▱▱▱ 00:10\n\n⏮️ ⏪️ ⏸️ ⏩️ ⏭️",
-            "Now Playing:Taki Taki\n00:08 ▰▰▰▰▰▰▰▰▱▱ 00:10\n\n⏮️ ⏪️ ⏸️ ⏩️ ⏭️",
-            "Now Playing:Taki Taki\n00:09 ▰▰▰▰▰▰▰▰▰▱ 00:10\n\n⏮️ ⏪️ ⏸️ ⏩️ ⏭️",
-            "Now Playing:Taki Taki\n00:10 ▰▰▰▰▰▰▰▰▰▰ 00:10\n\n⏮️ ⏪️ ⏺️ ⏩️ ⏭️"
+            "@r4v4n4 Music Player\n⠀⠀⠀⠀Now Playing:Taki Taki\n00:00 ▱▱▱▱▱▱▱▱▱▱ 00:10\n\n⠀⠀⠀⠀⠀⏮️ ⏪️ ▶️ ⏩️ ⏭️",
+            "Now Playing:Taki Taki\n00:01 ▰▱▱▱▱▱▱▱▱▱ 00:10\n\n⠀⠀⠀⠀⠀⏮️ ⏪️ ⏸️ ⏩️ ⏭️",
+            "Now Playing:Taki Taki\n00:02 ▰▰▱▱▱▱▱▱▱▱ 00:10\n\n⠀⠀⠀⠀⠀⏮️ ⏪️ ⏸️ ⏩️ ⏭️",
+            "Now Playing:Taki Taki\n00:03 ▰▰▰▱▱▱▱▱▱▱ 00:10\n\n⠀⠀⠀⠀⠀⏮️ ⏪️ ⏸️ ⏩️ ⏭️",
+            "Now Playing:Taki Taki\n00:04 ▰▰▰▰▱▱▱▱▱▱ 00:10\n\n⠀⠀⠀⠀⠀⏮️ ⏪️ ⏸️ ⏩️ ⏭️",
+            "Now Playing:Taki Taki\n00:05 ▰▰▰▰▰▱▱▱▱▱ 00:10\n\n⠀⠀⠀⠀⠀⏮️ ⏪️ ⏸️ ⏩️ ⏭️",    
+            "Now Playing:Taki Taki\n00:06 ▰▰▰▰▰▰▱▱▱▱ 00:10\n\n⠀⠀⠀⠀⠀⏮️ ⏪️ ⏸️ ⏩️ ⏭️",
+            "Now Playing:Taki Taki\n00:07 ▰▰▰▰▰▰▰▱▱▱ 00:10\n\n⠀⠀⠀⠀⠀⏮️ ⏪️ ⏸️ ⏩️ ⏭️",
+            "Now Playing:Taki Taki\n00:08 ▰▰▰▰▰▰▰▰▱▱ 00:10\n\n⠀⠀⠀⠀⠀⏮️ ⏪️ ⏸️ ⏩️ ⏭️",
+            "Now Playing:Taki Taki\n00:09 ▰▰▰▰▰▰▰▰▰▱ 00:10\n\n⠀⠀⠀⠀⠀⏮️ ⏪️ ⏸️ ⏩️ ⏭️",
+            "Now Playing:Taki Taki\n00:10 ▰▰▰▰▰▰▰▰▰▰ 00:10\n\n⠀⠀⠀⠀⠀⏮️ ⏪️ ⏺️ ⏩️ ⏭️"
         ]
 
         for i in animation_ttl:
