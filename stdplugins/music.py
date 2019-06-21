@@ -37,17 +37,17 @@ async def _(event):
         await event.edit(input_str)
 
         animation_chars = [
-            "⠀⠀⠀⠀@r4v4n4 Music Player\n⠀⠀⠀⠀Now Playing:Taki Taki\n00:00 ▱▱▱▱▱▱▱▱▱▱ 00:10\n\n⠀⠀⠀⠀⠀⏮️ ⏪️ ▶️ ⏩️ ⏭️",
-            "⠀⠀⠀⠀@r4v4n4 Music Player\n⠀⠀⠀⠀Now Playing:Taki Taki\n00:01 ▰▱▱▱▱▱▱▱▱▱ 00:10\n\n⠀⠀⠀⠀⠀⏮️ ⏪️ ⏸️ ⏩️ ⏭️",
-            "⠀⠀⠀⠀@r4v4n4 Music Player\n⠀⠀⠀⠀Now Playing:Taki Taki\n00:02 ▰▰▱▱▱▱▱▱▱▱ 00:10\n\n⠀⠀⠀⠀⠀⏮️ ⏪️ ⏸️ ⏩️ ⏭️",
-            "⠀⠀⠀⠀@r4v4n4 Music Player\n⠀⠀⠀⠀Now Playing:Taki Taki\n00:03 ▰▰▰▱▱▱▱▱▱▱ 00:10\n\n⠀⠀⠀⠀⠀⏮️ ⏪️ ⏸️ ⏩️ ⏭️",
-            "⠀⠀⠀⠀@r4v4n4 Music Player\n⠀⠀⠀⠀Now Playing:Taki Taki\n00:04 ▰▰▰▰▱▱▱▱▱▱ 00:10\n\n⠀⠀⠀⠀⠀⏮️ ⏪️ ⏸️ ⏩️ ⏭️",
-            "⠀⠀⠀⠀@r4v4n4 Music Player\n⠀⠀⠀⠀Now Playing:Taki Taki\n00:05 ▰▰▰▰▰▱▱▱▱▱ 00:10\n\n⠀⠀⠀⠀⠀⏮️ ⏪️ ⏸️ ⏩️ ⏭️",    
-            "⠀⠀⠀⠀@r4v4n4 Music Player\n⠀⠀⠀⠀Now Playing:Taki Taki\n00:06 ▰▰▰▰▰▰▱▱▱▱ 00:10\n\n⠀⠀⠀⠀⠀⏮️ ⏪️ ⏸️ ⏩️ ⏭️",
-            "⠀⠀⠀⠀@r4v4n4 Music Player\n⠀⠀⠀⠀Now Playing:Taki Taki\n00:07 ▰▰▰▰▰▰▰▱▱▱ 00:10\n\n⠀⠀⠀⠀⠀⏮️ ⏪️ ⏸️ ⏩️ ⏭️",
-            "⠀⠀⠀⠀@r4v4n4 Music Player\n⠀⠀⠀⠀Now Playing:Taki Taki\n00:08 ▰▰▰▰▰▰▰▰▱▱ 00:10\n\n⠀⠀⠀⠀⠀⏮️ ⏪️ ⏸️ ⏩️ ⏭️",
-            "⠀⠀⠀⠀@r4v4n4 Music Player\n⠀⠀⠀⠀Now Playing:Taki Taki\n00:09 ▰▰▰▰▰▰▰▰▰▱ 00:10\n\n⠀⠀⠀⠀⠀⏮️ ⏪️ ⏸️ ⏩️ ⏭️",
-            "⠀⠀⠀⠀@r4v4n4 Music Player\n⠀⠀⠀⠀Now Playing:Taki Taki\n00:10 ▰▰▰▰▰▰▰▰▰▰ 00:10\n\n⠀⠀⠀⠀⠀⏮️ ⏪️ ⏺️ ⏩️ ⏭️"
+            "⬤⬤⬤ 81%\n\n⠀⠀⠀⠀⠀RAVANA Music Player\n⠀⠀⠀⠀Now Playing:Kamasutra BGM\n00:00 ▱▱▱▱▱▱▱▱▱▱ 00:10\n\n⠀⠀⠀⠀⠀⏮️ ⏪️ ▶️ ⏩️ ⏭️\n\nNext Song: I Am Sexy And I Know It.\n\n⠀⠀⠀⠀Device: Nokia 1100",
+            "⬤⬤⬤ 81%\n\n⠀⠀⠀⠀⠀RAVANA Music Player\n⠀⠀⠀⠀Now Playing:Kamasutra BGM\n00:01 ▰▱▱▱▱▱▱▱▱▱ 00:10\n\n⠀⠀⠀⠀⠀⏮️ ⏪️ ⏸️ ⏩️ ⏭️\n\nNext Song: I Am Sexy And I Know It.\n\n⠀⠀⠀⠀Device: Nokia 1100",
+            "⬤⬤⬤ 81%\n\n⠀⠀⠀⠀⠀RAVANA Music Player\n⠀⠀⠀⠀Now Playing:Kamasutra BGM\n00:02 ▰▰▱▱▱▱▱▱▱▱ 00:10\n\n⠀⠀⠀⠀⠀⏮️ ⏪️ ⏸️ ⏩️ ⏭️\n\nNext Song: I Am Sexy And I Know It.\n\n⠀⠀⠀⠀Device: Nokia 1100",
+            "⬤⬤⬤ 81%\n\n⠀⠀⠀⠀⠀RAVANA Music Player\n⠀⠀⠀⠀Now Playing:Kamasutra BGM\n00:03 ▰▰▰▱▱▱▱▱▱▱ 00:10\n\n⠀⠀⠀⠀⠀⏮️ ⏪️ ⏸️ ⏩️ ⏭️\n\nNext Song: I Am Sexy And I Know It.\n\n⠀⠀⠀⠀Device: Nokia 1100",
+            "⬤⬤◯ 80%\n\n⠀⠀⠀⠀⠀RAVANA Music Player\n⠀⠀⠀⠀Now Playing:Kamasutra BGM\n00:04 ▰▰▰▰▱▱▱▱▱▱ 00:10\n\n⠀⠀⠀⠀⠀⏮️ ⏪️ ⏸️ ⏩️ ⏭️\n\nNext Song: I Am Sexy And I Know It.\n\n⠀⠀⠀⠀Device: Nokia 1100",
+            "⬤⬤◯ 80%\n\n⠀⠀⠀⠀⠀RAVANA Music Player\n⠀⠀⠀⠀Now Playing:Kamasutra BGM\n00:05 ▰▰▰▰▰▱▱▱▱▱ 00:10\n\n⠀⠀⠀⠀⠀⏮️ ⏪️ ⏸️ ⏩️ ⏭️\n\nNext Song: I Am Sexy And I Know It.\n\n⠀⠀⠀⠀Device: Nokia 1100",    
+            "⬤⬤◯ 80%\n\n⠀⠀⠀⠀⠀RAVANA Music Player\n⠀⠀⠀⠀Now Playing:Kamasutra BGM\n00:06 ▰▰▰▰▰▰▱▱▱▱ 00:10\n\n⠀⠀⠀⠀⠀⏮️ ⏪️ ⏸️ ⏩️ ⏭️\n\nNext Song: I Am Sexy And I Know It.\n\n⠀⠀⠀⠀Device: Nokia 1100",
+            "⬤⬤◯ 80%\n\n⠀⠀⠀⠀⠀RAVANA Music Player\n⠀⠀⠀⠀Now Playing:Kamasutra BGM\n00:07 ▰▰▰▰▰▰▰▱▱▱ 00:10\n\n⠀⠀⠀⠀⠀⏮️ ⏪️ ⏸️ ⏩️ ⏭️\n\nNext Song: I Am Sexy And I Know It.\n\n⠀⠀⠀⠀Device: Nokia 1100",
+            "⬤⬤◯ 80%\n\n⠀⠀⠀⠀⠀RAVANA Music Player\n⠀⠀⠀⠀Now Playing:Kamasutra BGM\n00:08 ▰▰▰▰▰▰▰▰▱▱ 00:10\n\n⠀⠀⠀⠀⠀⏮️ ⏪️ ⏸️ ⏩️ ⏭️\n\nNext Song: I Am Sexy And I Know It.\n\n⠀⠀⠀⠀Device: Nokia 1100",
+            "⬤⬤◯ 80%\n\n⠀⠀⠀⠀⠀RAVANA Music Player\n⠀⠀⠀⠀Now Playing:Kamasutra BGM\n00:09 ▰▰▰▰▰▰▰▰▰▱ 00:10\n\n⠀⠀⠀⠀⠀⏮️ ⏪️ ⏸️ ⏩️ ⏭️\n\nNext Song: I Am Sexy And I Know It.\n\n⠀⠀⠀⠀Device: Nokia 1100",
+            "⬤⬤◯ 80%\n\n⠀⠀⠀⠀⠀RAVANA Music Player\n⠀⠀⠀⠀Now Playing:Kamasutra BGM\n00:10 ▰▰▰▰▰▰▰▰▰▰ 00:10\n\n⠀⠀⠀⠀⠀⏮️ ⏪️ ⏺️ ⏩️ ⏭️\n\nNext Song: I Am Sexy And I Know It.\n\n⠀⠀⠀⠀Device: Nokia 1100"
         ]
 
         for i in animation_ttl:
