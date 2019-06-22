@@ -28,7 +28,7 @@ async def _(event):
 
     animation_interval = 3
 
-    animation_ttl = range(0, 102)
+    animation_ttl = range(0, 103)
 
     input_str = event.pattern_match.group(1)
 
@@ -46,11 +46,12 @@ async def _(event):
             "👁👁\n  💋  =====> Aye Ja Na Na Mard",
             "👁👁\n  👄  =====> Aye Ja Na Randi",
             "👁👁\n  👅  =====> Aye Ja Na Bhosdk",    
-            "👁👁\n  💋  =====> Aye Ja Na Chutiye"
+            "👁👁\n  💋  =====> Aye Ja Na Chutiye",
+            "👁👁\n  👄  =====> Hi All, How Are You Guys..."
         ]
 
         for i in animation_ttl:
 
             await asyncio.sleep(animation_interval)
 
-            await event.edit(animation_chars[i % 102])
+            await event.edit(animation_chars[i % 103])
