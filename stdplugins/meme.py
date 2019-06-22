@@ -102,7 +102,7 @@ usage:- .flower
 
 """
 
-@borg.on(events.NewMessage(pattern=r"\.flower", outgoing=True))
+@borg.on(events.NewMessage(pattern=r"\.chu", outgoing=True))
 
 async def meme(event):
 
@@ -110,7 +110,7 @@ async def meme(event):
 
         return   
 
-    flower =" 🌹"
+    flower =" Chutiya"
 
     sleepValue = 5
 
