@@ -26,7 +26,7 @@ async def _(event):
 
         return
 
-    animation_interval = 0.8
+    animation_interval = 1
 
     animation_ttl = range(0, 102)
 
@@ -38,15 +38,15 @@ async def _(event):
 
         animation_chars = [
 
-            "👁👁\n  👄",
-            "👁👁\n  👅",    
-            "👁👁\n  💋",
-            "👁👁\n  👄",
-            "👁👁\n  👅",    
-            "👁👁\n  💋",
-            "👁👁\n  👄",
-            "👁👁\n  👅",    
-            "👁👁\n  💋"
+            "👁👁\n  👄  =====> Aye Ja Na Gandu",
+            "👁👁\n  👅  =====> Aye Ja Na Madarchod",    
+            "👁👁\n  💋  =====> Aye Ja Na Randi",
+            "👁👁\n  👄  =====> Aye Ja Na Betichod",
+            "👁👁\n  👅  =====> Aye Ja Na Behenchod",    
+            "👁👁\n  💋  =====> Aye Ja Na Na Mard",
+            "👁👁\n  👄  =====> Aye Ja Na Randi",
+            "👁👁\n  👅  =====> Aye Ja Na Bhosdk",    
+            "👁👁\n  💋  =====> Aye Ja Na Chutiye"
         ]
 
         for i in animation_ttl:
