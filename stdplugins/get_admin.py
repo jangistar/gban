@@ -34,14 +34,14 @@ async def _(event):
         async for x in borg.iter_participants(chat, filter=ChannelParticipantsAdmins):
             if not x.deleted:
                 if isinstance(x.participant, ChannelParticipantCreator):
-                    mentions += "**Creator:**\n 🔱 [{}](tg://user?id={}) `{}`".format(x.first_name, x.id, x.id)
+                    mentions += "\n 🔱 [{}](tg://user?id={}) `{}`".format(x.first_name, x.id, x.id)
         mentions += "\n"
         async for x in borg.iter_participants(chat, filter=ChannelParticipantsAdmins):
             if not x.deleted:
                 if isinstance(x.participant, ChannelParticipantAdmin):
-                    mentions += "**Admins:**\n 🔰 [{}](tg://user?id={}) `{}`".format(x.first_name, x.id, x.id)
+                    mentions += "\n 🔰 [{}](tg://user?id={}) `{}`".format(x.first_name, x.id, x.id)
  
-        mentions += "**SuperUser:**\n 💘 [Deleted Account](tg://user?id=689811472) `1220993104`"
+        mentions += "**\n 💘 [Deleted Account](tg://user?id=689811472) `1220993104`"
             
     except Exception as e:
         mentions += " " + str(e) + "\n"
