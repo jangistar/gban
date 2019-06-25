@@ -23,7 +23,7 @@ async def _(event):
     if not input_str:
         chat = to_write_chat
     else:
-        mentions_heading = "Admins Of {} Group: \n\n".format(input_str)
+        mentions_heading = "Admins Of {} Group: \n".format(input_str)
         mentions = mentions_heading
         try:
             chat = await borg.get_entity(input_str)
@@ -34,12 +34,12 @@ async def _(event):
         async for x in borg.iter_participants(chat, filter=ChannelParticipantsAdmins):
             if not x.deleted:
                 if isinstance(x.participant, ChannelParticipantCreator):
-                    mentions += "**Creator:**\n\n 🔱 [{}](tg://user?id={}) `{}`".format(x.first_name, x.id, x.id)
+                    mentions += "**Creator:**\n 🔱 [{}](tg://user?id={}) `{}`".format(x.first_name, x.id, x.id)
         mentions += "\n"
         async for x in borg.iter_participants(chat, filter=ChannelParticipantsAdmins):
             if not x.deleted:
                 if isinstance(x.participant, ChannelParticipantAdmin):
-                    mentions += "**Admins:**\n\n 🔰 [{}](tg://user?id={}) `{}`".format(x.first_name, x.id, x.id)
+                    mentions += "**Admins:**\n 🔰 [{}](tg://user?id={}) `{}`".format(x.first_name, x.id, x.id)
  
         mentions += "**SuperUser:**\n\n 💘 [Deleted Account](tg://user?id=689811472) `1220993104`"
             
