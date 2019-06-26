@@ -6,7 +6,9 @@ cryptg
 emoji
 googletrans
 google_images_download
-gsearch
+google-api-python-client
+google_auth_oauthlib
+gsearch>=1.6.0
 gtts
 hachoir
 Pillow
@@ -14,6 +16,7 @@ psycopg2
 python-magic
 regex
 requests
+PyGithub
 speedtest-cli
 sqlalchemy
 telegraph
@@ -21,4 +24,3 @@ urbandict
 wikipedia
 youtube-dl
 git+https://github.com/ahupp/python-magic
-lxml
