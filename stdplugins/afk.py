@@ -1,104 +1,117 @@
-# This Source Code Form is subject to the terms of the Mozilla Public
-# License, v. 2.0. If a copy of the MPL was not distributed with this
-# file, You can obtain one at http://mozilla.org/MPL/2.0/.
-
+"""AFK Plugin for @UniBorg
+Syntax: .afk REASON"""
+import asyncio
+import datetime
 from telethon import events
-import os
-import time
+from telethon.tl import functions, types
 
 
-global ISAFK
-ISAFK=False
-global AFKREASON
-AFKREASON="No Reason"
-global USERS
-USERS={}
-global COUNT_MSG
-COUNT_MSG=0
-global PRIVATE_GROUP_BOT_API_ID
-PRIVATE_GROUP_BOT_API_ID = os.environ.get("PRIVATE_GROUP_BOT_API_ID")
+borg.storage.USER_AFK = {}  # pylint:disable=E0602
+borg.storage.afk_time = None  # pylint:disable=E0602
+borg.storage.last_afk_message = {}  # pylint:disable=E0602
 
 
-@borg.on(events.NewMessage(incoming=True))
+@borg.on(events.NewMessage(outgoing=True))  # pylint:disable=E0602
+async def set_not_afk(event):
+    current_message = event.message.message
+    if ".afk" not in current_message and "yes" in borg.storage.USER_AFK:  # pylint:disable=E0602
+        try:
+            await borg.send_message(  # pylint:disable=E0602
+                Config.PRIVATE_GROUP_BOT_API_ID,  # pylint:disable=E0602
+                "Set AFK mode to False"
+            )
+        except Exception as e:  # pylint:disable=C0103,W0703
+            await borg.send_message(  # pylint:disable=E0602
+                event.chat_id,
+                "Please set `PRIVATE_GROUP_BOT_API_ID` " + \
+                "for the proper functioning of afk functionality " + \
+                "in @UniBorg\n\n `{}`".format(str(e)),
+                reply_to=event.message.id,
+                silent=True
+            )
+        borg.storage.USER_AFK = {}  # pylint:disable=E0602
+        borg.storage.afk_time = None  # pylint:disable=E0602
+
+
+@borg.on(events.NewMessage(pattern=r"\.afk ?(.*)", outgoing=True))  # pylint:disable=E0602
 async def _(event):
-    global PRIVATE_GROUP_BOT_API_ID
-    if not PRIVATE_GROUP_BOT_API_ID:
-        await event.edit("This functionality will not work")
-        return
-    PRIVATE_GROUP_BOT_API_ID = int(PRIVATE_GROUP_BOT_API_ID)
-    global COUNT_MSG
-    global USERS
-    global ISAFK
-    global AFKREASON
-    if event.message.mentioned or event.is_private:
-        if ISAFK:
-            if event.sender:
-                if event.sender.username not in USERS:
-                    USERS.update({event.sender.username:1})
-                    COUNT_MSG=COUNT_MSG+1
-                    await event.reply("Sorry! My boss in AFK due to ```"+AFKREASON+"```Would ping him to look into the message soon😉.Meanwhile you can play around with his AI. **This message shall be self destructed in 5 seconds**")
-                    time.sleep(5)
-                    i=1
-                    async for message in borg.iter_messages(event.chat_id,from_user='me'):
-                        if i>1:
-                            break
-                        i=i+1
-                        await message.delete()
-            else:
-                USERS.update({event.chat_id:1})
-                COUNT_MSG=COUNT_MSG+1
-                await event.reply("Sorry! My boss in AFK due to ```"+AFKREASON+"```Would ping him to look into the message soon😉. Meanwhile you can play around with his AI. **This message shall be self destructed in 5 seconds**")
-                time.sleep(5)
-                i=1
-                async for message in borg.iter_messages(event.chat_id,from_user='me'):
-                    if i>1:
-                        break
-                    i=i+1
-                    await message.delete()
-
-
-@borg.on(events.NewMessage(outgoing=True, pattern=r'.iamafk (.*)'))
-async def _(event):
-    global PRIVATE_GROUP_BOT_API_ID
-    if not PRIVATE_GROUP_BOT_API_ID:
-        await event.edit("This functionality will not work")
-        return
-    PRIVATE_GROUP_BOT_API_ID = int(PRIVATE_GROUP_BOT_API_ID)
     if event.fwd_from:
         return
-    string = event.pattern_match.group(1)
-    global ISAFK
-    global AFKREASON
-    ISAFK = True
-    await event.edit("I am now AFK!")
-    if string != "":
-        AFKREASON = string
+    reason = event.pattern_match.group(1)
+    if not borg.storage.USER_AFK:  # pylint:disable=E0602
+        last_seen_status = await borg(  # pylint:disable=E0602
+            functions.account.GetPrivacyRequest(
+                types.InputPrivacyKeyStatusTimestamp()
+            )
+        )
+        if isinstance(last_seen_status.rules, types.PrivacyValueAllowAll):
+            borg.storage.afk_time = datetime.datetime.now()  # pylint:disable=E0602
+        borg.storage.USER_AFK.update({"yes": reason})  # pylint:disable=E0602
+        if reason:
+            await event.edit(f"Set AFK mode to True, and Reason is {reason}")
+        else:
+            await event.edit(f"Set AFK mode to True")
+        await asyncio.sleep(5)
+        await event.delete()
+        try:
+            await borg.send_message(  # pylint:disable=E0602
+                Config.PRIVATE_GROUP_BOT_API_ID,  # pylint:disable=E0602
+                f"Set AFK mode to True, and Reason is {reason}"
+            )
+        except Exception as e:  # pylint:disable=C0103,W0703
+            logger.warn(str(e))  # pylint:disable=E0602
 
 
-@borg.on(events.NewMessage(outgoing=True, pattern='.notafk'))
-async def _(event):
-    global PRIVATE_GROUP_BOT_API_ID
-    if not PRIVATE_GROUP_BOT_API_ID:
-        await event.edit("This functionality will not work")
+@borg.on(events.NewMessage(  # pylint:disable=E0602
+    incoming=True,
+    func=lambda e: bool(e.mentioned or e.is_private)
+))
+async def on_afk(event):
+    if event.fwd_from:
         return
-    PRIVATE_GROUP_BOT_API_ID = int(PRIVATE_GROUP_BOT_API_ID)
-    global ISAFK
-    global COUNT_MSG
-    global USERS
-    global AFKREASON
-    ISAFK=False
-    await event.edit("I have returned from AFK mode.")
-    await event.respond("```You had recieved "+str(COUNT_MSG)+" messages while you were away. Check log for more details. This auto-generated message shall be self destructed in 2 seconds.```")
-    time.sleep(2)
-    i=1
-    async for message in borg.iter_messages(event.chat_id,from_user='me'):
-        if i>1:
-            break
-        i=i+1
-        await message.delete()
-    await borg.send_message(PRIVATE_GROUP_BOT_API_ID, "You had recieved "+str(COUNT_MSG)+" messages from "+str(len(USERS))+" chats while you were away")
-    for i in USERS:
-        await borg.send_message(PRIVATE_GROUP_BOT_API_ID,str(i)+" sent you "+"```"+str(USERS[i])+" messages```")
-    COUNT_MSG=0
-    USERS={}
-    AFKREASON="No reason"
+    afk_since = "**a while ago**"
+    current_message_text = event.message.message.lower()
+    if "afk" in current_message_text:
+        # userbot's should not reply to other userbot's
+        # https://core.telegram.org/bots/faq#why-doesn-39t-my-bot-see-messages-from-other-bots
+        return False
+    if borg.storage.USER_AFK and not (await event.get_sender()).bot:  # pylint:disable=E0602
+        reason = borg.storage.USER_AFK["yes"]  # pylint:disable=E0602
+        if borg.storage.afk_time:  # pylint:disable=E0602
+            now = datetime.datetime.now()
+            datime_since_afk = now - borg.storage.afk_time  # pylint:disable=E0602
+            time = float(datime_since_afk.seconds)
+            days = time // (24 * 3600)
+            time = time % (24 * 3600)
+            hours = time // 3600
+            time %= 3600
+            minutes = time // 60
+            time %= 60
+            seconds = time
+            if days == 1:
+                afk_since = "**Yesterday**"
+            elif days > 1:
+                if days > 6:
+                    date = now + \
+                        datetime.timedelta(
+                            days=-days, hours=-hours, minutes=-minutes)
+                    afk_since = date.strftime("%A, %Y %B %m, %H:%I")
+                else:
+                    wday = now + datetime.timedelta(days=-days)
+                    afk_since = wday.strftime('%A')
+            elif hours > 1:
+                afk_since = f"`{int(hours)}h{int(minutes)}m` **ago**"
+            elif minutes > 0:
+                afk_since = f"`{int(minutes)}m{int(seconds)}s` **ago**"
+            else:
+                afk_since = f"`{int(seconds)}s` **ago**"
+        msg = None
+        message_to_reply = f"`I'm currently away from keyboard since` {afk_since} " + \
+            f"`And I will be right back soon to check your fukin messages`.\n__Reason:__ {reason}" \
+            if reason \
+            else f"I'm currently away from keyboard since {afk_since}. Meanwhile, you can play with my bot using /headpat@KingOfElephants Command.(◕‿◕)  until, I come back to check your messages. "
+        msg = await event.reply(message_to_reply)
+        await asyncio.sleep(5)
+        if event.chat_id in borg.storage.last_afk_message:  # pylint:disable=E0602
+            await borg.storage.last_afk_message[event.chat_id].delete()  # pylint:disable=E0602
+        borg.storage.last_afk_message[event.chat_id] = msg  # pylint:disable=E0602
