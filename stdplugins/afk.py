@@ -107,9 +107,9 @@ async def on_afk(event):
                 afk_since = f"`{int(seconds)}s` **ago**"
         msg = None
         message_to_reply = f"`I'm currently away from keyboard since` {afk_since} " + \
-            f"`And I will be right back soon to check your fukin messages`.\n__Reason:__ {reason}" \
+            f"`And I will be right back soon to check your USELESS messages`.\n__Reason:__ {reason}" \
             if reason \
-            else f"I'm currently away from keyboard since {afk_since}. Meanwhile, you can play with my bot using /headpat@KingOfElephants Command.(◕‿◕)  until, I come back to check your messages. "
+            else f"I'm currently away from keyboard since {afk_since}. Meanwhile, you can spam admins here with Noods in PM.(◕‿◕)  Until I come back to check your USELESS messages. "
         msg = await event.reply(message_to_reply)
         await asyncio.sleep(5)
         if event.chat_id in borg.storage.last_afk_message:  # pylint:disable=E0602
