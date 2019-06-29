@@ -24,3 +24,5 @@ urbandict
 wikipedia
 youtube-dl
 git+https://github.com/ahupp/python-magic
+oauth2client
+httplib2
