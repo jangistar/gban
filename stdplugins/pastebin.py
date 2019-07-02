@@ -51,4 +51,4 @@ async def _(event):
         nurl = f"https://del.dog/v/{r['key']}"
         await event.edit("Dogged to {} in {} seconds. GoTo Original URL: {}".format(url, ms, nurl))
     else:
-        await event.edit("Betichod, Yeh Le Link {}\nLink Generated In {} seconds".format(url, ms))
+        await event.edit("[Link nahi milega BSDK]({})\n\nLink Generated In {} seconds".format(url, ms))
