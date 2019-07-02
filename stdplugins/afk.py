@@ -109,7 +109,7 @@ async def on_afk(event):
         message_to_reply = f"`I'm currently away from keyboard since` {afk_since} " + \
             f"`And I will be right back soon to check your USELESS messages`.\n__Reason:__ {reason}" \
             if reason \
-            else f"I'm currently away from keyboard since {afk_since}. Meanwhile, you can spam admins here with Noods in PM.(◕‿◕)  Until I come back to check your USELESS messages. "
+            else f"╭━╮╭━╮╱╱╱╱╱╱╭╮\n┃┃╰╯┃┃╱╱╱╱╱╭╯╰╮\n┃╭╮╭╮┣━━┳━━╋╮╭╋━━┳━╮\n┃┃┃┃┃┃╭╮┃━━┫┃┃┃┃━┫╭╯\n┃┃┃┃┃┃╭╮┣━━┃┃╰┫┃━┫┃\n╰╯╰╯╰┻╯╰┻━━╯╰━┻━━┻╯\n╭━━╮\n╰┫┣╯\n╱┃┃╭━━╮\n╱┃┃┃━━┫\n╭┫┣╋━━┃\n╰━━┻━━╯\n╭━━━╮\n┃╭━╮┃\n┃┃╱┃┣╮╭╮╭┳━━┳╮╱╭╮\n┃╰━╯┃╰╯╰╯┃╭╮┃┃╱┃┃\n┃╭━╮┣╮╭╮╭┫╭╮┃╰━╯┃\n╰╯╱╰╯╰╯╰╯╰╯╰┻━╮╭╯\n╱╱╱╱╱╱╱╱╱╱╱╱╭━╯┃\n╱╱╱╱╱╱╱╱╱╱╱╱╰━━╯\n╭━━━╮\n┃╭━━╯\n┃╰━━┳━┳━━┳╮╭╮\n┃╭━━┫╭┫╭╮┃╰╯┃\n┃┃╱╱┃┃┃╰╯┃┃┃┃\n╰╯╱╱╰╯╰━━┻┻┻╯\n╭╮╭━╮╱╱╱╱╱╱╭╮╱╱╱╱╱╱╱╱╱╱╱╭╮\n┃┃┃╭╯╱╱╱╱╱╱┃┃╱╱╱╱╱╱╱╱╱╱╱┃┃\n┃╰╯╯╭━━┳╮╱╭┫╰━┳━━┳━━┳━┳━╯┃\n┃╭╮┃┃┃━┫┃╱┃┃╭╮┃╭╮┃╭╮┃╭┫╭╮┃\n┃┃┃╰┫┃━┫╰━╯┃╰╯┃╰╯┃╭╮┃┃┃╰╯┃\n╰╯╰━┻━━┻━╮╭┻━━┻━━┻╯╰┻╯╰━━╯\n╱╱╱╱╱╱╱╭━╯┃\n╱╱╱╱╱╱╱╰━━╯ {afk_since} "
         msg = await event.reply(message_to_reply)
         await asyncio.sleep(5)
         if event.chat_id in borg.storage.last_afk_message:  # pylint:disable=E0602
