@@ -7,7 +7,7 @@ from telethon.tl.types import User, Chat, Channel
 from uniborg.util import admin_cmd
 
 
-@borg.on(admin_cmd("stst"))
+@borg.on(admin_cmd("stat"))
 async def _(event):
     if event.fwd_from:
         return
@@ -35,7 +35,7 @@ async def _(event):
             logger.info(d.stringify())
     end = datetime.now()
     ms = (end - start).seconds
-    await event.edit(""" [Deleted Account](tg://user?id=689811472) stats obtained in {} seconds..
+    await event.edit(""" [Deleted Account](tg://user?id=689811472) stats obtained in {} seconds..\n\n
 Users:\t{}
 Groups:\t{}
 Super Groups:\t{}
