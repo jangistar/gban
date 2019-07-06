@@ -87,15 +87,15 @@ def humanbytes(size):
     raised_to_pow = 0
     dict_power_n = {
         0: "",
-        1: "Ki",
-        2: "Mi",
-        3: "Gi",
-        4: "Ti"
+        1: "Kb",
+        2: "Mb",
+        3: "Gb",
+        4: "Tb"
     }
     while size > power:
         size /= power
         raised_to_pow += 1
-    return str(round(size, 2)) + " " + dict_power_n[raised_to_pow] + "B"
+    return str(round(size, 2)) + " " + dict_power_n[raised_to_pow] + ""
 
 
 def time_formatter(milliseconds: int) -> str:
