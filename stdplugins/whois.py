@@ -9,7 +9,7 @@ from telethon.utils import get_input_location
 from uniborg.util import admin_cmd
 
 
-@borg.on(admin_cmd("betichod ?(.*)"))
+@borg.on(admin_cmd("who ?(.*)"))
 async def _(event):
     if event.fwd_from:
         return
@@ -23,7 +23,7 @@ async def _(event):
         max_id=0,
         limit=80
     ))
-    replied_user_profile_photos_count = "NaN"
+    replied_user_profile_photos_count = "None..."
     try:
         replied_user_profile_photos_count = replied_user_profile_photos.count
     except AttributeError as e:
@@ -47,14 +47,14 @@ async def _(event):
         dc_id = "Need a Profile Picture to check **this**"
         location = str(e)
     caption = """ID: <code>{}</code>
-Name: <a href='tg://user?id={}'>{}</a>
-Bio: {}
+Name🤵: <a href='tg://user?id={}'>{}</a>
+Bio✍️: {}
 DC ID: {}
-Number of PPs: {}
+Number of PPs🖼: {}
 Restricted: {}
 Verified: {}
-Bot: {}
-Groups in Common: {}
+Bot🤖: {}
+Groups in Common👥: {}
 """.format(
         user_id,
         user_id,
