@@ -23,7 +23,7 @@ async def _(event):
         max_id=0,
         limit=80
     ))
-    replied_user_profile_photos_count = "None..."
+    replied_user_profile_photos_count = "NaN"
     try:
         replied_user_profile_photos_count = replied_user_profile_photos.count
     except AttributeError as e:
