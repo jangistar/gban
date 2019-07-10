@@ -222,9 +222,7 @@ Custom Built Fork: https://github.com/ravana69/UniBorg""",
             # https://t.me/TelethonChat/115200
             await event.edit(buttons=buttons)
         else:
-            reply_pop_up_alert = "⚠️ Warning: Don't Press Any Buttons ⚠️
-
-Use Your Custom Fork: https://github.com/ravana69/UniBorg"
+            reply_pop_up_alert = "⚠️ Warning: Don't Press Any Buttons ⚠️\nUse Your Custom Fork: https://github.com/ravana69/UniBorg"
             await event.answer(reply_pop_up_alert, cache_time=0, alert=True)
 
     @tgbot.on(events.callbackquery.CallbackQuery(  # pylint:disable=E0602
