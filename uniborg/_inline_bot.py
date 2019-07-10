@@ -201,9 +201,9 @@ Talethrun 1.9.0
 Custom Built Fork: https://github.com/ravana69/UniBorg""",
                 buttons=[
                     [custom.Button.url("👤Contact Creator👤", "https://telegram.dog/r4v4n4"), custom.Button.url(
-                        "🐶Resistance Dog👨‍💻", "https://t.me/addstickers/ResistanceDog")],
+                        "🐶Resistance Dog🐶", "https://t.me/addstickers/ResistanceDog")],
                     [custom.Button.url(
-                        "Source Code", "https://github.com/ravana69/UniBorg")]
+                        "👨‍💻Source Code👨‍💻", "https://github.com/ravana69/UniBorg")]
                 ],
                 link_preview=False
             )
@@ -222,7 +222,9 @@ Custom Built Fork: https://github.com/ravana69/UniBorg""",
             # https://t.me/TelethonChat/115200
             await event.edit(buttons=buttons)
         else:
-            reply_pop_up_alert = "Please get your own @UniBorg, and don't edit my messages!"
+            reply_pop_up_alert = "⚠️ Warning: Don't Press Any Buttons ⚠️
+
+Use Your Custom Fork: https://github.com/ravana69/UniBorg"
             await event.answer(reply_pop_up_alert, cache_time=0, alert=True)
 
     @tgbot.on(events.callbackquery.CallbackQuery(  # pylint:disable=E0602
