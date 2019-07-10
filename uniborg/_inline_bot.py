@@ -203,7 +203,7 @@ Custom Built Fork: https://github.com/ravana69/UniBorg""",
                     [custom.Button.url("Join the Channel", "https://telegram.dog/UniBorg"), custom.Button.url(
                         "Join the Group", "tg://some_unsupported_feature")],
                     [custom.Button.url(
-                        "Source Code", "tg://some_unsupported_feature")]
+                        "Source Code", "https://github.com/ravana69/UniBorg")]
                 ],
                 link_preview=False
             )
