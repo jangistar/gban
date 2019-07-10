@@ -200,7 +200,7 @@ Talethrun 1.9.0
 
 Custom Built Fork: https://github.com/ravana69/UniBorg""",
                 buttons=[
-                    [custom.Button.url("Join the Channel", "https://telegram.dog/UniBorg"), custom.Button.url(
+                    [custom.Button.url("👤Contact Creator👤", "https://telegram.dog/r4v4n4"), custom.Button.url(
                         "Join the Group", "tg://some_unsupported_feature")],
                     [custom.Button.url(
                         "Source Code", "https://github.com/ravana69/UniBorg")]
