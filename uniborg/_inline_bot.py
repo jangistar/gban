@@ -190,15 +190,15 @@ if Config.TG_BOT_USER_NAME_BF_HER is not None and tgbot is not None:
         else:
             result = builder.article(
                 "© @UniBorg",
-                text="""@UniBorg ( Custom Built By @r4v4n4 ) 
-Verified Account: ✅
-Official Website: https://ravanaisdrunk.site.live
+                text="""@UniBorg **( Custom Built By** @r4v4n4 **)** 
+**Verified Account:** ✅
+**Official Website:** https://ravanaisdrunk.site.live
 
-Pithun 3.7.3 (default, Apr  3 2019, 21:35:17) 
-[GCC 7.3.0]
-Talethrun 1.9.0
+**Pithun 3.7.3 (default, Apr  3 2019, 21:35:17)** 
+**[GCC 7.3.0]**
+**Talethrun 1.9.0**
 
-Custom Built Fork: https://github.com/ravana69/UniBorg""",
+**Custom Built Fork:** https://github.com/ravana69/UniBorg""",
                 buttons=[
                     [custom.Button.url("👤Contact Creator👤", "https://telegram.dog/r4v4n4"), custom.Button.url(
                         "🐶Resistance Dog🐶", "https://t.me/addstickers/ResistanceDog")],
