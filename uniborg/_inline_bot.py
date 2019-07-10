@@ -65,7 +65,7 @@ if Config.TG_BOT_USER_NAME_BF_HER is not None and tgbot is not None:
         builder = event.builder
         result = None
         query = event.text
-        if event.query.user_id == borg.uid and query.startswith("@r4v4n4"):
+        if event.query.user_id == borg.uid and query.startswith("@UniBorg"):
             rev_text = query[::-1]
             buttons = paginate_help(0, borg._plugins, "helpme")
             result = builder.article(
