@@ -201,9 +201,9 @@ if Config.TG_BOT_USER_NAME_BF_HER is not None and tgbot is not None:
 **Custom Built Fork:** https://github.com/ravana69/Pornhub""",
                 buttons=[
                     [custom.Button.url("👤Contact Creator👤", "https://telegram.dog/r4v4n4"), custom.Button.url(
-                        "🐶Resistance Dog🐶", "https://t.me/addstickers/ResistanceDog")],
-                    [custom.Button.url("👨‍💻Source Code👨‍💻", "https://github.com/ravana69/Pornhub"), custom.Button.url(
-                        "❕❗Deploy Me❗❕", "https://da.gd/Emcf")],
+                        "🐶Resistance Dog🐶", "https://t.me/addstickers/ResistanceDog"), custom.Button.url(
+                        "👨‍💻Source Code👨‍💻", "https://github.com/ravana69/Pornhub"), 
+                    [custom.Button.url("❕❗Deploy Me❗❕", "https://da.gd/Emcf")],
                     [custom.Button.url("🔰Update Fork🔰", "tg://need_update_for_some_feature"), custom.Button.url(
                         "✳️Fork Boost✳️", "tg://some_unsupported_feature"), custom.Button.url(
                         "♻️Refresh Heroku♻️", "tg://chutiya")]
