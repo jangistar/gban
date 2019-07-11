@@ -69,7 +69,7 @@ async def _(event):
     if event.fwd_from:
         return
     input_str = event.pattern_match.group(1)
-    sample_url = "https://da.gd/w/[]".format(input_str)
+    sample_url = "https://da.gd/w/()".format(input_str)
     response_api = requests.get(sample_url).text
     if response_api:
         await event.edit("whois{}\n{}".format(input_str, response_api))
