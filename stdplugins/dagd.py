@@ -51,12 +51,12 @@ async def _(event):
         await event.edit("Input URL {} returned status_code {}".format(input_str, r.status_code))
 
 
-@borg.on(admin_cmd("isup (.*)"))
+@borg.on(admin_cmd("myua (.*)"))
 async def _(event):
     if event.fwd_from:
         return
     input_str = event.pattern_match.group(1)
-    sample_url = "https://www.isitdownrightnow.com/{}.html".format(input_str)
+    sample_url = "https://da.gd/ua".format(input_str)
     response_api = requests.get(sample_url).text
     if response_api:
         await event.edit("DNS records of {} are \n{}".format(input_str, response_api))
