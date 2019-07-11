@@ -121,7 +121,7 @@ async def _(event):
     sample_url = "https://da.gd/up/{}".format(input_str)
     response_api = requests.get(sample_url).text
     if response_api:
-        await event.edit("**Header**\n{}\n{}".format(input_str, response_api))
+        await event.edit("**Is Website Up????**\n{}\n{}".format(input_str, response_api))
     else:
         await event.edit("i can't seem to find {} on the internet".format(input_str))
 
