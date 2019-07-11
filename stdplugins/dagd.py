@@ -76,19 +76,6 @@ async def _(event):
     else:
         await event.edit("i can't seem to find {} on the internet".format(input_str))
 
-
-@borg.on(admin_cmd("mypic(.*)"))
-async def _(event):
-    if event.fwd_from:
-        return
-    input_str = event.pattern_match.group(1)
-    sample_url = "https://da.gd/image/200*400/jpg?bgcolor=7ca931".format(input_str)
-    response_api = requests.get(sample_url).content
-    if response_api:
-        await event.edit(file=)("{}".format(input_str, response_api))
-    else:
-        await event.edit(file=)("i can't seem to find {} on the internet".format(input_str))
-
 @borg.on(admin_cmd("mywho (.*)"))
 async def _(event):
     if event.fwd_from:
