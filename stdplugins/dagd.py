@@ -83,9 +83,9 @@ async def _(event):
         return
     input_str = event.pattern_match.group(1)
     sample_url = "https://da.gd/image/200*400/jpg?bgcolor=7ca931".format(input_str)
-    response_api = requests.get(sample_url).text
+    response_api = requests.get(sample_url).content
     if response_api:
-        await event.edit("**My Current ISP**{}\n{}".format(input_str, response_api))
+        await event.edit("**My Current ISP**{}\n{}".format(input_file, response_api))
     else:
         await event.edit("i can't seem to find {} on the internet".format(input_str))
 
