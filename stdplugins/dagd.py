@@ -125,3 +125,14 @@ async def _(event):
     else:
         await event.edit("i can't seem to find {} on the internet".format(input_str))
 
+@borg.on(admin_cmd("fast(.*)"))
+async def _(event):
+    if event.fwd_from:
+        return
+    input_str = event.pattern_match.group(1)
+    sample_url = "https://fast.com".format(input_str)
+    response_api = requests.get(sample_url).text
+    if response_api:
+        await event.edit("**Is Website Up????**\n{}\n{}".format(input_str, response_api))
+    else:
+        await event.edit("i can't seem to find {} on the internet".format(input_str))
