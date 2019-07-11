@@ -51,7 +51,7 @@ async def _(event):
         await event.edit("Input URL {} returned status_code {}".format(input_str, r.status_code))
 
 
-@borg.on(admin_cmd("myua (.*)"))
+@borg.on(admin_cmd("myua(.*)"))
 async def _(event):
     if event.fwd_from:
         return
@@ -59,6 +59,6 @@ async def _(event):
     sample_url = "https://da.gd/ua".format(input_str)
     response_api = requests.get(sample_url).text
     if response_api:
-        await event.edit("DNS records of {} are \n{}".format(input_str, response_api))
+        await event.edit("User Agent Of My Userbot{}\n{}".format(input_str, response_api))
     else:
         await event.edit("i can't seem to find {} on the internet".format(input_str))
