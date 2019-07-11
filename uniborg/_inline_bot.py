@@ -206,7 +206,8 @@ if Config.TG_BOT_USER_NAME_BF_HER is not None and tgbot is not None:
                         "❕❗Deploy Me❗❕", "https://da.gd/Emcf")],
                     [custom.Button.url("🔰Update Fork🔰", "tg://need_update_for_some_feature")], custom.Button.url(
                         "✳️Fork Boost✳️", "tg://some_unsupported_feature")], 
-                    [custom.Button.url("♻️Refresh Heroku♻️", "tg://chutiya")]
+                    [custom.Button.url(
+                        "♻️Refresh Heroku♻️", "tg://chutiya")]
                 ],
                 link_preview=False
             )
