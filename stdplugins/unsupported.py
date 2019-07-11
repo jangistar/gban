@@ -5,7 +5,7 @@ from telethon.tl.types import ChannelParticipantsAdmins
 from uniborg.util import admin_cmd
 
 
-@borg.on(admin_cmd(".l"))
+@borg.on(admin_cmd("l"))
 async def _(event):
     if event.fwd_from:
         return
@@ -22,7 +22,7 @@ async def _(event):
     await event.delete()
 
 
-@borg.on(admin_cmd(".repo"))
+@borg.on(admin_cmd("repo"))
 async def _(event):
     if event.fwd_from:
         return
