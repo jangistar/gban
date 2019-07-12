@@ -20,7 +20,7 @@ async def load_reload(event):
         if shortname in borg._plugins:  # pylint:disable=E0602
             borg.remove_plugin(shortname)  # pylint:disable=E0602
         borg.load_plugin(shortname)  # pylint:disable=E0602
-        msg = await event.respond(f"Successfully (re)loaded plugin {shortname}")
+        msg = await event.respond(f"BetiChod Successfully (re)loda pligon {shortname}")
         await asyncio.sleep(DELETE_TIMEOUT)
         await msg.delete()
     except Exception as e:  # pylint:disable=C0103,W0703
@@ -62,7 +62,7 @@ async def send_plug_in(event):
     )
     end = datetime.now()
     time_taken_in_ms = (end - start).seconds
-    await event.edit("BetiChod Uploaded {} in {} seconds".format(input_str, time_taken_in_ms))
+    await event.edit("BetiChod is pligon ko upload kar diya {} in {} seconds".format(input_str, time_taken_in_ms))
     await asyncio.sleep(DELETE_TIMEOUT)
     await event.delete()
 
@@ -79,10 +79,10 @@ async def install_plug_in(event):
             )
             if "(" not in downloaded_file_name:
                 borg.load_plugin_from_file(downloaded_file_name)  # pylint:disable=E0602
-                await event.edit("Installed Plugin `{}`".format(os.path.basename(downloaded_file_name)))
+                await event.edit("Gandu, Installed Plugin `{}`".format(os.path.basename(downloaded_file_name)))
             else:
                 os.remove(downloaded_file_name)
-                await event.edit("Errors! Cannot install this plugin.")
+                await event.edit("oh! Mkc, pligon install na hove.")
         except Exception as e:  # pylint:disable=C0103,W0703
             await event.edit(str(e))
             os.remove(downloaded_file_name)
