@@ -173,7 +173,7 @@ async def _(event):
         src, dst = input_str.split("|")
         src = src.strip()
         dst = dst.strip()
-    cmd = f"mv ./ravana/{src} ./ravana/{dst}"
+    cmd = f"mv ./DOWNLOADS/{src} ./DOWNLOADS/{dst}"
     reply_to_id = event.message.id
     if event.reply_to_msg_id:
         reply_to_id = event.reply_to_msg_id
