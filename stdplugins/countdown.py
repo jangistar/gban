@@ -82,7 +82,7 @@ async def timer_blankx(e):
 
 
 
-@borg.on(events.NewMessage(outgoing=True, pattern='^\.(f?f)admin '))
+@borg.on(events.NewMessage(outgoing=True, pattern='^\.(f?p)admin '))
 
 async def timer_blankx(e):
 
