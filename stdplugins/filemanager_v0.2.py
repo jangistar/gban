@@ -63,7 +63,7 @@ async def _(event):
         return
     DELAY_BETWEEN_EDITS = 0.3
     PROCESS_RUN_TIME = 100
-    cmd = "ls"
+    cmd = "ls -lh"
 	
     reply_to_id = event.message.id
     if event.reply_to_msg_id:
@@ -173,7 +173,7 @@ async def _(event):
         src, dst = input_str.split("|")
         src = src.strip()
         dst = dst.strip()
-    cmd = f"mv ./DOWNLOADS/{src} ./DOWNLOADS/{dst}"
+    cmd = f"mv ./ravana/{src} ./ravana/{dst}"
     reply_to_id = event.message.id
     if event.reply_to_msg_id:
         reply_to_id = event.reply_to_msg_id
@@ -220,7 +220,7 @@ async def handler(event):
     if event.fwd_from:
         return
     input_str = event.pattern_match.group(1)
-    pathtofile = f"./DOWNLOADS/{input_str}"
+    pathtofile = f"./ravana/{input_str}"
 
 	
     if os.path.isfile(pathtofile):
