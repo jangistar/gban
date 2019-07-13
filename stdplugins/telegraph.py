@@ -5,7 +5,7 @@ Available Commands:
 from telethon import events
 import os
 from datetime import datetime
-from telegraph import Telegraph, upload_file, exceptions
+from telegraph import Telegraph, upload_file, exceptions, import afk
 from uniborg.util import admin_cmd
 
 telegraph = Telegraph()
