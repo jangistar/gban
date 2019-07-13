@@ -4,7 +4,7 @@ Available Commands:
 .telegraph text as reply to a large text"""
 from telethon import events
 import os
-import stdplugins.afk
+import stdplugins.telegraph
 from datetime import datetime
 from telegraph import Telegraph, upload_file, exceptions
 from uniborg.util import admin_cmd
