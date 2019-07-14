@@ -36,7 +36,7 @@ async def _(event):
             )
             end = datetime.now()
             ms = (end - start).seconds
-            await event.edit("Downloaded to {} in {} seconds.".format(downloaded_file_name, ms))
+            await event.edit("Download ho gaya bsdk. lenk = {}".format(downloaded_file_name, ms))
             if downloaded_file_name.endswith((".webp")):
                 resize_image(downloaded_file_name)
             try:
@@ -79,7 +79,7 @@ async def _(event):
             ms = (end - start).seconds
             await event.edit("[www.pornhub.com/milf](https://telegra.ph/{})".format(response["path"], ms), link_preview=True)
     else:
-        await event.edit("Reply to a message to get a permanent telegra.ph link. (Inspired by @ControllerBot)")
+        await event.edit("o chutiye, kisi content pe reply kar bsdk.")
 
 
 def resize_image(image):
