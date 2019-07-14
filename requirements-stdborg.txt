@@ -14,6 +14,7 @@ hachoir
 Pillow
 psycopg2
 python-magic
+qrcode
 regex
 requests
 PyGithub
