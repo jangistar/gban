@@ -26,9 +26,9 @@ async def _(event):
 
         return
 
-    animation_interval = 0.5
+    animation_interval = 0.3
 
-    animation_ttl = range(0, 26)
+    animation_ttl = range(0, 27)
 
     input_str = event.pattern_match.group(1)
 
@@ -88,11 +88,13 @@ async def _(event):
 
             "◻️◻️◻️◻️◻️\n◻️◻️◻️◻️◻️\n◻️◻️◼️◻️◻️\n◻️◻️◻️◻️◻️\n◻️◻️◻️◻️◻️",
 
-            "◻️◻️◻️◻️◻️\n◻️◻️◻️◻️◻️\n◻️◻️◻️◻️◻️\n◻️◻️◻️◻️◻️\n◻️◻️◻️◻️◻️"
+            "◻️◻️◻️◻️◻️\n◻️◻️◻️◻️◻️\n◻️◻️◻️◻️◻️\n◻️◻️◻️◻️◻️\n◻️◻️◻️◻️◻️",
+          
+            "◻️◻️◻️◻️◻️\n◻️◼️◻️◼️◻️\n◻️◻️◻️◻️◻️\n◻️◼️◼️◼️◻️\n◻️◻️◻️◻️◻️"
         ]
 
         for i in animation_ttl:
 
             await asyncio.sleep(animation_interval)
 
-            await event.edit(animation_chars[i % 26])
+            await event.edit(animation_chars[i % 27])
