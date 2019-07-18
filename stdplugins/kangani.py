@@ -54,7 +54,7 @@ async def _(event):
     async with borg.conversation("@Stickers") as bot_conv:
         now = datetime.datetime.now()
         dt = now + datetime.timedelta(minutes=1)
-        file = await borg.download_file(reply_message.media)
+        file = await borg.download_file(reply_message.media.documents.attribute)
         with BytesIO(file) as mem_file, BytesIO() as sticker:
             resize_image(mem_file, sticker)
             sticker.seek(0)
