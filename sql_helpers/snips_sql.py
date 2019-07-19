@@ -1,10 +1,10 @@
-from sqlalchemy import Column, UnicodeText, LargeBinary, Numeric
+from sqlalchemy import Column, UnicodeText, LargeBinary, Numeric, Unicode
 from sql_helpers import SESSION, BASE
 
 
 class Snips(BASE):
     __tablename__ = "snips"
-    snip = Column(UnicodeText, primary_key=True)
+    snip = Column(Unicode(255), primary_key=True)
     reply = Column(UnicodeText)
     snip_type = Column(Numeric)
     media_id = Column(UnicodeText)
