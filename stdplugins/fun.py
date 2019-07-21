@@ -13,6 +13,7 @@ METOOSTR = [
 ]
 RUNSREACTS = [
     "`Runs to Thanos`",
+    "`Runs to Modiji For Achey Din`",
     "`Runs far, far away from earth`",
     "`Running faster than usian bolt coz I'mma Bot`",
     "`Runs to Marie`",
@@ -39,6 +40,8 @@ ABUSE_STRINGS = [
 	   "`Ma ka Bhodsa madharchod`",
 	   "`mml`",
 	   "`You MotherFukcer`",
+           "`You Betichod`",
+           "`you are lodu no.1`"
 	   "`Muh Me Lega Bhosdike ?`"
 ]
 GEY_STRINGS = [
@@ -55,6 +58,7 @@ PRO_STRINGS = [
 ]
 INSULT_STRINGS = [ 
     "`Owww ... Such a stupid idiot.`",
+    "`BC.. Gaand na fulao, maa chod denge tumhari`",
     "`Don't drink and type.`",
     "`Command not found. Just like your brain.`",
     "`Bot rule 544 section 9 prevents me from replying to stupid humans like you.`",
