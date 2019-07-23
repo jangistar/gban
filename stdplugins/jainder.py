@@ -5,12 +5,12 @@ from telethon import events
 import random
 import asyncio
 
-@borg.on(events.NewMessage(pattern=r"\.s(.*)", outgoing=True))
+@borg.on(events.NewMessage(pattern=r"\.se(.*)", outgoing=True))
 async def _(event):
     if event.fwd_from:
         return
     input_str = event.pattern_match.group(1)
-    if input_str in "ex":
+    if input_str in "x":
         emoticons = [
             "u is mard",
             "u is man",
