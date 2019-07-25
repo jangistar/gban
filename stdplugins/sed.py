@@ -7,7 +7,7 @@ from telethon.tl import types, functions
 
 HEADER = "👇 Edited 👇\n"
 KNOWN_RE_BOTS = re.compile(
-    Config.GROUP_REG_SED_EX_BOT_S',
+    Config.GROUP_REG_SED_EX_BOT_S,
     flags=re.IGNORECASE
 )
 
