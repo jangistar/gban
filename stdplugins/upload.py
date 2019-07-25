@@ -59,7 +59,7 @@ async def _(event):
                 force_document = True
                 supports_streaming = False
                 document_attributes = []
-               width = 0
+                width = 0
                 height = 0
                 if os.path.exists(thumb_image_path):
                     metadata = extractMetadata(createParser(thumb_image_path))
@@ -70,10 +70,8 @@ async def _(event):
                 if single_file.endswith((".mkv", ".mp4", ".webm")):
                     metadata = extractMetadata(createParser(single_file))
                     duration = 0
-                   
                     if metadata.has("duration"):
                         duration = metadata.get('duration').seconds
-                    
                     document_attributes = [
                         DocumentAttributeVideo(
                             duration=duration,
@@ -107,7 +105,6 @@ async def _(event):
                     ]
                     supports_streaming = True
                     force_document = False
-
                 try:
                     await borg.send_file(
                         event.chat_id,
@@ -131,7 +128,7 @@ async def _(event):
                     )
                     # some media were having some issues
                     continue
-               # os.remove(single_file)
+                os.remove(single_file)
                 u = u + 1
                 # await event.edit("Uploaded {} / {} files.".format(u, len(lst_of_files)))
                 # @ControllerBot was having issues,
@@ -169,7 +166,7 @@ async def _(event):
             )
         )
         end = datetime.now()
-        os.remove(input_str)
+        # os.remove(input_str)
         ms = (end - start).seconds
         await mone.edit("Uploaded in {} seconds.".format(ms))
     else:
