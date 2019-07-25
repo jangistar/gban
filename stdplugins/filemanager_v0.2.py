@@ -57,7 +57,7 @@ async def _(event):
 
 
 
-@borg.on(events.NewMessage(pattern=r"\.lsroot", outgoing=True, allow_sudo=True))
+@borg.on(events.NewMessage(pattern=r"\.lsroot", outgoing=True))
 async def _(event):
     if event.fwd_from:
         return
