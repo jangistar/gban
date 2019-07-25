@@ -16,7 +16,7 @@ if not os.path.isdir("./SAVED"):
 if not os.path.isdir(Config.TMP_DOWNLOAD_DIRECTORY):
      os.makedirs(Config.TMP_DOWNLOAD_DIRECTORY)
 
-@borg.on(events.NewMessage(pattern=r"\.lslocal", outgoing=True, allow_sudo=True))
+@borg.on(events.NewMessage(pattern=r"\.lslocal", allow_sudo=True))
 async def _(event):
     if event.fwd_from:
         return
