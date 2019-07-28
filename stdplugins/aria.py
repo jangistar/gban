@@ -50,7 +50,7 @@ async def magnet_download(event):
 
 	await event.edit("`Downloading From Magnet Link: `\n\n"+magnet_uri+"\nType show to check status")
 	await asyncio.sleep(5)
-	await event.delete()
+	await event.delete()		
 
 @borg.on(events.NewMessage(pattern=r"\.tor", outgoing=True))
 async def torrent_download(event):
@@ -70,18 +70,62 @@ async def torrent_download(event):
 		await event.edit("`Torrent File Not Found...`")
 		return
 
-	await event.edit("`Downloading From Torrent File: `\n\n"+torrent_file_path+"\nType show to check status")
-	await asyncio.sleep(5)
-	await event.delete()
+	gid = download.gid
+	complete = None
+	while complete != True:
+		file = aria2.get_download(gid)
+		complete = file.is_complete
+		try:
+			msg = "Downloading File: "+str(file.name) +"\nSpeed: "+ str(file.download_speed_string())+"\n"+"Progress: "+str(file.progress_string())+"\nETA:  "+str(file.eta_string())+"\n\n"  	
+			await event.edit(msg)
+			await asyncio.sleep(10)
+		except Exception as e:
+			print(str(e))
+			pass	
+
+	await event.edit("File Downloaded Successfully:\n`"+download.name+"`")
+
+@borg.on(events.NewMessage(pattern=r"\.url", outgoing=True))
+async def magnet_download(event):
+	if event.fwd_from:
+		return
+	var = event.text[5:]
+	print(var)	
+	uris = [var]
+
+	#Add URL Into Queue 
+	try:	
+		download = aria2.add_uris(uris, options=None, position=None)
+	except Exception as e:
+		await event.edit("`Error:\n`"+str(e))
+		return
+
+	gid = download.gid
+	complete = None
+	while complete != True:
+		file = aria2.get_download(gid)
+		complete = file.is_complete
+		try:
+			msg = "Downloading File: "+str(file.name) +"\nSpeed: "+ str(file.download_speed_string())+"\n"+"Progress: "+str(file.progress_string())+"\nETA:  "+str(file.eta_string())+"\n\n"  	
+			await event.edit(msg)
+			await asyncio.sleep(10)
+		except Exception as e:
+			print(str(e))
+			pass	
+			
+	await event.edit("File Downloaded Successfully...")
 
 
 @borg.on(events.NewMessage(pattern=r"\.ariaRM", outgoing=True))
 async def remove_all(event):
 	if event.fwd_from:
 		return
-
-	removed = aria2.remove_all()	
-
+	try:
+		removed = aria2.remove_all(force=True)	
+		aria2.purge_all()
+	except:
+		pass
+			
 	if removed == False:  #If API returns False Try to Remove Through System Call.
 		os.system("aria2p remove-all")
 
@@ -93,7 +137,7 @@ async def pause_all(event):
 		return
 	paused = aria2.pause_all(force=True)	#Pause ALL Currently Running Downloads.
 
-	await event.edit("Output: "+str(paused))
+	await even.edit("Output: "+str(paused))
 
 @borg.on(events.NewMessage(pattern=r"\.ariaResume", outgoing=True))
 async def resume_all(event):
@@ -133,5 +177,4 @@ async def show_all(event):
             allow_cache=False,
 			reply_to=event.message.id,
 			)				
-
 
