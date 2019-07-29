@@ -30,7 +30,7 @@ async def magnet_download(event):
         cmd, start_time, end_time = cmt
         o = await cult_small_video(
             Config.FF_MPEG_DOWN_LOAD_MEDIA_PATH,
-            Config.TMP_DOWNLOAD_DIRECTORY,
+            Config.FF_MPEG_DOWN_LOAD_MEDIA_PATH,
             start_time,
             end_time
         )
