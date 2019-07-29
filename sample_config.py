@@ -118,7 +118,7 @@ class Config(object):
     OPEN_LOAD_LOGIN = os.environ.get("OPEN_LOAD_LOGIN", "0")	
     OPEN_LOAD_KEY = os.environ.get("OPEN_LOAD_KEY", "0")
     # FFMpeg
-    FF_MPEG_DOWN_LOAD_MEDIA_PATH = "ffmpeg"
+    FF_MPEG_DOWN_LOAD_MEDIA_PATH = "./ffmpeg"
 
 class Production(Config):
     LOGGER = False
