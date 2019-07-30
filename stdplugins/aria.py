@@ -47,7 +47,7 @@ async def magnet_download(event):
     except Exception as e:
         await event.edit("**Error**: __Make Sure Magnet link is correct.__\n`{}`".format(str(e)))
         return
-    m = await event.reply("Downloading From Magnet Link:\nType `showariastatus` to check status")
+    m = await event.reply("Downloading From Magnet Link:\nType `.show` to check status")
     await asyncio.sleep(5)
     await m.delete()
 
@@ -67,7 +67,7 @@ async def torrent_download(event):
     except Exception as e:
         await event.edit("**Error**: __Make Sure Torrent PATH is correct.__\n`{}`".format(str(e)))
         return
-    m = await event.reply("Downloading From given Link:\nType `.status` to check status")
+    m = await event.reply("Downloading From given Link:\nType `.show` to check status")
     await asyncio.sleep(5)
     await m.delete()
 
@@ -99,7 +99,7 @@ async def resume_all(event):
     await event.edit("Output: " + str(resumed))
 
 
-@borg.on(admin_cmd("status"))
+@borg.on(admin_cmd("show"))
 async def show_all(event):
     if event.fwd_from:
         return
