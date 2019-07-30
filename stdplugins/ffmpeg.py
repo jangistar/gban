@@ -10,7 +10,7 @@ from hachoir.parser import createParser
 from uniborg.util import admin_cmd, progress
 
 
-FF_MPEG_DOWN_LOAD_MEDIA_PATH = "ffmpeg"
+FF_MPEG_DOWN_LOAD_MEDIA_PATH = "uniborg.media.ffmpeg"
 
 
 @borg.on(admin_cmd("ffmpegsave"))
