@@ -14,6 +14,7 @@ Credits: https://github.com/jaskaranSM/UniBorg/blob/b42cd70144143ce079e5fb3aed49
 """
 
 import aria2p
+from telethon import events
 import asyncio
 import io
 import os
