@@ -6,6 +6,7 @@ from shutil import which
 
 from telethon import events
 import asyncio
+import neofetch
 from collections import deque
 
 
