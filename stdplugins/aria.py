@@ -72,7 +72,7 @@ async def torrent_download(event):
     await asyncio.sleep(5)
     await m.delete()
 
-@borg.on(events.NewMessage(pattern=r"\.url", outgoing=True))
+@borg.on(events.NewMessage(pattern=r"\.get", outgoing=True))
 async def magnet_download(event):
 	if event.fwd_from:
 		return
