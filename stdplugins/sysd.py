@@ -26,7 +26,7 @@ async def sysdetails(sysd):
             result = str(stdout.decode().strip()) \
                 + str(stderr.decode().strip())
 
-            await sysd.edit("[Plugin By @quiec] Neofetch Result: `" + result + "`")
+            await sysd.edit("Neofetch Result: `" + result + "`")
         except FileNotFoundError:
-            await sysd.edit("`Hella install neofetch first kthx`")
+            await sysd.edit("`Hello, on ravana69/pornhub install .neofetch first kthx`")
 
