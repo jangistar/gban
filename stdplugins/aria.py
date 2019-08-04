@@ -93,7 +93,7 @@ async def magnet_download(event):
 		file = aria2.get_download(gid)
 		complete = file.is_complete
 		try:
-			msg = "⬛️⬛️⬛️⬛️⬛️⬛️⬛️⬛️⬛️⬛️⬛️⬛️⬛️⬛️⬛️⬛️⬛️⬛️⬛️⬛️⬛️⬛️\n\n\n`ℛAVANA Telegram Downloader`\n\n\n⬛️⬛️⬛️⬛️⬛️⬛️⬛️⬛️⬛️⬛️⬛️⬛️⬛️⬛️⬛️⬛️⬛️⬛️⬛️⬛️⬛️⬛️\n\n\nDownloading File: "+str(file.name) +"\n\nSpeed: "+ str(file.download_speed_string())+"\n\n"+"Progress: "+str(file.progress_string())+"\n\nStatus: "+str(file.status)+"\n\nETA:  "+str(file.eta_string())+"\n\n\n⬛️⬛️⬛️⬛️⬛️⬛️⬛️⬛️⬛️⬛️⬛️⬛️⬛️⬛️⬛️⬛️⬛️⬛️⬛️⬛️⬛️⬛️\n"	
+			msg = "⬛️⬛️⬛️⬛️⬛️⬛️⬛️⬛️⬛️⬛️⬛️⬛️⬛️⬛️⬛️⬛⬛️⬛️⬛️⬛️⬛️\n\n\n`ℛAVANA Telegram Downloader`\n\n\n⬛️⬛️⬛️⬛️⬛️⬛️⬛️⬛️⬛️⬛️⬛️⬛️⬛️⬛⬛️⬛️⬛️⬛️⬛️⬛️⬛️\n\n\nDownloading File: "+str(file.name) +"\n\nSpeed: "+ str(file.download_speed_string())+"\n\n"+"Progress: "+str(file.progress_string())+"\n\nStatus: "+str(file.status)+"\n\nETA:  "+str(file.eta_string())+"\n\n\n⬛️⬛️⬛️⬛️⬛️⬛️⬛️⬛️⬛️⬛️⬛️⬛️⬛️⬛️⬛️⬛⬛️⬛️⬛️⬛️⬛️\n"	
 			await event.edit(msg)
 			await asyncio.sleep(10)
 		except Exception as e:
