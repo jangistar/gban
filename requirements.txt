@@ -3,5 +3,8 @@ hastebin.py
 async_generator
 pybase64
 zalgo_text
-pyfiglet 
+pyfiglet
+lxml
+selenium
+aria2p 
 -r ./requirements-stdborg.txt
