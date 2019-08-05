@@ -45,17 +45,17 @@ async def _(event):
 
     me = borg.me
     userid = event.from_id
-    packname = f"{userid}'s @refundisillegal Pack"
-    packshortname = f"avatar_xd_{userid}"  # format: avatar_xd_userid
+    packname = f"{userid}'s @r4v4n4 Pack"
+    packshortname = f"r4v4n4_{userid}"  # format: r4v4n4_userid
 
     is_a_s = is_it_animated_sticker(reply_message)
-    file_ext_ns_ion = "@refundisillegal_Sticker.png"
+    file_ext_ns_ion = "@r4v4n4_Sticker.png"
     file = await borg.download_file(reply_message.media)
     uploaded_sticker = None
     if is_a_s:
         file_ext_ns_ion = "AnimatedSticker.tgs"
         uploaded_sticker = await borg.upload_file(file, file_name=file_ext_ns_ion)
-        packname = f"{userid}'s AVATAR @refundisillegal"
+        packname = f"{userid}'s RAVANA @R4V4N4 Animated"
         packshortname = f"Uni_Borg_{userid}_as"  # format: Uni_Borg_userid
     elif not is_message_image(reply_message):
         await event.edit("Invalid message type")
@@ -66,7 +66,7 @@ async def _(event):
             sticker.seek(0)
             uploaded_sticker = await borg.upload_file(sticker, file_name=file_ext_ns_ion)
 
-    await event.edit("Muderring this sticker. Please Wait!")
+    await event.edit("Tu Ruk Gandu...")
     
     async with borg.conversation("@Stickers") as bot_conv:
         now = datetime.datetime.now()
@@ -118,7 +118,7 @@ async def _(event):
             await silently_send_message(bot_conv, sticker_emoji)
             await silently_send_message(bot_conv, "/done")
 
-    await event.edit(f"Mudrdered this sticker! Sticker Soul is [here](t.me/addstickers/{packshortname})")
+    await event.edit(f"O gandu yeh le sticker! Zyada gaand na marwao [⚡](t.me/addstickers/{packshortname})")
 
 
 @borg.on(admin_cmd("packinfo"))
