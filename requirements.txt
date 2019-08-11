@@ -7,5 +7,5 @@ pyfiglet
 lxml
 selenium
 aria2p 
-chatterbot
+ChatterBot
 -r ./requirements-stdborg.txt
