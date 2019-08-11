@@ -135,3 +135,12 @@ async def meme(event):
     await event.edit(flower+flower+flower+flower+flower+flower+flower+flower+flower+flower)
 
     await asyncio.sleep(sleepValue)
+
+
+@borg.on(events.NewMessage(pattern=r"\.resp", outgoing=True))
+async def meme(event):
+	if event.fwd_from:
+		return   
+	paytext=event.text[6:]
+	pay = "{}\n{}\n{}\n{}\n{}\n{}\n{}".format(paytext*5, paytext*1,paytext*1, paytext*4, paytext*1, paytext*1, paytext*1)
+	await event.edit(pay)    
