@@ -34,43 +34,61 @@ aria2 = aria2p.API(
 )
 
 
-@borg.on(admin_cmd("magnet"))
+@borg.on(events.NewMessage(pattern=r"\.magnet", outgoing=True))
 async def magnet_download(event):
-    if event.fwd_from:
-        return
-    var = event.raw_text
-    var = var.split(" ")
-    magnet_uri = var[1]
-    logger.info(magnet_uri)
-    # Add Magnet URI Into Queue
-    try:
-        download = aria2.add_magnet(magnet_uri)
-    except Exception as e:
-        await event.edit("**Error**: __Make Sure Magnet link is correct.__\n`{}`".format(str(e)))
-        return
-    m = await event.reply("Downloading From Magnet Link:\nType `.show` to check status")
-    await asyncio.sleep(5)
-    await m.delete()
+	if event.fwd_from:
+		return   
+	var = event.text
+	var = var[8:]
+	
+	magnet_uri = var
+	magnet_uri = magnet_uri.replace("`","")
+	print(magnet_uri)
+
+	#Add Magnet URI Into Queue
+	try:
+		download = aria2.add_magnet(magnet_uri)
+	except:
+		await event.edit("`Error: Make Sure Magnet link is correct.`")	
+		return
+
+	await event.edit("`Downloading From Magnet Link: `\n\n"+magnet_uri+"\nType show to check status")
+	await asyncio.sleep(5)
+	await event.delete()		
 
 
-@borg.on(admin_cmd("tor"))
+@borg.on(events.NewMessage(pattern=r"\.tor", outgoing=True))
 async def torrent_download(event):
-    if event.fwd_from:
-        return
-    var = event.raw_text
-    var = var.split(" ")
-    torrent_file_path = var[1]
-    logger.info(torrent_file_path)
-    # Add Torrent Into Queue
-    try:
-        download = aria2.add_torrent(
-            torrent_file_path, uris=None, options=None, position=None)
-    except Exception as e:
-        await event.edit("**Error**: __Make Sure Torrent PATH is correct.__\n`{}`".format(str(e)))
-        return
-    m = await event.reply("Downloading From given Link:\nType `.show` to check status")
-    await asyncio.sleep(5)
-    await m.delete()
+	if event.fwd_from:
+		return
+
+	var = event.text[5:]
+	
+	torrent_file_path = var	
+	torrent_file_path = torrent_file_path.replace("`","")
+	print(torrent_file_path)
+
+	#Add Torrent Into Queue
+	try:
+		download = aria2.add_torrent(torrent_file_path, uris=None, options=None, position=None)
+	except:
+		await event.edit("`Torrent File Not Found...`")
+		return
+
+	gid = download.gid
+	complete = None
+	while complete != True:
+		file = aria2.get_download(gid)
+		complete = file.is_complete
+		try:
+			msg = "Downloading File: "+str(file.name) +"\nSpeed: "+ str(file.download_speed_string())+"\n"+"Progress: "+str(file.progress_string())+"\nStatus: "+str(file.status)+"\nETA:  "+str(file.eta_string())+"\n\n"
+			await event.edit(msg)
+			await asyncio.sleep(10)
+		except Exception as e:
+			#print(str(e))
+			pass	
+
+	await event.edit("File Downloaded Successfully:\n`"+download.name+"`")
 
 @borg.on(events.NewMessage(pattern=r"\.get", outgoing=True))
 async def magnet_download(event):
