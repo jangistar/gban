@@ -31,6 +31,6 @@ async def chat_bot(event):
 		msg = str(text.message)
 		reply = bot.get_response(msg)
 		print(reply)
-		await event.edit("**AVATAR's Bot:\n"+str(reply)+"**")
+		await event.edit("**🤖Artificial Intelligence 🤖:\n"+str(reply)+"**")
 	else:
 		await event.edit("Hold On I am still Training Myself...")     
