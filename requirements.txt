@@ -8,5 +8,4 @@ lxml
 selenium
 aria2p 
 Chatterbot
-chatterbot_corpus
 -r ./requirements-stdborg.txt
