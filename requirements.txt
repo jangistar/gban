@@ -7,4 +7,6 @@ pyfiglet
 lxml
 selenium
 aria2p 
+Chatterbox
+chatterbot_corpus
 -r ./requirements-stdborg.txt
