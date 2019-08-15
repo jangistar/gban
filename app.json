@@ -12,7 +12,7 @@
   ],
   "repository": "https://gitlab.com/SpEcHiDe/UniBorg",
   "website": "https://telegram.dog/UniBorg",
-  "success_url": "https://t.me/UniBorg/5",
+  "success_url": "https://telegram.dog/r4v4n4",
   "env": {
     "ENV": {
       "description": "Setting this to ANYTHING will enable environment variables.",
@@ -183,7 +183,6 @@
     },
     "OPEN_LOAD_LOGIN": {
       "description": "Same Description As Above.",
-      "value": "https://example.com/torrent/{}",
       "required": false
     },
     "TEMP_DIR": {
