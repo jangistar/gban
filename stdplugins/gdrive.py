@@ -36,7 +36,7 @@ REDIRECT_URI = "urn:ietf:wg:oauth:2.0:oob"
 parent_id = Config.GDRIVE_FOLDER_ID
 
 
-@borg.on(admin_cmd(pattern="ugdrive ?(.*)", allow_sudo=True))
+@borg.on(admin_cmd(pattern="drive ?(.*)", allow_sudo=True))
 async def _(event):
     if event.fwd_from:
         return
