@@ -191,7 +191,7 @@ if Config.TG_BOT_USER_NAME_BF_HER is not None and tgbot is not None:
         else:
             result = builder.article(
                 "© @UniBorg",
-                text="""@UniBorg **( Custom Built By** @r4v4n4 **)** 
+                text="""@r4v4n4 **( Custom Built By** @r4v4n4 **)** 
 **Verified Account:** ✅
 **Official Website:** https://ravanaisdrunk.site.live
 
@@ -204,7 +204,7 @@ if Config.TG_BOT_USER_NAME_BF_HER is not None and tgbot is not None:
                     [custom.Button.url("👤Contact Creator👤", "https://telegram.dog/r4v4n4"), custom.Button.url(
                         "📼Ravana Audio Memes📼", "https://t.me/tgaudiomemes")],
                     [custom.Button.url("👨‍💻Source Code👨‍💻", "https://github.com/ravana69/Pornhub"), custom.Button.url(
-                        "❕❗Deploy Me❗❕", "https://da.gd/Emcf")],
+                        "❕❗Deploy Me❗❕", "https://dashboard.heroku.com/new?button-url=https%3A%2F%2Fgithub.com%2Fravana69%2FPornHub%2F&template=https%3A%2F%2Fgithub.com%2Fravana69%2FPornHub%2F")],
                     [custom.Button.url("🔰Update Fork🔰", "tg://need_update_for_some_feature"), custom.Button.url(
                         "✳️Fork Boost✳️", "tg://some_unsupported_feature"), custom.Button.url(
                         "♻️Refresh Heroku♻️", "tg://chutiya")]
