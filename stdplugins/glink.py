@@ -42,7 +42,7 @@ parent_id = Config.GDRIVE_FOLDER_ID
 
 
 
-@borg.on(admin_cmd(pattern="gdrive ?(.*)", allow_sudo=True))
+@borg.on(admin_cmd(pattern="glink ?(.*)", allow_sudo=True))
 async def download(dryb):
     """ For .gdrive command, upload files to google drive. """
     if not dryb.text[0].isalpha() and dryb.text[0] not in ("/", "#", "@", "!"):
@@ -125,9 +125,9 @@ async def download(dryb):
                 )
     if required_file_name:
         #
-        if Config.G_DRIVE_AUTH_TOKEN_DATA is not None:
+        if Config.AUTH_TOKEN_DATA is not None:
             with open(G_DRIVE_TOKEN_FILE, "w") as t_file:
-                t_file.write(Config.G_DRIVE_AUTH_TOKEN_DATA)
+                t_file.write(Config.AUTH_TOKEN_DATA)
         # Check if token file exists, if not create it by requesting authorization code
         if not os.path.isfile(G_DRIVE_TOKEN_FILE):
             storage = await create_token_file(G_DRIVE_TOKEN_FILE, dryb)
