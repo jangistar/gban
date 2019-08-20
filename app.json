@@ -157,6 +157,7 @@
     },
     "AUTH_TOKEN_DATA": {
       "description": "This is required for gdrive to work.",
+      "value": "blahblah",
       "required": false
     },
     "DATA_DIRECTORY": {
