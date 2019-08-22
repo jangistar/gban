@@ -17,7 +17,7 @@ async def _(event):
     if event.fwd_from:
         return
     DELAY_BETWEEN_EDITS = 1.0
-    PROCESS_RUN_TIME = 100
+    PROCESS_RUN_TIME = 500
     cmd = event.pattern_match.group(1)
     reply_to_id = event.message.id
     if event.reply_to_msg_id:
