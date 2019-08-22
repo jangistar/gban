@@ -159,8 +159,8 @@ def upload_file(http, file_path, file_name, mime_type):
         "description": "backup",
         "mimeType": mime_type
     }
-    if parent_id:
-        body[ 'parents' ] = [{'id': parent_id}]
+    if G_DRIVE_F_PARENT_ID:
+        body[ 'parents' ] = [{'id': G_DRIVE_F_PARENT_ID}]
     # Permissions body description: anyone who has link can upload
     # Other permissions can be found at https://developers.google.com/drive/v2/reference/permissions
     permissions = {
@@ -182,7 +182,7 @@ def upload_file(http, file_path, file_name, mime_type):
 async def _(event):
     if event.fwd_from:
         return
-    folder_link = "https://drive.google.com/drive/u/2/folders/"+parent_id    
+    folder_link = "https://drive.google.com/drive/u/2/folders/"+G_DRIVE_F_PARENT_ID    
     await event.edit("`Here is Your Gdrive Folder link : `\n"+folder_link)    
 
 
