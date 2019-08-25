@@ -37,7 +37,7 @@ REDIRECT_URI = "urn:ietf:wg:oauth:2.0:oob"
 parent_id = Config.GDRIVE_FOLDER_ID
 
 
-@borg.on(admin_cmd(pattern="ugdrive ?(.*)", allow_sudo=True))
+@borg.on(admin_cmd(pattern="drive ?(.*)", allow_sudo=True))
 async def _(event):
     if event.fwd_from:
         return
@@ -101,7 +101,7 @@ async def _(event):
     else:
         await mone.edit("File Not found in local server. Give me a file path :((")
 
-@borg.on(admin_cmd(pattern="drivesch ?(.*)", allow_sudo=True))
+@borg.on(admin_cmd(pattern="dsearch ?(.*)", allow_sudo=True))
 async def sch(event):
     if event.fwd_from:
         return
@@ -149,7 +149,7 @@ async def gsearch(http,query,filename):
 
 
 
-@borg.on(admin_cmd(pattern="gdrivedir ?(.*)", allow_sudo=True))
+@borg.on(admin_cmd(pattern="gdir ?(.*)", allow_sudo=True))
 async def _(event):
     if event.fwd_from:
         return
