@@ -64,6 +64,7 @@ class Config(object):
     # because of their ephemeral file system
     NO_LOAD = [
         "fwd",
+        "chatbot",
         "gban"
     ]
     # Get your own API key from https://www.remove.bg/ or
