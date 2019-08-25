@@ -10,7 +10,6 @@ Syntax:
 import asyncio
 import os
 import time
-import math
 from datetime import datetime
 from telethon import events
 from uniborg.util import admin_cmd, progress
