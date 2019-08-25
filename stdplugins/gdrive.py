@@ -94,12 +94,86 @@ async def _(event):
         # required_file_name will have the full path
         # Sometimes API fails to retrieve starting URI, we wrap it.
         try:
-            g_drive_link = upload_file(http, required_file_name, file_name, mime_type,mone,parent_id)
-            await mone.edit("__Successfully Uploaded File on G-Drive :__\n[{}]({})".format(file_name,g_drive_link))
+            g_drive_link = upload_file(http, required_file_name, file_name, mime_type)
+            await mone.edit(f"Here is your Google Drive link: {g_drive_link}")
         except Exception as e:
             await mone.edit(f"Exception occurred while uploading to gDrive {e}")
     else:
         await mone.edit("File Not found in local server. Give me a file path :((")
+
+
+# Get mime type and name of given file
+def file_ops(file_path):
+    mime_type = guess_type(file_path)[0]
+    mime_type = mime_type if mime_type else "text/plain"
+    file_name = file_path.split("/")[-1]
+    return file_name, mime_type
+
+
+async def create_token_file(token_file, event):
+    # Run through the OAuth flow and retrieve credentials
+    flow = OAuth2WebServerFlow(
+        CLIENT_ID,
+        CLIENT_SECRET,
+        OAUTH_SCOPE,
+        redirect_uri=REDIRECT_URI
+    )
+    authorize_url = flow.step1_get_authorize_url()
+    async with event.client.conversation(Config.PRIVATE_GROUP_BOT_API_ID) as conv:
+        await conv.send_message(f"Go to the following link in your browser: {authorize_url} and reply the code")
+        response = conv.wait_event(events.NewMessage(
+            outgoing=True,
+            chats=Config.PRIVATE_GROUP_BOT_API_ID
+        ))
+        response = await response
+        code = response.message.message.strip()
+        credentials = flow.step2_exchange(code)
+        storage = Storage(token_file)
+        storage.put(credentials)
+        return storage
+
+
+def authorize(token_file, storage):
+    # Get credentials
+    if storage is None:
+        storage = Storage(token_file)
+    credentials = storage.get()
+    # Create an httplib2.Http object and authorize it with our credentials
+    http = httplib2.Http()
+    credentials.refresh(http)
+    http = credentials.authorize(http)
+    return http
+
+
+def upload_file(http, file_path, file_name, mime_type):
+    # Create Google Drive service instance
+    drive_service = build("drive", "v2", http=http)
+    # File body description
+    
+    media_body = MediaFileUpload(file_path, mimetype=mime_type, resumable=True)
+    body = {
+        "title": file_name,
+        "description": "backup",
+        "mimeType": mime_type
+    }
+    if parent_id:
+        body[ 'parents' ] = [{'id': parent_id}]
+    # Permissions body description: anyone who has link can upload
+    # Other permissions can be found at https://developers.google.com/drive/v2/reference/permissions
+    permissions = {
+        "role": "reader",
+        "type": "anyone",
+        "value": None,
+        "withLink": True
+    }
+    # Insert a file
+    file = drive_service.files().insert(body=body, media_body=media_body).execute()
+    # Insert new permissions
+    drive_service.permissions().insert(fileId=file["id"], body=permissions).execute()
+    # Define file instance and get url for download
+    file = drive_service.files().get(fileId=file["id"]).execute()
+    download_url = file.get("webContentLink")
+    return download_url
 
 @borg.on(admin_cmd(pattern="dsearch ?(.*)", allow_sudo=True))
 async def sch(event):
