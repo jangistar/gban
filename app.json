@@ -50,7 +50,7 @@
     },
     "TMP_DOWNLOAD_DIRECTORY": {
       "description": "This is required for the plugins involving the file system.",
-      "value": "./DOWNLOADS/",
+      "value": "./ravana/",
       "required": false
     },
     "IBM_WATSON_CRED_USERNAME": {
@@ -82,11 +82,6 @@
     },
     "TG_GLOBAL_ALBUM_LIMIT": {
       "description": "How many media should appear when you do a .google image search? (setting a low value is preferred)",
-      "value": "9",
-      "required": false
-    },
-    "GOOGLE_SEARCH_COUNT_LIMIT": {
-      "description": "How many search result should appear when you do a .google search search? (setting a low value is preferred)",
       "value": "9",
       "required": false
     },
