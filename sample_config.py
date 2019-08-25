@@ -65,7 +65,7 @@ class Config(object):
     NO_LOAD = [
         "fwd",
         "chatbot",
-        "English",
+        "english",
         "gban"
     ]
     # Get your own API key from https://www.remove.bg/ or
