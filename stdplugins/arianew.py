@@ -21,7 +21,7 @@ aria2_is_running = False
 aria2 = None
 
 
-@borg.on(admin_cmd(pattern="ariastart"))
+@borg.on(admin_cmd(pattern="torrent"))
 async def aria_start(event):
     process = await asyncio.create_subprocess_shell(
         aria2_daemon_start_cmd,
@@ -41,7 +41,7 @@ async def aria_start(event):
     await event.edit(OUTPUT)
 
 
-@borg.on(admin_cmd(pattern="addmagnet"))
+@borg.on(admin_cmd(pattern="addmag"))
 async def magnet_download(event):
     if event.fwd_from:
         return
@@ -66,7 +66,7 @@ async def magnet_download(event):
     await check_progress_for_dl(new_gid, event)
 
 
-@borg.on(admin_cmd(pattern="addtorrent"))
+@borg.on(admin_cmd(pattern="addtor"))
 async def torrent_download(event):
     if event.fwd_from:
         return
@@ -111,7 +111,7 @@ async def magnet_download(event):
     await check_progress_for_dl(gid, event)
 
 
-@borg.on(admin_cmd(pattern="ariaRM"))
+@borg.on(admin_cmd(pattern="ariarm"))
 async def remove_all(event):
     if event.fwd_from:
         return
@@ -125,7 +125,7 @@ async def remove_all(event):
     await event.edit("`Removed All Downloads.`")
 
 
-@borg.on(admin_cmd(pattern="ariaP"))
+@borg.on(admin_cmd(pattern="ariap"))
 async def pause_all(event):
     if event.fwd_from:
         return
@@ -134,7 +134,7 @@ async def pause_all(event):
     await event.edit("Output: " + str(paused))
 
 
-@borg.on(admin_cmd(pattern="ariaResume"))
+@borg.on(admin_cmd(pattern="ariaresume"))
 async def resume_all(event):
     if event.fwd_from:
         return
@@ -142,12 +142,12 @@ async def resume_all(event):
     await event.edit("Output: " + str(resumed))
 
 
-@borg.on(admin_cmd(pattern="showariastatus"))
+@borg.on(admin_cmd(pattern="showstatus"))
 async def show_all(event):
     if event.fwd_from:
         return
     if not aria2:
-        await event.edit("Please start process using `ariastart`")
+        await event.edit("Please start process using `showstatus`")
         return False
     # Show All Downloads
     downloads = aria2.get_downloads()
