@@ -61,11 +61,18 @@ class Config(object):
     # specify LOAD and NO_LOAD
     LOAD = []
     # foloowing plugins won't work on Heroku,
-    # because of their ephemeral file system
+    # ⚡Remove This To Make Them Work But Would Make Bot Unstable AF...⚡
     NO_LOAD = [
         "fwd",
         "chatbot",
         "english",
+        "antiflood",
+        "blacklist",
+        "filters",
+        "locks",
+        "pmpermit",
+        "snip",
+        "welcome",
         "gban"
     ]
     # Get your own API key from https://www.remove.bg/ or
