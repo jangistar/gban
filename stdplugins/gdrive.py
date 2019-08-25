@@ -149,7 +149,7 @@ async def gsearch(http,query,filename):
 
 
 
-@borg.on(admin_cmd(pattern="gdir ?(.*)", allow_sudo=True))
+@borg.on(admin_cmd(pattern="ddir ?(.*)", allow_sudo=True))
 async def _(event):
     if event.fwd_from:
         return
