@@ -36,7 +36,7 @@ REDIRECT_URI = "urn:ietf:wg:oauth:2.0:oob"
 parent_id = Config.GDRIVE_FOLDER_ID
 
 
-@borg.on(admin_cmd(pattern="drive ?(.*)", allow_sudo=True))
+@borg.on(admin_cmd(pattern="uggfug ?(.*)", allow_sudo=True))
 async def _(event):
     if event.fwd_from:
         return
@@ -375,7 +375,7 @@ async def upload_file(http, file_path, file_name, mime_type, event, parent_id):
     return download_url
 
 
-@borg.on(admin_cmd(pattern="gfolder ?(.*)", allow_sudo=True))
+@borg.on(admin_cmd(pattern="gfibbb ?(.*)", allow_sudo=True))
 async def _(event):
     if event.fwd_from:
         return
