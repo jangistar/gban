@@ -21,7 +21,7 @@ aria2_is_running = False
 aria2 = None
 
 
-@borg.on(admin_cmd(pattern="torrent"))
+@borg.on(admin_cmd(pattern="starttorrent"))
 async def aria_start(event):
     process = await asyncio.create_subprocess_shell(
         aria2_daemon_start_cmd,
