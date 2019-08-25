@@ -16,7 +16,7 @@ from telethon.tl.functions.messages import SendMediaRequest
 
 
 
-@borg.on(util.admin_cmd(r"f"))
+@borg.on(util.admin_cmd(r"z"))
 
 async def on_file_to_photo(event):
 
