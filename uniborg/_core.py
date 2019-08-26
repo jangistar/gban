@@ -30,7 +30,7 @@ async def load_reload(event):
         await event.respond(f"Failed to (re)load plugin {shortname}: {e}")
 
 
-@borg.on(util.admin_cmd(pattern="(?:unloada|remove) (?P<shortname>\w+)$"))  # pylint:disable=E0602
+@borg.on(util.admin_cmd(pattern="(?:unloda|remove) (?P<shortname>\w+)$"))  # pylint:disable=E0602
 async def remove(event):
     await event.delete()
     shortname = event.pattern_match["shortname"]
