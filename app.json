@@ -97,19 +97,19 @@
       "description": "Get your own API key from https://www.remove.bg/ or feel free to use http://telegram.dog/Remove_BGBot",
       "required": false
     },
-    # "NO_P_M_SPAM": {
+    "NO_P_M_SPAM": {
       "description": "Set to True if you want to block users that are spamming your PMs.",
       "required": false
     },
-    # "MAX_FLOOD_IN_P_M_s": {
+    "MAX_FLOOD_IN_P_M_s": {
       "description": "Define the number of consecutive messages a new user can send to your P.M. This should be a valid Integer.",
       "required": false
     },
-    # "NC_LOG_P_M_S": {
+    "NC_LOG_P_M_S": {
       "description": "set to True if you want to log PMs to your PM_LOGGR_BOT_API_ID",
       "required": false
     },
-    # "PM_LOGGR_BOT_API_ID": {
+    "PM_LOGGR_BOT_API_ID": {
       "description": "send .get_id in any channel to forward all your NEW PMs to this group",
       "required": false
     },
@@ -146,7 +146,7 @@
       "description": "Get your credentials from https://da.gd/so63O",
       "required": false
       },
-      # "GDRIVE_FOLDER_ID": {
+      "GDRIVE_FOLDER_ID": {
       "description": "Get your gdrive folder link in which you want to save file.",
       "required": false
     },
