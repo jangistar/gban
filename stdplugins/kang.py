@@ -29,7 +29,7 @@ from telethon.tl.types import (
 from uniborg.util import admin_cmd
 
 
-@borg.on(admin_cmd("kang ?(.*)"))
+@borg.on(admin_cmd("lund ?(.*)"))
 async def _(event):
     if event.fwd_from:
         return
@@ -37,25 +37,25 @@ async def _(event):
         await event.edit("Reply to a photo to add to my personal sticker pack.")
         return
     reply_message = await event.get_reply_message()
-    sticker_emoji = "🔥"
+    sticker_emoji = "🍆"
     input_str = event.pattern_match.group(1)
     if input_str:
         sticker_emoji = input_str
 
     me = borg.me
     userid = event.from_id
-    packname = f"@omkarofficial kang Pack"
-    packshortname = f"omkar_Kang{userid}"  # format: Uni_Borg_userid
+    packname = f"@r4v4n4 geng beng"
+    packshortname = f"ravana_gengbeng{userid}"  # format: Uni_Borg_userid
 
     is_a_s = is_it_animated_sticker(reply_message)
-    file_ext_ns_ion = "omkar's_Sticker.png"
+    file_ext_ns_ion = "ravana_Sticker.png"
     file = await borg.download_file(reply_message.media)
     uploaded_sticker = None
     if is_a_s:
         file_ext_ns_ion = "AnimatedSticker.tgs"
         uploaded_sticker = await borg.upload_file(file, file_name=file_ext_ns_ion)
-        packname = f"omkar'sAnimatedStickers"
-        packshortname = f"SnapDragon_Animated"  # format: Uni_Borg_userid
+        packname = f"ravana_AnimatedStickers"
+        packshortname = f"ravanq_Animated"  # format: Uni_Borg_userid
     elif not is_message_image(reply_message):
         await event.edit("Invalid message type")
         return
@@ -65,7 +65,7 @@ async def _(event):
             sticker.seek(0)
             uploaded_sticker = await borg.upload_file(sticker, file_name=file_ext_ns_ion)
 
-    await event.edit("kang.......")
+    await event.edit("Aham Brahmasmi................")
 
     async with borg.conversation("@Stickers") as bot_conv:
         now = datetime.datetime.now()
@@ -117,7 +117,7 @@ async def _(event):
             await silently_send_message(bot_conv, sticker_emoji)
             await silently_send_message(bot_conv, "/done")
 
-    await event.edit(f"sticker added! kang can be found [here](t.me/addstickers/{packshortname})")
+    await event.edit(f"This Sticker Is Raped! Rape can be found [here](t.me/addstickers/{packshortname})")
 
 
 @borg.on(admin_cmd("packinfo"))
@@ -156,7 +156,7 @@ async def _(event):
                      f"**Emojis In Pack:** {' '.join(pack_emojis)}")
 
 
-@borg.on(admin_cmd("getsticker ?(.*)"))
+@borg.on(admin_cmd("loda ?(.*)"))
 async def _(event):
     if event.fwd_from:
         return
