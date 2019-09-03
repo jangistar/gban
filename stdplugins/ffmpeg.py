@@ -1,5 +1,5 @@
-"""FFMpeg for @UniBorg
-"""
+"""COMMAND : .fsave, .ftrim"""
+
 import asyncio
 import io
 import os
