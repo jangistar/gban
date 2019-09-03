@@ -1,3 +1,5 @@
+"""COMMAND : .z"""
+
 from io import BytesIO
 
 
