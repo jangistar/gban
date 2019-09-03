@@ -1,3 +1,5 @@
+"""COMMAND : .runs , .metoo , .rape , .insult , .pro , .abuse , .gey"""
+
 from telethon import events
 import random, re
 from uniborg.util import admin_cmd
