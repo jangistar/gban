@@ -1,4 +1,4 @@
-""".admin Plugin for @UniBorg"""
+"""COMMAND : .join , .pay"""
 import asyncio
 from telethon import events
 from telethon.tl.types import ChannelParticipantsAdmins
