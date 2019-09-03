@@ -1,10 +1,4 @@
-# For @UniBorg
-
-# (c) <GNU/std::sakty_]> a.k.a. @sunda001
-
-
-
-
+"""COMMAND : .code |;|"""
 
 from telethon import events
 
