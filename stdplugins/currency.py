@@ -1,4 +1,4 @@
-"""demo"""
+"""command: .currency usd inr"""
 from telethon import events
 import asyncio
 from datetime import datetime
