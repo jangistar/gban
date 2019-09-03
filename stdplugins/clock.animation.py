@@ -1,3 +1,4 @@
+"""COMMAND : .clock animation"""
 # (c) @UniBorg
 # Original written by @UniBorg edit by @INF1N17Y
 
