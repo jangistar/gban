@@ -1,5 +1,4 @@
-# For @UniBorg
-# (c) Neel Pragmatist
+"""COMMAND : .cname"""
 
 import asyncio
 import time
