@@ -1,3 +1,5 @@
+"""COMMAND : .magnet, .tor, .url, .show, .ariaRM"""
+
 import aria2p
 from telethon import events
 import asyncio
