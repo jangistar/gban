@@ -1,3 +1,4 @@
+"""COMMAND : .pbio, .ppic, .pname"""
 
 import os
 from telethon import events
