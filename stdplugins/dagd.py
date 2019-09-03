@@ -1,9 +1,6 @@
-"""DA.GD helpers in @UniBorg
-Available Commands:
-.isup URL
-.dns google.com
-.url <long url>
-.unshort <short url>"""
+"""COMMAND : .dns , .link, .unshort , .myip , .myisp , .myhead , .mywho , .myup"""
+
+
 from telethon import events
 import os
 import requests
