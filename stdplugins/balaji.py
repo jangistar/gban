@@ -1,14 +1,4 @@
-"""Emoji
-
-Available Commands:
-
-.emoji shrug
-
-.emoji apple
-
-.emoji :/
-
-.emoji -_-"""
+"""COMMAND : .balaji"""
 
 from telethon import events
 
@@ -32,7 +22,7 @@ async def _(event):
 
     input_str = event.pattern_match.group(1)
 
-    if input_str == "baalaji":
+    if input_str == "balaji":
 
         await event.edit(input_str)
 
