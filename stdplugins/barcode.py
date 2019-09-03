@@ -2,7 +2,6 @@
 """
 BarCode Generator
 Command .bar (your text)
-By @snappy101
 """
 
 import os
