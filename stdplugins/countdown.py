@@ -1,12 +1,4 @@
-# For @UniBorg
-
-"""Countdown Commands
-
-.timer
-
-.fcd"""
-
-
+"""COMMAND : .cd, .scd, .padmin"""
 
 from telethon import events
 
