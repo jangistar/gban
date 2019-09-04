@@ -1,6 +1,6 @@
-"""Upload local Files to gDrive
+"""Upload link to gDrive
 Syntax:
-.gdrive"""
+.glink"""
 
 # The entire code given below is verbatim copied from
 # https://github.com/cyberboysumanjay/Gdrivedownloader/blob/master/gdrive_upload.py
