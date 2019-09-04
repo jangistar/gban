@@ -1,10 +1,4 @@
-# For @UniBorg
-
-"""Countdown Commands
-
-.timer
-
-.fcd"""
+"""command: .heroku"""
 
 
 
