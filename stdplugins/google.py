@@ -1,8 +1,8 @@
 """ Powered by @Google
 Available Commands:
-.google search <query>
-.google image <query>
-.google reverse search"""
+.gs <query>
+.gi <query>
+.grs"""
 
 import asyncio
 import os
