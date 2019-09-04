@@ -9,4 +9,7 @@ selenium
 aria2p 
 chatterbot
 chatterbot_corpus
+instaloader
+spcli
+coffeehouse==1.0.4
 -r ./requirements-stdborg.txt
