@@ -1,6 +1,10 @@
 """Upload local Files to gDrive
 Syntax:
-.ugdrive"""
+.gdrive
+.sdrive
+.gfolder
+.drive delete | get
+.gclear """
 
 # The entire code given below is verbatim copied from
 # https://github.com/cyberboysumanjay/Gdrivedownloader/blob/master/gdrive_upload.py
