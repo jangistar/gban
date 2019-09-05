@@ -2,13 +2,8 @@
 
 Available Commands:
 
-.emoji shrug
-
-.emoji apple
-
-.emoji :/
-
-.emoji -_-"""
+.smoon
+.tmoon"""
 
 from telethon import events
 
