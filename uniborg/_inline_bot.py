@@ -153,7 +153,7 @@ if Config.TG_BOT_USER_NAME_BF_HER is not None and tgbot is not None:
         reply_pop_up_alert = help_string if help_string is not None else \
             "No DOCSTRING has been setup for {} plugin".format(plugin_name)
         reply_pop_up_alert += "\n\n Use .unload {} to remove this plugin\n\
-            © @UniBorg".format(plugin_name)
+            © @r4v4n4".format(plugin_name)
         await event.answer(reply_pop_up_alert, cache_time=0, alert=True)
 
 
