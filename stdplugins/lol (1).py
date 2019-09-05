@@ -1,4 +1,6 @@
-from telethon import events
+"""command: .lol"""
+
+ from telethon import events
 from uniborg.util import admin_cmd
 
 
