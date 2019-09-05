@@ -5,20 +5,7 @@
 Available Commands:
 
 
-
-.emoji shrug
-
-
-
-.emoji apple
-
-
-
-.emoji :/
-
-
-
-.emoji -_-"""
+.admem"""
 
 
 
