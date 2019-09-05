@@ -1,3 +1,5 @@
+""" commands: .tspam text """
+
 import asyncio
 import time
 from asyncio import wait
