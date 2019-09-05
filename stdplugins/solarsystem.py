@@ -1,9 +1,6 @@
 """Emoji
 Available Commands:
-.emoji shrug
-.emoji apple
-.emoji :/
-.emoji -_-"""
+.solar"""
 
 from telethon import events
 import asyncio
