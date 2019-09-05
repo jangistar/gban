@@ -1,8 +1,6 @@
 """command: .lol"""
-
- from telethon import events
+from telethon import events
 from uniborg.util import admin_cmd
-
 
 @borg.on(admin_cmd(pattern="lol"))
 async def _(event):
