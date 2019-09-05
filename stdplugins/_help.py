@@ -1,4 +1,4 @@
-"""COMMAND : .info, .dc, .syntax"""
+"""COMMAND : .info, .dc, .lund"""
 
 import sys
 from telethon import events, functions, __version__
@@ -57,7 +57,7 @@ async def _(event):
     await event.edit("""Telethon UserBot powered by @UniBorg""")
 
 
-@borg.on(admin_cmd(pattern="pornhub (.*)"))
+@borg.on(admin_cmd(pattern="lund (.*)"))
 async def _(event):
     if event.fwd_from:
         return
