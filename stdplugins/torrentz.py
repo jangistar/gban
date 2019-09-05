@@ -1,3 +1,5 @@
+""" command: .movie torrentz2.eu|idop.se """
+
 import cfscrape  # https://github.com/Anorov/cloudflare-scrape
 import requests
 from datetime import datetime
