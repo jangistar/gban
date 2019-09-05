@@ -1,10 +1,8 @@
 # For @UniBorg
 
-"""Countdown Commands
+"""fake leave
 
-.timer
-
-.fcd"""
+.fleave"""
 
 
 
