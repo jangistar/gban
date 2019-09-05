@@ -1,4 +1,11 @@
-""".admin Plugin for @UniBorg"""
+"""Commands:
+.warn0
+.warn1
+.warn2
+.warn3
+.gbun
+.fw
+.ocb"""
 import asyncio
 from telethon import events
 from telethon.tl.types import ChannelParticipantsAdmins
