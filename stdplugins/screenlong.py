@@ -1,5 +1,5 @@
 """Take screenshot of any website
-Syntax: .screencapture <Website URL>"""
+Syntax: .screenlong <Website URL>"""
 
 import io
 import traceback
