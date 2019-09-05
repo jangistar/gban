@@ -1,4 +1,4 @@
-"""COMMAND : .info, .dc, .lund"""
+"""COMMAND : .info, .dc, .nigga"""
 
 import sys
 from telethon import events, functions, __version__
@@ -57,14 +57,14 @@ async def _(event):
     await event.edit("""Telethon UserBot powered by @UniBorg""")
 
 
-@borg.on(admin_cmd(pattern="lund (.*)"))
+@borg.on(admin_cmd(pattern="nigga (.*)"))
 async def _(event):
     if event.fwd_from:
         return
     plugin_name = event.pattern_match.group(1)
     if plugin_name in borg._plugins:
         help_string = borg._plugins[plugin_name].__doc__
-        unload_string = f"Use `.unload {plugin_name}` to remove this plugin.\n           © @UniBorg"
+        unload_string = f"Use `.unload {plugin_name}` to remove this plugin.\n           © @r4v4n4"
         if help_string:
             plugin_syntax = f"Syntax for plugin **{plugin_name}**:\n\n{help_string}\n{unload_string}"
         else:
