@@ -1,4 +1,4 @@
-"""Get the info your system. Using Neofetch | by @quiec"""
+"""Get the info your system. Using .neofetch then .sysd"""
 from asyncio import create_subprocess_shell as asyncrunapp
 from asyncio.subprocess import PIPE as asyncPIPE
 from platform import python_version, uname
