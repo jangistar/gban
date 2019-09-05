@@ -2,9 +2,7 @@
 
 """Countdown Commands
 
-.timer
-
-.fcd"""
+.wchar"""
 
 
 
