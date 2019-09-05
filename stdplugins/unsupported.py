@@ -1,4 +1,4 @@
-""".admin Plugin for @UniBorg"""
+"""Command: .repo"""
 import asyncio
 from telethon import events
 from telethon.tl.types import ChannelParticipantsAdmins
