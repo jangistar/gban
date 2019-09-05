@@ -1,8 +1,8 @@
 """Personal Message Spammer
 Available Commands:
-.approve
-.block
-.list approved pms"""
+.approvepm
+.blockpm
+.listapprovedpms"""
 import asyncio
 import json
 from telethon import events
