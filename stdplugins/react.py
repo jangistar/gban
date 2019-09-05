@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
-# (c) @INF1N17Y
+""" Command: .react happy|thinking|waving|wtf|love|confused|dead|sad|dog """
 
 from telethon import events
 import random
