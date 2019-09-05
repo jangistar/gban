@@ -2,13 +2,11 @@
 
 Available Commands:
 
-.emoji shrug
-
-.emoji apple
-
-.emoji :/
-
-.emoji -_-"""
+.os
+.macos
+.windows
+.linux
+.stock"""
 
 from telethon import events
 
