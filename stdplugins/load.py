@@ -2,13 +2,11 @@
 
 Available Commands:
 
-.emoji shrug
-
-.emoji apple
-
-.emoji :/
-
-.emoji -_-"""
+.load
+.square
+.up
+.round
+.heart"""
 
 from telethon import events
 
