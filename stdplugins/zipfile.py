@@ -1,3 +1,5 @@
+""" command: .compress """
+
 from telethon import events
 import asyncio
 import zipfile
