@@ -7,7 +7,7 @@
 # you may use this file in compliance with the License.
 #
 
-"""RapidLeech plugin: Inspired by @SjProjects"""
+"""Command : .rl link"""
 
 import aiohttp
 import asyncio
