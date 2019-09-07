@@ -61,6 +61,11 @@
       "description": "This is required for the speech to text module. Get your PASSWORD from https://console.bluemix.net/docs/services/speech-to-text/getting-started.html",
       "required": false
     },
+    "LYDIA_API": {
+      "description": "This Module Needs CoffeeHouse API to work. so Join https://telegram.dog/IntellivoidDev and send #activateapi and follow instructions.",
+      "value": "GET API TO MAKE AI WORK",
+      "required": false
+    },
     "HASH_TO_TORRENT_API": {
       "description": "This is required for the hash to torrent file functionality to work.",
       "value": "https://example.com/torrent/{}",
@@ -68,7 +73,7 @@
     },
     "TELEGRAPH_SHORT_NAME": {
       "description": "This is required for the @telegraph functionality.",
-      "value": "UniBorg",
+      "value": "LUCIFERTHEKING",
       "required": false
     },
     "OCR_SPACE_API_KEY": {
@@ -151,7 +156,7 @@
       "required": false
     },
     "AUTH_TOKEN_DATA": {
-      "description": "This is required for gdrive to work.",
+      "description": "This is required for gdrive to work. This might help: "https://telegra.ph/Deleted-Account-08-05-2" ",
       "value": "blahblah",
       "required": false
     },
