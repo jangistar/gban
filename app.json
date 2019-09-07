@@ -156,7 +156,7 @@
       "required": false
     },
     "AUTH_TOKEN_DATA": {
-      "description": "This is required for gdrive to work. This might help: "https://is.gd/RhuFNn" ",
+      "description": "This is required for gdrive to work. This might help: https://da.gd/authtoken ",
       "value": "blahblah",
       "required": false
     },
