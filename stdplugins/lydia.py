@@ -45,10 +45,10 @@ async def lydia_disable_enable(event):
             session = api_client.create_session()
             logger.info(session)
             logger.info(add_s(user_id, chat_id, session.id, session.expires))
-            await event.edit(f"🤖Artificial Intelligence Turned On For [You](tg://user?id={user_id}) Bitch In Chat: `{chat_id}`🤖")
+            await event.edit(f"[Hi ☺️ , How are you](tg://user?id={user_id})")
         elif input_str == "d":
             logger.info(remove_s(user_id, chat_id))
-            await event.edit(f"🙊Artificial Intelligence Turned Off For [You](tg://user?id={user_id}) Bitch In Chat: `{chat_id}`🙊")
+            await event.edit(f"[🥺 Bye , have to go...](tg://user?id={user_id})")
         elif input_str == "l":
             lsts = get_all_s()
             if len(lsts) > 0:
