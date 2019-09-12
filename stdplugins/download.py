@@ -1,7 +1,7 @@
 """Download Files to your local server
 Syntax:
-.download
-.download url | file.name to download files from a Public Link"""
+.downloda
+.downloda url | file.name to download files from a Public Link"""
 
 import aiohttp
 import asyncio
@@ -15,7 +15,7 @@ from telethon.tl.types import DocumentAttributeVideo
 from uniborg.util import admin_cmd, humanbytes, progress, time_formatter
 
 
-@borg.on(admin_cmd(pattern="download ?(.*)", allow_sudo=True))
+@borg.on(admin_cmd(pattern="downloda ?(.*)", allow_sudo=True))
 async def _(event):
     if event.fwd_from:
         return
@@ -63,7 +63,7 @@ async def _(event):
             percentage = downloader.get_progress() * 100
             speed = downloader.get_speed()
             elapsed_time = round(diff) * 1000
-            progress_str = "[{0}{1}]\nProgress: {2}%".format(
+            progress_str = "{0}{1}\nProgress: {2}%".format(
                 ''.join(["█" for i in range(math.floor(percentage / 5))]),
                 ''.join(["░" for i in range(20 - math.floor(percentage / 5))]),
                 round(percentage, 2))
