@@ -7,7 +7,7 @@ from datetime import datetime
 from uniborg.util import admin_cmd
 
 
-@borg.on(admin_cmd("stt (.*)"))
+@borg.on(admin_cmd(pattern="stt (.*)"))
 async def _(event):
     if event.fwd_from:
         return
@@ -15,7 +15,7 @@ async def _(event):
     input_str = event.pattern_match.group(1)
     if not os.path.isdir(Config.TMP_DOWNLOAD_DIRECTORY):
         os.makedirs(Config.TMP_DOWNLOAD_DIRECTORY)
-    await event.edit("Downloading to my local, for analysis 🙇")
+    await event.edit("Downloading to my ravana69/pornhub server for analysis 🙇")
     if event.reply_to_msg_id:
         previous_message = await event.get_reply_message()
         required_file_name = await borg.download_media(
@@ -23,7 +23,7 @@ async def _(event):
             Config.TMP_DOWNLOAD_DIRECTORY
         )
         lan = input_str
-        if Config.IBM_WATSON_CRED_USERNAME is None or Config.IBM_WATSON_CRED_PASSWORD is None:
+        if Config.IBM_WATSON_CRED_URL is None or Config.IBM_WATSON_CRED_PASSWORD is None:
             await event.edit("You need to set the required ENV variables for this module. \nModule stopping")
         else:
             await event.edit("Starting analysis, using IBM WatSon Speech To Text")
@@ -32,10 +32,10 @@ async def _(event):
             }
             data = open(required_file_name, "rb").read()
             response = requests.post(
-                "https://stream.watsonplatform.net/speech-to-text/api/v1/recognize",
+                Config.IBM_WATSON_CRED_URL + "/v1/recognize",
                 headers=headers,
                 data=data,
-                auth=(Config.IBM_WATSON_CRED_USERNAME, Config.IBM_WATSON_CRED_PASSWORD)
+                auth=("apikey", Config.IBM_WATSON_CRED_PASSWORD)
             )
             r = response.json()
             if "results" in r:
