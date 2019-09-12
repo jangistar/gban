@@ -27,7 +27,7 @@ async def load_reload(event):
         trace_back = traceback.format_exc()
         # pylint:disable=E0602
         logger.warn(f"Failed to (re)load plugin {shortname}: {trace_back}")
-        await event.respond(f"Failed to (re)load plugin {shortname}: {e}")
+        await event.respond(f"Failed to (re)loda pligon {shortname}: {e}")
 
 
 @borg.on(util.admin_cmd(pattern="(?:unloda|remove) (?P<shortname>\w+)$"))  # pylint:disable=E0602
@@ -38,9 +38,9 @@ async def remove(event):
         msg = await event.respond(f"Not removing {shortname}")
     elif shortname in borg._plugins:  # pylint:disable=E0602
         borg.remove_plugin(shortname)  # pylint:disable=E0602
-        msg = await event.respond(f"Removed plugin {shortname}")
+        msg = await event.respond(f"Removed pligon {shortname}")
     else:
-        msg = await event.respond(f"Plugin {shortname} is not loaded")
+        msg = await event.respond(f"Pligon {shortname} is not loda...")
     await asyncio.sleep(DELETE_TIMEOUT)
     await msg.delete()
 
@@ -79,10 +79,10 @@ async def install_plug_in(event):
             )
             if "(" not in downloaded_file_name:
                 borg.load_plugin_from_file(downloaded_file_name)  # pylint:disable=E0602
-                await event.edit("Gandu, Installed Plugin `{}`".format(os.path.basename(downloaded_file_name)))
+                await event.edit("Gandu, Instulled Pligon `{}`".format(os.path.basename(downloaded_file_name)))
             else:
                 os.remove(downloaded_file_name)
-                await event.edit("oh! Mkc, pligon install na hove.")
+                await event.edit("oh! Mkc, pligon instull na hove.")
         except Exception as e:  # pylint:disable=C0103,W0703
             await event.edit(str(e))
             os.remove(downloaded_file_name)
