@@ -80,7 +80,7 @@ async def _(event):
 
             "DOWNLOADING... \n\n20.63% [███░░░░░░░░░░░░░░░░░]\n\nETA: 0m, 16s",    
 
-            "FILE DOWNLOADED, UPLOADING TO ADMIN'S WHATSAPP GROUP "CHUTIYA GENG BOYS" ... \n\n34.42% [█████░░░░░░░░░░░░░░░]\n\nETA: 0m, 14s",
+            "FILE DOWNLOADED, UPLOADING TO ADMINS WHATSAPP GROUP "CHUTIYA GENG BOYS" ... \n\n34.42% [█████░░░░░░░░░░░░░░░]\n\nETA: 0m, 14s",
 
             "UPLOADING... \n\n42.17% [███████░░░░░░░░░░░░░]\n\nETA: 0m, 12s",
 
