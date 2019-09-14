@@ -70,7 +70,7 @@ class Config(object):
         "locks",
         "pmpermit",
         "snip",
-        "welcome",
+        "welcome_old",
         "gban"
     ]
     # Get your own API key from https://www.remove.bg/ or
