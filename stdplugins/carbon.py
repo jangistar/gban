@@ -19,7 +19,7 @@ import os
 async def carbon_api(e):
  if not e.text[0].isalpha() and e.text[0] not in ("/", "#", "@", "!"):
    """ A Wrapper for carbon.now.sh """
-   await e.edit("⬜⬜⬜⬜⬜ 00%")
+   await e.edit("⬜⬜⬜⬜⬜")
    CARBON = 'https://carbon.now.sh/?l={lang}&code={code}'
    CARBONLANG = "en"
    textx = await e.get_reply_message()
@@ -39,7 +39,7 @@ async def carbon_api(e):
    chrome_options.add_argument('--disable-gpu')
    prefs = {'download.default_directory' : './'}
    chrome_options.add_experimental_option('prefs', prefs)
-   await e.edit("⬛⬛⬜⬜⬜ 30%")
+   await e.edit("⬛⬛⬜⬜⬜")
 
    driver = webdriver.Chrome(executable_path=Config.CHROME_DRIVER, options=chrome_options)
    driver.get(url)
@@ -52,17 +52,17 @@ async def carbon_api(e):
    sleep(5) # this might take a bit.
    driver.find_element_by_xpath("//button[contains(text(),'4x')]").click()
    sleep(5)
-   await e.edit("⬛⬛⬛⬜⬜ 50%")
+   await e.edit("⬛⬛⬛⬜⬜")
    driver.find_element_by_xpath("//button[contains(text(),'PNG')]").click()
    sleep(5) #Waiting for downloading
 
-   await e.edit("⬛⬛⬛⬛⬛ 100%")
+   await e.edit("⬛⬛⬛⬛⬛")
    file = './carbon.png'
    await e.edit("✅Carbon Completed, Uploading Carbon✅")
    await e.client.send_file(
          e.chat_id,
          file,
-         caption="Carbon by [@r4v4n4](https://www.github.com/ravana69/pornhub)/",
+         caption="Carbon by [@r4v4n4](https://www.github.com/ravana69/pornhub)",
          force_document=True,
          reply_to=e.message.reply_to_msg_id,
          )
