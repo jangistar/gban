@@ -39,12 +39,12 @@
       "required": false
     },
     "PRIVATE_GROUP_BOT_API_ID": {
-      "description": "Send .get_id in any group to fill this value.",
+      "description": "Send .g_id in any group to fill this value.",
       "value": "-100",
       "required": false
     },
     "PRIVATE_CHANNEL_BOT_API_ID": {
-      "description": "Send .get_id in any channel to fill this value. ReQuired for @Manuel15 inspiration to work!",
+      "description": "Send .g_id in any channel to fill this value. ReQuired for @Manuel15 inspiration to work!",
       "value": "-100",
       "required": false
     },
@@ -81,7 +81,7 @@
       "required": false
     },
     "G_BAN_LOGGER_GROUP": {
-      "description": "Send .get_id in any group with all your administration bots (added)",
+      "description": "Send .g_id in any group with all your administration bots (added)",
       "value": "-100",
       "required": false
     },
@@ -115,7 +115,7 @@
       "required": false
     },
     "PM_LOGGR_BOT_API_ID": {
-      "description": "send .get_id in any channel to forward all your NEW PMs to this group",
+      "description": "send .g_id in any channel to forward all your NEW PMs to this group",
       "required": false
     },
     "NO_OF_BUTTONS_DISPLAYED_IN_H_ME_CMD": {
@@ -169,6 +169,21 @@
     "FF_MPEG_DOWN_LOAD_MEDIA_PATH": {
       "description": "blah blah blah.",
       "value": "./uniborg.media.ffmpeg/",
+      "required": false
+    },
+    "PM_LOGGR_BOT_API_ID": {
+      "description": "Type .g_id in private channel and add that value here.",
+      "value": "-100",
+      "required": false
+    },
+    "CHROME_BIN": {
+      "description": "For Carbon.py",
+      "value": "/app/.apt/usr/bin/google-chrome",
+      "required": false
+    },
+    "CHROME_DRIVER": {
+      "description": "For Carbon.py",
+      "value": "/app/.chromedriver/bin/chromedriver",
       "required": false
     },
     "GITHUB_ACCESS_TOKEN": {
