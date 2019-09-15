@@ -127,6 +127,9 @@ class Config(object):
     GOOGLE_CHROME_BIN = os.environ.get("GOOGLE_CHROME_BIN", None)
     #
     LYDIA_API = os.environ.get("LYDIA_API", None)
+    #
+    CHROME_DRIVER = os.environ.get("CHROME_DRIVER", None)
+    CHROME_BIN = os.environ.get("CHROME_BIN", None)
 
 class Production(Config):
     LOGGER = False
