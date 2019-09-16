@@ -7,11 +7,7 @@
 Description: A module that Act as a chatbot and chat with a User/other Bot.
 This Module Needs CoffeeHouse API to work. so Join https://telegram.dog/IntellivoidDev and send #activateapi and follow instructions.
 This Module also Needs DB_URI For Storage of Some Data So make sure you have that too.
-
-Credits:
-@Hackintosh5 (for inspiring me to write this module)
-@Zero_cool7870 (For Writing The Original Module)
-Zi Xing (For CoffeeHouse API)"""
+"""
 
 
 import coffeehouse as cf
@@ -40,12 +36,12 @@ async def lydia_disable_enable(event):
         reply_msg = await event.get_reply_message()
         user_id = reply_msg.from_id
         chat_id = event.chat_id
-        await event.edit("Processing...")
+        await event.edit("hm")
         if input_str == "e":
             session = api_client.create_session()
             logger.info(session)
             logger.info(add_s(user_id, chat_id, session.id, session.expires))
-            await event.edit(f"[Hi ☺️ , How are you](tg://user?id={user_id})")
+            await event.edit(f"hmm")
         elif input_str == "d":
             logger.info(remove_s(user_id, chat_id))
             await event.edit(f"[🥺 Bye , have to go...](tg://user?id={user_id})")
