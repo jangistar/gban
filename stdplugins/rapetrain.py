@@ -2,7 +2,7 @@
 
 Available Commands:
 
-.train
+.repe
 
 build by legend @r4v4n4 , if u edit it then u r gay..."""
 
@@ -28,7 +28,7 @@ async def _(event):
 
     input_str = event.pattern_match.group(1)
 
-    if input_str == "train":
+    if input_str == "repe":
 
         await event.edit(input_str)
 
