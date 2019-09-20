@@ -1,70 +1,74 @@
-from sqlalchemy import BigInteger, Boolean, Column, LargeBinary, Numeric, String, UnicodeText
-from sql_helpers import SESSION, BASE
+"""Greetings
+Commands:
+.clearwelcome
+.savewelcome <Welcome Message>"""
+
+from telethon import events, utils
+from telethon.tl import types
+from sql_helpers.welcome_sql import get_current_welcome_settings, \
+    add_welcome_setting, rm_welcome_setting, update_previous_welcome
+from uniborg.util import admin_cmd
 
 
-class Welcome(BASE):
-    __tablename__ = "welcome"
-    chat_id = Column(Numeric, primary_key=True)
-    should_clean_welcome = Column(Boolean, default=False)
-    previous_welcome = Column(BigInteger)
-    f_mesg_id = Column(Numeric)
+@borg.on(events.ChatAction())  # pylint:disable=E0602
+async def _(event):
+    cws = get_current_welcome_settings(event.chat_id)
+    if cws:
+        # logger.info(event.stringify())
+        """user_added=False,
+        user_joined=True,
+        user_left=False,
+        user_kicked=False,"""
+        if event.user_joined or event.user_added:
+            if cws.should_clean_welcome:
+                try:
+                    await event.client.delete_messages(
+                        event.chat_id,
+                        cws.previous_welcome
+                    )
+                except Exception as e:  # pylint:disable=C0103,W0703
+                    logger.warn(str(e))  # pylint:disable=E0602
+            a_user = await event.get_user()
+            msg_o = await event.client.get_messages(
+                entity=Config.PRIVATE_CHANNEL_BOT_API_ID,
+                ids=int(cws.f_mesg_id)
+            )
+            current_saved_welcome_message = msg_o.message
+            mention = "[{}](tg://user?id={})".format(a_user.first_name, a_user.id)
+            file_media = msg_o.media
+            current_message = await event.reply(
+                current_saved_welcome_message.format(mention=mention),
+                file=file_media
+            )
+            update_previous_welcome(event.chat_id, current_message.id)
 
-    def __init__(
-        self,
-        chat_id,
-        should_clean_welcome,
-        previous_welcome,
-        f_mesg_id
-    ):
-        self.chat_id = chat_id
-        self.should_clean_welcome = should_clean_welcome
-        self.previous_welcome = previous_welcome
-        self.f_mesg_id = f_mesg_id
 
-
-Welcome.__table__.create(checkfirst=True)
-
-
-def get_current_welcome_settings(chat_id):
-    try:
-        return SESSION.query(Welcome).filter(Welcome.chat_id == chat_id).one()
-    except:
-        return None
-    finally:
-        SESSION.close()
-
-
-def add_welcome_setting(
-    chat_id,
-    should_clean_welcome,
-    previous_welcome,
-    f_mesg_id
-):
-    adder = SESSION.query(Welcome).get(chat_id)
-    if adder:
-        adder.should_clean_welcome = should_clean_welcome
-        adder.previous_welcome = previous_welcome
-        adder.f_mesg_id = f_mesg_id
-    else:
-        adder = Welcome(
-            chat_id,
-            should_clean_welcome,
-            previous_welcome,
-            f_mesg_id
+@borg.on(admin_cmd(pattern="savewelcome"))  # pylint:disable=E0602
+async def _(event):
+    if event.fwd_from:
+        return
+    msg = await event.get_reply_message()
+    if msg:
+        msg_o = await event.client.forward_messages(
+            entity=Config.PRIVATE_CHANNEL_BOT_API_ID,
+            messages=msg,
+            from_peer=event.chat_id,
+            silent=True
         )
-    SESSION.add(adder)
-    SESSION.commit()
+        add_welcome_setting(event.chat_id, True, 0, msg_o.id)
+        await event.edit("Welcome note saved. ")
 
 
-def rm_welcome_setting(chat_id):
-    rem = SESSION.query(Welcome).get(chat_id)
-    if rem:
-        SESSION.delete(rem)
-        SESSION.commit()
-
-
-def update_previous_welcome(chat_id, previous_welcome):
-    row = SESSION.query(Welcome).get(chat_id)
-    row.previous_welcome = previous_welcome
-    # commit the changes to the DB
-    SESSION.commit()
+@borg.on(admin_cmd(pattern="clearwelcome"))  # pylint:disable=E0602
+async def _(event):
+    if event.fwd_from:
+        return
+    cws = get_current_welcome_settings(event.chat_id)
+    rm_welcome_setting(event.chat_id)
+    await event.edit(
+        "Welcome note cleared. " + \
+        "[This](https://t.me/c/{}/{}) was your previous welcome message.".format(
+            Config.PRIVATE_CHANNEL_BOT_API_ID[4:],
+            cws.f_mesg_id
+        )
+    )
