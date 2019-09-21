@@ -27,9 +27,9 @@ import importlib.util
 
 async def timer_blankx(e):
 
- txt=e.text[7:] + '\n\n`Exiting This Group In` '
+ txt=e.text[7:] + '\n\n`Processing....` '
 
- j=5
+ j=1
 
  k=j
 
@@ -43,5 +43,5 @@ async def timer_blankx(e):
 
  if e.pattern_match.group(1) == 'f':
 
-  await e.edit("`Group Exited. I Had A Pleasant Stay With You Guys..` ")
+  await e.edit("`Legend is leaving this chat.....!` @admin `Goodbye aren't forever..` ")
 
