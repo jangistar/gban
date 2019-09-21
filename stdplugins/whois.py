@@ -46,17 +46,17 @@ async def _(event):
     except Exception as e:
         dc_id = "Need a Profile Picture to check **this**"
         location = str(e)
-    caption = """**Detailed Whois:**
+    caption = """Detailed Whois:
 
-**🔖ID: <code>{}</code>**
-**🤵Name: <a href='tg://user?id={}'>{}</a>**
-**✍️Bio: {}**
-**🌏Data Centre Number: {}**
-**🖼Number of Profile Pics: {}**
-**🔏Restricted: {}**
-**🌐Verified: {}**
-**🤖Bot: {}**
-**👥Groups in Common: {}**
+🔖ID: <code>{}</code>
+🤵Name: <a href='tg://user?id={}'>{}</a>
+✍️Bio: {}
+🌏Data Centre Number: {}
+🖼Number of Profile Pics: {}
+🔏Restricted: {}
+🌐Verified: {}
+🤖Bot: {}
+👥Groups in Common: {}
 
 
 List Of Telegram Data Centres:
