@@ -1,8 +1,8 @@
 """Make / Download Telegram Sticker Packs without installing Third Party applications
 Available Commands:
-.kang [Optional Emoji]
+.lund [Optional Emoji]
 .packinfo
-.getsticker"""
+.loda {for zip sticker pack}"""
 from telethon import events
 from io import BytesIO
 from PIL import Image
