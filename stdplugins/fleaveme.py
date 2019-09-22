@@ -22,7 +22,7 @@ async def _(event):
 
     animation_interval = 1
 
-    animation_ttl = range(0, 12)
+    animation_ttl = range(0, 15)
 
     input_str = event.pattern_match.group(1)
 
@@ -42,6 +42,9 @@ async def _(event):
             "⬛⬆️↗️\n⬛🔄➡️\n↙️⬇️↘️",
             "⬛⬆️↗️\n⬅️🔄➡️\n↙️⬇️↘️",
             "↖️⬆️↗️\n⬅️🔄➡️\n↙️⬇️↘️",
+            "**Chat Message Exported To** `./ravana/`",
+            "**Chat Message Exported To** `./ravana/chatbackup/`",
+            "**Chat Message Exported To** `./ravana/chatbackup/new.txt`",
             "**Chat Message Exported To** `./ravana/chatbackup/new.txt`",
             "__Legend is leaving this chat.....!__ @admin __Goodbye aren't forever..__"
 
@@ -51,4 +54,4 @@ async def _(event):
 
             await asyncio.sleep(animation_interval)
 
-            await event.edit(animation_chars[i % 12])
+            await event.edit(animation_chars[i % 15])
