@@ -45,7 +45,7 @@ async def _(event):
             "**Chat Message Exported To** `./ravana/`",
             "**Chat Message Exported To** `./ravana/chatbackup/`",
             "**Chat Message Exported To** `./ravana/chatbackup/new.txt`",
-            "**Chat Message Exported To** `./ravana/chatbackup/new.txt`",
+            "__Legend is leaving this chat.....!__ @admin __Goodbye aren't forever..__",
             "__Legend is leaving this chat.....!__ @admin __Goodbye aren't forever..__"
 
  ]
