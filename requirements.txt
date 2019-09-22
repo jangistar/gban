@@ -1,5 +1,5 @@
 telethon<=1.11.0
-pip<=19.9.9
+pip>=19.2.3
 hastebin.py
 async_generator
 pybase64
