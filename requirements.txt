@@ -1,5 +1,6 @@
 telethon<=1.11.0
 pip>=19.2.3
+git+https://github.com/dylanaraps/neofetch
 hastebin.py
 async_generator
 pybase64
