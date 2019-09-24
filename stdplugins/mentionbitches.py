@@ -1,5 +1,5 @@
 """Mention/Tag Replied Users\n
-`.mention` <text>
+`.men` <text>
 """
 # By: @INF1N17Y
 
