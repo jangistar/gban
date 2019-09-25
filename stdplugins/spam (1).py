@@ -11,7 +11,7 @@ from asyncio import wait
 from userbot import BOTLOG, BOTLOG_CHATID, CMD_HELP
 from userbot.events import register
 
-@register(outgoing=True, pattern="^.tspam")
+@borg(outgoing=True, pattern="^.tspam")
 async def tmeme(e):
     if not e.text[0].isalpha() and e.text[0] not in ("/", "#", "@", "!"):
         tspam = str(e.text[7:])
@@ -26,7 +26,7 @@ async def tmeme(e):
                     "TSpam was executed successfully"
                     )
 
-@register(outgoing=True, pattern="^.spam")
+@borg(outgoing=True, pattern="^.spam")
 async def spammer(e):
     if not e.text[0].isalpha() and e.text[0] not in ("/", "#", "@", "!"):
         message = e.text
@@ -41,7 +41,7 @@ async def spammer(e):
                 "Spam was executed successfully"
                 )
 
-@register(outgoing=True, pattern="^.bigspam")
+@borg(outgoing=True, pattern="^.bigspam")
 async def bigspam(e):
     if not e.text[0].isalpha() and e.text[0] not in ("/", "#", "@", "!"):
         message = e.text
@@ -58,7 +58,7 @@ async def bigspam(e):
                 )
 
 
-@register(outgoing=True, pattern="^.picspam")
+@borg(outgoing=True, pattern="^.picspam")
 async def tiny_pic_spam(e):
     if not e.text[0].isalpha() and e.text[0] not in ("/", "#", "@", "!"):
         message = e.text
@@ -76,7 +76,7 @@ async def tiny_pic_spam(e):
                 )
 
 
-@register(outgoing=True, pattern="^.delayspam")
+@borg(outgoing=True, pattern="^.delayspam")
 async def spammer(e):
     if not e.text[0].isalpha() and e.text[0] not in ("/", "#", "@", "!"):
         message = e.text
