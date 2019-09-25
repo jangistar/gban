@@ -5,7 +5,7 @@ import time
 
 telethon.errors.rpcerrorlist.FloodWaitError: A wait of 280 seconds is required"""
 
-@borg.on(events.NewMessage(pattern=r"\.bigspam (.*)", outgoing=True))
+@borg.on(events.NewMessage(pattern=r"\.bigspamreboot (.*)", outgoing=True))
 async def _(event):
     if event.fwd_from:
         return
@@ -25,6 +25,6 @@ async def _(event):
             await event.respond(message_text)
         await event.delete()
     else:
-        await event.edit("send me a message in the format `.bigspam count | spam message` and admins won't see it in recent actions" +
+        await event.edit("send me a message in the format `.bigspamreboot count | spam message` and admins won't see it in recent actions" +
                          " \n Courtesy: @shiiinabot")"""
 
