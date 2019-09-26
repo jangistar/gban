@@ -14,20 +14,22 @@ from sql_helpers.filters_sql import get_filter, add_filter, remove_filter, get_a
 from uniborg.util import admin_cmd
 
 
-DELETE_TIMEOUT = 300
+DELETE_TIMEOUT = 0
 TYPE_TEXT = 0
 TYPE_PHOTO = 1
 TYPE_DOCUMENT = 2
 
 
-borg.storage.last_triggered_filters = {}  # pylint:disable=E0602
+global last_triggered_filters
+last_triggered_filters = {}  # pylint:disable=E0602
 
 
 @borg.on(events.NewMessage(incoming=True))
 async def on_snip(event):
+    global last_triggered_filters
     name = event.raw_text
-    if event.chat_id in borg.storage.last_triggered_filters:
-        if name in borg.storage.last_triggered_filters[event.chat_id]:
+    if event.chat_id in last_triggered_filters:
+        if name in last_triggered_filters[event.chat_id]:
             # avoid userbot spam
             # "I demand rights for us bots, we are equal to you humans." -Henri Koivuneva (t.me/UserbotTesting/2698)
             return False
@@ -59,11 +61,11 @@ async def on_snip(event):
                     reply_to=message_id,
                     file=media
                 )
-                if event.chat_id not in borg.storage.last_triggered_filters:
-                    borg.storage.last_triggered_filters[event.chat_id] = []
-                borg.storage.last_triggered_filters[event.chat_id].append(name)
+                if event.chat_id not in last_triggered_filters:
+                    last_triggered_filters[event.chat_id] = []
+                last_triggered_filters[event.chat_id].append(name)
                 await asyncio.sleep(DELETE_TIMEOUT)
-                borg.storage.last_triggered_filters[event.chat_id].remove(name)
+                last_triggered_filters[event.chat_id].remove(name)
 
 
 @borg.on(admin_cmd("savefilter (.*)"))
