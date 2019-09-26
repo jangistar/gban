@@ -66,7 +66,6 @@ class Config(object):
         "fwd",
         "antiflood",
         "blacklist",
-        "filters",
         "locks",
         "pmpermit",
         "snip",
