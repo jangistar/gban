@@ -1,5 +1,5 @@
 # For @UniBorg
-# Courtesy @yasirsiddiqui
+# Courtesy @r4v4n4
 """
 .leave
 """
