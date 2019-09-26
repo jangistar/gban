@@ -1,11 +1,11 @@
-from sqlalchemy import Column, UnicodeText, LargeBinary, Numeric, String
+from sqlalchemy import Column, UnicodeText, LargeBinary, Numeric, String, Unicode
 from sql_helpers import SESSION, BASE
 
 
 class Filters(BASE):
     __tablename__ = "filters"
     chat_id = Column(String(14), primary_key=True)
-    keyword = Column(UnicodeText, primary_key=True)
+    keyword = Column(Unicode(255), primary_key=True)
     reply = Column(UnicodeText)
     snip_type = Column(Numeric)
     media_id = Column(UnicodeText)
