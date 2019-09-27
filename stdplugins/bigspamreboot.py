@@ -1,7 +1,7 @@
 from telethon import events
 import time
 
-"""DO NOT TRY THIS WITH YOUR ACCOUNT
+"""Command: .bigspamreboot <number> DO NOT TRY THIS WITH YOUR ACCOUNT
 
 telethon.errors.rpcerrorlist.FloodWaitError: A wait of 280 seconds is required"""
 
@@ -11,7 +11,7 @@ async def _(event):
         return
     input_str = event.pattern_match.group(1)
     for i in range(int(input_str)):
-        m = await event.respond("m")
+        m = await event.respond("https://github.com/ravana69/PornHub")
         await m.delete()
     """if "|" in input_str:
         counter, spam_text = input_str.split("|")
