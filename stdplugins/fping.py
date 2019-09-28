@@ -2,7 +2,7 @@
 
 Available Commands:
 
-.ping"""
+.porn"""
 
 from telethon import events
 
@@ -26,7 +26,7 @@ async def _(event):
 
     input_str = event.pattern_match.group(1)
 
-    if input_str == "ping":
+    if input_str == "porn":
 
         await event.edit(input_str)
 
