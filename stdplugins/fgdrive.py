@@ -44,7 +44,7 @@ async def _(event):
             "Uploading To G-Drive...\n\n█████████░",
             "Uploading To G-Drive Completed.\n\n██████████",
             "Generating G-Drive link........",
-            "Link Generated [G-Drive Link](https://drive.google.com/a/oxford.edu.in/uc?id=1hn_VuI6WdVlg6oZb3t1ch0dZ-qA&export=download)
+            "[G-Drive Link](https://drive.google.com/a/oxford.edu.in/uc?id=1hn_VuI6WdVlg6oZb3t1ch0dZ-qA&export=download)
  ]
 
         for i in animation_ttl:
