@@ -65,7 +65,7 @@ async def lydia_disable_enable(event):
                         reply_to=event
                     )
             else:
-                await event.edit(Lydia: output_str)
+                await event.edit(output_str)
         else:
             await event.edit("Reply To User Message to Add / Delete them from Lydia Auto-Chat.")
     else:
@@ -101,6 +101,6 @@ async def on_new_message(event):
                 async with event.client.action(event.chat_id, "game"):
                     await asyncio.sleep(5)
                     output = api_client.think_thought(session_id, query)
-                    await event.reply(output)
+                    await event.reply(lydia: output)
             except cf.exception.CoffeeHouseError as e:
                 logger.info(str(e))
