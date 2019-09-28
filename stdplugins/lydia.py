@@ -65,7 +65,7 @@ async def lydia_disable_enable(event):
                         reply_to=event
                     )
             else:
-                await event.edit(output_str)
+                await event.edit(Lydia: output_str)
         else:
             await event.edit("Reply To User Message to Add / Delete them from Lydia Auto-Chat.")
     else:
@@ -98,7 +98,7 @@ async def on_new_message(event):
                 logger.info(add_s(user_id, chat_id, session_id, session_expires))
             # Try to think a thought.
             try:
-                async with event.client.action(event.chat_id, "photo"):
+                async with event.client.action(event.chat_id, "game"):
                     await asyncio.sleep(5)
                     output = api_client.think_thought(session_id, query)
                     await event.reply(output)
