@@ -101,6 +101,6 @@ async def on_new_message(event):
                 async with event.client.action(event.chat_id, "game"):
                     await asyncio.sleep(5)
                     output = api_client.think_thought(session_id, query)
-                    await event.reply(lydia: output)
+                    await event.reply(output)
             except cf.exception.CoffeeHouseError as e:
                 logger.info(str(e))
