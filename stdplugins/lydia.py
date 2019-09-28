@@ -98,7 +98,7 @@ async def on_new_message(event):
                 logger.info(add_s(user_id, chat_id, session_id, session_expires))
             # Try to think a thought.
             try:
-                async with event.client.action(event.chat_id, "typing"):
+                async with event.client.action(event.chat_id, "photo"):
                     await asyncio.sleep(5)
                     output = api_client.think_thought(session_id, query)
                     await event.reply(output)
