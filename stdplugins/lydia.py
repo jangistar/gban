@@ -44,7 +44,7 @@ async def lydia_disable_enable(event):
             await event.edit(f"hmm")
         elif input_str == "d":
             logger.info(remove_s(user_id, chat_id))
-            await event.edit(f"[🥺 Bye , have to go...](tg://user?id={user_id})")
+            await event.edit(f"[__**signal lost**__](tg://user?id={user_id})")
         elif input_str == "l":
             lsts = get_all_s()
             if len(lsts) > 0:
