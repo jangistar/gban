@@ -1,11 +1,11 @@
 """Enable Seen Counter in any message,
 to know how many users have seen your message
-Syntax: .fwd as reply to any message"""
+Syntax: .oo as reply to any message"""
 from telethon import events
 from uniborg.util import admin_cmd
 
 
-@borg.on(admin_cmd("fwd"))
+@borg.on(admin_cmd("oo"))
 async def _(event):
     if event.fwd_from:
         return
