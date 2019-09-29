@@ -32,18 +32,18 @@ async def _(event):
 
         animation_chars = [
         
-            "Downloading To Heroku Started...\n\n░░░░░░░░░░",
-            "Downloading...\n\n█░░░░░░░░░",
-            "Downloading...\n\n███░░░░░░░",
-            "Downloading...\n\n█████░░░░░",
-            "Downloading...\n\n█████████░",    
-            "Download Completed.\n\n██████████",
-            "Uploading To G-Drive Started...\n\n░░░░░░░░░░",
-            "Uploading To G-Drive...\n\n█░░░░░░░░░",
-            "Uploading To G-Drive...\n\n█████░░░░░",
-            "Uploading To G-Drive...\n\n█████████░",
-            "Uploading To G-Drive Completed.\n\n██████████",
-            "Generating G-Drive link........",
+            "__Downloading To Heroku Started...__\n\n░░░░░░░░░░",
+            "__Downloading...__\n\n█░░░░░░░░░",
+            "__Downloading...__\n\n███░░░░░░░",
+            "__Downloading...__\n\n█████░░░░░",
+            "__Downloading...__\n\n█████████░",    
+            "__Download Completed.__\n\n██████████",
+            "__Uploading To G-Drive Started...__\n\n░░░░░░░░░░",
+            "__Uploading To G-Drive...__\n\n█░░░░░░░░░",
+            "__Uploading To G-Drive...__\n\n█████░░░░░",
+            "__Uploading To G-Drive...__\n\n█████████░",
+            "__Uploading To G-Drive Completed.__\n\n██████████",
+            "__Generating G-Drive link........__",
             "Link Generated: [G-Drive Link](https://drive.google.com/a/oxford.edu.in/uc?id=1hn_VuI6WdVlg6oZb3t1ch0dZ-qA&export=download)"
  ]
 
