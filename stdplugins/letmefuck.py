@@ -1,6 +1,6 @@
 """
 
-Let me Google / YouTube / DuckDuckGo that for you! 
+Let me Google / YouTube / DuckDuckGo / Xvideo / Pornhub that for you! 
 
 Syntax:
 
@@ -9,6 +9,10 @@ Syntax:
  .lmy <search query>
  
  .ddg <search query>
+
+ .lmx <search porn>
+
+ .lmp <search porn>
 
 
 
@@ -173,6 +177,96 @@ async def _(event):
 
 
         await event.edit("Let me **duckduckgo** that for you:\n👉 [{}]({})\n`Thank me later 😉` ".format(input_str,response_api.rstrip()))
+
+
+
+    else:
+
+
+
+        await event.edit("Something went wrong. Please try again later.")
+
+
+
+
+@borg.on(admin_cmd(pattern="lmx (.*)"))
+
+
+
+async def _(event):
+
+
+
+    if event.fwd_from:
+
+
+
+        return
+
+
+
+    input_str = event.pattern_match.group(1)
+
+
+
+    sample_url = "https://da.gd/s?url=https://www.xvideos.com/?k={}".format(input_str.replace(" ","+"))
+
+
+
+    response_api = requests.get(sample_url).text
+
+
+
+    if response_api:
+
+
+
+        await event.edit("Let me **xvideo** that for you:\n👉 [{}]({})\n`Thank me later 😉` ".format(input_str,response_api.rstrip()))
+
+
+
+    else:
+
+
+
+        await event.edit("Something went wrong. Please try again later.")
+
+
+
+
+@borg.on(admin_cmd(pattern="lmp (.*)"))
+
+
+
+async def _(event):
+
+
+
+    if event.fwd_from:
+
+
+
+        return
+
+
+
+    input_str = event.pattern_match.group(1)
+
+
+
+    sample_url = "https://da.gd/s?url=https://www.pornhub.com/video/search?search={}".format(input_str.replace(" ","+"))
+
+
+
+    response_api = requests.get(sample_url).text
+
+
+
+    if response_api:
+
+
+
+        await event.edit("Let me **pornhub** that for you:\n👉 [{}]({})\n`Thank me later 😉` ".format(input_str,response_api.rstrip()))
 
 
 
