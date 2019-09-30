@@ -1,6 +1,6 @@
 """
 
-Let me Google / YouTube / DuckDuckGo / Xvideo / Pornhub that for you! 
+Let me Google / YouTube / DuckDuckGo / altnews / Xvideo / Pornhub that for you! 
 
 Syntax:
 
@@ -9,6 +9,8 @@ Syntax:
  .lmy <search query>
  
  .ddg <search query>
+
+ .lmalt <search news>
 
  .lmx <search porn>
 
@@ -275,3 +277,47 @@ async def _(event):
 
 
         await event.edit("Something went wrong. Please try again later.")
+
+
+@borg.on(admin_cmd(pattern="lmalt (.*)"))
+
+
+
+async def _(event):
+
+
+
+    if event.fwd_from:
+
+
+
+        return
+
+
+
+    input_str = event.pattern_match.group(1)
+
+
+
+    sample_url = "https://da.gd/s?url=https://www.altnews.in/?s={}".format(input_str.replace(" ","+"))
+
+
+
+    response_api = requests.get(sample_url).text
+
+
+
+    if response_api:
+
+
+
+        await event.edit("Let me **altnews** that for you:\n👉 [{}]({})\n`Thank me later 😉` ".format(input_str,response_api.rstrip()))
+
+
+
+    else:
+
+
+
+        await event.edit("Something went wrong. Please try again later.")
+
