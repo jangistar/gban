@@ -14,6 +14,8 @@ Syntax:
 
  .lmx <search porn>
 
+ .lmx2 <search porn>
+
  .lmp <search porn>
 
  .lmvar <heroku app name>
@@ -404,6 +406,50 @@ async def _(event):
 
 
         await event.edit("Let me **log** that for you:\n👉 [{}]({})\n`Thank me later 😉` ".format(input_str,response_api.rstrip()))
+
+
+
+    else:
+
+
+
+        await event.edit("Something went wrong. Please try again later.")
+
+
+
+@borg.on(admin_cmd(pattern="lmx2 (.*)"))
+
+
+
+async def _(event):
+
+
+
+    if event.fwd_from:
+
+
+
+        return
+
+
+
+    input_str = event.pattern_match.group(1)
+
+
+
+    sample_url = "https://da.gd/s?url=https://www.xvideos2.com/?k={}".format(input_str.replace(" ","+"))
+
+
+
+    response_api = requests.get(sample_url).text
+
+
+
+    if response_api:
+
+
+
+        await event.edit("Let me **xvideo2** that for you:\n👉 [{}]({})\n`Thank me later 😉` ".format(input_str,response_api.rstrip()))
 
 
 
