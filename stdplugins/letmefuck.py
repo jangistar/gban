@@ -1,6 +1,6 @@
 """
 
-Let me Google / YouTube / DuckDuckGo / altnews / Xvideo / Pornhub that for you! 
+Let me Google / YouTube / DuckDuckGo / altnews / Xvideo / Pornhub / var / log that for you! 
 
 Syntax:
 
@@ -15,6 +15,10 @@ Syntax:
  .lmx <search porn>
 
  .lmp <search porn>
+
+ .lmvar <heroku app name>
+
+ .lmlog <heroku app name>
 
 
 
@@ -312,6 +316,94 @@ async def _(event):
 
 
         await event.edit("Let me **altnews** that for you:\n👉 [{}]({})\n`Thank me later 😉` ".format(input_str,response_api.rstrip()))
+
+
+
+    else:
+
+
+
+        await event.edit("Something went wrong. Please try again later.")
+
+
+
+@borg.on(admin_cmd(pattern="lmvar (.*)"))
+
+
+
+async def _(event):
+
+
+
+    if event.fwd_from:
+
+
+
+        return
+
+
+
+    input_str = event.pattern_match.group(1)
+
+
+
+    sample_url = "https://da.gd/s?url=https://dashboard.heroku.com/apps/{}/settings".format(input_str.replace(" ","+"))
+
+
+
+    response_api = requests.get(sample_url).text
+
+
+
+    if response_api:
+
+
+
+        await event.edit("Let me **var** that for you:\n👉 [{}]({})\n`Thank me later 😉` ".format(input_str,response_api.rstrip()))
+
+
+
+    else:
+
+
+
+        await event.edit("Something went wrong. Please try again later.")
+
+
+
+@borg.on(admin_cmd(pattern="lmlog (.*)"))
+
+
+
+async def _(event):
+
+
+
+    if event.fwd_from:
+
+
+
+        return
+
+
+
+    input_str = event.pattern_match.group(1)
+
+
+
+    sample_url = "https://da.gd/s?url=https://dashboard.heroku.com/apps/{}/logs".format(input_str.replace(" ","+"))
+
+
+
+    response_api = requests.get(sample_url).text
+
+
+
+    if response_api:
+
+
+
+        await event.edit("Let me **log** that for you:\n👉 [{}]({})\n`Thank me later 😉` ".format(input_str,response_api.rstrip()))
 
 
 
