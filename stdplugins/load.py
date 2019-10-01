@@ -237,7 +237,7 @@ async def _(event):
 
         return
 
-    animation_interval = 0.5
+    animation_interval = 1
 
     animation_ttl = range(0, 11)
 
@@ -269,7 +269,7 @@ async def _(event):
 
             "‎😢",
 
-            "__RePe GeNg Is BeHiNd You....__"
+            "__**RePe GeNg Is BeHiNd You....**__"
 
         ]
 
