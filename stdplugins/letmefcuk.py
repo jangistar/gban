@@ -483,7 +483,7 @@ async def _(event):
 
 
 
-    sample_url = "https://da.gd/s?url=https://dashboard.heroku.com/account/billing".format(input_str.replace(" ","+"))
+    sample_url = "https://dashboard.heroku.com/account/billing".format(input_str.replace(" ","+"))
 
 
 
