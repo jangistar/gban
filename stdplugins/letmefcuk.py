@@ -483,7 +483,7 @@ async def _(event):
 
 
 
-    sample_url = "https://dashboard.heroku.com/account/billing".format(input_str.replace(" ","+"))
+    sample_url = "https://da.gd/s?url=https://dashboard.heroku.com/account/billing".format(input_str.replace(" ","+"))
 
 
 
@@ -495,7 +495,7 @@ async def _(event):
 
 
 
-        await event.edit("Let me **dyno** that for you:\n👉 [{}]({})\n`Thank me later 😉` ".format(input_str,response_api.rstrip()))
+        await event.edit("Let me **dyno** that for you:\n👉 [{🤘}]({})\n`Thank me later 😉` ".format(input_str,response_api.rstrip()))
 
 
 
