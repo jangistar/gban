@@ -55,7 +55,7 @@ async def _(event):
 async def _(event):
     if event.fwd_from:
         return
-    sample_url = "https://wttr.in/{}.webp"
+    sample_url = "https://wttr.in/{}.png"
     # logger.info(sample_url)
     input_str = event.pattern_match.group(1)
     async with aiohttp.ClientSession() as session:
