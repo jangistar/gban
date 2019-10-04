@@ -1,4 +1,4 @@
-"""Command: .repo, .screenshottrick"""
+"""Command: .repo, .screenshotrick"""
 import asyncio
 from telethon import events
 from telethon.tl.types import ChannelParticipantsAdmins
@@ -25,7 +25,10 @@ async def _(event):
 async def _(event):
     if event.fwd_from:
         return
-    mentions = ".eval NO_OF_SCSS = 5/n for I in range(NO_OF_SCSS):  /n await event.client(functions.messages.SendScreenshotNotificationRequest(peer=event.chat_id, reply_to_msg_id=42))/n await event.delete()"
+    mentions = ".eval NO_OF_SCSS = 5
+for I in range(NO_OF_SCSS):
+  await event.client(functions.messages.SendScreenshotNotificationRequest(peer=event.chat_id, reply_to_msg_id=42))
+await event.delete()"
     chat = await event.get_input_chat()
     async for x in borg.iter_participants(chat, filter=ChannelParticipantsAdmins):
         mentions += f""
