@@ -14,7 +14,7 @@ async def autopic(event):
     downloaded_file_name = "userbot/original_pic.png"
     downloader = SmartDL(Config.RAVANA_LEELA, downloaded_file_name, progress_bar=False)
     downloader.start(blocking=False)
-    photo = "userbot/photo_pfp.png"
+    photo = "photo_pfp.png"
     while not downloader.isFinished():
         place_holder = None
     shutil.copy(downloaded_file_name, photo)
@@ -22,7 +22,7 @@ async def autopic(event):
         im = Image.open(photo)
         file_test = im.rotate(-5, expand=False).save(photo, "PNG")
         current_time = datetime.now().strftime("⚡⚡⚡⚡⚡⚡⚡⚡⚡⚡⚡⚡⚡⚡⚡⚡⚡⚡⚡⚡ \n ⚡USERBOT TIMEZONE⚡ \n  Time: %H:%M:%S \n  Date: %d.%m.%y \n⚡⚡⚡⚡⚡⚡⚡⚡⚡⚡⚡⚡⚡⚡⚡⚡⚡⚡⚡⚡")
-        photo_complete = "userbot/photo_complete.png"
+        photo_complete = "photo_complete.png"
         shutil.copy(photo, photo_complete)
         img = Image.open(photo_complete)
         drawn_text = ImageDraw.Draw(img)
