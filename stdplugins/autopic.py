@@ -29,7 +29,7 @@ async def autopic(event):
     photo = "photo_pfp.png"
     while not downloader.isFinished():
         place_holder = None
-    counter = -15
+    counter = +30
     while True:
         shutil.copy(downloaded_file_name, photo)
         im = Image.open(photo)
@@ -46,7 +46,7 @@ async def autopic(event):
                 file
             ))
             os.remove(photo)
-            counter -= 15
+            counter += 30
             await asyncio.sleep(65)
         except:
             return
