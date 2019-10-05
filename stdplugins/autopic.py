@@ -12,7 +12,7 @@ FONT_FILE_TO_USE = "/usr/share/fonts/truetype/dejavu/DejaVuSansMono.ttf"
 @borg.on(admin_cmd("auto ?(.*)"))
 async def autopic(event):
     downloaded_file_name = "userbot/original_pic.png"
-    downloader = SmartDL(https://da.gd/X2IG , downloaded_file_name, progress_bar=False)
+    downloader = SmartDL(https://da.gd/X2IG, downloaded_file_name, progress_bar=False)
     downloader.start(blocking=False)
     photo = "userbot/photo_pfp.png"
     while not downloader.isFinished():
