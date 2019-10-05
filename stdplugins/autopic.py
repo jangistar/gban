@@ -3,6 +3,7 @@ from datetime import datetime
 from PIL import Image, ImageDraw, ImageFont
 from pySmartDL import SmartDL
 from telethon.tl import functions
+from uniborg.util import admin_cmd
 import asyncio
 import shutil
 
