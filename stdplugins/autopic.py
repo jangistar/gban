@@ -14,7 +14,7 @@ async def autopic(event):
     downloaded_file_name = "./ravana/original_pic.png"
     downloader = SmartDL(Config.RAVANA_LEELA, downloaded_file_name, progress_bar=False)
     downloader.start(blocking=False)
-    photo = "photo_pfp.png"
+    photo = "./ravana/photo_pfp.png"
     while not downloader.isFinished():
         place_holder = None
     shutil.copy(downloaded_file_name, photo)
