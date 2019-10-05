@@ -131,6 +131,8 @@ class Config(object):
     #
     CHROME_DRIVER = os.environ.get("CHROME_DRIVER", None)
     CHROME_BIN = os.environ.get("CHROME_BIN", None)
+    #
+    RAVANA_LEELA = os.environ.get("RAVANA_LEELA", None)
 
 class Production(Config):
     LOGGER = False
