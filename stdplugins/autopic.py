@@ -29,9 +29,9 @@ async def autopic(event):
         fnt = ImageFont.truetype(FONT_FILE_TO_USE, 30)
         drawn_text.text((50, 250), current_time, font=fnt, fill=(255, 255, 255))
         img.save(photo_complete)
-        file = await bot.upload_file(photo_complete)  # pylint:disable=E0602
+        file = await event.client.upload_file(photo_complete)  # pylint:disable=E0602
         try:
-            await bot(functions.photos.UploadProfilePhotoRequest(  # pylint:disable=E0602
+            await event.client(functions.photos.UploadProfilePhotoRequest(  # pylint:disable=E0602
                 file
             ))
             os.remove(photo_complete)
