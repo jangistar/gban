@@ -11,7 +11,7 @@ FONT_FILE_TO_USE = "/usr/share/fonts/truetype/dejavu/DejaVuSansMono.ttf"
 
 @borg.on(admin_cmd("auto ?(.*)"))
 async def autopic(event):
-    downloaded_file_name = "userbot/original_pic.png"
+    downloaded_file_name = "original_pic.png"
     downloader = SmartDL(Config.RAVANA_LEELA, downloaded_file_name, progress_bar=False)
     downloader.start(blocking=False)
     photo = "photo_pfp.png"
