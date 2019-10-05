@@ -31,7 +31,7 @@ async def autopic(event):
         place_holder = None
     counter = -5
     while True:
-    shutil.copy(downloaded_file_name, photo)
+        shutil.copy(downloaded_file_name, photo)
         im = Image.open(photo)
         file_test = im.rotate(counter, expand=False).save(photo, "PNG")
         current_time = datetime.now().strftime("⚡⚡⚡⚡⚡⚡⚡⚡⚡⚡⚡⚡⚡⚡⚡⚡⚡⚡⚡⚡ \n ⚡USERBOT TIMEZONE⚡ \n  Time: %H:%M:%S \n  Date: %d.%m.%y \n⚡⚡⚡⚡⚡⚡⚡⚡⚡⚡⚡⚡⚡⚡⚡⚡⚡⚡⚡⚡")
@@ -46,7 +46,7 @@ async def autopic(event):
                 file
             ))
             os.remove(photo)
-            counter = -5
+            counter -= 5
             await asyncio.sleep(65)
         except:
             return
