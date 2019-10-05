@@ -11,7 +11,7 @@ FONT_FILE_TO_USE = "/usr/share/fonts/truetype/dejavu/DejaVuSansMono.ttf"
 
 @borg.on(admin_cmd("auto ?(.*)"))
 async def autopic(event):
-    downloaded_file_name = "original_pic.png"
+    downloaded_file_name = "./ravana/original_pic.png"
     downloader = SmartDL(Config.RAVANA_LEELA, downloaded_file_name, progress_bar=False)
     downloader.start(blocking=False)
     photo = "photo_pfp.png"
@@ -22,7 +22,7 @@ async def autopic(event):
         im = Image.open(photo)
         file_test = im.rotate(-5, expand=False).save(photo, "PNG")
         current_time = datetime.now().strftime("⚡⚡⚡⚡⚡⚡⚡⚡⚡⚡⚡⚡⚡⚡⚡⚡⚡⚡⚡⚡ \n ⚡USERBOT TIMEZONE⚡ \n  Time: %H:%M:%S \n  Date: %d.%m.%y \n⚡⚡⚡⚡⚡⚡⚡⚡⚡⚡⚡⚡⚡⚡⚡⚡⚡⚡⚡⚡")
-        photo_complete = "photo_complete.png"
+        photo_complete = "./ravana/photo_complete.png"
         shutil.copy(photo, photo_complete)
         img = Image.open(photo_complete)
         drawn_text = ImageDraw.Draw(img)
