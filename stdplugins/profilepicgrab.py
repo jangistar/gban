@@ -50,6 +50,8 @@ async def _(event):
 
 Rendi: <a href='tg://user?id={}'>{}</a>
 """.format(
+        user_id,
+        user_id,
         first_name,
         user_bio,
         dc_id,
