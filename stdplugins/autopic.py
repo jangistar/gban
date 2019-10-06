@@ -19,7 +19,7 @@ from uniborg.util import admin_cmd
 import asyncio
 import shutil
 
-FONT_FILE_TO_USE = "/usr/share/fonts/truetype/dejavu/DejaVuSansMono.ttf"
+FONT_FILE_TO_USE = "/usr/share/fonts/truetype/dejavu/DejaVuSans.ttf"
 
 @borg.on(admin_cmd("autopp ?(.*)"))
 async def autopic(event):
