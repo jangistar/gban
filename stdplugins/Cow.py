@@ -12,7 +12,7 @@ async def univsaye(cowmsg):
         arg = cowmsg.pattern_match.group(1).lower()
         text = cowmsg.pattern_match.group(2)
 
-        if arg == "cow":
+        if arg == "kow":
             arg = "default"
         if arg not in cow.COWACTERS:
             return
