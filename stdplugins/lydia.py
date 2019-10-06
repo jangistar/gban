@@ -55,7 +55,7 @@ async def lydia_disable_enable(event):
                 output_str = "no Lydia AI enabled users / chats. Start by replying `.enacf` to any user in any chat!"
             if len(output_str) > Config.MAX_MESSAGE_SIZE_LIMIT:
                 with io.BytesIO(str.encode(output_str)) as out_file:
-                    out_file.name = "lydia_ai.text"
+                    out_file.name = "@r4v4n4_lydia_ai.text"
                     await borg.send_file(
                         event.chat_id,
                         out_file,
@@ -100,7 +100,7 @@ async def on_new_message(event):
             try:
                 async with event.client.action(event.chat_id, "round"):
                     await asyncio.sleep(0.1)
-                    output = api_client.think_thought(session_id, query)
+                    output = api_client.think_thought(session_id, Lydia: query)
                     await event.reply(output)
             except cf.exception.CoffeeHouseError as e:
                 logger.info(str(e))
