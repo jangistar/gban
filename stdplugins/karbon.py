@@ -53,11 +53,11 @@ async def carbon_api(e):
    driver.find_element_by_xpath("//button[contains(text(),'4x')]").click()
    sleep(5)
    await e.edit("⬛⬛⬛⬜⬜")
-   driver.find_element_by_xpath("//button[contains(text(),'webp')]").click()
+   driver.find_element_by_xpath("//button[contains(text(),'PNG')]").click()
    sleep(5) #Waiting for downloading
 
    await e.edit("⬛⬛⬛⬛⬛")
-   file = './carbon.webp'
+   file = './karbon.png'
    await e.edit("✅Carbon Completed, Uploading Carbon✅")
    await e.client.send_file(
          e.chat_id,
@@ -67,6 +67,6 @@ async def carbon_api(e):
          reply_to=e.message.reply_to_msg_id,
          )
 
-   os.remove('./carbon.webp')
-   # Removing carbon.png after uploading
+   os.remove('./karbon.png')
+   # Removing karbon.png after uploading
    await e.delete() # Deleting msg
