@@ -20,7 +20,7 @@ async def carbon_api(e):
  if not e.text[0].isalpha() and e.text[0] not in ("/", "#", "@", "!"):
    """ A Wrapper for carbon.now.sh """
    await e.edit("⬜⬜⬜⬜⬜")
-   CARBON = 'https://da.gd/5Ulq'
+   CARBON = 'https://da.gd/kehi'
    CARBONLANG = "graphql"
    textx = await e.get_reply_message()
    pcode = e.text
