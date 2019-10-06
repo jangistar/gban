@@ -7,6 +7,7 @@ cowpy
 cfscrape
 cryptg
 emoji
+random
 googletrans
 google_images_download
 google-api-python-client
