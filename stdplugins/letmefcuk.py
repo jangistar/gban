@@ -83,15 +83,8 @@ async def _(event):
 
 
 
-    sample_url = "https://da.gd/s?url=http://google.com/search?q={}".format(input_str.replace(" ","+"))
+    sample_url = "http://google.com/search?q={}".format(input_str.replace(" ","+"))
 
-
-
-    response_api = requests.get(sample_url).text
-
-
-
-    if response_api:
 
 
 
