@@ -3,6 +3,7 @@ aiohttp
 aria2p
 beautifulsoup4
 coffeehouse
+cowpy
 cfscrape
 cryptg
 emoji
