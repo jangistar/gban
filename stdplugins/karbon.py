@@ -21,7 +21,7 @@ async def carbon_api(e):
    """ A Wrapper for carbon.now.sh """
    await e.edit("⬜⬜⬜⬜⬜")
    CARBON = 'https://da.gd/kehi'
-   CARBONLANG = "graphql"
+   CARBONLANG = "en"
    textx = await e.get_reply_message()
    pcode = e.text
    if pcode[8:]:
