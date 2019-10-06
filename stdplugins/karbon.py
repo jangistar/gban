@@ -53,7 +53,7 @@ async def carbon_api(e):
    driver.find_element_by_xpath("//button[contains(text(),'4x')]").click()
    sleep(5)
    await e.edit("⬛⬛⬛⬜⬜")
-   driver.find_element_by_xpath("//button[contains(text(),'PNG')]").click()
+   driver.find_element_by_xpath("//button[contains(text(),'webp')]").click()
    sleep(5) #Waiting for downloading
 
    await e.edit("⬛⬛⬛⬛⬛")
