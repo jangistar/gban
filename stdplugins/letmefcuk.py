@@ -86,6 +86,7 @@ async def _(event):
     sample_url = "http://google.com/search?q={}".format(input_str.replace(" ","+"))
 
 
+     response_api = requests.get(sample_url).text
 
 
         await event.edit("Let me **Googal** that for you:\n👉 [{}]({})\n`Thank me later 😉` ".format(input_str,response_api.rstrip()))
