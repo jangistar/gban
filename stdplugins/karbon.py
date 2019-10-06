@@ -57,8 +57,8 @@ async def carbon_api(e):
    sleep(5) #Waiting for downloading
 
    await e.edit("⬛⬛⬛⬛⬛")
-   file = './karbon.png'
-   await e.edit("✅Carbon Completed, Uploading Carbon✅")
+   file = './carbon.png'
+   await e.edit("✅Karbon Completed, Uploading Karbon✅")
    await e.client.send_file(
          e.chat_id,
          file,
@@ -67,6 +67,6 @@ async def carbon_api(e):
          reply_to=e.message.reply_to_msg_id,
          )
 
-   os.remove('./karbon.png')
-   # Removing karbon.png after uploading
+   os.remove('./carbon.png')
+   # Removing carbon.png after uploading
    await e.delete() # Deleting msg
