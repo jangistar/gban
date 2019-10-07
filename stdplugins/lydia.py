@@ -101,6 +101,6 @@ async def on_new_message(event):
                 async with event.client.action(event.chat_id, "round"):
                     await asyncio.sleep(0.1)
                     output = api_client.think_thought(session_id, query)
-                    await event.reply ("🤖: " +output)
+                    await event.reply ("**🤖: " +output**)
             except cf.exception.CoffeeHouseError as e:
                 logger.info(str(e))
