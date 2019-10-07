@@ -9,6 +9,10 @@ Command: `.autopp`
 
 
 #curse: who ever edits this credit section will goto hell
+
+⚠️DISCLAIMER⚠️
+
+USING THIS PLUGIN CAN RESULT IN ACCOUNT BAN. WE DONT CARE ABOUT BAN, SO WE ARR USING THIS.
 """
 import os
 from datetime import datetime
@@ -38,7 +42,7 @@ async def autopic(event):
         img = Image.open(photo)
         drawn_text = ImageDraw.Draw(img)
         fnt = ImageFont.truetype(FONT_FILE_TO_USE, 35)
-        drawn_text.text((200, 300), current_time, font=fnt, fill=(255, 255, 255))
+        drawn_text.text((200, 250), current_time, font=fnt, fill=(255, 0, 0))
         img.save(photo)
         file = await event.client.upload_file(photo)  # pylint:disable=E0602
         try:
