@@ -87,7 +87,7 @@ async def download(dryb):
                     if current_message != display_message:
                         await dryb.edit(current_message)
                         display_message = current_message
-                        await asyncio.sleep(3)
+                        await asyncio.sleep(5)
                 except Exception as e:
                     logger.info(str(e))
             end = datetime.now()
@@ -212,7 +212,7 @@ async def upload_file(http, file_path, file_name, mime_type, event):
     response = None
     while response is None:
         status, response = file.next_chunk()
-        await asyncio.sleep(3)
+        await asyncio.sleep(5)
         if status:
             percentage = int(status.progress() * 100)
             progress_str = "[{0}{1}]\nProgress: {2}%\n".format(
