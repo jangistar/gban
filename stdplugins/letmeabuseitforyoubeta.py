@@ -138,7 +138,7 @@ async def _(event):
 "Nayinte Monne Son of a Bitch",
 "Ninte Ammede Kothil. In your mothers ass hole.",
 "Ninte ama koondi ishtima Your mom likes ass",
-"Ninte ammakku vettu nayinte mone fuck your mother you son of a bitch  (49%)      (51%)
+"Ninte ammakku vettu nayinte mone fuck your mother you son of a bitch  (49%)      (51%)",
 "Ninte ammaku vetu Fuck your mom",
 "Ninte ammede thenga mairu your moms coconut pubes",
 "Odu myre run pubic motherfucker",
