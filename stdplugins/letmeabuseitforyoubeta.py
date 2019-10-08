@@ -84,6 +84,7 @@ async def _(event):
 "Kutte ke tatte- Dog’s balls",
 "Kutte ke poot, teri maa ki choot-  Son of a dog, your mother’s pussy",
 "Lavde ke bal- Hair on your penis",
+"muh mei lele: Suck my dick"
 "Lund Chus: Suck dick",
 "Lund Ke Pasine- Sweat of dick",
 "Meri Gand Ka Khatmal: Bug of my Ass",
