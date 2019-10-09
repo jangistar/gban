@@ -1,5 +1,6 @@
-from telethon import events
-
+import sys
+from telethon import events, functions, __version__
+from uniborg.util import admin_cmd
 import asyncio
 
 
