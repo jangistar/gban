@@ -1,4 +1,4 @@
-"""command: .ghin , .gmal"""
+"""command: .abusehin , .abusemal"""
 
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
@@ -7,7 +7,7 @@ from telethon import events
 import random
 import asyncio
 
-@borg.on(events.NewMessage(pattern=r"\.g(.*)", outgoing=True))
+@borg.on(events.NewMessage(pattern=r"\.abuse(.*)", outgoing=True))
 async def _(event):
     if event.fwd_from:
         return
