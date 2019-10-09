@@ -2,7 +2,8 @@ from telethon import events
 
 import asyncio
 
-@borg.on(outgoing=True, pattern="^.shoot$")
+
+@borg.on(admin_cmd(pattern="shoot$ ?(.*)", allow_sudo=True))  # pylint:disable=E0602
 async def killing (killed):
     """ Dont Kill Too much -_-"""
     if not killed.text[0].isalpha() and killed.text[0] not in ("/", "#", "@", "!"):
