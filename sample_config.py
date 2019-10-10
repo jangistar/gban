@@ -72,7 +72,7 @@ class Config(object):
         "gban",
         "welcome",
         "notification",
-        "mentions"
+        "markdown"
 
     ]
     # Get your own API key from https://www.remove.bg/ or
