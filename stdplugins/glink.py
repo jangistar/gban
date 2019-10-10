@@ -87,7 +87,7 @@ async def download(dryb):
                     if current_message != display_message:
                         await dryb.edit(current_message)
                         display_message = current_message
-                        await asyncio.sleep(5)
+                        await asyncio.sleep(20)
                 except Exception as e:
                     logger.info(str(e))
             end = datetime.now()
