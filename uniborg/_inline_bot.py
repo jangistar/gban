@@ -92,7 +92,7 @@ if Config.TG_BOT_USER_NAME_BF_HER is not None and tgbot is not None:
 
 **Pithun 3.7.4 (default, Sep 12 2019, 01:19:52)** 
 **[GCC 7.4.0]**
-**Talethrun 1.10.4**
+**Talethrun 1.10.6**
 
 **Custom Built Fork:** https://github.com/ravana69/Pornhub""",
                 buttons=[
