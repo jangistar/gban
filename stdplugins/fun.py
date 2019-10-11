@@ -1,4 +1,4 @@
-"""COMMAND : .runs , .metoo , .rape , .insult , .pro , .abu , .gey"""
+"""COMMAND : .runs , .metoo , .rape , .insult , .pro , .maaki , .gey"""
 
 from telethon import events
 import random, re
@@ -143,7 +143,7 @@ async def _(event):
     await event.edit(reply_text)
 			  
 			  
-@borg.on(admin_cmd("abu ?(.*)"))
+@borg.on(admin_cmd("maaki ?(.*)"))
 async def _(event):
     if event.fwd_from:
          return
