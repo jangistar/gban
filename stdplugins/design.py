@@ -1,4 +1,4 @@
-"""COMMAND : .join , .pay , .fuck , .work , .push , .aag"""
+"""COMMAND : .join , .pay , .fuck , .work , .push , .aag , .climb"""
 import asyncio
 from telethon import events
 from telethon.tl.types import ChannelParticipantsAdmins
