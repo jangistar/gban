@@ -3,7 +3,7 @@
 # Licensed under the Raphielscape Public License, Version 1.b (the "License");
 # you may not use this file except in compliance with the License.
 #
-"""COMMAND : .direct"""
+"""COMMAND : .dir"""
 
 from os import popen
 import re
@@ -17,7 +17,7 @@ from telethon import events
 
 
 
-@borg.on(events.NewMessage(pattern=r"\.direct ?(.*)", outgoing=True))
+@borg.on(events.NewMessage(pattern=r"\.dir ?(.*)", outgoing=True))
 async def direct_link_generator(request):
     """ direct links generator """
     if not request.text[0].isalpha(
