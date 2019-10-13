@@ -21,7 +21,7 @@ async def _(event):
         user_id=replied_user.user.id,
         offset=42,
         max_id=0,
-        limit=80
+        limit=0
     ))
     replied_user_profile_photos_count = "NaN"
     try:
@@ -42,7 +42,7 @@ async def _(event):
         user_bio = html.escape(replied_user.about)
     common_chats = replied_user.common_chats_count
     try:
-        dc_id, location = get_input_location(replied_user)
+        dc_id, location = get_input_location(replied_user.profile_photo)
     except Exception as e:
         dc_id = "Need a Profile Picture to check **this**"
         location = str(e)
