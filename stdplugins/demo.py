@@ -43,7 +43,7 @@ async def _(event):
     common_chats = replied_user.common_chats_count
     try:
         dc_id, location = get_input_location(replied_user)
-Exception as e:
+    except Exception as e:
         dc_id = "Need a Profile Picture to check **this**"
         location = str(e)
     caption = """Demo:
