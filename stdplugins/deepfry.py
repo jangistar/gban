@@ -27,7 +27,9 @@
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 # SOFTWARE.
-""" Userbot module for frying stuff. """
+""" Command : .deepfry <1to5> 
+
+credit: Raphielscape"""
 
 import io
 from random import randint, uniform
@@ -39,7 +41,7 @@ from uniborg.util import admin_cmd
 from telethon import events
 
 
-@borg.on(admin_cmd(pattern=".deepfry(?: |$)(.*)", outgoing=True,)) 
+@borg.on(admin_cmd(pattern="deepfry(?: |$)(.*)", outgoing=True,)) 
 async def deepfryer(event):
     try:
         frycount = int(event.pattern_match.group(1))
