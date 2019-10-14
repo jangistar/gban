@@ -120,7 +120,7 @@ async def _(event):
     await event.edit(f"🔳⬛⬛⬛🔳\n⬛⬛⬛⬛⬛\n⬛⬛[▶️](t.me/addstickers/{packshortname})⬛⬛\n⬛⬛⬛⬛⬛\n🔳⬛⬛⬛🔳")
 
 @borg.on(admin_cmd("packinfo"))
-async def _(event)::
+async def _(event):
     if event.fwd_from:
         return
     if not event.is_reply:
