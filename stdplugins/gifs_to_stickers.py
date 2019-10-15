@@ -47,7 +47,7 @@ async def convert_sticker_to_gif(sticker):
     return media
 
 
-@borg.on(util.admin_cmd(r'^\.ss'))
+@borg.on(events.NewMessage(pattern=r"\.ss", outgoing=True))
 async def on_save(event):
     await event.delete()
     target = await event.get_reply_message()
