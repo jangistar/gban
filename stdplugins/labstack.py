@@ -2,7 +2,7 @@
 .labstack <path_to_image>
 .labstack as reply to media
  Ported by © [Eyepatch](http://t.me/NeoMatrix90)
- helping hands @r4v3n4 @amnd33p"""
+ helping hands @r4v4n4 @amnd33p"""
 from datetime import datetime
 import os
 import requests
