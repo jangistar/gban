@@ -65,7 +65,13 @@ async def _(event):
             sticker.seek(0)
             uploaded_sticker = await borg.upload_file(sticker, file_name=file_ext_ns_ion)
 
-    await event.edit("🔳⬛⬛⬛🔳\n⬛⬛⬛⬛⬛\n⬛⬛⏸️⬛⬛\n⬛⬛⬛⬛⬛\n🔳⬛⬛⬛🔳")
+    await event.edit("⬛⬛⬛⬛⬛⬛⬛
+⬛⬛⏸️⬛⏸️⬛⬛
+⬛⬛⏸️⬛⏸️⬛⬛
+⬛⬛⏸️⬛⏸️⬛⬛
+⬛⬛⏸️⬛⏸️⬛⬛
+⬛⬛⏸️⬛⏸️⬛⬛
+⬛⬛⬛⬛⬛⬛⬛")
 
     async with borg.conversation("@Stickers") as bot_conv:
         now = datetime.datetime.now()
@@ -117,7 +123,7 @@ async def _(event):
             await silently_send_message(bot_conv, sticker_emoji)
             await silently_send_message(bot_conv, "/done")
 
-    await event.edit(f"🔳⬛⬛⬛🔳\n⬛⬛⬛⬛⬛\n⬛⬛[▶️](t.me/addstickers/{packshortname})⬛⬛\n⬛⬛⬛⬛⬛\n🔳⬛⬛⬛🔳")
+    await event.edit(f"[⬛⬛⬛⬛⬛⬛⬛\n⬛⬛▶️⬛⬛⬛⬛\n⬛⬛▶️▶️⬛⬛⬛\n⬛⬛▶️▶️▶️⬛⬛\n⬛⬛▶️▶️⬛⬛⬛\n⬛⬛▶️⬛⬛⬛⬛\n⬛⬛⬛⬛⬛⬛⬛](t.me/addstickers/{packshortname})")
 
 @borg.on(admin_cmd("packinfo"))
 async def _(event):
