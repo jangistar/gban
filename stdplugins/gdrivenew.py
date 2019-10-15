@@ -2,6 +2,7 @@
 Syntax:
 .gdrive
 .sdrive
+.gdir
 .gfolder
 .drive delete | get
 .gclear """
