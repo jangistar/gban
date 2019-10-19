@@ -88,7 +88,7 @@ if Config.TG_BOT_USER_NAME_BF_HER is not None and tgbot is not None:
                 "© @UniBorg",
                 text="""@r4v4n4 **( Custom Built By** @r4v4n4 **)** 
 **Verified Account:** ✅
-**Official Website:** https://ravanaisdrunk.site.live
+**Official Website:** [⠀](https://telegra.ph/file/b0604ea53360cd3858ec5.mp4)
 
 **Pithun 3.7.4 (default, Sep 12 2019, 01:19:52)** 
 **[GCC 7.4.0]**
@@ -104,7 +104,7 @@ if Config.TG_BOT_USER_NAME_BF_HER is not None and tgbot is not None:
                         "✳️Fork Boost✳️", "tg://some_unsupported_feature"), custom.Button.url(
                         "♻️Refresh Heroku♻️", "tg://chutiya")]
                 ],
-                link_preview=False
+                link_preview=True
             )
         await event.answer([result] if result else None)
 
