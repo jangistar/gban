@@ -1,6 +1,6 @@
 """
 Carbon Scraper Plugin for Userbot. //text in creative way.
-usage: .karbon3 //as a reply to any text message
+usage: .karbon4 //as a reply to any text message
 
 Thanks to @r4v4n4 for vars
 
@@ -15,12 +15,12 @@ from time import sleep
 import asyncio
 import os
 
-@borg.on(events.NewMessage(pattern=r"\.karbon3", outgoing=True))
+@borg.on(events.NewMessage(pattern=r"\.karbon4", outgoing=True))
 async def carbon_api(e):
  if not e.text[0].isalpha() and e.text[0] not in ("/", "#", "@", "!"):
    """ A Wrapper for carbon.now.sh """
    await e.edit("⬜⬜⬜⬜⬜")
-   CARBON = 'https://carbon.now.sh/?bg=rgba(239%2C40%2C44%2C1)&t=one-light&wt=none&l=application%2Ftypescript&ds=true&dsyoff=20px&dsblur=68px&wc=true&wa=true&pv=56px&ph=56px&ln=false&fl=1&fm=Hack&fs=14px&lh=143%25&si=false&es=2x&wm=false&code={}'
+   CARBON = 'https://carbon.now.sh/?bg=rgba(74%2C144%2C226%2C1)&t=material&wt=none&l=auto&ds=false&dsyoff=20px&dsblur=68px&wc=true&wa=true&pv=56px&ph=56px&ln=false&fl=1&fm=Fira%20Code&fs=14px&lh=152%25&si=false&es=2x&wm=false&code={code}'
    CARBONLANG = "en"
    textx = await e.get_reply_message()
    pcode = e.text
