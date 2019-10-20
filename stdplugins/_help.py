@@ -18,7 +18,7 @@ async def _(event):
 Pithun {}
 Talethrun {}
  
-**Custom Built Fork**: https://github.com/ravana69/PornHub[⠀](https://telegra.ph/file/b0604ea53360cd3858ec5.mp4)""".format(
+**Custom Built Fork**: https://github.com/ravana69/PornHub \n[⠀](https://telegra.ph/file/b0604ea53360cd3858ec5.mp4)""".format(
         sys.version,
         __version__
     )
