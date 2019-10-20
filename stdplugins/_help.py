@@ -31,7 +31,7 @@ Talethrun {}
         await results[0].click(
             event.chat_id,
             reply_to=event.reply_to_msg_id,
-            hide_via=False
+            hide_via=True
         )
         await event.delete()
     else:
