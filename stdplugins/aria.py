@@ -100,7 +100,7 @@ async def show_all(event):
 	downloads = aria2.get_downloads() 
 	msg = ""
 	for download in downloads:
-		msg = msg+"File: `"+str(download.name) +"`\nSpeed: "+ str(download.download_speed_string())+"\nProgress: "+str(download.progress_string())+"\nTotal Size: "+str(download.total_length_string())+"\nStatus: "+str(download.status)+"\nETA:  "+str(download.eta_string())+"\n\n"
+		msg = msg+"File: `"+str(download.name) +"`\nSpeed: "+{file.download_speed_string()} 🔽 / {file.upload_speed_string()} 🔼+"\nProgress: "+str(download.progress_string())+"\nTotal Size: "+str(download.total_length_string())+"\nStatus: "+str(download.status)+"\nETA:  "+str(download.eta_string())+"\n\n"
 	if len(msg) <= 4096:
 		await event.edit("`Current Downloads: `\n"+msg)
 	else:
