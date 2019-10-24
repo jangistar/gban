@@ -100,8 +100,7 @@ async def show_all(event):
 	downloads = aria2.get_downloads() 
 	msg = ""
 	for download in downloads:
-		msg = msg + "File: `" + str(download.name) + "`\nSpeed: " + str(download.download_speed_string()) + "\nProgress: " + str(download.progress_string(
-        )) + "\nTotal Size: " + str(download.total_length_string()) + "\nStatus: " + str(download.status) + "\nETA:  " + str(download.eta_string()) + "\n\n"
+		msg = msg+"File: `"+str(download.name) +"`\nSpeed: "+ str(download.download_speed_string())+"\nProgress: "+str(download.progress_string())+"\nTotal Size: "+str(download.total_length_string())+"\nStatus: "+str(download.status)+"\nETA:  "+str(download.eta_string())+"\n\n"
 	if len(msg) <= 4096:
 		await event.edit("`Current Downloads: `\n"+msg)
 	else:
@@ -130,7 +129,7 @@ async def progress_status(gid,event,previous):
 		file = aria2.get_download(gid)
 		if not file.is_complete:
 			if not file.error_message:
-				msg = "Downloading File: `"+str(file.name) +"`\nSpeed" +str{file.download_speed_string()} 🔽 / {file.upload_speed_string()} 🔼"\nProgress: "+str{file.progress_string()}+"\nTotal Size: "+str(file.total_length_string())+"\nStatus: "+str(file.status)+"\nETA:  "+str(file.eta_string())+"\n\n"
+				msg = "Downloading File: `"+str(file.name) +"`\nSpeed: "+ str(file.download_speed_string())+"\nProgress: "+str(file.progress_string())+"\nTotal Size: "+str(file.total_length_string())+"\nStatus: "+str(file.status)+"\nETA:  "+str(file.eta_string())+"\n\n"
 				if previous != msg:
 					await event.edit(msg)
 					previous = msg
