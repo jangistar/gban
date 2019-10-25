@@ -41,7 +41,7 @@ async def magnet_download(event):
 		file = aria2.get_download(gid)
 		complete = file.is_complete
 		try:
-			msg = "⬛⬛⬛⬛⬛⬛⬛⬛⬛\n**Downloading File:** "+str(file.name) +"\n**Speed:** "+ str(file.download_speed_string())+"\nDemo: "+ str{humanbytes(downloaded)}+"\n**Progress:** "+str(file.progress_string())+"\n**Total Size:** "+str(file.total_length_string())+"\n**ETA:**  "+str(file.eta_string())+"\n⬛⬛⬛⬛⬛⬛⬛⬛⬛\n\n"  	
+			msg = "⬛⬛⬛⬛⬛⬛⬛⬛⬛\n**Downloading File:** "+str(file.name) +"\n**Speed:** "+ str(file.download_speed_string())+"\nDemo: "+ str{file.humanbytes(downloaded)}+"\n**Progress:** "+str(file.progress_string())+"\n**Total Size:** "+str(file.total_length_string())+"\n**ETA:**  "+str(file.eta_string())+"\n⬛⬛⬛⬛⬛⬛⬛⬛⬛\n\n"  	
 			await event.edit(msg)
 			await asyncio.sleep(10)
 		except Exception as e:
