@@ -16,6 +16,19 @@ from telethon import events
 import asyncio
 import os
 
+cmd = "aria2c --enable-rpc --rpc-listen-all=false --rpc-listen-port 6800  --max-connection-per-server=10 --rpc-max-request-size=1024M --seed-time=0.01 --min-split-size=10M --follow-torrent=mem --split=10 --daemon=true"
+
+aria2_is_running = os.system(cmd)
+
+aria2 = aria2p.API(
+		aria2p.Client(
+			host="http://localhost",
+			port=6800,
+			secret=""
+		)
+	)
+
+
 @borg.on(events.NewMessage(pattern=r"\.her", outgoing=True))
 async def magnet_download(event):
 	if event.fwd_from:
