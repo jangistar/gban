@@ -59,7 +59,7 @@ async def torrent_download(event):
 	gid = download.gid
 	await progress_status(gid=gid,event=event,previous=None)
 
-@borg.on(events.NewMessage(pattern=r"\.url", outgoing=True))
+@borg.on(events.NewMessage(pattern=r"\.igk", outgoing=True))
 async def magnet_download(event):
 	if event.fwd_from:
 		return
