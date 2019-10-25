@@ -1,14 +1,5 @@
 """
-A Torrent Client Plugin Based On Aria2 for Userbot
-
-cmds: Magnet link : .magnet magnetLink
-	  Torrent file from local: .tor file_path
-	  Show Downloads: .show
-	  Remove All Downloads: .ariaRM
-	  Resume All Downloads: .ariaResume
-	  Pause All Downloads:  .ariaP
-	  
-By:- @Zero_cool7870	   
+command: .url 
 
 """
 import aria2p
@@ -29,7 +20,7 @@ aria2 = aria2p.API(
 	)
 
 
-@borg.on(events.NewMessage(pattern=r"\.her", outgoing=True))
+@borg.on(events.NewMessage(pattern=r"\.url", outgoing=True))
 async def magnet_download(event):
 	if event.fwd_from:
 		return
@@ -50,11 +41,11 @@ async def magnet_download(event):
 		file = aria2.get_download(gid)
 		complete = file.is_complete
 		try:
-			msg = "Downloading File: "+str(file.name) +"\nSpeed: "+ str(file.download_speed_string())+"\n"+"Progress: "+str(file.progress_string())+"\nTotal Size: "+str(file.total_length_string())+"\nETA:  "+str(file.eta_string())+"\n\n"  	
+			msg = "⬛⬛⬛⬛⬛⬛⬛⬛⬛\n**Downloading File:** "+str(file.name) +"\n**Speed:** "+ str(file.download_speed_string())+"\n**Progress:** "+str(file.progress_string())+"\n**Total Size:** "+str(file.total_length_string())+"\n**ETA:**  "+str(file.eta_string())+"\n⬛⬛⬛⬛⬛⬛⬛⬛⬛\n\n"  	
 			await event.edit(msg)
 			await asyncio.sleep(10)
 		except Exception as e:
 			print(str(e))
 			pass	
 			
-	await event.edit("File Downloaded Successfully: `{}`".format(file.name))
+	await event.edit("**File Downloaded Successfully:** `{}`".format(file.name))
