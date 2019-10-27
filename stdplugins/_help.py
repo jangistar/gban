@@ -18,7 +18,7 @@ async def _(event):
 Pithun {}
 Talethrun {}
  
-**Custom Built Fork**: https://github.com/mkaraniya/PepeBot""".format(
+**Custom Built Fork**: https://github.com/mkaraniya/BotHub""".format(
         sys.version,
         __version__
     )
