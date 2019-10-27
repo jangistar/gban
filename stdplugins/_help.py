@@ -14,7 +14,7 @@ async def _(event):
         s_help_string = borg._plugins[splugin_name].__doc__
     else:
         s_help_string = "****:"
-    help_string = """@BotHub ( **Custom Built By** @TeKnoways_bot ) \n**Verified Account**: ✅\n**Official Website**: http://www.threecube.tk\n
+    help_string = """@Bot_Hub_Official ( **Custom Built By** @TeKnoways_bot ) \n**Verified Account**: ✅\n**Official Website**: http://www.threecube.tk\n
 Pithun {}
 Talethrun {}
  
@@ -39,7 +39,7 @@ Talethrun {}
         await event.delete()
 
 
-@borg.on(admin_cmd(pattern="dc"))  # pylint:disable=E0602
+@borg.on(admin_cmd(pattern="dc ?(.*)" ))  # pylint:disable=E0602
 async def _(event):
     if event.fwd_from:
         return
@@ -47,24 +47,24 @@ async def _(event):
     await event.edit(result.stringify())
 
 
-@borg.on(admin_cmd(pattern="config"))  # pylint:disable=E0602
+@borg.on(admin_cmd(pattern="config ?(.*)" ))  # pylint:disable=E0602
 async def _(event):
     if event.fwd_from:
         return
     result = await borg(functions.help.GetConfigRequest())  # pylint:disable=E0602
     result = result.stringify()
     logger.help(result)  # pylint:disable=E0602
-    await event.edit("""Telethon UserBot powered by @BotHub""")
+    await event.edit("""Telethon UserBot powered by @Bot_Hub_Official""")
 
 
-@borg.on(admin_cmd(pattern="gandu (.*)"))
+@borg.on(admin_cmd(pattern="gandu ?(.*)" ))
 async def _(event):
     if event.fwd_from:
         return
     plugin_name = event.pattern_match.group(1)
     if plugin_name in borg._plugins:
         help_string = borg._plugins[plugin_name].__doc__
-        unload_string = f"Use `.unloda {plugin_name}` to remove this plugin.\n           © @TeKnoways_Bot"
+        unload_string = f"Use `.unload {plugin_name}` to remove this plugin.\n           © @TeKnoways_Bot"
         if help_string:
             plugin_syntax = f"Syntax for plugin **{plugin_name}**:\n\n{help_string}\n{unload_string}"
         else:
