@@ -1,11 +1,11 @@
-"""COMMAND : .info, .dc, .nigga"""
+"""COMMAND : .help, .dc, .nigga"""
 
 import sys
 from telethon import events, functions, __version__
 from uniborg.util import admin_cmd
 
 
-@borg.on(admin_cmd(pattern="info ?(.*)", allow_sudo=True))  # pylint:disable=E0602
+@borg.on(admin_cmd(pattern="help ?(.*)", allow_sudo=True))  # pylint:disable=E0602
 async def _(event):
     if event.fwd_from:
         return
@@ -14,11 +14,11 @@ async def _(event):
         s_help_string = borg._plugins[splugin_name].__doc__
     else:
         s_help_string = "****:"
-    help_string = """@UniBorg ( **Custom Built By** @r4v4n4 ) \n**Verified Account**: ✅\n**Official Website**: https://ravanaisdrunk.site.live\n
+    help_string = """@BotHub ( **Custom Built By** @TeKnoways_bot ) \n**Verified Account**: ✅\n**Official Website**: http://www.threecube.tk\n
 Pithun {}
 Talethrun {}
  
-**Custom Built Fork**: https://github.com/ravana69/PornHub""".format(
+**Custom Built Fork**: https://github.com/mkaraniya/PepeBot""".format(
         sys.version,
         __version__
     )
@@ -53,8 +53,8 @@ async def _(event):
         return
     result = await borg(functions.help.GetConfigRequest())  # pylint:disable=E0602
     result = result.stringify()
-    logger.info(result)  # pylint:disable=E0602
-    await event.edit("""Telethon UserBot powered by @UniBorg""")
+    logger.help(result)  # pylint:disable=E0602
+    await event.edit("""Telethon UserBot powered by @BotHub""")
 
 
 @borg.on(admin_cmd(pattern="gandu (.*)"))
@@ -64,11 +64,11 @@ async def _(event):
     plugin_name = event.pattern_match.group(1)
     if plugin_name in borg._plugins:
         help_string = borg._plugins[plugin_name].__doc__
-        unload_string = f"Use `.unloda {plugin_name}` to remove this plugin.\n           © @r4v4n4"
+        unload_string = f"Use `.unload {plugin_name}` to remove this plugin.\n           © @TeKnoways_Bot"
         if help_string:
             plugin_syntax = f"Syntax for plugin **{plugin_name}**:\n\n{help_string}\n{unload_string}"
         else:
             plugin_syntax = f"No DOCSTRING has been setup for {plugin_name} plugin."
     else:
-        plugin_syntax = "Enter valid **Plugin** name.\nDo `.stdplugins` or `.info` to get list of valid plugin names."
+        plugin_syntax = "Enter valid **Plugin** name.\nDo `.stdplugins` or `.help` to get list of valid plugin names."
     await event.edit(plugin_syntax)
