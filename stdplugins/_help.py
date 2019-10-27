@@ -57,7 +57,7 @@ async def _(event):
     await event.edit("""Telethon UserBot powered by @Bot_Hub_Official""")
 
 
-@borg.on(admin_cmd(pattern="gandu ?(.*)" ))
+@borg.on(admin_cmd(pattern="syntax ?(.*)" ))
 async def _(event):
     if event.fwd_from:
         return
@@ -70,5 +70,5 @@ async def _(event):
         else:
             plugin_syntax = f"No DOCSTRING has been setup for {plugin_name} plugin."
     else:
-        plugin_syntax = "Enter valid **Plugin** name.\nDo `.stdplugins` or `.help` to get list of valid plugin names."
+        plugin_syntax = "Enter valid **Plugin** name.\nDo `.exec ls stdplugins` or `.help` or .helpme or .stdplugins to get list of valid plugin names."
     await event.edit(plugin_syntax)
