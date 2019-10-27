@@ -86,23 +86,23 @@ if Config.TG_BOT_USER_NAME_BF_HER is not None and tgbot is not None:
         else:
             result = builder.article(
                 "© @UniBorg",
-                text="""@r4v4n4 **( Custom Built By** @r4v4n4 **)** 
+                text="""@PepeBot **( Custom Built By** @TeKnoways_bot **)** 
 **Verified Account:** ✅
-**Official Website:** https://ravanaisdrunk.site.live [⠀](https://telegra.ph/file/b0604ea53360cd3858ec5.mp4)
+**Official Website:** https://mkaraniya.github.io/PepeBot
 
-**Pithun 3.7.4 (default, Sep 12 2019, 01:19:52)** 
-**[GCC 7.4.0]**
-**Talethrun 1.10.6**
+**Pithun 3.7.7 (default, Dec 16 1981, 01:14:52)** 
+**[GCC 7.7.7]**
+**Talethrun 1.10.7**
 
-**Custom Built Fork:** https://github.com/ravana69/Pornhub""",
+**Custom Built Fork:** https://github.com/mkaraniya/PepeBot""",
                 buttons=[
-                    [custom.Button.url("👤Contact Creator👤", "https://telegram.dog/r4v4n4"), custom.Button.url(
-                        "📼Ravana Audio Memes📼", "https://t.me/tgaudiomemes")],
-                    [custom.Button.url("👨‍💻Source Code👨‍💻", "https://github.com/ravana69/Pornhub"), custom.Button.url(
-                        "❕❗Deploy Me❗❕", "https://dashboard.heroku.com/new?button-url=https%3A%2F%2Fgithub.com%2Fravana69%2FPornHub%2F&template=https%3A%2F%2Fgithub.com%2Fravana69%2FPornHub%2F")],
+                    [custom.Button.url("👤Contact Creator👤", "https://telegram.dog/Three_Cube_TeKnoways"), custom.Button.url(
+                        "📼My YouTube Channel📼", "https://www.youtube.com/channel/UCeKQxQK7XZ3jGi3541uWATg")],
+                    [custom.Button.url("👨‍💻Source Code👨‍💻", "https://github.com/mkaraniya/PepeBot"), custom.Button.url(
+                        "❕❗Deploy Me❗❕", "https://dashboard.heroku.com/new?button-url=https%3A%2F%2Fgithub.com%2Fmkaraniya%2FPepeBot%2F&template=https%3A%2F%2Fgithub.com%2Fmkaraniya%2FPepeBot%2F")],
                     [custom.Button.url("🔰Update Fork🔰", "tg://need_update_for_some_feature"), custom.Button.url(
                         "✳️Fork Boost✳️", "tg://some_unsupported_feature"), custom.Button.url(
-                        "♻️Refresh Heroku♻️", "tg://chutiya")]
+                        "♻️Refresh Heroku♻️", "tg://some_unsupported_feature")]
                 ],
                 link_preview=True
             )
@@ -121,7 +121,7 @@ if Config.TG_BOT_USER_NAME_BF_HER is not None and tgbot is not None:
             # https://t.me/TelethonChat/115200
             await event.edit(buttons=buttons)
         else:
-            reply_pop_up_alert = "⚠️ Warning: Don't Press Any Buttons ⚠️\n\nCustom Fork: https://github.com/ravana69/Pornhub\n\n\nNote: Bas kar BetiChod, Maa Ke Laude, Madarchod"
+            reply_pop_up_alert = "⚠️ Warning: Don't Press Any Buttons ⚠️\n\nCustom Fork: https://github.com/mkaraniya/PepeBot\n\n\nNote: Bas kar, "
             await event.answer(reply_pop_up_alert, cache_time=0, alert=True)
 
     @tgbot.on(events.callbackquery.CallbackQuery(  # pylint:disable=E0602
@@ -136,7 +136,7 @@ if Config.TG_BOT_USER_NAME_BF_HER is not None and tgbot is not None:
                 borg._plugins,  # pylint:disable=E0602
                 "helpme"
             )
-            # https://t.me/TelethonChat/115200
+            # https://t.me/PaperplaneExtended_news/55
             await event.edit(buttons=buttons)
         else:
             reply_pop_up_alert = "Please get your own @UniBorg, and don't edit my messages!"
@@ -153,14 +153,14 @@ if Config.TG_BOT_USER_NAME_BF_HER is not None and tgbot is not None:
         reply_pop_up_alert = help_string if help_string is not None else \
             "No DOCSTRING has been setup for {} plugin".format(plugin_name)
         reply_pop_up_alert += "\n\n Use .unload {} to remove this plugin\n\
-            © @r4v4n4".format(plugin_name)
+            © @Three_Cube_TeKnoways".format(plugin_name)
         await event.answer(reply_pop_up_alert, cache_time=0, alert=True)
 
 
 def paginate_help(page_number, loaded_plugins, prefix):
     number_of_rows = Config.NO_OF_BUTTONS_DISPLAYED_IN_H_ME_CMD
     number_of_cols = 2
-    multi = "😇🤠🤡😈👿👹👺💀☠👻👽👾🤖💩😺😸😹😻😼😽🙀😿😾🙈🙉🙊👦👧👨👩👴👵👶"
+    multi = "😇🤠🤡😈👿👹👺💀☠👻👽👾🤖💩😺😸😹😻😼😽🙀😿😾🙈🙉🙊👦👧👨👩👴👵👶👑💪🏻"
     helpable_plugins = []
     for p in loaded_plugins:
         if not p.startswith("_"):
