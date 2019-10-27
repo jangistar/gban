@@ -34,7 +34,7 @@ class Uniborg(TelegramClient):
             "api_hash": "eb06d4abfb49dc3eeb1aeb98ae0f581e",
             "device_model": "Iphone 11 Pro Max (Clone)",
             "app_version": "@Three_Cube_TeKnoways",
-            "lang_code": "ml",
+            "lang_code": "en",
             **kwargs
         }
 
