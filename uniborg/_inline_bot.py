@@ -66,11 +66,11 @@ if Config.TG_BOT_USER_NAME_BF_HER is not None and tgbot is not None:
         builder = event.builder
         result = None
         query = event.text
-        if event.query.user_id == borg.uid and query.startswith("@UniBorg"):
+        if event.query.user_id == borg.uid and query.startswith("@BotHub"):
             rev_text = query[::-1]
             buttons = paginate_help(0, borg._plugins, "helpme")
             result = builder.article(
-                "© @UniBorg",
+                "© @BotHub",
                 text="{}\nℂ𝕦𝕣𝕣𝕖𝕟𝕥𝕝𝕪 𝕃𝕠𝕒𝕕𝕖𝕕 ℙ𝕝𝕦𝕘𝕚𝕟𝕤: {}".format(
                     query, len(borg._plugins)),
                 buttons=buttons,
@@ -78,14 +78,14 @@ if Config.TG_BOT_USER_NAME_BF_HER is not None and tgbot is not None:
             )
         elif query.startswith("tb_btn"):
             result = builder.article(
-                "Button Parser © @UniBorg",
-                text=f"powered by @UniBorg",
+                "Button Parser © @BotHub",
+                text=f"powered by @BotHub",
                 buttons=[],
                 link_preview=True
             )
         else:
             result = builder.article(
-                "© @UniBorg",
+                "© @BotHub",
                 text="""@PepeBot **( Custom Built By** @TeKnoways_bot **)** 
 **Verified Account:** ✅
 **Official Website:** https://mkaraniya.github.io/PepeBot
@@ -139,7 +139,7 @@ if Config.TG_BOT_USER_NAME_BF_HER is not None and tgbot is not None:
             # https://t.me/PaperplaneExtended_news/55
             await event.edit(buttons=buttons)
         else:
-            reply_pop_up_alert = "Please get your own @UniBorg, and don't edit my messages!"
+            reply_pop_up_alert = "Please get your own @BotHub, and don't edit my messages!"
             await event.answer(reply_pop_up_alert, cache_time=0, alert=True)
 
 
