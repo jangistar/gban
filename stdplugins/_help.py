@@ -1,4 +1,4 @@
-"""COMMAND : .help, .dc, .nigga"""
+"""COMMAND : .help, .dc, .exec ls stdplugins, .stdplugins, .helpme, .syntax"""
 
 import sys
 from telethon import events, functions, __version__
@@ -14,7 +14,7 @@ async def _(event):
         s_help_string = borg._plugins[splugin_name].__doc__
     else:
         s_help_string = "****:"
-    help_string = """@Bot_Hub_Official ( **Custom Built By** @TeKnoways_bot ) \n**Verified Account**: ✅\n**Official Website**: http://www.threecube.tk\n
+    help_string = """@Bot_Hub_Official™️ ( **Custom Built By** @TeKnoways_bot ) \n**Verified Account**: ✅\n**Official Website**: http://www.threecube.tk\n
 Pithun {}
 Talethrun {}
  
