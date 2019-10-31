@@ -70,7 +70,7 @@ if Config.TG_BOT_USER_NAME_BF_HER is not None and tgbot is not None:
             rev_text = query[::-1]
             buttons = paginate_help(0, borg._plugins, "helpme")
             result = builder.article(
-                "© @Bot_Hub_Official",
+                "© @Bot_Hub_Official™️",
                 text="{}\nℂ𝕦𝕣𝕣𝕖𝕟𝕥𝕝𝕪 𝕃𝕠𝕒𝕕𝕖𝕕 ℙ𝕝𝕦𝕘𝕚𝕟𝕤: {}".format(
                     query, len(borg._plugins)),
                 buttons=buttons,
@@ -85,7 +85,7 @@ if Config.TG_BOT_USER_NAME_BF_HER is not None and tgbot is not None:
             )
         else:
             result = builder.article(
-                "© @Bot_Hub_Official",
+                "© @Bot_Hub_Official™️",
                 text="""@BotHub **( Custom Built By** @TeKnoways_bot **)** 
 **Verified Account:** ✅
 **Official Website:** https://mkaraniya.github.io/BotHub
@@ -97,8 +97,8 @@ if Config.TG_BOT_USER_NAME_BF_HER is not None and tgbot is not None:
 **Custom Built Fork:** https://github.com/mkaraniya/BotHub""",
                 buttons=[
                     [custom.Button.url("👤Contact Creator👤", "https://telegram.dog/Three_Cube_TeKnoways"), custom.Button.url(
-                        "📼My YouTube Channel📼", "https://www.youtube.com/channel/UCeKQxQK7XZ3jGi3541uWATg")],
-                    [custom.Button.url("👨‍💻Source Code👨‍💻", "https://github.com/mkaraniya/BotHub"), custom.Button.url(
+                        "🎞My YouTube Channel🎞", "https://www.youtube.com/channel/UCeKQxQK7XZ3jGi3541uWATg?sub_confirmation=1")],
+                    [custom.Button.url("🎛Source Code🎛", "https://github.com/mkaraniya/PepeBot"), custom.Button.url(
                         "❕❗Deploy Me❗❕", "https://dashboard.heroku.com/new?button-url=https%3A%2F%2Fgithub.com%2Fmkaraniya%2FBotHub%2F&template=https%3A%2F%2Fgithub.com%2Fmkaraniya%2FBotHub%2F")],
                     [custom.Button.url("🔰Update Fork🔰", "tg://need_update_for_some_feature"), custom.Button.url(
                         "✳️Fork Boost✳️", "tg://some_unsupported_feature"), custom.Button.url(
@@ -139,7 +139,7 @@ if Config.TG_BOT_USER_NAME_BF_HER is not None and tgbot is not None:
             # https://t.me/PaperplaneExtended_news/55
             await event.edit(buttons=buttons)
         else:
-            reply_pop_up_alert = "Please get your own @Bot_Hub_Official, and don't edit my messages!"
+            reply_pop_up_alert = "Please get your own @Bot_Hub_Official™️, and don't edit my messages!"
             await event.answer(reply_pop_up_alert, cache_time=0, alert=True)
 
 
@@ -160,7 +160,7 @@ if Config.TG_BOT_USER_NAME_BF_HER is not None and tgbot is not None:
 def paginate_help(page_number, loaded_plugins, prefix):
     number_of_rows = Config.NO_OF_BUTTONS_DISPLAYED_IN_H_ME_CMD
     number_of_cols = 2
-    multi = "😇🤠🤡😈👿👹👺💀☠👻👽👾🤖💩😺😸😹😻😼😽🙀😿😾🙈🙉🙊👦👧👨👩👴👵👶👑💪🏻"
+    multi = "😇🤠😺😸😹🕴🏻😻😼😽💪🙀😿😾✈️🙈🙉🙊👦👧👨👩👍👴👵👍⛑👶🎓❤️🏻"
     helpable_plugins = []
     for p in loaded_plugins:
         if not p.startswith("_"):
