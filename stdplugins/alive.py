@@ -1,15 +1,15 @@
-""".alive Plugin for @UniBorg"""
+""".on Plugin for @UniBorg"""
 import asyncio
 from telethon import events
 from telethon.tl.types import ChannelParticipantsAdmins
 from uniborg.util import admin_cmd
 
 
-@borg.on(admin_cmd("alive"))
+@borg.on(admin_cmd("on"))
 async def _(event):
     if event.fwd_from:
         return
-    mentions = "`Your bot is running\n\nTelethon version: 1.10.6\nPython: 3.7.4\nUser: @r4v4n4\nDatabase Status: Telegram Databases functioning normally!`"
+    mentions =       "`i am ON My Mastor \n\nbotdo is ON \n\nTelethon version: 1.10.7 \n\nPython: 3.7.7 \n--------------------------- \nUser: is the one who is using it \n\nCreator: Mayur Karaniya \n\nOwner: 3Cube TeKnoways \n\nUserbot: testuserbot \n\nDatabase Status: Basiclly Telegram Databases functioning is normal! just sometimes it creates hoax!`"
     chat = await event.get_input_chat()
     async for x in borg.iter_participants(chat, filter=ChannelParticipantsAdmins):
         mentions += f""
