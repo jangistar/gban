@@ -12,7 +12,7 @@ from uniborg import util
 DELETE_TIMEOUT = 5
 
 
-@borg.on(util.admin_cmd(pattern="loda (?P<shortname>\w+)$"))  # pylint:disable=E0602
+@borg.on(util.admin_cmd(pattern="load (?P<shortname>\w+)$"))  # pylint:disable=E0602
 async def load_reload(event):
     await event.delete()
     shortname = event.pattern_match["shortname"]
@@ -20,17 +20,17 @@ async def load_reload(event):
         if shortname in borg._plugins:  # pylint:disable=E0602
             borg.remove_plugin(shortname)  # pylint:disable=E0602
         borg.load_plugin(shortname)  # pylint:disable=E0602
-        msg = await event.respond(f"BetiChod Successfully (re)loda pligon {shortname}")
+        msg = await event.respond(f"Successfully (re)load plugin {shortname}")
         await asyncio.sleep(DELETE_TIMEOUT)
         await msg.delete()
     except Exception as e:  # pylint:disable=C0103,W0703
         trace_back = traceback.format_exc()
         # pylint:disable=E0602
         logger.warn(f"Failed to (re)load plugin {shortname}: {trace_back}")
-        await event.respond(f"Failed to (re)loda pligon {shortname}: {e}")
+        await event.respond(f"Failed to (re)load pligon {shortname}: {e}")
 
 
-@borg.on(util.admin_cmd(pattern="(?:unloda|remove) (?P<shortname>\w+)$"))  # pylint:disable=E0602
+@borg.on(util.admin_cmd(pattern="(?:unload|remove) (?P<shortname>\w+)$"))  # pylint:disable=E0602
 async def remove(event):
     await event.delete()
     shortname = event.pattern_match["shortname"]
@@ -40,12 +40,12 @@ async def remove(event):
         borg.remove_plugin(shortname)  # pylint:disable=E0602
         msg = await event.respond(f"Removed pligon {shortname}")
     else:
-        msg = await event.respond(f"Pligon {shortname} is not loda...")
+        msg = await event.respond(f"Plugin is {shortname} is not load...")
     await asyncio.sleep(DELETE_TIMEOUT)
     await msg.delete()
 
 
-@borg.on(util.admin_cmd(pattern="sund pligon (?P<shortname>\w+)$"))  # pylint:disable=E0602
+@borg.on(util.admin_cmd(pattern="send plugin (?P<shortname>\w+)$"))  # pylint:disable=E0602
 async def send_plug_in(event):
     if event.fwd_from:
         return
@@ -62,12 +62,12 @@ async def send_plug_in(event):
     )
     end = datetime.now()
     time_taken_in_ms = (end - start).seconds
-    await event.edit("BetiChod is pligon ko upload kar diya {} in {} seconds".format(input_str, time_taken_in_ms))
+    await event.edit("Plugin ko upload kar diya {} in {} seconds".format(input_str, time_taken_in_ms))
     await asyncio.sleep(DELETE_TIMEOUT)
     await event.delete()
 
 
-@borg.on(util.admin_cmd(pattern="instull pligon"))  # pylint:disable=E0602
+@borg.on(util.admin_cmd(pattern="instull plugin"))  # pylint:disable=E0602
 async def install_plug_in(event):
     if event.fwd_from:
         return
@@ -79,10 +79,10 @@ async def install_plug_in(event):
             )
             if "(" not in downloaded_file_name:
                 borg.load_plugin_from_file(downloaded_file_name)  # pylint:disable=E0602
-                await event.edit("Gandu, Instulled Pligon `{}`".format(os.path.basename(downloaded_file_name)))
+                await event.edit("Please, Install Plugin `{}`".format(os.path.basename(downloaded_file_name)))
             else:
                 os.remove(downloaded_file_name)
-                await event.edit("oh! Mkc, pligon instull na hove.")
+                await event.edit("oh! plugin install na hove.")
         except Exception as e:  # pylint:disable=C0103,W0703
             await event.edit(str(e))
             os.remove(downloaded_file_name)
