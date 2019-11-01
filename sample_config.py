@@ -63,16 +63,7 @@ class Config(object):
     # foloowing plugins won't work on Heroku,
     # ⚡Remove This To Make Them Work But Would Make Bot Unstable AF...⚡
     NO_LOAD = [
-        "fwd",
-        "antiflood",
-        "blacklist",
-        "locks",
-        "pmpermit",
-        "snip",
-        "gban",
-        "welcome",
-        "notification",
-        "markdown"
+        "pmpermit"
 
     ]
     # Get your own API key from https://www.remove.bg/ or
@@ -133,7 +124,7 @@ class Config(object):
     CHROME_DRIVER = os.environ.get("CHROME_DRIVER", None)
     CHROME_BIN = os.environ.get("CHROME_BIN", None)
     #
-    RAVANA_LEELA = os.environ.get("RAVANA_LEELA", None)
+    BOT_HUB = os.environ.get("BOT_HUB", None)
 
 class Production(Config):
     LOGGER = False
