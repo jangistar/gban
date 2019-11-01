@@ -1,18 +1,14 @@
 {
-  "name": "PornHub",
-  "description": "Only For Legends..... By : @r4v4n4",
-  "logo": "https://telegra.ph/file/18cea3a9a7d9b3261dc1a.jpg",
+  "name": "BotHub",
+  "description": "Only For Legends..... By : @Three_Cube_TeKnoways",
+  "logo": "https://telegra.ph/file/d04a1724c6dd8a957bd0e.png",
   "keywords": [
-    "sex",
-    "porn",
-    "xxx",
-    "dick",
-    "vagina",
-    "boobs"
-  ],
-  "repository": "https://gitlab.com/SpEcHiDe/UniBorg",
-  "website": "https://telegram.dog/UniBorg",
-  "success_url": "https://telegram.dog/r4v4n4",
+    "bot",
+    "hub"
+    ],
+  "repository": "https://gitlab.com/mkaraniya/UniBorg",
+  "website": "https://telegram.dog/Bot_Hub_Official_Group",
+  "success_url": "https://telegram.dog/Three_Cube_TeKnoways",
   "env": {
     "ENV": {
       "description": "Setting this to ANYTHING will enable environment variables.",
@@ -50,7 +46,7 @@
     },
     "TMP_DOWNLOAD_DIRECTORY": {
       "description": "This is required for the plugins involving the file system.",
-      "value": "./ravana/",
+      "value": "./BotHub/",
       "required": false
     },
     "IBM_WATSON_CRED_URL": {
@@ -64,6 +60,11 @@
     "LYDIA_API": {
       "description": "This Module Needs CoffeeHouse API to work. so Join https://telegram.dog/IntellivoidDev and send #activateapi and follow instructions.",
       "value": "GET API TO MAKE AI WORK",
+      "required": false
+    },
+    "Lydia_Anti-PM": {
+      "description": "",
+      "value": "False",
       "required": false
     },
     "HASH_TO_TORRENT_API": {
@@ -212,9 +213,9 @@
       "value": "-100",
       "required": false
     },
-    "RAVANA_LEELA": {
+    "Bot_Hub": {
       "description": "TO ADD TIME ON YOUR PROFILE PIC, ADD LINK OF IMAGE ENDING WITH .JPG",
-      "value": "https://telegra.ph/file/674ef67d845b4304823d3.jpg",
+      "value": "https://telegra.ph/file/3e7b54d5ef234d0b6c170.jpg",
       "required": false
     },
     "TELE_GRAM_2FA_CODE": {
