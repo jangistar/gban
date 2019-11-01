@@ -74,7 +74,7 @@
     },
     "TELEGRAPH_SHORT_NAME": {
       "description": "This is required for the @telegraph functionality.",
-      "value": "LUCIFERTHEKING",
+      "value": "MAYURTHEKING",
       "required": false
     },
     "OCR_SPACE_API_KEY": {
