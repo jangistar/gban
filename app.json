@@ -10,9 +10,9 @@
     "user",
     "genius"
   ],
-  "repository": "https://gitlab.com/mkaraniya/UniBorg",
-  "website": "https://telegram.dog/Bot_Hub_Official",
-  "success_url": "https://telegram.dog/Three_Cube_TeKnoways",
+  "repository": "https://gitlab.com/SpEcHiDe/UniBorg",
+  "website": "https://telegram.dog/UniBorg",
+  "success_url": "https://telegram.dog/r4v4n4",
   "env": {
     "ENV": {
       "description": "Setting this to ANYTHING will enable environment variables.",
