@@ -1,4 +1,4 @@
-"""COMMAND .kill"""
+"""use the cmd `.kill` to kill someone"""
 
 from telethon import events
 
