@@ -86,7 +86,7 @@ if Config.TG_BOT_USER_NAME_BF_HER is not None and tgbot is not None:
         else:
             result = builder.article(
                 "© @Bot_Hub_Official™️",
-                text="""@BotHub **( Custom Built By** @TeKnoways_bot **)** 
+                text="""@Bot_Hub_Official **( Custom Built By** @TeKnoways_bot **)** 
 **Verified Account:** ✅
 **Official Website:** https://mkaraniya.github.io/BotHub
 
@@ -98,7 +98,7 @@ if Config.TG_BOT_USER_NAME_BF_HER is not None and tgbot is not None:
                 buttons=[
                     [custom.Button.url("👤Contact Creator👤", "https://telegram.dog/Three_Cube_TeKnoways"), custom.Button.url(
                         "🎞My YouTube Channel🎞", "https://www.youtube.com/channel/UCeKQxQK7XZ3jGi3541uWATg?sub_confirmation=1")],
-                    [custom.Button.url("🎛Source Code🎛", "https://github.com/mkaraniya/PepeBot"), custom.Button.url(
+                    [custom.Button.url("🎛Source Code🎛", "https://github.com/mkaraniya/BotHub"), custom.Button.url(
                         "❕❗Deploy Me❗❕", "https://dashboard.heroku.com/new?button-url=https%3A%2F%2Fgithub.com%2Fmkaraniya%2FBotHub%2F&template=https%3A%2F%2Fgithub.com%2Fmkaraniya%2FBotHub%2F")],
                     [custom.Button.url("🔰Update Fork🔰", "tg://need_update_for_some_feature"), custom.Button.url(
                         "✳️Fork Boost✳️", "tg://some_unsupported_feature"), custom.Button.url(
