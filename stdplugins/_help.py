@@ -17,8 +17,7 @@ async def _(event):
     help_string = """@Bot_Hub_Official™️ ( **Custom Built By** @Three_Cube_TeKnoways_bot ) \n**Verified Account**: ✅\n**Official Website**: http://www.threecube.tk\n**NOTICE**: **COMMANDS** are CASE **sensitive**\n**DESCRIPTION**: https://magicalpepewillguideyou.com\n
 Pithun {}
 Talethrun {}
- 
-[Custom Built Fork](https://github.com/mkaraniya/BotHub)""".format(
+ """.format(
         sys.version,
         __version__
     )
