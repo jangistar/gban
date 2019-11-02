@@ -1,4 +1,7 @@
-# credits: SNAPDRAGON (@s_n_a_p_s)
+# credits: SNAPDRAGON (@s_n_a_p_s) edited by 3Cube @Three_Cube_TeKnoways
+
+"""use cmd .web <anonfiles|transfer|filebin|anonymousfiles|megaupload|bayfiles>"""
+
 from telethon import events
 import subprocess
 import os
