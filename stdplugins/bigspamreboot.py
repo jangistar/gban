@@ -1,9 +1,9 @@
-from telethon import events
-import time
-
 """Command: .bigspamreboot <number> DO NOT TRY THIS WITH YOUR ACCOUNT
 
 telethon.errors.rpcerrorlist.FloodWaitError: A wait of 280 seconds is required"""
+
+from telethon import events
+import time
 
 @borg.on(events.NewMessage(pattern=r"\.bigspamreboot (.*)", outgoing=True))
 async def _(event):
