@@ -39,8 +39,8 @@ async def _(event):
             "`Forking BotHub... 52%\n\n⬛️⬛️⬛️⬛️⬛️⬛️⬛️⬛️⬛️⬜️⬜️⬜️⬜️⬜️\n\nFile Size: 90.7 MiB / 108.7 MiB `",
             "`Forking BotHub... 84%\n\n⬛️⬛️⬛️⬛️⬛️⬛️⬛️⬛️⬛️⬛️⬛️⬛️⬜️⬜️\n\nFile Size: 100.7 MiB / 108.7 MiB `",
             "`Forking BotHub... 100%\n\n⬛️⬛️⬛️⬛️⬛️⬛️⬛️⬛️⬛️⬛️⬛️⬛️⬛️⬛️\n\nFile Size: 108.7 MiB / 108.7 MiB\n\nTask Completed... `",
-            "`Fork Deploying...`\n\n@BotHub ( `Custom Built By` @Three_Cube_TeKnoways ) \n`Verified Account:` ☑️\n`Official Website:` http://www.threecube.tk \n\n`Python` `Loading...`\n[GCC 7.3.0]\n`Telethon` `Loading...`\n\n`Custom Built Fork:` `Loading...`",
-            "`Fork Deployed...`\n\n@BotHub ( `Custom Built By` @Three_Cube_TeKnoways ) \n`Verified Account:` ✅\n`Official Website:` http://www.threecube.tk \n\n`Python` 3.6.8 (default, Dec 16 1981, 14:45:16)\n[GCC 7.3.0]\n`Telethon` 1.8.0\n\n`Custom Built Fork:` https://github.com/mkaraniya/BotHub"
+            "`Fork Deploying...`\n\nBotHub ( `Custom Built By` @Three_Cube_TeKnoways ) \n`Verified Account:` ☑️\n`Official Website:` http://www.threecube.tk \n\n`Python` `Loading...`\n[GCC 7.3.0]\n`Telethon` `Loading...`\n\n`Custom Built Fork:` `Loading...`",
+            "`Fork Deployed...`\n\nBotHub ( `Custom Built By` @Three_Cube_TeKnoways ) \n`Verified Account:` ✅\n`Official Website:` http://www.threecube.tk \n\n`Python` 3.6.8 (default, Dec 16 1981, 14:45:16)\n[GCC 7.3.0]\n`Telethon` 1.8.0\n\n`Custom Built Fork:` https://github.com/mkaraniya/BotHub"
         ]
 
         for i in animation_ttl:
