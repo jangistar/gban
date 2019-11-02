@@ -86,9 +86,9 @@ if Config.TG_BOT_USER_NAME_BF_HER is not None and tgbot is not None:
         else:
             result = builder.article(
                 "© @Bot_Hub_Official™️",
-                text="""@Bot_Hub_Official **( Custom Built By** @TeKnoways_bot **)** 
+                text="""@Bot_Hub_Official **( Custom Built By** @Three_Cube_TeKnoways_bot **)** 
 **Verified Account:** ✅
-**Official Website:** https://mkaraniya.github.io/BotHub
+**Official Website:** http://www.threecube.tk
 
 **Pithun 3.7.7 (default, Dec 16 1981, 01:14:52)** 
 **[GCC 7.7.7]**
