@@ -1,5 +1,5 @@
 """Emoji
-Available Commands:
+use Commands:
 .emoji shrug
 .emoji apple
 .emoji :/
