@@ -22,7 +22,7 @@ async def _(event):
             return False
         else:
             im = Image.new(mode="RGB", size=(1280, 720), color=usercolor)
-            im.save("UniBorg.png", "PNG")
+            im.save("BotHub.png", "PNG")
             input_str = input_str.replace("#", "#COLOR_")
             await borg.send_file(
                 event.chat_id,
@@ -31,7 +31,7 @@ async def _(event):
                 caption=input_str,
                 reply_to=message_id
             )
-            os.remove("UniBorg.png")
+            os.remove("BotHub.png")
             await event.delete()
     else:
         await event.edit("Syntax: `.color <color_code>`")
