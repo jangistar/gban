@@ -1,3 +1,6 @@
+"""use cmd `.dump` , `.dump all` to dump things"""
+
+
 from telethon import events
 import asyncio
 from uniborg.util import admin_cmd
