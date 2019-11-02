@@ -1,8 +1,4 @@
-"""Emoji
-
-Available Commands:
-
-.fleave"""
+"""Available Commands: `.fleave`"""
 
 from telethon import events
 
@@ -42,11 +38,11 @@ async def _(event):
             "⬛⬆️↗️\n⬛🔄➡️\n↙️⬇️↘️",
             "⬛⬆️↗️\n⬅️🔄➡️\n↙️⬇️↘️",
             "↖️⬆️↗️\n⬅️🔄➡️\n↙️⬇️↘️",
-            "**Chat Message Exported To** `./ravana/`",
-            "**Chat Message Exported To** `./ravana/chatbackup/`",
-            "**Chat Message Exported To** `./ravana/chatbackup/groupchat.txt`",
-            "__Legend is leaving this chat.....! Gaand Marao Bc..__",
-            "__Legend is leaving this chat.....! Gaand Marao Bc..__"
+            "**Chat Message Exported To** `./BotHub/`",
+            "**Chat Message Exported To** `./BotHub/chatbackup/`",
+            "**Chat Message Exported To** `./BotHub/chatbackup/groupchat.txt`",
+            "__Legend is leaving this chat.....! ..__",
+            "__Legend is leaving this chat.....! ..__"
 
  ]
 
