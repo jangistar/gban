@@ -1,14 +1,4 @@
-"""Emoji
-
-Available Commands:
-
-.emoji shrug
-
-.emoji apple
-
-.emoji :/
-
-.emoji -_-"""
+"""Use cmd `.bothub , .armor , .love , .hero` and check what happens"""
 
 from telethon import events
 
