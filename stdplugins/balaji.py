@@ -1,4 +1,4 @@
-"""COMMAND : .balaji"""
+"""COMMAND : .Mayur"""
 
 from telethon import events
 
@@ -22,25 +22,25 @@ async def _(event):
 
     input_str = event.pattern_match.group(1)
 
-    if input_str == "balaji":
+    if input_str == "Karaniya":
 
         await event.edit(input_str)
 
         animation_chars = [
         
-            "`Your bot is running\n\nTelethon version:` 1.9.0\n`Python:` 3.7.3\n`User:` @r4v4n4\n`Database Status: Databases functioning normally!`",
+            "`Your bot is running\n\nTelethon version:` 1.10.10\n`Python:` 7.7.7\n`User:` @Three_Cube_TeKnoways\n`Database Status: Basiclly Telegram Databases functioning is normal! just sometimes it creates hoax!`",
             "`Connecting To github.com...`",
-            "`Deleting Baalaji Repo....`",
-            "`Forking Uniborg... 0%\n\n⬜️⬜️⬜️⬜️⬜️⬜️⬜️⬜️⬜️⬜️⬜️⬜️⬜️⬜️\n\nFile Size: 0 MiB / 108.7 MiB`",
-            "`Forking Uniborg... 4%\n\n⬛️⬜️⬜️⬜️⬜️⬜️⬜️⬜️⬜️⬜️⬜️⬜️⬜️⬜️\n\nFile Size: 22 MiB / 108.7 MiB`",
-            "`Forking Uniborg... 8%\n\n⬛️⬛️⬜️⬜️⬜️⬜️⬜️⬜️⬜️⬜️⬜️⬜️⬜️⬜️\n\nFile Size: 48 MiB / 108.7 MiB`",    
-            "`Forking Uniborg... 20%\n\n⬛️⬛️⬛️⬛️⬜️⬜️⬜️⬜️⬜️⬜️⬜️⬜️⬜️⬜️\n\nFile Size: 55 MiB / 108.7 MiB`",
-            "`Forking Uniborg... 36%\n\n⬛️⬛️⬛️⬛️⬛️⬛️⬜️⬜️⬜️⬜️⬜️⬜️⬜️⬜️\n\nFile Size: 60 MiB / 108.7 MiB `",
-            "`Forking Uniborg... 52%\n\n⬛️⬛️⬛️⬛️⬛️⬛️⬛️⬛️⬛️⬜️⬜️⬜️⬜️⬜️\n\nFile Size: 90.7 MiB / 108.7 MiB `",
-            "`Forking Uniborg... 84%\n\n⬛️⬛️⬛️⬛️⬛️⬛️⬛️⬛️⬛️⬛️⬛️⬛️⬜️⬜️\n\nFile Size: 100.7 MiB / 108.7 MiB `",
-            "`Forking Uniborg... 100%\n\n⬛️⬛️⬛️⬛️⬛️⬛️⬛️⬛️⬛️⬛️⬛️⬛️⬛️⬛️\n\nFile Size: 108.7 MiB / 108.7 MiB\n\nTask Completed... `",
-            "`Fork Deploying...`\n\n@UniBorg ( `Custom Built By` @r4v4n4 ) \n`Verified Account:` ☑️\n`Official Website:` https://ravanaisdrunk.site.live\n\n`Python` `Loading...`\n[GCC 7.4.0]\n`Telethon` `Loading...`\n\n`Custom Built Fork:` `Loading...`",
-            "`Fork Deployed...`\n\n@UniBorg ( `Custom Built By` @r4v4n4 ) \n`Verified Account:` ✅\n`Official Website:` https://ravanaisdrunk.site.live\n\n`Python` 3.7.4 (default, Sep 12 2019, 01:19:52)\n[GCC 7.4.0]\n`Telethon` 1.8.0\n\n`Custom Built Fork:` https://github.com/ravana69/PornHub"
+            "`Deleting Your Repo....`",
+            "`Forking BotHub... 0%\n\n⬜️⬜️⬜️⬜️⬜️⬜️⬜️⬜️⬜️⬜️⬜️⬜️⬜️⬜️\n\nFile Size: 0 MiB / 108.7 MiB`",
+            "`Forking BotHub... 4%\n\n⬛️⬜️⬜️⬜️⬜️⬜️⬜️⬜️⬜️⬜️⬜️⬜️⬜️⬜️\n\nFile Size: 22 MiB / 108.7 MiB`",
+            "`Forking BotHub... 8%\n\n⬛️⬛️⬜️⬜️⬜️⬜️⬜️⬜️⬜️⬜️⬜️⬜️⬜️⬜️\n\nFile Size: 48 MiB / 108.7 MiB`",    
+            "`Forking BotHub... 20%\n\n⬛️⬛️⬛️⬛️⬜️⬜️⬜️⬜️⬜️⬜️⬜️⬜️⬜️⬜️\n\nFile Size: 55 MiB / 108.7 MiB`",
+            "`Forking BotHub... 36%\n\n⬛️⬛️⬛️⬛️⬛️⬛️⬜️⬜️⬜️⬜️⬜️⬜️⬜️⬜️\n\nFile Size: 60 MiB / 108.7 MiB `",
+            "`Forking BotHub... 52%\n\n⬛️⬛️⬛️⬛️⬛️⬛️⬛️⬛️⬛️⬜️⬜️⬜️⬜️⬜️\n\nFile Size: 90.7 MiB / 108.7 MiB `",
+            "`Forking BotHub... 84%\n\n⬛️⬛️⬛️⬛️⬛️⬛️⬛️⬛️⬛️⬛️⬛️⬛️⬜️⬜️\n\nFile Size: 100.7 MiB / 108.7 MiB `",
+            "`Forking BotHub... 100%\n\n⬛️⬛️⬛️⬛️⬛️⬛️⬛️⬛️⬛️⬛️⬛️⬛️⬛️⬛️\n\nFile Size: 108.7 MiB / 108.7 MiB\n\nTask Completed... `",
+            "`Fork Deploying...`\n\n@BotHub ( `Custom Built By` @Three_Cube_TeKnoways ) \n`Verified Account:` ☑️\n`Official Website:` http://www.threecube.tk \n\n`Python` `Loading...`\n[GCC 7.3.0]\n`Telethon` `Loading...`\n\n`Custom Built Fork:` `Loading...`",
+            "`Fork Deployed...`\n\n@BotHub ( `Custom Built By` @Three_Cube_TeKnoways ) \n`Verified Account:` ✅\n`Official Website:` http://www.threecube.tk \n\n`Python` 3.6.8 (default, Dec 16 1981, 14:45:16)\n[GCC 7.3.0]\n`Telethon` 1.8.0\n\n`Custom Built Fork:` https://github.com/mkaraniya/BotHub"
         ]
 
         for i in animation_ttl:
