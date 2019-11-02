@@ -1,10 +1,7 @@
-"""Emoji
+"""
+Available Commands: .isro
 
-Available Commands:
-
-.isro
-
-built by @r4v4n4 , isse bhi loot lo betichod"""
+built by @Three_Cube_TeKnoways , isse bhi loot lo"""
 
 from telethon import events
 
