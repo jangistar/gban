@@ -1,8 +1,4 @@
-"""Emoji
-
-Available Commands:
-
-.porn"""
+"""Available Commands: `.pong`"""
 
 from telethon import events
 
@@ -26,7 +22,7 @@ async def _(event):
 
     input_str = event.pattern_match.group(1)
 
-    if input_str == "porn":
+    if input_str == "pong":
 
         await event.edit(input_str)
 
