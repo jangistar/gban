@@ -14,9 +14,7 @@ async def _(event):
         s_help_string = borg._plugins[splugin_name].__doc__
     else:
         s_help_string = "****:"
-    help_string = """@Bot_Hub_Official™️ ( **Custom Built By** @Three_Cube_TeKnoways_bot ) \n**Verified Account**: ✅\n**Official Website**: http://www.threecube.tk\n**NOTICE**: **COMMANDS** are CASE **sensitive**\n**DESCRIPTION**: https://magicalpepewillguideyou.com\n
-Pithun {}
-Talethrun {}
+    help_string = """@Bot_Hub_Official™️ ( **Custom Built By** @Three_Cube_TeKnoways_bot ) \n**Verified Account**: ✅\n**Official Website**: http://www.threecube.tk\n**NOTICE**: **COMMANDS** are CASE **sensitive**\n**DESCRIPTION**: https://magicalpepewillguideyou.com\nPithun {}\nTalethrun {}\n
  """.format(
         sys.version,
         __version__
