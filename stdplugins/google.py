@@ -22,7 +22,7 @@ async def _(event):
     if event.fwd_from:
         return
     start = datetime.now()
-    await event.edit("Ruk Ja Betichod, Google Se Bolta Hoon Tera IP Ban Kare ...")
+    await event.edit("Ruk Ja , Google Se Bolta Hoon Tera IP Ban Kare ...")
     # SHOW_DESCRIPTION = False
     input_str = event.pattern_match.group(1) # + " -inurl:(htm|html|php|pls|txt) intitle:index.of \"last modified\" (mkv|mp4|avi|epub|pdf|mp3)"
     input_url = "https://bots.shrimadhavuk.me/search/?q={}".format(input_str)
