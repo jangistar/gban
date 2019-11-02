@@ -1,8 +1,6 @@
 # For @UniBorg
 
-"""fake exit
-
-.fexit"""
+"""use cmd `.fexit` to create a fake exit"""
 
 
 
