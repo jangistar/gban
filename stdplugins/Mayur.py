@@ -1,6 +1,5 @@
-"""Emoji
-Available Commands:
-.mayur"""
+"""use cmd .mayur
+aaahaaa you can edit this 😉"""
 
 from telethon import events
 
