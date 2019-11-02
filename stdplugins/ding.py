@@ -1,8 +1,4 @@
-"""Emoji
-
-Available Commands:
-
-.ding"""
+"""Available Commands: `.ding`"""
 
 from telethon import events
 
