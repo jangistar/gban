@@ -1,3 +1,5 @@
+"""use cmd .figlet <YOUR_WORD>"""
+
 import asyncio
 import pyfiglet
 from telethon import events, functions
