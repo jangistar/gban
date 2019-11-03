@@ -15,7 +15,7 @@ from time import sleep
 import asyncio
 import os
 
-@borg.on(events.NewMessage(pattern=r"\.karbon3", outgoing=True))
+@borg.on(events.NewMessage(pattern=r"\.karbonf", outgoing=True))
 async def carbon_api(e):
  if not e.text[0].isalpha() and e.text[0] not in ("/", "#", "@", "!"):
    """ A Wrapper for carbon.now.sh """
@@ -58,11 +58,11 @@ async def carbon_api(e):
 
    await e.edit("⬛⬛⬛⬛⬛")
    file = './carbon.png'
-   await e.edit("✅Karbon3 Completed, Uploading Karbon✅")
+   await e.edit("✅Karbonf Completed, Uploading Karbon✅")
    await e.client.send_file(
          e.chat_id,
          file,
-         caption="Karbon2 by [@r4v4n4](https://www.github.com/ravana69/pornhub)",
+         caption="Karbonf by [@Mayur_Karaniya](https://www.github.com/mkaraniya/BotHub)",
          force_document=True,
          reply_to=e.message.reply_to_msg_id,
          )
