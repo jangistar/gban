@@ -97,4 +97,4 @@ async def _(event):
 
             await asyncio.sleep(animation_interval)
 
-            await event.edit(animation_chars[i % 32])
+            await event.edit(animation_chars[i % 31])
