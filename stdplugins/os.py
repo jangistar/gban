@@ -1,9 +1,9 @@
 """Commands:
-.os
-.macos
-.windows
-.linux
-.stock"""
+.OS
+.Macos
+.Windows
+.Linux
+.Stock"""
 
 from telethon import events
 
@@ -27,7 +27,7 @@ async def _(event):
 
     input_str = event.pattern_match.group(1)
 
-    if input_str == "macos":
+    if input_str == "Macos":
 
         await event.edit(input_str)
 
@@ -67,7 +67,7 @@ async def _(event):
 
     input_str = event.pattern_match.group(1)
 
-    if input_str == "windows":
+    if input_str == "Windows":
 
         await event.edit(input_str)
 
@@ -108,7 +108,7 @@ async def _(event):
 
     input_str = event.pattern_match.group(1)
 
-    if input_str == "linux":
+    if input_str == "Linux":
 
         await event.edit(input_str)
 
@@ -148,7 +148,7 @@ async def _(event):
 
     input_str = event.pattern_match.group(1)
 
-    if input_str == "stock":
+    if input_str == "Stock":
 
         await event.edit(input_str)
 
@@ -188,7 +188,7 @@ async def _(event):
 
     input_str = event.pattern_match.group(1)
 
-    if input_str == "os":
+    if input_str == "OS":
 
         await event.edit(input_str)
 
