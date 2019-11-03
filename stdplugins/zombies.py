@@ -26,7 +26,7 @@ from telethon.tl.types import (ChannelParticipantsAdmins, ChatAdminRights,
                                ChatBannedRights, MessageEntityMentionName,
                                MessageMediaPhoto)
 
-from uniborg import PRIVATE_GROUP_BOT_API_ID, CMD_HELPME, bot
+
 from uniborg.events import register
 
 # =================== CONSTANT ===================
