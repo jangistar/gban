@@ -2,7 +2,7 @@
 
 Available Commands:
 
-.tp"""
+.timepass"""
 
 from telethon import events
 
