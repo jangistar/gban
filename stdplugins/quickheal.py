@@ -1,9 +1,6 @@
-"""Emoji
-
-Available Commands:
-
+"""
 .quickheal
-.vqh
+.sqh
 .vquickheal"""
 
 from telethon import events
