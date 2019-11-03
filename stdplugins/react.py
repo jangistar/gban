@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
-""" Command: .react happy|thinking|waving|wtf|love|confused|dead|sad|dog """
+""" Command: .react happy|thinking|waving|love|confused|dead|sad|dog """
 
 from telethon import events
 import random
@@ -41,15 +41,6 @@ async def _(event):
             "ヾ(◍’౪`◍)ﾉﾞ♡",
             "(ό‿ὸ)ﾉ",
             "(ヾ(´・ω・｀)",
-        ]
-    elif input_str in "wtf":
-        emoticons = [
-            "༎ຶ‿༎ຶ",
-            "(‿ˠ‿)",
-            "╰U╯☜(◉ɷ◉ )",
-            "(;´༎ຶ益༎ຶ`)♡",
-            "╭∩╮(︶ε︶*)chu",
-            "( ＾◡＾)っ (‿|‿)",
         ]
     elif input_str in "love":
         emoticons = [
