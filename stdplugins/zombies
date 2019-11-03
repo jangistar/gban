@@ -6,8 +6,10 @@
 Usage: Searches for deleted accounts in a groups and channels.
 Use .zombies clean to remove deleted accounts from the groups and channels."""
 
-
-
+from telethon import events
+import requests
+from uniborg.util import admin_cmd
+#
 from asyncio import sleep
 from os import remove
 
