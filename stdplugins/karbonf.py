@@ -1,10 +1,8 @@
-"""
-Carbon Scraper Plugin for Userbot. //text in creative way.
-usage: .karbon3 //as a reply to any text message
+"""Carbon Scraper Plugin for Userbot. //text in creative way.
+usage: .karbonf //as a reply to any text message
 
-Thanks to @r4v4n4 for vars
+Thanks to @r4v4n4 for vars"""
 
-"""
 from selenium.webdriver.support.ui import Select
 from selenium.webdriver.chrome.options import Options
 from selenium import webdriver
