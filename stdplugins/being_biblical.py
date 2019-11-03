@@ -24,9 +24,9 @@ async def _(event):
 
     await event.edit("LAKHU CHU 1 MINUTE !...")
 
-    await asyncio.sleep(2)
+    await asyncio.sleep(1)
 
-    x=(random.randrange(1,4))
+    x=(random.randrange(1,5))
     
     if x==1:
         
