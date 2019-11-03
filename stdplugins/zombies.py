@@ -27,7 +27,7 @@ from telethon.tl.types import (ChannelParticipantsAdmins, ChatAdminRights,
                                MessageMediaPhoto)
 
 
-from uniborg.events import register
+# from uniborg.events import register
 
 # =================== CONSTANT ===================
 PP_TOO_SMOL = "`The image is too small`"
