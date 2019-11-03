@@ -63,9 +63,9 @@ class Config(object):
     # foloowing plugins won't work on Heroku,
     # ⚡Remove This To Make Them Work But Would Make Bot Unstable AF...⚡
     NO_LOAD = [
-                    "pmpermit" ,
-                    "left" ,
-                    "hand" ,   
+                    "pmpermit",
+                    "left",
+                    "hand"   
     ]
     # Get your own API key from https://www.remove.bg/ or
     # feel free to use http://telegram.dog/Remove_BGBot
