@@ -1,3 +1,4 @@
+"""do `.song <song keyword>`"""
 
 from telethon import events
 import subprocess
