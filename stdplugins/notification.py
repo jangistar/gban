@@ -1,5 +1,5 @@
 """Notification Manager for @UniBorg
-.nccreatadch
+.nccreatedch
 .nolog
 .dellog
 .approvepm
