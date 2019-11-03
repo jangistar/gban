@@ -1,4 +1,4 @@
-"""COMMAND : .Mayur"""
+"""COMMAND : .Karaniya"""
 
 from telethon import events
 
