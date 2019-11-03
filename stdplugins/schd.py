@@ -1,5 +1,5 @@
 """Schedule Plugin for @UniBorg
-Syntax: .schd <time_in_seconds> ;=; <message to send>"""
+Syntax: .schd <time_in_seconds> = <message to send>"""
 from telethon import events
 import asyncio
 from uniborg.util import admin_cmd
