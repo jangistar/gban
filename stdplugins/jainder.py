@@ -1,4 +1,4 @@
-"""command: .sex"""
+"""command: `.max, .malove, .madog, .maconfused, .mathinking, .mawaving, .masad, .madead, .ma h`"""
 
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
@@ -7,19 +7,19 @@ from telethon import events
 import random
 import asyncio
 
-@borg.on(events.NewMessage(pattern=r"\.se(.*)", outgoing=True))
+@borg.on(events.NewMessage(pattern=r"\.ma(.*)", outgoing=True))
 async def _(event):
     if event.fwd_from:
         return
     input_str = event.pattern_match.group(1)
     if input_str in "x":
         emoticons = [
-            "u is mard",
-            "u is man",
-            "u is aurat",
-            "u is woman",
-            "u is gey",
-            "u is chakka",
+            " ",
+            " ",
+            " ",
+            " ",
+            " ",
+            "u is pappu",
         ]
     elif input_str in "thinking":
         emoticons = [
@@ -38,15 +38,6 @@ async def _(event):
             "ヾ(◍’౪◍)ﾉﾞ♡",
             "(ό‿ὸ)ﾉ",
             "(ヾ(´・ω・｀)",
-        ]
-    elif input_str in "wtf":
-        emoticons = [
-            "༎ຶ‿༎ຶ",
-            "(‿ˠ‿)",
-            "╰U╯☜(◉ɷ◉ )",
-            "(;´༎ຶ益༎ຶ)♡",
-            "╭∩╮(︶ε︶*)chu",
-            "( ＾◡＾)っ (‿|‿)",
         ]
     elif input_str in "love":
         emoticons = [
