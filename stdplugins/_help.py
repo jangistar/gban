@@ -1,11 +1,11 @@
-"""COMMAND : .help, .dc, .exec ls stdplugins, .stdplugins, .helpme, .syntax"""
+"""COMMAND : .helpme, .dc, .exec ls stdplugins, .stdplugins, .syntax"""
 
 import sys
 from telethon import events, functions, __version__
 from uniborg.util import admin_cmd
 
 
-@borg.on(admin_cmd(pattern="help ?(.*)", allow_sudo=True))  # pylint:disable=E0602
+@borg.on(admin_cmd(pattern="helpme ?(.*)", allow_sudo=True))  # pylint:disable=E0602
 async def _(event):
     if event.fwd_from:
         return
@@ -67,5 +67,5 @@ async def _(event):
         else:
             plugin_syntax = f"No DOCSTRING has been setup for {plugin_name} plugin."
     else:
-        plugin_syntax = "Enter valid **Plugin** name.\nDo `.exec ls stdplugins` or `.help` or `.helpme` or `.stdplugins` to get list of valid plugin names."
+        plugin_syntax = "Enter valid **Plugin** name.\nDo `.exec ls stdplugins` or `.helpme` or `.stdplugins` to get list of valid plugin names."
     await event.edit(plugin_syntax)
