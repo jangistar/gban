@@ -1,6 +1,7 @@
-"""
+# Xvideo / Pornhub / .lmx <search porn> / .lmx2 <search porn> / .lmp <search porn>
 
-Let me Google / YouTube / DuckDuckGo / altnews / Xvideo / Pornhub / var / log / dyno that for you! 
+
+"""Let me Google / YouTube / DuckDuckGo / altnews / var / log / dyno that for you! 
 
 Syntax:
 
@@ -12,26 +13,13 @@ Syntax:
 
  .lmalt <search news>
 
- .lmx <search porn>
-
- .lmx2 <search porn>
-
- .lmp <search porn>
-
  .lmvar <heroku app name>
 
  .lmlog <heroku app name>
 
  .dyno <type billing>
 
-
-
-
 """
-
-
-
-
 
 
 
