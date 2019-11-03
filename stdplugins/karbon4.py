@@ -1,10 +1,8 @@
-"""
-Carbon Scraper Plugin for Userbot. //text in creative way.
+"""Carbon Scraper Plugin for Userbot. //text in creative way.
 usage: .karbon4 //as a reply to any text message
 
-Thanks to @r4v4n4 for vars
+Thanks to @r4v4n4 for vars"""
 
-"""
 from selenium.webdriver.support.ui import Select
 from selenium.webdriver.chrome.options import Options
 from selenium import webdriver
@@ -62,7 +60,7 @@ async def carbon_api(e):
    await e.client.send_file(
          e.chat_id,
          file,
-         caption="Karbon2 by [@r4v4n4](https://www.github.com/ravana69/pornhub)",
+         caption="Karbon4 by [@Mayur_Karaniya](https://www.github.com/mkaraniya/BotHub)",
          force_document=True,
          reply_to=e.message.reply_to_msg_id,
          )
