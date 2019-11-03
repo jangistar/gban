@@ -1,7 +1,7 @@
 # This Source Code Form is subject to the terms of the Mozilla Public
 # License, v. 2.0. If a copy of the MPL was not distributed with this
 # file, You can obtain one at http://mozilla.org/MPL/2.0/.
-
+"""use cmd .load <plugin.py name>, .unload <plugin.py name>, send plugin <plugin.py name>, instol <plugin.py name>."""
 import asyncio
 import traceback
 import os
@@ -27,7 +27,7 @@ async def load_reload(event):
         trace_back = traceback.format_exc()
         # pylint:disable=E0602
         logger.warn(f"Failed to (re)load plugin {shortname}: {trace_back}")
-        await event.respond(f"Failed to (re)load pligon {shortname}: {e}")
+        await event.respond(f"Failed to (re)load plugin {shortname}: {e}")
 
 
 @borg.on(util.admin_cmd(pattern="(?:unload|remove) (?P<shortname>\w+)$"))  # pylint:disable=E0602
@@ -38,7 +38,7 @@ async def remove(event):
         msg = await event.respond(f"Not removing {shortname}")
     elif shortname in borg._plugins:  # pylint:disable=E0602
         borg.remove_plugin(shortname)  # pylint:disable=E0602
-        msg = await event.respond(f"Removed pligon {shortname}")
+        msg = await event.respond(f"Removed plugin {shortname}")
     else:
         msg = await event.respond(f"Plugin is {shortname} is not load...")
     await asyncio.sleep(DELETE_TIMEOUT)
@@ -67,7 +67,7 @@ async def send_plug_in(event):
     await event.delete()
 
 
-@borg.on(util.admin_cmd(pattern="instull plugin"))  # pylint:disable=E0602
+@borg.on(util.admin_cmd(pattern="instol plugin"))  # pylint:disable=E0602
 async def install_plug_in(event):
     if event.fwd_from:
         return
