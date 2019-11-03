@@ -3,7 +3,7 @@
 from telethon import events
 import time
 
-telethon.errors.rpcerrorlist.FloodWaitError: A wait of 280 seconds is required
+# telethon.errors.rpcerrorlist.FloodWaitError: A wait of 280 seconds is required
 
 @borg.on(events.NewMessage(pattern=r"\.bigspam (.*)", outgoing=True))
 async def _(event):
