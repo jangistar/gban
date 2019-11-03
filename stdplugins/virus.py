@@ -90,7 +90,7 @@ async def _(event):
 
             "◼️◼️\n◼️◼️",
 
-            "◼️"
+            "👑"
         ]
 
         for i in animation_ttl:
