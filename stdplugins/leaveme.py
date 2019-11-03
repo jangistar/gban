@@ -1,7 +1,7 @@
 # For @UniBorg
 # Courtesy @r4v4n4
 """
-.leave
+.leave to kick yourself from any group
 """
 
 from telethon.tl.functions.channels import LeaveChannelRequest
