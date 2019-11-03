@@ -1,4 +1,4 @@
- """$python "ASCII_IMAGE_GENERATOR.py" --file data/11.jpg --cols 120"""
+ """$python ASCII_IMAGE_GENERATOR.py --file data/11.jpg --cols 120"""
  
 # Python code to convert an image to ASCII image. 
 
