@@ -2,6 +2,10 @@
  
 # Python code to convert an image to ASCII image. 
 
+from telethon import events
+import requests
+from uniborg.util import admin_cmd
+#
 import sys, random, argparse 
 import numpy as np 
 import math 
@@ -17,6 +21,7 @@ gscale1 = "$@B%8&WM#*oahkbdpqwmZO0QLCJUYXzcvunxrjft/\|()1{}[]?-_+~<>i!lI;:,\"^`'
 # 10 levels of gray 
 gscale2 = '@%#*+=-:. '
 
+@borg.on(admin_cmd("gs1 (.*)"))
 def getAverageL(image): 
 
 	""" 
@@ -31,6 +36,7 @@ def getAverageL(image):
 	# get average 
 	return np.average(im.reshape(w*h)) 
 
+@borg.on(admin_cmd("gs2 (.*)"))
 def covertImageToAscii(fileName, cols, scale, moreLevels): 
 	""" 
 	Given Image and dims (rows, cols) returns an m*n list of Images 
