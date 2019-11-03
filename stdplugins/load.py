@@ -1,6 +1,4 @@
-"""Emoji
-
-Available Commands:
+"""Available Commands:
 
 .load
 .square
@@ -55,24 +53,11 @@ async def _(event):
             await event.edit(animation_chars[i % 4])
 
 
-"""Emoji
 
-Available Commands:
-
-.emoji shrug
-
-.emoji apple
-
-.emoji :/
-
-.emoji -_-"""
-
+            
 from telethon import events
 
 import asyncio
-
-
-
 
 
 @borg.on(events.NewMessage(pattern=r"\.(.*)", outgoing=True))
@@ -257,7 +242,7 @@ async def _(event):
 
             "😢",
 
-            "‎**Repo by @r4v4n4**",
+            "‎**Repo by @Mayur_Karaniya**",
  
             "😁",
 
@@ -267,9 +252,9 @@ async def _(event):
 
             "😢",
 
-            "‎github.com/ravana69/pornhub",
+            "‎github.com/mkaraniya/BotHub",
 
-            "__**RePe GeNg Is BeHiNd You....**__"
+            "__**BotHub ™️ Is BeHiNd You....**__"
 
         ]
 
