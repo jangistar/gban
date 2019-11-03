@@ -11,10 +11,10 @@ async def _(event):
         return
     splugin_name = event.pattern_match.group(1)
     if splugin_name in borg._plugins:
-        s_help_string = borg._plugins[splugin_name].__doc__
+        s_helpme_string = borg._plugins[splugin_name].__doc__
     else:
-        s_help_string = "****:"
-    help_string = """@Bot_Hub_Official™️ ( **Custom Built By** @Three_Cube_TeKnoways_bot ) \n**Verified Account**: ✅\n**Official Website**: http://www.threecube.tk\n**NOTICE**: **COMMANDS** are CASE **sensitive**\n**DESCRIPTION**: https://magicalpepewillguideyou.com\nPithun {}\nTalethrun {}\n
+        s_helpme_string = "****:"
+    helpme_string = """@Bot_Hub_Official™️ ( **Custom Built By** @Three_Cube_TeKnoways_bot ) \n**Verified Account**: ✅\n**Official Website**: http://www.threecube.tk\n**NOTICE**: **COMMANDS** are CASE **sensitive**\n**DESCRIPTION**: https://magicalpepewillguideyou.com\nPithun {}\nTalethrun {}\n
  """.format(
         sys.version,
         __version__
@@ -23,7 +23,7 @@ async def _(event):
     if tgbotusername is not None:
         results = await borg.inline_query(  # pylint:disable=E0602
             tgbotusername,
-            help_string + "\n\n" + s_help_string
+            helpme_string + "\n\n" + s_helpme_string
         )
         await results[0].click(
             event.chat_id,
@@ -32,7 +32,7 @@ async def _(event):
         )
         await event.delete()
     else:
-        await event.reply(help_string + "\n\n" + s_help_string)
+        await event.reply(helpme_string + "\n\n" + s_helpme_string)
         await event.delete()
 
 
@@ -40,7 +40,7 @@ async def _(event):
 async def _(event):
     if event.fwd_from:
         return
-    result = await borg(functions.help.GetNearestDcRequest())  # pylint:disable=E0602
+    result = await borg(functions.helpme.GetNearestDcRequest())  # pylint:disable=E0602
     await event.edit(result.stringify())
 
 
@@ -48,9 +48,9 @@ async def _(event):
 async def _(event):
     if event.fwd_from:
         return
-    result = await borg(functions.help.GetConfigRequest())  # pylint:disable=E0602
+    result = await borg(functions.helpme.GetConfigRequest())  # pylint:disable=E0602
     result = result.stringify()
-    logger.help(result)  # pylint:disable=E0602
+    logger.helpme(result)  # pylint:disable=E0602
     await event.edit("""Telethon UserBot powered by @Bot_Hub_Official""")
 
 
@@ -60,10 +60,10 @@ async def _(event):
         return
     plugin_name = event.pattern_match.group(1)
     if plugin_name in borg._plugins:
-        help_string = borg._plugins[plugin_name].__doc__
+        helpme_string = borg._plugins[plugin_name].__doc__
         unload_string = f"Use `.unload {plugin_name}` to remove this plugin.\n           © @Three_Cube_TeKnoways_Bot"
-        if help_string:
-            plugin_syntax = f"Syntax for plugin **{plugin_name}**:\n\n{help_string}\n{unload_string}"
+        if helpme_string:
+            plugin_syntax = f"Syntax for plugin **{plugin_name}**:\n\n{helpme_string}\n{unload_string}"
         else:
             plugin_syntax = f"No DOCSTRING has been setup for {plugin_name} plugin."
     else:
