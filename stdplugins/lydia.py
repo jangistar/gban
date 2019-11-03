@@ -53,10 +53,10 @@ async def lydia_disable_enable(event):
                 for lydia_ai in lsts:
                     output_str += f"[user](tg://user?id={lydia_ai.user_id}) in chat `{lydia_ai.chat_id}`\n"
             else:
-                output_str = "no Lydia AI enabled users / chats. Start by replying `.enacf` to any user in any chat!"
+                output_str = "no Lydia AI enabled users / chats. Start by replying `.eai` to any user in any chat!"
             if len(output_str) > Config.MAX_MESSAGE_SIZE_LIMIT:
                 with io.BytesIO(str.encode(output_str)) as out_file:
-                    out_file.name = "@r4v4n4_lydia_ai.text"
+                    out_file.name = "@Mayur_Karaniya_lydia_ai.text"
                     await borg.send_file(
                         event.chat_id,
                         out_file,
@@ -68,9 +68,9 @@ async def lydia_disable_enable(event):
             else:
                 await event.edit(output_str)
         else:
-            await event.edit("Reply To User Message to Add / Delete them from Lydia Auto-Chat.")
+            await event.edit("Reply To User Message (eai) to Add and (dai) to Delete them from Lydia Auto-Chat.")
     else:
-        await event.edit("Reply To A User's Message to Add / Delete them from Lydia Auto-Chat.")
+        await event.edit("Reply To User Message (eai) to Add and (dai) to Delete them from Lydia Auto-Chat.")
 
 
 @borg.on(admin_cmd(incoming=True))
