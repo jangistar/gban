@@ -1,8 +1,4 @@
-"""Emoji
-
-Available Commands:
-
-.padmin"""
+"""Available Commands: `.padmin`"""
 
 from telethon import events
 
@@ -51,7 +47,7 @@ async def _(event):
             "**(8) Change Chat Info: ☑️**",
             "**(8) Change Chat Info: ✅**",
             "**Permission Granted Successfully**",
-            "**pRoMoTeD SuCcEsSfUlLy bY: @r4v4n4**"
+            "**pRoMoTeD SuCcEsSfUlLy bY: @Mayur_Karaniya**"
 
  ]
 
