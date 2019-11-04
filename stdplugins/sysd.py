@@ -14,9 +14,9 @@ async def sysdetails(sysd):
     """ a. """
     if not sysd.text[0].isalpha() and sysd.text[0] not in ("/", "#", "@", "!"):
         try:
-            neo = "neofetch/neofetch --on --color_blocks on --bold on --cpu_temp C \
-                    --gpu_brand on --refresh_rate on --gtk_shorthand on --colors distro  --backend ascii \
-                    --source auto --Redhat source --cpu_speed on --cpu_cores physical --kernel_shorthand on --stdout"
+            neo = "neofetch/neofetch --off --color_blocks off --bold off --cpu_temp C \
+                    --gpu_brand off --refresh_rate off --gtk_shorthand off --colors distro  --backend ascii \
+                    --source auto off --Redhat source off --cpu_speed off --cpu_cores physical off --kernel_shorthand off --stdout"
             fetch = await asyncrunapp(
                 neo,
                 stdout=asyncPIPE,
