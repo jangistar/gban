@@ -1,4 +1,4 @@
-"""COMMAND : .runs , .metoo , .rape , .insult , .pro , .maaki , .gey"""
+"""COMMAND : .runs , .metoo , .pro """
 
 from telethon import events
 import random, re
