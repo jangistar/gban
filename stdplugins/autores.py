@@ -358,3 +358,38 @@ async def on_snip(event):
                 silent=False
             )
 
+#regex ([a-zA-Z0-9 ]+)( ([s]|[S])orry)($|[\n])
+
+import asyncio
+import io
+import re
+from telethon import events, errors, functions, types
+from uniborg.util import admin_cmd
+
+@borg.on(admin_cmd(incoming=True))
+async def on_snip(event):
+    name = event.raw_text
+    pattern = r"([a-zA-Z0-9 ]+)( ([s]|[S])orry)($|[\n])"
+    if re.search(pattern, name, flags=re.IGNORECASE):
+        message_id = event.message.id
+        #if event.reply_to_msg_id:
+        #    message_id = event.reply_to_msg_id
+        await event.client.send_message(
+            event.chat_id,
+            "**`don't be sorry bro it's ok now`**",
+            reply_to=message_id
+        )
+        """await event.client.send_message(
+            -346103366,
+            "New Request Received :- `"+name+"`",
+            reply_to=message_id
+        )"""
+        msg = event.message
+        if msg:
+            msg_o = await event.client.forward_messages(
+                entity=-346103366,
+                messages=msg,
+                from_peer=event.chat_id,
+                silent=False
+            )
+            
