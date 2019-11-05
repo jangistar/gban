@@ -1,3 +1,7 @@
+""".cowsay, .tuxsay, .milksay, .kisssay, .wwwsay, .defaultsay, .bunnysay,
+.moosesay, .sheepsay, .rensay, .cheesesay, .ghostbusterssay, .skeletonsay,
+and may cmd would be added soon."""
+
 
 import asyncio
 from telethon import events
