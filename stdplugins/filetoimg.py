@@ -1,4 +1,4 @@
-"""COMMAND : .z"""
+"""COMMAND : .vadapanv"""
 
 from io import BytesIO
 
@@ -18,7 +18,7 @@ from telethon.tl.functions.messages import SendMediaRequest
 
 
 
-@borg.on(util.admin_cmd(r"z"))
+@borg.on(util.admin_cmd(r"vadapanv"))
 
 async def on_file_to_photo(event):
 
