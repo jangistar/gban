@@ -16,7 +16,7 @@ async def sysdetails(sysd):
         try:
             neo = "neofetch/neofetch --off --color_blocks on --bold on --cpu_temp=C \
                     --cpu_speed on --cpu_cores physical --kernel_shorthand on \
-                    --gpu_brand=on --refresh_rate=on --gtk_shorthand=on --colors=distro  --backend=ascii \
+                    --gpu_brand on --refresh_rate on --gtk_shorthand on --colors=distro  --backend ascii \
                     --source=auto --Redhat source --stdout"
             fetch = await asyncrunapp(
                 neo,
