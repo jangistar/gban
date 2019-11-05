@@ -32,7 +32,7 @@ headers = {
 response = requests.request("POST", url, data=payload, headers=headers)
 
         a = ""
-        if "error" not in response_content:
+        if "error" not in response:
             print(response.text)
             a = json.dumps(current_date_detail_arraays, sort_keys=True, indent=4)
         else:
