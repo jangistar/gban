@@ -1,7 +1,10 @@
+"""use cmd .itaa"""
+
 from PIL import Image
 
 ASCII_CHARS = [ '#', '?', '%', '.', 'S', '+', '.', '*', ':', ',', '@']
 
+@borg.on(admin_cmd("itaa (.*)"))
 def scale_image(image, new_width=100):
     """Resizes an image preserving the aspect ratio.
     """
