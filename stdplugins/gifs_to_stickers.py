@@ -1,3 +1,5 @@
+""".gts"""
+
 from io import BytesIO
 
 from uniborg import util
