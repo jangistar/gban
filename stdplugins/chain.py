@@ -2,6 +2,9 @@
 # License, v. 2.0. If a copy of the MPL was not distributed with this
 # file, You can obtain one at http://mozilla.org/MPL/2.0/.
 
+"""cmd .chain it's just here, but of no use for use"""
+
+
 from telethon import events
 from telethon.tl.functions.messages import SaveDraftRequest
 
