@@ -19,7 +19,7 @@ async def _(event):
         yyyy = input_sgra[0]
         mm = input_sgra[1]
         dd = input_sgra[2]
-        required_url = "https://panchang.click/panchang-api/years/{}/months/{}/days/{}?lang={}".format(yyyy, mm, dd, "en")
+        required_url = "https://panchang.click/panchang-api years/{}/months/{}/days/{}?lang={}".format(yyyy, mm, dd, "en")
         headers = {"Accept": "application/json"}
         response_content = requests.get(required_url, headers=headers).json()
         a = ""
