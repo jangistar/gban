@@ -9,7 +9,7 @@ sticker_to_gif = storage.sticker_to_gif or {}
 access_hashes = storage.access_hashes or {}
 gif_to_sticker = {str(gif): int(sticker) for sticker, gif in sticker_to_gif.items()}
 
-
+@borg.on(events.Message(pattern=r"\.gts", outgoing=True))
 async def convert_sticker_to_gif(sticker):
     gif_id = sticker_to_gif.get(str(sticker.id), None)
     if gif_id:
