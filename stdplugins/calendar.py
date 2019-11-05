@@ -31,14 +31,4 @@ headers = {
 
 response = requests.request("POST", url, data=payload, headers=headers)
 
-        a = ""
-        if "error" not in response:
-            print(response.text)
-            a = json.dumps(current_date_detail_arraays, sort_keys=True, indent=4)
-        else:
-            a = response["error"]
-        await event.edit(str(a))
-    else:
-        await event.edit("SYNTAX: .calendar DD-MM-YYYY")
-    end = datetime.now()
-    ms = (end - start).seconds
+print(response.text
