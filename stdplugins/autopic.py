@@ -1,8 +1,6 @@
-"""Time In Profile Pic.....
-Command: `.autopp`
-
+"""Time In Profile Pic.
+Command: .autopp
 ⚠️DISCLAIMER⚠️
-
 USING THIS PLUGIN CAN RESULT IN ACCOUNT BAN. WE DONT CARE ABOUT BAN, SO WE ARR USING THIS."""
 
 import os
