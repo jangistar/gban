@@ -1,4 +1,4 @@
-"""COMMAND : ./cull"""
+"""COMMAND : ./calling"""
 
 from telethon import events
 
