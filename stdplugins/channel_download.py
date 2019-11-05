@@ -1,8 +1,7 @@
-"""
-Telegram Channel Media Downloader Plugin for userbot.
-usage: .geta channel_username [will  get all media from channel, tho there is limit of 3000 there to prevent API limits.]
-       .getc number_of_messsages channel_username  
-"""
+"""Telegram Channel Media Downloader Plugin for userbot.
+.geta channel_username [will  get all media from channel, tho there is limit of 3000 there to prevent API limits.]
+.getc number_of_messsages channel_username"""
+
 from telethon import events
 import asyncio
 import os
