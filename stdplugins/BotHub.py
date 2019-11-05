@@ -1,4 +1,4 @@
-"""Use cmd `.bothub , .armor , .love , .hero` and check what happens"""
+"""Use cmd .bothub , .armor , .love , .hero and check what happens"""
 
 from telethon import events
 
