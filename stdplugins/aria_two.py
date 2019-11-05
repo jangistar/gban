@@ -1,13 +1,12 @@
-"""
-A Torrent Client Plugin Based On Aria2 for Userbot
+"""A Torrent Client Plugin Based On Aria2 for Userbot
 Syntax: Start Aria2: .ariastart
-    Magnet link: .addmagnet magnetLink
-    Torrent file from local: .addtorrent file_path
-    Show Downloads: .showariastatus
-    Remove All Downloads: .ariaRM
-    Resume All Downloads: .ariaRES
-    Pause All Downloads:  .ariaP
-"""
+Magnet link: .addmagnet magnetLinK
+Torrent file from local: .addtorrent file_path
+Show Downloads: .showariastatus
+Remove All Downloads: .ariaRM
+Resume All Downloads: .ariaRES
+Pause All Downloads: .ariaP"""
+
 # By:- @Zero_cool7870
 
 
