@@ -2,7 +2,17 @@
 Available Commands:
 .unbanall
 .kick option
-Available Options: d, y, m, w, o, q, r """
+Available Options: d, y, m, w, o, q, r, p 
+p - reserved for channel
+e - usercount
+y - userstatusempty
+m - userstatuslastmonth
+w - userstatuslastweek
+o - userstatusoffline
+q - userstatusonline
+r - userstatusrecently
+b - bot
+d - deleted account"""
 from telethon import events
 from datetime import datetime, timedelta
 from telethon.tl.types import UserStatusEmpty, UserStatusLastMonth, UserStatusLastWeek, UserStatusOffline, UserStatusOnline, UserStatusRecently, ChannelParticipantsKicked, ChatBannedRights
