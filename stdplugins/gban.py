@@ -1,8 +1,7 @@
-"""Globally Ban users from all the
-Group Administrations bots where you are SUDO
-Available Commands:
+"""Globally Ban users from all the Group Administrations where you are SUDO.
 .gban REASON
 .ungban REASON"""
+
 from telethon import events
 import asyncio
 from uniborg.util import admin_cmd
