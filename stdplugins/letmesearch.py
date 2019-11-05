@@ -143,19 +143,50 @@ async def _(event):
 
 
 @borg.on(admin_cmd(pattern="ddg (.*)"))
+
+
+
 async def _(event):
 
+
+
     if event.fwd_from:
+
+
+
         return
 
+
+
     input_str = event.pattern_match.group(1)
+
+
+
     sample_url = "https://da.gd/s?url=https://duckduckgo.com/?q={}&t=h_&ia=about".format(input_str.replace(" ","+"))
+
+
+
     response_api = requests.get(sample_url).text
 
+
+
     if response_api:
+
+
+
         await event.edit("Let me **duckduckgo** that for you:\n👉 [{}]({})\n`Thank me later 😉` ".format(input_str,response_api.rstrip()))
-      else:
-       await event.edit("Something went wrong. Please try again later.")
+
+
+
+    else:
+
+
+
+        await event.edit("Something went wrong. Please try again later.")
+
+
+
+
 
        
        
