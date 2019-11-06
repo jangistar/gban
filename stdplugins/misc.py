@@ -29,7 +29,7 @@ async def _(event):
 
         animation_chars = [
 
-            "[Setup Guide - Basic](https://telegra.ph/How-to-host-a-Telegram-Userbot-11-06)",
+            "[BotHub's Setup Guide - Basic](https://telegra.ph/How-to-host-a-Telegram-Userbot-11-06)",
             
             "[BotHub's README.md file](https://github.com/mkaraniya/BotHub/blob/master/README.md)"
             
