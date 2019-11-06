@@ -12,7 +12,7 @@ async def _(event):
     if event.fwd_from:
         return
     start = datetime.now()
-    to_promote_id = None
+    to_promote_id = ()
     rights = ChatAdminRights(
         change_info=True,
         post_messages=True,
@@ -43,7 +43,7 @@ async def _(event):
     if event.fwd_from:
         return
     start = datetime.now()
-    to_promote_id = None
+    to_promote_id = ()
     rights = ChatAdminRights(
         post_messages=True
     )
