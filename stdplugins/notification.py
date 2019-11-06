@@ -2,9 +2,9 @@
 .nccreatedch
 .nolog
 .dellog
-.approvepm
+.apm
 .blockpm
-.listapprovedpms"""
+.lapms"""
 
 import asyncio
 import io
@@ -82,7 +82,7 @@ async def set_no_log_p_m(event):
                 await event.delete()
 
 
-@borg.on(admin_cmd(pattern="approvepm ?(.*)"))
+@borg.on(admin_cmd(pattern="apm ?(.*)"))
 async def approve_p_m(event):
     if event.fwd_from:
         return
@@ -117,7 +117,7 @@ async def approve_p_m(event):
                 await borg(functions.contacts.BlockRequest(chat.id))
 
 
-@borg.on(admin_cmd(pattern="listapprovedpms"))
+@borg.on(admin_cmd(pattern="lapms"))
 async def approve_p_m(event):
     if event.fwd_from:
         return
