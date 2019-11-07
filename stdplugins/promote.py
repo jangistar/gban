@@ -24,7 +24,7 @@ async def _(event):
         pin_messages=True,
         add_admins=False,
     )
-    rank = await event.user
+    rank = await event.get_user()
     if not rank:
         # Just in case.
         rank = "admin"
@@ -54,7 +54,7 @@ async def _(event):
     rights = ChatAdminRights(
         post_messages=True
     )
-    rank = await event.user
+    rank = await event.get_user()
     if not rank:
         # Just in case.
         rank = "admin"
