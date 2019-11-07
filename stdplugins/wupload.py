@@ -1,15 +1,11 @@
 """Emoji
 
-
-
-Available Commands:
-
 .wupload
-
-
 
 by @r4v4n4
 
+
+edited by @Mayur_Karaniya
 """
 
 
@@ -80,7 +76,7 @@ async def _(event):
 
             "DOWNLOADING... \n\n20.63% [███░░░░░░░░░░░░░░░░░]\n\nETA: 0m, 16s",    
 
-            "FILE DOWNLOADED, UPLOADING TO ADMIN'S WHATSAPP GROUP [CHUTIYA GENG BOYS]... \n\n34.42% [█████░░░░░░░░░░░░░░░]\n\nETA: 0m, 14s",
+            "FILE DOWNLOADED, UPLOADING TO ADMIN'S WHATSAPP GROUP/S []... \n\n34.42% [█████░░░░░░░░░░░░░░░]\n\nETA: 0m, 14s",
 
             "UPLOADING... \n\n42.17% [███████░░░░░░░░░░░░░]\n\nETA: 0m, 12s",
 
@@ -94,7 +90,7 @@ async def _(event):
 
             "SPLITTING FILE IN WHATSAPP SUPPORTED SIZE & UPLOADING IT... 93.50% [█████████████████░░░]\n\nETA: 0m, 02s",
 
-            "UPLOADING TO ADMIN'S WHATSAPP GROUP [CHUTIYA GANG BOYS]... 100% [████████████████████]\n`Scanning file...`\nETA: 0m, 00s",
+            "UPLOADING TO ADMIN'S WHATSAPP GROUP []... 100% [████████████████████]\n`Scanning file...`\nETA: 0m, 00s",
 
             "UPLOADING FILE TO WHATSAPP GROUP COMPLETED!\nFILE VERIFIED: ✅",
 
