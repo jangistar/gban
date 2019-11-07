@@ -1,5 +1,5 @@
 """Available Commands 
-Read code in .vapor, .zal""" 
+Read code in noice.py """ 
 
 # .cowsay cow which says things.\
 # :/Usage: Check yourself
@@ -24,7 +24,6 @@ Read code in .vapor, .zal"""
 # .smk <text/reply>A shit module for ツ , who cares. 
 # .lgfy Let me Google that for you real quick !!
 # Thanks to 🅱️ottom🅱️ext🅱️ot (@NotAMemeBot) for some of these.
-
 
 
 
