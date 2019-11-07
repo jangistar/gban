@@ -20,6 +20,9 @@
 # permission notice shall be included in all copies   #
 # or substantial portions of the Software.            #
 # =================================================== #
+
+"""it's just a backhand plugin for system not for userbots"""
+
 import sys
 
 
