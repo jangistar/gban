@@ -1,4 +1,4 @@
-"""use .zal Invoke the feeling of chaos."""
+"""use .izal Invoke the feeling of chaos."""
 
 import asyncio
 import random
