@@ -24,7 +24,14 @@ async def _(event):
         pin_messages=True,
         add_admins=False,
     )
-    rank = "admin"
+    user, rank = await get_user_from_event(event)
+    if not rank:
+        # Just in case.
+        rank = "admin"
+    if user:
+        pass
+    else:
+        return
     input_str = event.pattern_match.group(1)
     reply_msg_id = event.message.id
     if reply_msg_id:
@@ -49,7 +56,14 @@ async def _(event):
     rights = ChatAdminRights(
         post_messages=True
     )
-    rank = "admin"
+    user, rank = await get_user_from_event(event)
+    if not rank:
+        # Just in case.
+        rank = "admin"
+    if user:
+        pass
+    else:
+        return
     input_str = event.pattern_match.group(1)
     reply_msg_id = event.message.id
     if reply_msg_id:
