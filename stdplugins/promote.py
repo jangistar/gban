@@ -24,12 +24,10 @@ async def _(event):
         pin_messages=True,
         add_admins=False,
     )
-    user, rank = await get_user_from_event(event)
+    rank = await event.user
     if not rank:
         # Just in case.
         rank = "admin"
-    if user:
-        pass
     else:
         return
     input_str = event.pattern_match.group(1)
@@ -56,12 +54,10 @@ async def _(event):
     rights = ChatAdminRights(
         post_messages=True
     )
-    user, rank = await get_user_from_event(event)
+    rank = await event.user
     if not rank:
         # Just in case.
         rank = "admin"
-    if user:
-        pass
     else:
         return
     input_str = event.pattern_match.group(1)
