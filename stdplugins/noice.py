@@ -429,13 +429,13 @@ async def copypasta(cp_e):
         elif textx:
             message = textx.text
         else:
-            await cp_e.edit("`😂🅱️IvE👐sOME👅text👅for✌️Me👌tO👐MAkE👀iT💞funNy!💦`")
+            await cp_e.edit("`😂Ⓜ️IvE👐sOME👅text👅for✌️Me👌tO👐MAkE👀iT💞funNy!💦`")
             return
 
         reply_text = random.choice(EMOJIS)
         b_char = random.choice(
             message
-        ).lower()  # choose a random character in the message to be substituted with 🅱️
+        ).lower()  # choose a random character in the message to be substituted with Ⓜ️
         for owo in message:
             if owo == " ":
                 reply_text += random.choice(EMOJIS)
@@ -443,7 +443,7 @@ async def copypasta(cp_e):
                 reply_text += owo
                 reply_text += random.choice(EMOJIS)
             elif owo.lower() == b_char:
-                reply_text += "🅱️"
+                reply_text += "Ⓜ️"
             else:
                 if bool(random.getrandbits(1)):
                     reply_text += owo.upper()
@@ -549,11 +549,6 @@ async def hoi(hello):
     if not hello.text[0].isalpha() and hello.text[0] not in ("/", "#", "@", "!"):
         await hello.edit(random.choice(HELLOSTR))
 
-@borg.on(admin_cmd(pattern="irand", outgoing=True))
-async def irand(randi):
-    """ur a Randi! """
-    if not randi.text[0].isalpha() and randi.text[0] not in ("/", "#", "@", "!"):
-        await randi.edit(random.choice(RENDISTR))
 
 @borg.on(admin_cmd(pattern="owo(?: |$)(.*)", outgoing=True)) 
 async def faces(owo):
