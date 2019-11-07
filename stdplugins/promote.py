@@ -24,6 +24,7 @@ async def _(event):
         pin_messages=True,
         add_admins=False,
     )
+    rank = "admin"
     input_str = event.pattern_match.group(1)
     reply_msg_id = event.message.id
     if reply_msg_id:
@@ -32,7 +33,7 @@ async def _(event):
     elif input_str:
         to_premote_id = input_str
     try:
-        await borg(EditAdminRequest(event.chat_id, to_premote_id, rights))
+        await borg(EditAdminRequest(event.chat_id, to_premote_id, rights, rank))
     except (Exception) as exc:
         await event.edit(str(exc))
     else:
@@ -48,6 +49,7 @@ async def _(event):
     rights = ChatAdminRights(
         post_messages=True
     )
+    rank = "admin"
     input_str = event.pattern_match.group(1)
     reply_msg_id = event.message.id
     if reply_msg_id:
@@ -56,7 +58,7 @@ async def _(event):
     elif input_str:
         to_premote_id = input_str
     try:
-        await borg(EditAdminRequest(event.chat_id, to_premote_id, rights))
+        await borg(EditAdminRequest(event.chat_id, to_premote_id, rights, rank))
     except (Exception) as exc:
         await event.edit(str(exc))
     else:
