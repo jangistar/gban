@@ -1,4 +1,4 @@
-"""use .izal Invoke the feeling of chaos."""
+"""use .zal Invoke the feeling of chaos."""
 
 import asyncio
 import random
@@ -135,8 +135,8 @@ DISABLE_ROON = False
 
 
 
-@borg.on(admin_cmd(pattern="izal", outgoing=True)) 
-async def izal(zgfy):
+@borg.on(admin_cmd(pattern="zal", outgoing=True)) 
+async def zal(zgfy):
     """ Invoke the feeling of chaos. """
     if not zgfy.text[0].isalpha() and zgfy.text[0] not in ("/", "#", "@", "!"):
         reply_text = list()
