@@ -130,27 +130,9 @@ ZALG_LIST = [["̖",
               " ͡",
               ]]
 
-# DISABLE_ROON = False
+DISABLE_ROON = False
 # ===========================================
 
-
-@borg.on(events.NewMessage(outgoing=True, pattern="^:/$")) 
-async def kek(keks):
-    """ Check yourself ;)"""
-    uio = ["/", "\\"]
-    for i in range(1, 15):
-        time.sleep(0.3)
-        await keks.edit(":" + uio[i % 2])
-
-
-
-@borg.on(events.NewMessage(outgoing=True, pattern="^;_;$"))
-async def fun(e):
-    t = ";__;"
-    for j in range(10):
-        t = t[:-1] + "_;"
-        await e.edit(t)
-        
 
 
 @borg.on(admin_cmd(pattern="izal", outgoing=True)) 
