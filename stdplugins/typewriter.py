@@ -1,6 +1,8 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 # (c) Shrimadhav U K
+
+""" cmd .typewriter to write it as typewriter"""
 import asyncio
 from uniborg.util import admin_cmd
 
