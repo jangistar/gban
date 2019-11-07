@@ -1,6 +1,6 @@
 """Upload local Files to Mirrors
 Syntax:
-."""
+.mirrorace"""
 
 import aiohttp
 import asyncio
