@@ -44,10 +44,10 @@ async def _(event):
 
 
 
-https://telegra.ph/command-list-for-BotHub-Userbot-11-08
+"""https://telegra.ph/command-list-for-BotHub-Userbot-11-08
 
 
-""".helpme
+.helpme
 .stdplugins
 .3Cube
 .bothub
