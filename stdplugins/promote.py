@@ -85,4 +85,4 @@ async def _(event):
     except (Exception) as exc:
         await event.edit(str(exc))
     else:
-        await event.edit("admins has Successfully premoted {to_prankpremote_id}")
+        await event.edit("admins has Successfully premoted Madanyu{}")
