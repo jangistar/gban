@@ -121,6 +121,7 @@ class Uniborg(TelegramClient):
 
         del self._plugins[shortname]
         self._logger.info(f"Removed plugin {shortname}")
+        self._logger.info(f"just do .cl to know your cmd list")
 
     def await_event(self, event_matcher, filter=None):
         fut = asyncio.Future()
