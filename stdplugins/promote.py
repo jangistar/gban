@@ -33,7 +33,7 @@ async def _(event):
     except (Exception) as exc:
         await event.edit(str(exc))
     else:
-        await event.edit("Successfully premoted")
+        await event.edit("OO you are Successfully premoted")
 
 @borg.on(admin_cmd(pattern="demote ?(.*)"))
 async def _(event):
