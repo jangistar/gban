@@ -57,7 +57,7 @@ async def _(event):
     elif input_str:
         to_demote_id = input_str
     try:
-        await borg(EditAdminRequest(event.chat_id, to_demote_id, permissions, ""))
+        await borg(EditAdminRequest(event.chat_id, to_demote_id, rights, ""))
     except (Exception) as exc:
         await event.edit(str(exc))
     else:
