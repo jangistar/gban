@@ -1,4 +1,4 @@
-"""Reply to a user to .promote them in the current chat"""
+"""Reply to a user to .premote / .demote / .prankpremote them in the current chat"""
 from telethon import events
 import asyncio
 from datetime import datetime
@@ -7,12 +7,12 @@ from telethon.tl.types import ChatAdminRights
 from uniborg.util import admin_cmd
 
 
-@borg.on(admin_cmd(pattern="promote ?(.*)"))
+@borg.on(admin_cmd(pattern="premote ?(.*)"))
 async def _(event):
     if event.fwd_from:
         return
     start = datetime.now()
-    to_promote_id = None
+    to_premote_id = None
     rights = ChatAdminRights(
         change_group_info=False,
         post_messages=True,
@@ -27,15 +27,15 @@ async def _(event):
     reply_msg_id = event.message.id
     if reply_msg_id:
         r_mesg = await event.get_reply_message()
-        to_promote_id = r_mesg.sender_id
+        to_premote_id = r_mesg.sender_id
     elif input_str:
-        to_promote_id = input_str
+        to_premote_id = input_str
     try:
-        await borg(EditAdminRequest(event.chat_id, to_promote_id, rights, ""))
+        await borg(EditAdminRequest(event.chat_id, to_premote_id, rights, ""))
     except (Exception) as exc:
         await event.edit(str(exc))
     else:
-        await event.edit("Successfully Promoted")
+        await event.edit("Successfully premoted")
 
 @borg.on(admin_cmd(pattern="demote ?(.*)"))
 async def _(event):
@@ -68,12 +68,12 @@ async def _(event):
         await event.edit("Successfully Demoted")
 
         
-@borg.on(admin_cmd(pattern="prankpromote ?(.*)"))
+@borg.on(admin_cmd(pattern="prankpremote ?(.*)"))
 async def _(event):
     if event.fwd_from:
         return
     start = datetime.now()
-    to_prankpromote_id = None
+    to_prankpremote_id = None
     rights = ChatAdminRights(
         change_chat_info=False
     )
@@ -81,12 +81,12 @@ async def _(event):
     reply_msg_id = event.message.id
     if reply_msg_id:
         r_mesg = await event.get_reply_message()
-        to_prankpromote_id = r_mesg.sender_id
+        to_prankpremote_id = r_mesg.sender_id
     elif input_str:
-        to_prankpromote_id = input_str
+        to_prankpremote_id = input_str
     try:
-        await borg(EditAdminRequest(event.chat_id, to_prankpromote_id, rights, ""))
+        await borg(EditAdminRequest(event.chat_id, to_prankpremote_id, rights, ""))
     except (Exception) as exc:
         await event.edit(str(exc))
     else:
-        await event.edit("Madanyu Successfully Promoted")
+        await event.edit("Madanyu Successfully premoted")
