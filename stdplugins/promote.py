@@ -14,7 +14,7 @@ async def _(event):
     start = datetime.now()
     to_promote_id = None
     rights = ChatAdminRights(
-        change_info=False,
+        change_group_info=False,
         post_messages=True,
         edit_messages=True,
         delete_messages=True,
@@ -44,12 +44,12 @@ async def _(event):
     start = datetime.now()
     to_demote_id = None
     rights = ChatAdminRights(
-        change_info=False,
-        post_messages=False,
+        change_group_info=False,
+        post_messages=True,
         edit_messages=False,
         delete_messages=False,
         ban_users=False,
-        invite_users=False,
+        invite_users=True,
         pin_messages=False,
         add_admins=False,
     )
@@ -61,7 +61,7 @@ async def _(event):
     elif input_str:
         to_demote_id = input_str
     try:
-        await borg(EditAdminRequest(event.chat_id, to_demote_id, rights, ""))
+        await borg(EditAdminRequest(event.chat_id, to_demote_id, permissions, ""))
     except (Exception) as exc:
         await event.edit(str(exc))
     else:
@@ -75,7 +75,7 @@ async def _(event):
     start = datetime.now()
     to_prankpromote_id = None
     rights = ChatAdminRights(
-        post_messages=True
+        change_chat_info=False
     )
     input_str = event.pattern_match.group(1)
     reply_msg_id = event.message.id
