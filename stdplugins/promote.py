@@ -14,14 +14,12 @@ async def _(event):
     start = datetime.now()
     to_premote_id = None
     rights = ChatAdminRights(
-        change_group_info=False,
-        post_messages=True,
-        edit_messages=True,
-        delete_messages=True,
-        ban_users=True,
-        invite_users=True,
-        pin_messages=True,
-        add_admins=False,
+                                 add_admins=False,
+                                 invite_users=True,
+                                 change_info=False,
+                                 ban_users=True,
+                                 delete_messages=True,
+                                 pin_messages=True,
     )
     input_str = event.pattern_match.group(1)
     reply_msg_id = event.message.id
@@ -44,14 +42,12 @@ async def _(event):
     start = datetime.now()
     to_demote_id = None
     rights = ChatAdminRights(
-        change_group_info=False,
-        post_messages=True,
-        edit_messages=False,
-        delete_messages=False,
-        ban_users=False,
-        invite_users=True,
-        pin_messages=False,
-        add_admins=False,
+                                add_admins=None,
+                                invite_users=None,
+                                change_info=None,
+                                ban_users=None,
+                                delete_messages=None,
+                                pin_messages=None,
     )
     input_str = event.pattern_match.group(1)
     reply_msg_id = event.message.id
@@ -75,7 +71,7 @@ async def _(event):
     start = datetime.now()
     to_prankpremote_id = None
     rights = ChatAdminRights(
-        change_chat_info=False
+        
     )
     input_str = event.pattern_match.group(1)
     reply_msg_id = event.message.id
@@ -89,4 +85,4 @@ async def _(event):
     except (Exception) as exc:
         await event.edit(str(exc))
     else:
-        await event.edit("Madanyu Successfully premoted")
+        await event.edit("admins has Successfully premoted {to_prankpremote_id}")
