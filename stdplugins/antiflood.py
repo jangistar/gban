@@ -42,7 +42,7 @@ async def _(event):
                     )
                     await asyncio.sleep(10)
                     await no_admin_privilege_message.edit(
-                        "https://t.me/keralagram/724970",
+                        "https://t.me/Bot_Hub_Official_Group/901",
                         link_preview=False
                     )
                 else:
