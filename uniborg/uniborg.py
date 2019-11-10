@@ -121,12 +121,10 @@ class Uniborg(TelegramClient):
 
         del self._plugins[shortname]
         self._logger.info(f"Removed plugin {shortname}")
-       # self._logger.info(f"just do .cl to know your cmd list")
         
-    def self._msg(self):
-     #   self._msg[shortname] = mod
-        self._logger.info(f"just do .cl to know your cmd list")
-
+        self._logger.info(f"Hurrey You just had deployed BotHub userbot for support :-https://t.me/Bot_Hub_Official, just do .ping to confirm your bot on in anygroup & do .cl to know your cmd list")
+        
+    
     def await_event(self, event_matcher, filter=None):
         fut = asyncio.Future()
 
