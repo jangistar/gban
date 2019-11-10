@@ -1,7 +1,7 @@
 from os import remove, execl
 import sys
 
-from git import Repo
+from unsupported import repo
 from git.exc import GitCommandError, InvalidGitRepositoryError, NoSuchPathError
 
 from userbot import CMD_HELP, bot
