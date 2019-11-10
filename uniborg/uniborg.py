@@ -122,7 +122,7 @@ class Uniborg(TelegramClient):
         del self._plugins[shortname]
         self._logger.info(f"Removed plugin {shortname}")
         
-        self._logger.info(f"Hurrey You just had deployed BotHub userbot for support :-https://t.me/Bot_Hub_Official, just do .ping to confirm your bot on in anygroup & do .cl to know your cmd list")
+        self._logger.info(f"Hurrey You just had deployed BotHub userbot, for support :-https://telegram.me/Bot_Hub_Official, just do .ping to confirm your bot is on in anygroup & do .cl in your private group to know BotHub's cmd list. Bakkaa you can also use .on sometimes if you wish 😉.")
         
     
     def await_event(self, event_matcher, filter=None):
