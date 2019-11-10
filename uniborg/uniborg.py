@@ -123,8 +123,8 @@ class Uniborg(TelegramClient):
         self._logger.info(f"Removed plugin {shortname}")
        # self._logger.info(f"just do .cl to know your cmd list")
         
-    def log_info(self):
-        
+    def self._msg(self):
+     #   self._msg[shortname] = mod
         self._logger.info(f"just do .cl to know your cmd list")
 
     def await_event(self, event_matcher, filter=None):
