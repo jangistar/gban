@@ -1,4 +1,4 @@
-
+""" cmd .sg reply or tag any user"""
 import datetime
 from telethon import events
 from telethon.errors.rpcerrorlist import YouBlockedUserError
