@@ -93,10 +93,12 @@
     },
     "TG_BOT_TOKEN_BF_HER": {
       "description": "Obtain a Telegram bot token by contacting @BotFather",
+      "value": "",
       "required": true
     },
     "TG_BOT_USER_NAME_BF_HER": {
       "description": "Obtain a Telegram bot @username by contacting @BotFather",
+      "value": "",
       "required": true
     },
     "REM_BG_API_KEY": {
@@ -121,6 +123,7 @@
     },
     "NO_OF_BUTTONS_DISPLAYED_IN_H_ME_CMD": {
       "description": "Number of rows of modules that needs to be displayed in the .helpme command",
+      "value": "9",
       "required": true
     },
     "COMMAND_HAND_LER": {
@@ -160,7 +163,7 @@
     },
     "AUTH_TOKEN_DATA": {
       "description": "This is required for gdrive to work. This might help: https://da.gd/authtoken ",
-      "value": "blahblah",
+      "value": "google",
       "required": false
     },
     "DATA_DIRECTORY": {
