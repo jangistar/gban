@@ -37,12 +37,12 @@
     "PRIVATE_GROUP_BOT_API_ID": {
       "description": "Send .g_id in any group to fill this value.",
       "value": "-100",
-      "required": false
+      "required": true
     },
     "PRIVATE_CHANNEL_BOT_API_ID": {
       "description": "Send .g_id in any channel to fill this value. ReQuired for @Manuel15 inspiration to work!",
       "value": "-100",
-      "required": false
+      "required": true
     },
     "TMP_DOWNLOAD_DIRECTORY": {
       "description": "This is required for the plugins involving the file system.",
@@ -84,20 +84,20 @@
     "G_BAN_LOGGER_GROUP": {
       "description": "Send .g_id in any group with all your administration bots (added)",
       "value": "-100",
-      "required": false
+      "required": true
     },
     "TG_GLOBAL_ALBUM_LIMIT": {
       "description": "How many media should appear when you do a .google image search? (setting a low value is preferred)",
       "value": "9",
-      "required": false
+      "required": true
     },
     "TG_BOT_TOKEN_BF_HER": {
       "description": "Obtain a Telegram bot token by contacting @BotFather",
-      "required": false
+      "required": true
     },
     "TG_BOT_USER_NAME_BF_HER": {
       "description": "Obtain a Telegram bot @username by contacting @BotFather",
-      "required": false
+      "required": true
     },
     "REM_BG_API_KEY": {
       "description": "Get your own API key from https://www.remove.bg/ or feel free to use http://telegram.dog/Remove_BGBot",
@@ -121,12 +121,12 @@
     },
     "NO_OF_BUTTONS_DISPLAYED_IN_H_ME_CMD": {
       "description": "Number of rows of modules that needs to be displayed in the .helpme command",
-      "required": false
+      "required": true
     },
     "COMMAND_HAND_LER": {
       "description": "specify command handler that should be used for the plugins. This should be a valid \"regex\" pattern",
-      "value": "\."
-      "required": false
+      "value": "\.",
+      "required": true
     },
     "SUDO_USERS": {
       "description": "Makes Your Account Stable. Do not edit this values or you would be in trouble.",
@@ -176,7 +176,7 @@
     "PM_LOGGR_BOT_API_ID": {
       "description": "Type .g_id in private channel and add that value here.",
       "value": "-100",
-      "required": false
+      "required": true
     },
     "CHROME_BIN": {
       "description": "For Carbon.py",
@@ -198,16 +198,18 @@
     },
     "OPEN_LOAD_KEY": {
       "description": "I dunno but my repo needs it, u can type 100.",
-      "required": false
+      "value": "100",
+      "required": true
     },
     "OPEN_LOAD_LOGIN": {
       "description": "Same Description As Above.",
-      "required": false
+      "value": "100",
+      "required": true
     },
     "TEMP_DIR": {
       "description": ":p",
       "value": "Env",
-      "required": false
+      "required": true
     },
     "UB_BLACK_LIST_CHAT": {
       "description": "don't edit this values or you would be in trouble, if you edit this values and got into trouble don't blame us.",
