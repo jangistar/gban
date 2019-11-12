@@ -13,7 +13,9 @@ import uuid
 import git
 from git import Repo
 
-from uniborg import utils
+# from uniborg import loader, utils
+from uniborg.util import admin_cmd, loader
+
 
 logger = logging.getLogger(__name__)
 
