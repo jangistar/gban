@@ -122,8 +122,7 @@ class Config(object):
     GOOGLE_CHROME_BIN = os.environ.get("GOOGLE_CHROME_BIN", None)
     #
     LYDIA_API = os.environ.get("LYDIA_API", None)
-    #
-    LYDIA_ANTI-PM = os.environ.get("LYDIA_ANTI-PM", None)
+    LYDIA_ANTI-PM = bool(os.environ.get("LYDIA_ANTI-PM", False))
     #
     CHROME_DRIVER = os.environ.get("CHROME_DRIVER", None)
     CHROME_BIN = os.environ.get("CHROME_BIN", None)
