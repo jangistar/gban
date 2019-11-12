@@ -13,7 +13,7 @@ import uuid
 import git
 from git import Repo
 
-from root import loader, utils
+from uniborg import loader, utils
 
 logger = logging.getLogger(__name__)
 
