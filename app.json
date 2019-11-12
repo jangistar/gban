@@ -57,6 +57,10 @@
       "description": "This is required for the speech to text module. Get your PASSWORD from https://console.bluemix.net/docs/services/speech-to-text/getting-started.html",
       "required": false
     },
+    "LYDIA_ANTI-PM": {
+      "description": "Set to True if you want to.",
+      "required": false
+    },
     "LYDIA_API": {
       "description": "This Module Needs CoffeeHouse API to work. so Join https://telegram.dog/IntellivoidDev and send #activateapi and follow instructions.",
       "value": "GET API TO MAKE AI WORK",
