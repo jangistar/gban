@@ -13,7 +13,7 @@ import uuid
 import git
 from git import Repo
 
-from .. import loader, utils
+from root import loader, utils
 
 logger = logging.getLogger(__name__)
 
