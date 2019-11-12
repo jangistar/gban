@@ -14,8 +14,7 @@ import git
 from git import Repo
 
 # from uniborg import loader, utils
-from uniborg.util import admin_cmd, loader
-
+from uniborg.util import admin_cmd
 
 logger = logging.getLogger(__name__)
 
