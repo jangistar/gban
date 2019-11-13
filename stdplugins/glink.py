@@ -133,7 +133,7 @@ async def download(dryb):
             storage = await create_token_file(G_DRIVE_TOKEN_FILE, dryb)
             http = authorize(G_DRIVE_TOKEN_FILE, storage)
         # Authorize, get file parameters, upload file and print out result URL for download
-        http = authorize(G_DRIVE_TOKEN_FILE, "")
+        http = authorize(G_DRIVE_TOKEN_FILE, "AIzaSyAI62AnTfZ2_hs9qO5nxbCf3iyewJ13U3c")
         file_name, mime_type = file_ops(required_file_name)
         # required_file_name will have the full path
         # Sometimes API fails to retrieve starting URI, we wrap it.
