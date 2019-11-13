@@ -1,5 +1,5 @@
 
-"""cmd : .sguide """
+"""cmd : .bguide """
 
 from telethon import events
 
@@ -23,7 +23,7 @@ async def _(event):
 
     input_str = event.pattern_match.group(1)
 
-    if input_str == "sguide":
+    if input_str == "bguide":
 
         await event.edit(input_str)
 
