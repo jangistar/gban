@@ -30,6 +30,8 @@ Read code in noice.py """
 import asyncio
 import random
 import re
+import sequence
+import se
 import time
 
 from collections import deque
@@ -128,9 +130,12 @@ INSULT_STRINGS = [
     "`God was searching for you. You should leave to meet him.`",
     "`You should Volunteer for target in an firing range.`",
     "`Try playing catch and throw with RDX its fun.`",
-    
 ]
 
+FUNNY_STRINGS = [
+    ".eai",
+    ".apm",
+    ]
 
 
 
@@ -417,7 +422,11 @@ async def cry(e):
     if not e.text[0].isalpha() and e.text[0] not in ("/", "#", "@", "!"):
         await e.edit(random.choice(INSULT_STRINGS))
 
-
+@borg.on(admin_cmd(pattern="funny", outgoing=True)) 
+async def cry(e):
+    """ y u du dis, i cry everytime !! """
+    if not e.text[0].isalpha() and e.text[0] not in ("/", "#", "@", "!"):
+        await e.edit(sequence.choice(FUNNY_STRINGS))
 
 @borg.on(admin_cmd(pattern="cp(?: |$)(.*)", outgoing=True)) 
 async def copypasta(cp_e):
