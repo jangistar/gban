@@ -131,7 +131,7 @@ INSULT_STRINGS = [
 ]
 
 BUNNY_STRINGS = [
-    [".eai,],
+    [".eai,]
     [".apm,]
     ]
 
