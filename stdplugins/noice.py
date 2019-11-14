@@ -421,8 +421,8 @@ async def cry(e):
         await e.edit(random.choice(INSULT_STRINGS))
 
 @borg.on(admin_cmd(pattern="funny", outgoing=True)) 
-async def cry(e):
-    """ y u du dis, i cry everytime !! """
+async def cry(funny_e):
+    """ this is too much fun !! """
     if not e.text[0].isalpha() and e.text[0] not in ("/", "#", "@", "!"):
         await e.edit(sequence.choice(FUNNY_STRINGS))
 
