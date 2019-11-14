@@ -21,7 +21,7 @@ PREV_REPLY_MESSAGE = {}
 BAALAJI_TG_USER_BOT = "My Master hasn't approved you to PM."
 TG_COMPANION_USER_BOT = "Please wait for his response and don't spam his PM."
 UNIBORG_USER_BOT_WARN_ZERO = "I am currently offline. Please do not SPAM me."
-UNIBORG_USER_BOT_NO_WARN = ".funny"
+UNIBORG_USER_BOT_NO_WARN = ".apm"
 
 
 @borg.on(admin_cmd(pattern="nccreatedch"))
@@ -97,7 +97,7 @@ async def approve_p_m(event):
                     await PREV_REPLY_MESSAGE[chat.id].delete()
                     del PREV_REPLY_MESSAGE[chat.id]
                 pmpermit_sql.approve(chat.id, reason)
-                await event.edit("[──███▅▄▄▄▄▄▄▄▄▄\n─██▐████████████\n▐█▀████████████▌▌\n▐─▀▀▀▐█▌▀▀███▀█─▌\n▐▄───▄█───▄█▌▄█](t.me/Three_Cube_TeKnoways) \n\n My Master Has Approved You To PM him...")
+                await event.edit(".eai")
                 await asyncio.sleep(30)
                 await event.delete()
 
