@@ -30,8 +30,6 @@ Read code in noice.py """
 import asyncio
 import random
 import re
-import sequence
-import se
 import time
 
 from collections import deque
