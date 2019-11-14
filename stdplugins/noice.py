@@ -136,8 +136,7 @@ FUNNY_STRINGS = [[
     ]
  [  
     ".apm",
- ]
-]]
+ ]]
 
 
 UWUS = [
