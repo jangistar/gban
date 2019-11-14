@@ -130,7 +130,7 @@ INSULT_STRINGS = [
     "`Try playing catch and throw with RDX its fun.`",
 ]
 
-FUNNY_STRINGS = [
+BUNNY_STRINGS = [
     ".eai",
     ".apm",
     ]
@@ -414,17 +414,17 @@ async def cri(e):
     if not e.text[0].isalpha() and e.text[0] not in ("/", "#", "@", "!"):
         await e.edit(random.choice(CRI))
 
-@borg.on(admin_cmd(pattern="insut", outgoing=True)) 
+@borg.on(admin_cmd(pattern="insult", outgoing=True)) 
 async def cry(e):
     """ y u du dis, i cry everytime !! """
     if not e.text[0].isalpha() and e.text[0] not in ("/", "#", "@", "!"):
         await e.edit(random.choice(INSULT_STRINGS))
 
-@borg.on(admin_cmd(pattern="funny", outgoing=True)) 
-async def cry(funny_e):
-    """ this is too much fun !! """
+@borg.on(admin_cmd(pattern="bunny", outgoing=True)) 
+async def cry(e):
+    """ y u du dis, i cry everytime !! """
     if not e.text[0].isalpha() and e.text[0] not in ("/", "#", "@", "!"):
-        await e.edit(sequence.choice(FUNNY_STRINGS))
+        await e.edit(random.choice(BUNNY_STRINGS))
 
 @borg.on(admin_cmd(pattern="cp(?: |$)(.*)", outgoing=True)) 
 async def copypasta(cp_e):
