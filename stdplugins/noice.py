@@ -131,12 +131,10 @@ INSULT_STRINGS = [
     
 ]
 
-FUNNY_STRINGS = [[
-    ".eai",
-    ]
- [  
-    ".apm",
- ]]
+FUNNY_STRINGS = [[".eai",
+                  ]
+                  [".apm",
+                  ]]
 
 
 UWUS = [
