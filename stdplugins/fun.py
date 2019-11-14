@@ -8,27 +8,28 @@ METOOSTR = [
     "`Me too thanks`",
     "`Haha yes, me too`",
     "`Same lol`",
-    "`Me irl`",
+    "`Me `",
     "`Same here`",
     "`Haha yes`",
-    "`Same pinch bsdk`",
+    "`Same pinch `",
 ]
 RUNSREACTS = [
     "`Runs to Thanos`",
     "`Runs to Modiji For Achey Din`",
     "`Runs far, far away from earth`",
     "`Running faster than usian bolt coz I'mma Bot`",
-    "`Runs to Marie`",
+    "`Runs to no one`",
     "`This Group is too cancerous to deal with.`",
-    "`Cya bois`",
+    "`Cya boss`",
     "`I am a mad person. Plox Ban me.`",
     "`I go away`",
-    "`I am just walking off, coz me is too fat.`",
-    "`I Fugged off!`",
+    "`I am just walking off, coz me is too healthy.`",
+    "`I switch off!`",
 ]
 PRO_STRINGS = [
-     "`This gey is pro as phack.`",
+     "`You is pro user.`",
      "`Pros here -_- Time to Leave`",
+     "`Pros everywhere`",
 ]
 INSULT_STRINGS = [ 
     "`Owww ... Such a stupid idiot.`",
@@ -56,10 +57,6 @@ INSULT_STRINGS = [
     "`God was searching for you. You should leave to meet him.`",
     "`You should Volunteer for target in an firing range.`",
     "`Try playing catch and throw with RDX its fun.`",
-    "`People like you are the reason we have middle fingers.`",
-    "`When your mom dropped you off at the school, she got a ticket for littering.`",
-    "`You’re so ugly that when you cry, the tears roll down the back of your head…just to avoid your face.`",
-    "`If you’re talking behind my back then you’re in a perfect position to kiss my a**!.`",
 ]
 # ===========================================
                           
