@@ -130,9 +130,9 @@ INSULT_STRINGS = [
     "`Try playing catch and throw with RDX its fun.`",
 ]
 
-BUNNY_STRINGS = [
-    ".eai",
-    ".apm",
+BUNNY_STRINGS = [[
+    [".eai,],
+    [".apm,]
     ]
 
 
