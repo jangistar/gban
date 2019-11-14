@@ -45,27 +45,27 @@ from uniborg.util import admin_cmd
 
 # ================= CONSTANT =================
 RENDISTR = [
-    "`I Know Uh ez Rendi Bhay Dont show Your Randi Pesa Here`",
-    "`Jag Suna suna laage Sab #maderchod bhay`",
-    "`you talking behind meh wew uh iz my fan now bhay`",
-    "`Wanna pass in Life Goto BRAZZER.CAM BHAY`",
-    "`Uh iz Pro i iz noob your boob is landi uh are Randi`",
-    "`Sellers Nasa calling Uh bhay😆`",
-    "`Badwoo ki yojna behan bna ke ch*da uh iz badwa its your yozja?`",
-    "`CHAND PE CHADA HAI CHANDYAAN KA GHODA TERA NAAM HAI MANSUR TU HAI BEHAN KA LOD*😂`",
-    "`Jab se dil lga baithe tanhai me maa chu*da baithe wo kho gyi kisi aur ke pyar hum apne hi jaato me aag lga baithe`",
-    "`Chadii ke ander se lal pani kha se ata hai ky teri masuka ka bhosda bhi paan khata hai😂`",
-    "`Sun bhosdi ke By anonyCrew MOHABBAT KE SIWA AUR BHI GAM HAI JAMANE ME BSDK GAND PAHAT JATI HAI PAISA KAMANE ME`",
-    "`Thaan liya tha Sayri nhi krege Unka pichwada dekha Alfaaz nikal gye`",
-    "`Ravivaar ko dekha Chand Ka Tukra Itna Baar Dekha par Jaath na Ukra`",
-    "`Katal kro Tir se Talwar me Ky Rkkha hai Maal Chodo Sari Me Salwar me Ky Rkkha hai`",
+ #   "`I Know Uh ez Rendi Bhay Dont show Your Randi Pesa Here`",
+ #  "`Jag Suna suna laage Sab #maderchod bhay`",
+ #   "`you talking behind meh wew uh iz my fan now bhay`",
+ #   "`Wanna pass in Life Goto BRAZZER.CAM BHAY`",
+ #   "`Uh iz Pro i iz noob your boob is landi uh are Randi`",
+ #   "`Sellers Nasa calling Uh bhay😆`",
+ #   "`Badwoo ki yojna behan bna ke ch*da uh iz badwa its your yozja?`",
+ #   "`CHAND PE CHADA HAI CHANDYAAN KA GHODA TERA NAAM HAI MANSUR TU HAI BEHAN KA LOD*😂`",
+  #  "`Jab se dil lga baithe tanhai me maa chu*da baithe wo kho gyi kisi aur ke pyar hum apne hi jaato me aag lga baithe`",
+  #  "`Chadii ke ander se lal pani kha se ata hai ky teri masuka ka bhosda bhi paan khata hai😂`",
+  #  "`Sun bhosdi ke By anonyCrew MOHABBAT KE SIWA AUR BHI GAM HAI JAMANE ME BSDK GAND PAHAT JATI HAI PAISA KAMANE ME`",
+  #  "`Thaan liya tha Sayri nhi krege Unka pichwada dekha Alfaaz nikal gye`",
+  #  "`Ravivaar ko dekha Chand Ka Tukra Itna Baar Dekha par Jaath na Ukra`",
+  #  "`Katal kro Tir se Talwar me Ky Rkkha hai Maal Chodo Sari Me Salwar me Ky Rkkha hai`",
 ]
 
 METOOSTR = [
     "`Me too thanks`",
     "`Haha yes, me too`",
     "`Same lol`",
-    "`Me irl`",
+    "`Me hero`",
     "`Same here`",
     "`Haha yes`",
     "`Me rn`",
@@ -128,11 +128,17 @@ INSULT_STRINGS = [
     "`God was searching for you. You should leave to meet him.`",
     "`You should Volunteer for target in an firing range.`",
     "`Try playing catch and throw with RDX its fun.`",
-    "`People like you are the reason we have middle fingers.`",
-    "`When your mom dropped you off at the school, she got a ticket for littering.`",
-    "`You’re so ugly that when you cry, the tears roll down the back of your head, just to avoid your face.`",
-    "`If you’re talking behind my back then you’re in a perfect position to kiss my a**!.`",
+    
 ]
+
+FUNNY_STRINGS = [[
+    ".eai",
+    ]
+ [  
+    ".apm",
+ ]
+]]
+
 
 UWUS = [
     "(・`ω´・)",
@@ -268,14 +274,14 @@ RUN_REACTS = [
     "`Runs to Thanos`",
     "`Runs far, far away from earth`",
     "`Running faster than usian bolt coz I'mma Bot`",
-    "`Runs to Marie`",
+    "`Runs to No where`",
     "`This Group is too cancerous to deal with.`",
-    "`Cya bois`",
+    "`Cya boss`",
     "`Kys`",
     "`I am a mad person. Plox Ban me.`",
     "`I go away`",
     "`I am just walking off, coz me is too fat.`",
-    "`I Fugged off!`",
+    "`I switched it off!`",
     "`Will run for chocolate.`",
     "`I run because I really like food.`",
     "`Running...because dieting is not an option.`",
@@ -416,6 +422,12 @@ async def cry(e):
     """ y u du dis, i cry everytime !! """
     if not e.text[0].isalpha() and e.text[0] not in ("/", "#", "@", "!"):
         await e.edit(random.choice(INSULT_STRINGS))
+
+@borg.on(admin_cmd(pattern="funny", outgoing=True)) 
+async def cry(e):
+    """ y u du dis, i cry everytime !! """
+    if not e.text[0].isalpha() and e.text[0] not in ("/", "#", "@", "!"):
+        await e.edit(random.choice(FUNNY_STRINGS))
 
 @borg.on(admin_cmd(pattern="cp(?: |$)(.*)", outgoing=True)) 
 async def copypasta(cp_e):
