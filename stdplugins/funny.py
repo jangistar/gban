@@ -1,42 +1,24 @@
 """COMMAND : .funny"""
 
+
 from telethon import events
+import random, re
+from uniborg.util import admin_cmd
 
-import asyncio
+FUNNYREACTS = [
+    ".eai",
+    ".apm",
+]
 
 
 
-
-
-@borg.on(events.NewMessage(pattern=r"\.(.*)", outgoing=True))
-
+@borg.on(admin_cmd("funny ?(.*)"))
 async def _(event):
-
     if event.fwd_from:
-
-        return
-
-    animation_interval = 1
-
-    animation_ttl = range(0, 5)
-
+         return
+    bro = random.randint(0, len(FUNNYREACTS) - 1)    
     input_str = event.pattern_match.group(1)
-
-    if input_str == "funny":
-
-        await event.edit(input_str)
-
-        animation_chars = [
-        
-            ".apm",
-            "approved ",
-            ".eai",
-            "enbled ",
-            
-        ]
-
-        for i in animation_ttl:
-
-            await asyncio.sleep(animation_interval)
-
-            await event.edit(animation_chars[i % 7])
+    reply_text = FUNNYREACTS[bro]
+    await event.edit(reply_text)
+    
+    
