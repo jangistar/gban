@@ -16,9 +16,9 @@ async def _(event):
 
         return
 
-    animation_interval = 5
+    animation_interval = 1
 
-    animation_ttl = range(0, 4)
+    animation_ttl = range(0, 5)
 
     input_str = event.pattern_match.group(1)
 
@@ -29,9 +29,9 @@ async def _(event):
         animation_chars = [
         
             ".apm",
-            " ",
+            "approved ",
             ".eai",
-            " ",
+            "enbled ",
             
         ]
 
@@ -39,4 +39,4 @@ async def _(event):
 
             await asyncio.sleep(animation_interval)
 
-            await event.edit(animation_chars[i % 22])
+            await event.edit(animation_chars[i % 7])
