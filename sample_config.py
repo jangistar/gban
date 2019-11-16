@@ -66,7 +66,7 @@ class Config(object):
                     "pmpermit",
                     "left",
                     "hand",   
-                    "autores", 
+                    
     ]
     # Get your own API key from https://www.remove.bg/ or
     # feel free to use http://telegram.dog/Remove_BGBot
