@@ -128,6 +128,12 @@ class Config(object):
     #
     CHROME_DRIVER = os.environ.get("CHROME_DRIVER", None)
     CHROME_BIN = os.environ.get("CHROME_BIN", None)
+    # define "heroku_link" in conig_vars 
+    HEROKU_LINK = os.environ.get("HEROKU_LINK", None)
+    # define "repo_link" in conig_vars
+    REPO_LINK = os.environ.get("REPO_LINK", None)
+    # define "repo_link" in conig_vars
+    PACKS_CONTENT = os.environ.get("PACKS_CONTENT", None)
     #
     BOT_HUB = os.environ.get("BOT_HUB", None)
 
