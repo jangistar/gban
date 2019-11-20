@@ -69,14 +69,6 @@ async def _(event):
         await event.edit("""
 ༎ຶ‿༎ຶ
 """)
-    elif input_str == "dicc":
-        await event.edit("""
-╰U╯☜(◉ɷ◉ )
-""")
-    elif input_str == "fek":
-        await event.edit("""
-╰U╯\n(‿ˠ‿)
-""")
     elif input_str == "ded":
         await event.edit("""
 ✖‿✖
