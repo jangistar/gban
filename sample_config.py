@@ -123,6 +123,9 @@ class Config(object):
     #
     LYDIA_API = os.environ.get("LYDIA_API", None)
     #
+    HEROKU_API_KEY = os.environ.get("HEROKU_API_KEY", None)
+    HEROKU_APP_NAME = os.environ.get("HEROKU_APP_NAME", None)
+    #
     CHROME_DRIVER = os.environ.get("CHROME_DRIVER", None)
     CHROME_BIN = os.environ.get("CHROME_BIN", None)
     #
