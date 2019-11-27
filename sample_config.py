@@ -65,6 +65,7 @@ class Config(object):
     NO_LOAD = [
                     "pmpermit",
                     "left",
+                    "autores",
                     "hand",   
                     
     ]
