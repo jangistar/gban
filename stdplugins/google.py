@@ -11,13 +11,16 @@ from bs4 import BeautifulSoup
 from datetime import datetime
 from google_images_download import google_images_download
 from uniborg.util import admin_cmd
+import sys
+from telethon import events, functions, __version__
+# from uniborg.util import admin_cmd
 
 
 def progress(current, total):
     logger.info("Downloaded {} of {}\nCompleted {}".format(current, total, (current / total) * 100))
 
 
-@borg.on(admin_cmd(pattern="gs (.*)"))
+@borg.on(admin_cmd(pattern="gs ?(.*)", allow_sudo=True))
 async def _(event):
     if event.fwd_from:
         return
