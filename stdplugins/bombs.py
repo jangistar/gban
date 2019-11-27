@@ -1,5 +1,5 @@
 # BY @STARKTM1
-"""Use cmd `.bomb` to blast"""
+"""Use cmd `.bombs` to blast"""
 
 from telethon import events
 import asyncio
