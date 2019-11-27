@@ -32,11 +32,10 @@ async def _(event):
             "E",
             "S",
             "T",
-            "BOTHUB IS THE BEST",
-            "Ok Sar 😇"
+            "BOTHUB IS THE BEST 0K Sir 😇"
         ]
 
         for i in animation_ttl:
         	
             await asyncio.sleep(animation_interval)
-            await event.edit(animation_chars[i % 51])
+            await event.edit(animation_chars[i % 78])
