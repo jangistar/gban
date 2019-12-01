@@ -106,10 +106,10 @@ async def on_afk(event):
             else:
                 afk_since = f"`{int(seconds)}s` **ago**"
         msg = None
-        message_to_reply = f"I am AFK right-now  \n\n**Last Seen: {time} I don't wanna tell you, but...** " + \
+        message_to_reply = f"I am AFK right-now  \n\n**Last Seen: {} I don't wanna tell you, but...** " + \
             f"\n\n__Reason:__ {reason}" \
             if reason \
-            else f"{datime}......\n\n**My**\n\n[King gone to meet Salman Khan, i don't know why ?](https://i.imgur.com/ZaVPQaA.jpg) "
+            else f"{}......\n\n**My**\n\n[King gone to meet Salman Khan, i don't know why ?](https://i.imgur.com/ZaVPQaA.jpg) "
         msg = await event.reply(message_to_reply)
         await asyncio.sleep(5)
         if event.chat_id in borg.storage.last_afk_message:  # pylint:disable=E0602
