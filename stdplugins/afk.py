@@ -98,7 +98,7 @@ async def on_afk(event):
                     afk_since = date.strftime("%A, %Y %B %m, %H:%I")
                 else:
                     wday = now + datetime.timedelta(days=-days)
-                    afk_since = wday.strftime('%A')
+                    afk_since = wday.strftime('%A, %Y %B %m, %H:%I')
             elif hours > 1:
                 afk_since = f"`{int(hours)}h{int(minutes)}m` **ago**"
             elif minutes > 0:
