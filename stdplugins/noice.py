@@ -727,12 +727,12 @@ async def is_off_br(br):
     return
 
 
-@borg.on(admin_cmd(outgoing=True, pattern="^.update(?: |$)(.*))")
+@borg.on(admin_cmd(pattern="update (.*)", outgoing=True))
 async def upstream(ups):
     "For .update command, check if the bot is up to date, update if specified"
     await ups.edit("`Checking for updates, please wait....`")
     conf = ups.pattern_match.group(1)
-    off_repo = 'https://github.com/mkaraniya/OpenUserBot.git'
+    off_repo = 'https://github.com/mkaraniya/BotHub.git'
 
     try:
         txt = "`Oops.. Updater cannot continue due to some problems occured`\n\n**LOGTRACE:**\n"
