@@ -803,7 +803,7 @@ async def upstream(ups):
 
     
     
-@borg.on(outgoing=True, pattern="^.shalom$")
+@borg.on(admin_cmd("shalom ?(.*)", outgoing=True))
 async def shalom(e):
     await e.edit(
         "\n☁️☁️☁️☁️☁️☁️☁️☁️☁️"
