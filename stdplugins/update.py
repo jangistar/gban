@@ -1,6 +1,31 @@
 """Update UserBot code
 Syntax: .update"""
 
+from os import remove, execl
+import sys
+
+from git import Repo
+from git.exc import GitCommandError, InvalidGitRepositoryError, NoSuchPathError
+
+# from uniborg import CMD_HELP, bot
+# from uniborg.events import register
+
+
+import asyncio
+import random
+import re
+import time
+
+from collections import deque
+
+import requests
+
+from telethon.tl.functions.users import GetFullUserRequest
+from telethon.tl.types import MessageEntityMentionName
+from telethon import events
+
+from uniborg.util import admin_cmd
+
 import git
 from contextlib import suppress
 import os
