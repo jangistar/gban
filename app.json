@@ -22,6 +22,10 @@
       "description": "Get this value from Heroku Please do not steal",
       "value": ""
     },
+    "HEROKU_APP_NAME": {
+      "description": "This is required for commit functionality to work.",
+      "required": false
+    },
     "API_HASH": {
       "description": "Get this value from my.telegram.org! Please do not steal",
       "value": ""
