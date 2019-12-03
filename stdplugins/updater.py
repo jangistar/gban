@@ -12,7 +12,8 @@ from git.exc import NoSuchPathError
 
 # from uniborg import CMD_HELP, bot
 # from uniborg.events import register
-
+from uniborg.util import bot
+from uniborg.util import CMD_HELP
 
 import asyncio
 import random
