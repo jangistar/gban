@@ -18,6 +18,10 @@
       "description": "Get this value from my.telegram.org! Please do not steal",
       "value": ""
     },
+    "HEROKU_API_KEY": {
+      "description": "Get this value from Heroku Please do not steal",
+      "value": ""
+    },
     "API_HASH": {
       "description": "Get this value from my.telegram.org! Please do not steal",
       "value": ""
