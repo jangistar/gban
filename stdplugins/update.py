@@ -1,11 +1,14 @@
 """Update UserBot code
 Syntax: .update"""
 
-from os import remove, execl
+from os import remove
+from os import execl
 import sys
 
 from git import Repo
-from git.exc import GitCommandError, InvalidGitRepositoryError, NoSuchPathError
+from git.exc import GitCommandError
+from git.exc import InvalidGitRepositoryError
+from git.exc import NoSuchPathError
 
 # from uniborg import CMD_HELP, bot
 # from uniborg.events import register
@@ -32,7 +35,6 @@ import os
 import sys
 import asyncio
 
-
 async def gen_chlog(repo, diff):
     ch_log = ''
     d_form = "%d/%m/%y"
@@ -54,7 +56,7 @@ async def upstream(ups):
     "For .update command, check if the bot is up to date, update if specified"
     await ups.edit("`Checking for updates, please wait....`")
     conf = ups.pattern_match.group(1)
-    off_repo = 'https://github.com/mkaraniya/BotHub'
+    off_repo = "https://github.com/mkaraniya/BotHub.git"
 
     try:
         txt = "`Oops.. Updater cannot continue due to some problems occured`\n\n**LOGTRACE:**\n"
@@ -124,10 +126,12 @@ async def upstream(ups):
 
 
 
-CMD_HELP.update({
+
+"""CMD_HELP.update({
     'update':
     ".update\
 \nUsage: Checks if the main userbot repository has any updates and shows a changelog if so.\
 \n\n.update now\
 \nUsage: Updates your userbot, if there are any updates in the main userbot repository."
 })
+"""
