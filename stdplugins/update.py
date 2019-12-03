@@ -6,7 +6,9 @@ from os import execl
 import sys
 
 from git import Repo
-from git.exc import GitCommandError, InvalidGitRepositoryError, NoSuchPathError
+from git.exc import GitCommandError
+from git.exc import InvalidGitRepositoryError
+from git.exc import NoSuchPathError
 
 # from uniborg import CMD_HELP, bot
 # from uniborg.events import register
@@ -54,7 +56,7 @@ async def upstream(ups):
     "For .update command, check if the bot is up to date, update if specified"
     await ups.edit("`Checking for updates, please wait....`")
     conf = ups.pattern_match.group(1)
-    off_repo = "https://github.com/mkaraniya/BotHub_TeKnoways.git"
+    off_repo = "https://github.com/mkaraniya/BotHub.git"
 
     try:
         txt = "`Oops.. Updater cannot continue due to some problems occured`\n\n**LOGTRACE:**\n"
