@@ -132,7 +132,7 @@ async def updater(message):
             if Config.HEROKU_APP_NAME is not None:
                 heroku_app = None
                 for i in heroku_applications:
-                    if i.name == .HEROKU_APP_NAME:
+                    if i.name == Config.HEROKU_APP_NAME:
                         heroku_app = i
                 if heroku_app is None:
                     await message.edit("Invalid APP Name. Please set the name of your bot in heroku in the var HEROKU_APP_NAME.")
@@ -166,7 +166,7 @@ def generate_change_log(git_repo, diff_marker):
 
 async def deploy_start(bot, message, refspec, remote):
     await message.edit(RESTARTING_APP)
-    await message.edit("restarted! do `.alive` to check if I am online?")
+    await message.edit("restarted! do `.ping` to check if I am online?")
     await remote.push(refspec=refspec)
     await bot.disconnect()
     os.execl(sys.executable, sys.executable, *sys.argv)
