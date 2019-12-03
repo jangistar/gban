@@ -1,11 +1,14 @@
 """Update UserBot code
 Syntax: .update"""
 
-from os import remove, execl
+from os import remove
+from os import execl
 import sys
 
 from git import Repo
-from git.exc import GitCommandError, InvalidGitRepositoryError, NoSuchPathError
+from git.exc import GitCommandError
+from git.exc import InvalidGitRepositoryError
+from git.exc import NoSuchPathError
 
 # from uniborg import CMD_HELP, bot
 # from uniborg.events import register
