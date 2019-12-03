@@ -1,11 +1,5 @@
-# Copyright (C) 2019 The Raphielscape Company LLC.
-#
-# Licensed under the Raphielscape Public License, Version 1.c (the "License");
-# you may not use this file except in compliance with the License.
-#
-"""
-This module updates the userbot based on Upstream revision
-"""
+"""Update UserBot code
+Syntax: .update"""
 
 from os import remove, execl
 import sys
@@ -13,8 +7,30 @@ import sys
 from git import Repo
 from git.exc import GitCommandError, InvalidGitRepositoryError, NoSuchPathError
 
-from userbot import CMD_HELP, bot
-from userbot.events import register
+# from uniborg import CMD_HELP, bot
+# from uniborg.events import register
+
+
+import asyncio
+import random
+import re
+import time
+
+from collections import deque
+
+import requests
+
+from telethon.tl.functions.users import GetFullUserRequest
+from telethon.tl.types import MessageEntityMentionName
+from telethon import events
+
+from uniborg.util import admin_cmd
+
+import git
+from contextlib import suppress
+import os
+import sys
+import asyncio
 
 
 async def gen_chlog(repo, diff):
@@ -26,19 +42,19 @@ async def gen_chlog(repo, diff):
 
 
 async def is_off_br(br):
-    off_br = ['sql-extended', 'sql-dirty']
+    off_br = ['master']
     for k in off_br:
         if k == br:
             return 1
     return
 
 
-@register(outgoing=True, pattern="^.update(?: |$)(.*)")
+@borg.on(admin_cmd("update ?(.*)", outgoing=True))
 async def upstream(ups):
     "For .update command, check if the bot is up to date, update if specified"
     await ups.edit("`Checking for updates, please wait....`")
     conf = ups.pattern_match.group(1)
-    off_repo = 'https://github.com/mkaraniya/OpenUserBot.git'
+    off_repo = 'https://github.com/mkaraniya/BotHub'
 
     try:
         txt = "`Oops.. Updater cannot continue due to some problems occured`\n\n**LOGTRACE:**\n"
@@ -105,6 +121,7 @@ async def upstream(ups):
     execl(sys.executable, sys.executable, *sys.argv)
     # Shut the existing one down
     exit()
+
 
 
 CMD_HELP.update({
