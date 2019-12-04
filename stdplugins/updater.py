@@ -10,7 +10,7 @@ from git.exc import GitCommandError
 from git.exc import InvalidGitRepositoryError
 from git.exc import NoSuchPathError
 
-from uniborg import tgbot
+from uniborg.util import tgbot
 # from uniborg.events import register
 
 
