@@ -5,15 +5,15 @@ from os import remove
 from os import execl
 import sys
 
-from git import Repo
-from git.exc import GitCommandError
-from git.exc import InvalidGitRepositoryError
-from git.exc import NoSuchPathError
+# from git import Repo
+# from git.exc import GitCommandError
+# from git.exc import InvalidGitRepositoryError
+# from git.exc import NoSuchPathError
 
 # from .. import bot
 # from uniborg.events import register
 
-
+import git
 import asyncio
 import random
 import re
@@ -29,7 +29,7 @@ from telethon import events
 
 from uniborg.util import admin_cmd
 
-import git
+
 from contextlib import suppress
 import os
 import sys
@@ -42,7 +42,7 @@ IS_SELECTED_DIFFERENT_BRANCH = (
     "in this case, Updater is unable to identify the branch to be updated."
     "please check out to an official branch, and re-start the updater."
 )
-OFFICIAL_UPSTREAM_REPO = "git+https://github.com/mkaraniya/BotHub/"
+OFFICIAL_UPSTREAM_REPO = "https://github.com/mkaraniya/BotHub/"
 BOT_IS_UP_TO_DATE = "the userbot is up-to-date."
 NEW_BOT_UP_DATE_FOUND = (
     "new update found for {branch_name}\n"
