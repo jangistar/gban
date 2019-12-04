@@ -10,7 +10,7 @@ from git.exc import GitCommandError
 from git.exc import InvalidGitRepositoryError
 from git.exc import NoSuchPathError
 
-from .. import bot
+# from .. import bot
 # from uniborg.events import register
 
 
@@ -42,7 +42,7 @@ IS_SELECTED_DIFFERENT_BRANCH = (
     "in this case, Updater is unable to identify the branch to be updated."
     "please check out to an official branch, and re-start the updater."
 )
-OFFICIAL_UPSTREAM_REPO = "https://github.com/mkaraniya/BotHub/"
+OFFICIAL_UPSTREAM_REPO = "git+https://github.com/mkaraniya/BotHub/"
 BOT_IS_UP_TO_DATE = "the userbot is up-to-date."
 NEW_BOT_UP_DATE_FOUND = (
     "new update found for {branch_name}\n"
@@ -146,7 +146,7 @@ async def updater(message):
                     remote.set_url(heroku_git_url)
                 else:
                     remote = repo.create_remote("heroku", heroku_git_url)
-                asyncio.get_event_loop().create_task(deploy_start(bot, message, HEROKU_GIT_REF_SPEC, remote))
+                asyncio.get_event_loop().create_task(deploy_start(tgbot, message, HEROKU_GIT_REF_SPEC, remote))
 
             else:
                 await message.edit("Please create the var HEROKU_APP_NAME as the key and the name of your bot in heroku as your value.")
@@ -164,11 +164,11 @@ def generate_change_log(git_repo, diff_marker):
         out_put_str += f"•[{repo_change.committed_datetime.strftime(d_form)}]: {repo_change.summary} <{repo_change.author}>\n"
     return out_put_str
 
-async def deploy_start(bot, message, refspec, remote):
+async def deploy_start(tgbot, message, refspec, remote):
     await message.edit(RESTARTING_APP)
     await message.edit("restarted! do `.ping` to check if I am pinging?")
     await remote.push(refspec=refspec)
-    await bot.disconnect()
+    await tgbot.disconnect()
     os.execl(sys.executable, sys.executable, *sys.argv)
 
     
