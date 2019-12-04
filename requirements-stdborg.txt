@@ -32,7 +32,6 @@ lxml
 heroku3 
 git+https://github.com/LonamiWebs/Telethon
 git+https://github.com/ahupp/python-magic
-git+https://github.com/mkaraniya/BotHub
 oauth2client
 httplib2
 humanize
