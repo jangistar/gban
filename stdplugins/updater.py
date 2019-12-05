@@ -53,8 +53,8 @@ NEW_UP_DATE_FOUND = (
     "new update found for {branch_name}\n"
     "updating ..."
 )
-REPO_REMOTE_NAME = "bothub"
-IFFUCI_ACTIVE_BRANCH_NAME = "master"
+REPO_REMOTE_NAME = {}
+IFFUCI_ACTIVE_BRANCH_NAME = "origin"
 DIFF_MARKER = "HEAD..{remote_name}/{branch_name}"
 NO_HEROKU_APP_CFGD = "no heroku application found, but a key given? 😕 "
 HEROKU_GIT_REF_SPEC = "HEAD:refs/heads/master"
@@ -121,7 +121,7 @@ async def updater(message):
         await message.edit(message_one)
 
     temp_upstream_remote.fetch(active_branch_name)
-    git.reset("--hard", "FETCH_HEAD")
+    repo.git.reset("--hard", "FETCH_HEAD")
 
     if Config.HEROKU_API_KEY is not None:
         import heroku3
