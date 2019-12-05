@@ -42,7 +42,7 @@ IS_SELECTED_DIFFERENT_BRANCH = (
     "in this case, Updater is unable to identify the branch to be updated."
     "please check out to an official branch, and re-start the updater."
 )
-OFFICIAL_UPSTREAM_REPO = "https://github.com/mkaraniya/BotHub/"
+OFFICIAL_UPSTREAM_REPO = "https://www.github.com/mkaraniya/BotHub.git"
 BOT_IS_UP_TO_DATE = "the userbot is up-to-date."
 NEW_BOT_UP_DATE_FOUND = (
     "new update found for {branch_name}\n"
@@ -121,7 +121,7 @@ async def updater(message):
         await message.edit(message_one)
 
     temp_upstream_remote.fetch(active_branch_name)
-    git.Repo.reset("--hard", "FETCH_HEAD")
+    git.repo.reset("--hard", "FETCH_HEAD")
 
     if Config.HEROKU_API_KEY is not None:
         import heroku3
