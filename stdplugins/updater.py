@@ -42,7 +42,7 @@ IS_SELECTED_DIFFERENT_BRANCH = (
     "in this case, Updater is unable to identify the branch to be updated."
     "please check out to an official branch, and re-start the updater."
 )
-OFFICIAL_UPSTREAM_REPO = "https://www.github.com/mkaraniya/BotHub"
+OFFICIAL_UPSTREAM_REPO = "https://github.com/mkaraniya/BotHub_TeKnoways/"
 BOT_IS_UP_TO_DATE = "the userbot is up-to-date."
 NEW_BOT_UP_DATE_FOUND = (
     "new update found for {branch_name}\n"
@@ -53,7 +53,7 @@ NEW_UP_DATE_FOUND = (
     "new update found for {branch_name}\n"
     "updating ..."
 )
-REPO_REMOTE_NAME = "bothub_teknoways"
+REPO_REMOTE_NAME = "temponame"
 IFFUCI_ACTIVE_BRANCH_NAME = "master"
 DIFF_MARKER = "HEAD..{remote_name}/{branch_name}"
 NO_HEROKU_APP_CFGD = "no heroku application found, but a key given? 😕 "
@@ -89,8 +89,9 @@ async def updater(message):
     temp_upstream_remote = repo.remote(REPO_REMOTE_NAME)
     temp_upstream_remote.fetch(active_branch_name)
 
-    changelog = generate_change_log(repo, DIFF_MARKER.format
-                                    (
+    changelog = generate_change_log(
+        repo,
+        DIFF_MARKER.format(
             remote_name=REPO_REMOTE_NAME,
             branch_name=active_branch_name
         )
@@ -111,7 +112,7 @@ async def updater(message):
     if len(message_one) > 4095:
         with open("change.log", "w+", encoding="utf8") as out_file:
             out_file.write(str(message_one))
-        await bot.send_message(
+        await tgbot.send_message(
             message.chat_id,
             document="change.log",
             caption=message_two
