@@ -89,9 +89,8 @@ async def updater(message):
     temp_upstream_remote = repo.remote(REPO_REMOTE_NAME)
     temp_upstream_remote.fetch(active_branch_name)
 
-    changelog = generate_change_log(
-        repo,
-        DIFF_MARKER.format(
+    changelog = generate_change_log(repo, DIFF_MARKER.format
+                                    (
             remote_name=REPO_REMOTE_NAME,
             branch_name=active_branch_name
         )
@@ -122,7 +121,7 @@ async def updater(message):
         await message.edit(message_one)
 
     temp_upstream_remote.fetch(active_branch_name)
- #   repo.git.reset("--hard", "FETCH_HEAD")
+    git.Repo.reset("--hard", "FETCH_HEAD")
 
     if Config.HEROKU_API_KEY is not None:
         import heroku3
