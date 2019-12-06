@@ -10,7 +10,7 @@ global USER_AFK  # pylint:disable=E0602
 global afk_time  # pylint:disable=E0602
 global last_afk_message  # pylint:disable=E0602
 USER_AFK = {}
-afk_time = {}
+afk_time = None
 last_afk_message = {}
 
 
@@ -48,7 +48,7 @@ async def _(event):
     global last_afk_message  # pylint:disable=E0602
     global reason
     USER_AFK = {}
-    afk_time = {}
+    afk_time = None
     last_afk_message = {}
     reason = event.pattern_match.group(1)
     if not USER_AFK:  # pylint:disable=E0602
