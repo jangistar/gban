@@ -29,7 +29,7 @@ from telethon import events
 
 from uniborg.util import admin_cmd
 
- import git
+# import git
 from contextlib import suppress
 import os
 import sys
