@@ -56,7 +56,7 @@ NEW_UP_DATE_FOUND = (
 REPO_REMOTE_NAME = "temponame"
 IFFUCI_ACTIVE_BRANCH_NAME = "master"
 DIFF_MARKER = "HEAD..{remote_name}/{branch_name}"
-NO_HEROKU_APP_CFGD = "no heroku application found, but a key given? 😕 "
+NO_HEROKU_APP_CFGD = "no heroku application found, but a key given? ðŸ˜• "
 HEROKU_GIT_REF_SPEC = "HEAD:refs/heads/master"
 RESTARTING_APP = "re-starting heroku application"
 # -- Constants End -- #
@@ -65,7 +65,7 @@ async def generate_change_log(git_repo, diff_marker):
     out_put_str = ""
     d_form = "%d/%m/%y"
     for repo_change in git_repo.iter_commits(diff_marker):
-        out_put_str += f"•[{repo_change.committed_datetime.strftime(d_form)}]: {repo_change.summary} <{repo_change.author}>\n"
+        out_put_str += f"â€¢[{repo_change.committed_datetime.strftime(d_form)}]: {repo_change.summary} <{repo_change.author}>\n"
     return out_put_str
 
 @borg.on(admin_cmd("update ?(.*)", outgoing=True))
@@ -118,7 +118,7 @@ async def updater(message):
     if len(message_one) > 4095:
         with open("change.log", "w+", encoding="utf8") as out_file:
             out_file.write(str(message_one))
-        await tgbot.send_message(
+        await borg.send_message(
             message.chat_id,
             document="change.log",
             caption=message_two
@@ -166,7 +166,7 @@ async def updater(message):
 async def deploy_start(tgbot, message, refspec, remote):
     await message.edit(RESTARTING_APP)
     await message.edit("restarted! do `.ping` to check if I am pinging?")
-    await remote.fetch(refspec=refspec)
+    await remote.push(refspec=refspec)
     await tgbot.disconnect()
     os.execl(sys.executable, sys.executable, *sys.argv)
 
