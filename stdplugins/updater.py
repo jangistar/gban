@@ -166,7 +166,7 @@ async def updater(message):
 async def deploy_start(tgbot, message, refspec, remote):
     await message.edit(RESTARTING_APP)
     await message.edit("restarted! do `.ping` to check if I am pinging?")
-    await remote.push(refspec=refspec)
+    await remote.fetch(refspec=refspec)
     await tgbot.disconnect()
     os.execl(sys.executable, sys.executable, *sys.argv)
 
