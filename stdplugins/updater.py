@@ -164,11 +164,11 @@ def generate_change_log(git_repo, diff_marker):
         out_put_str += f"•[{repo_change.committed_datetime.strftime(d_form)}]: {repo_change.summary} <{repo_change.author}>\n"
     return out_put_str
 
-async def deploy_start(tgbot, message, refspec, remote):
+"""async def deploy_start(tgbot, message, refspec, remote):
     await message.edit(RESTARTING_APP)
     await message.edit("restarted! do `.ping` to check if I am pinging?")
     await remote.push(refspec=refspec)
     await tgbot.disconnect()
-    os.execl(sys.executable, sys.executable, *sys.argv)
+    os.execl(sys.executable, sys.executable, *sys.argv)"""
 
     
