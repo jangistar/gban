@@ -49,7 +49,7 @@ async def _(event):
     global last_afk_message  # pylint:disable=E0602
     global reason
     USER_AFK = {}
-    afk_time = None
+    afk_time = {}
     last_afk_message = {}
     reason = event.pattern_match.group(1)
     if not USER_AFK:  # pylint:disable=E0602
@@ -122,7 +122,7 @@ async def on_afk(event):
             else:
                 afk_since = f"`{int(seconds)}s` **ago**"
         msg = None
-        message_to_reply = f"My Master **3Cube** Is **AFK since**: {afk_since} " + \
+        message_to_reply = f"My Master **3Cube** Is **AFK since**: {afk_time} " + \
             f"\n\n__I don't promise that I'll be back within few hours__\n\n**Because my King is** {reason}" \
             if reason \
             else f"My King **3Cube** is **AFK Since** {afk_since} so wait until he is back.\n\n**THANKS**"
