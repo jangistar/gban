@@ -6,6 +6,7 @@ import datetime
 import time
 from telethon import events
 from telethon.tl import functions, types
+from uniborg.util import time_formatter
 
 
 global USER_AFK  # pylint:disable=E0602
