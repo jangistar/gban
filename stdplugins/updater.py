@@ -119,7 +119,7 @@ async def updater(message):
     if len(message_one) > 4095:
         with open("change.log", "w+", encoding="utf8") as out_file:
             out_file.write(str(message_one))
-        await tgbot.send_message(
+        await tg_bot.send_message(
             message.chat_id,
             document="change.log",
             caption=message_two
@@ -153,7 +153,7 @@ async def updater(message):
                     remote.set_url(heroku_git_url)
                 else:
                     remote = repo.create_remote("heroku", heroku_git_url)
-                asyncio.get_event_loop().create_task(deploy_start(tgbot, message, HEROKU_GIT_REF_SPEC, remote))
+                asyncio.get_event_loop().create_task(deploy_start(tg_bot, message, HEROKU_GIT_REF_SPEC, remote))
 
             else:
                 await message.edit("Please create the var HEROKU_APP_NAME as the key and the name of your bot in heroku as your value.")
@@ -171,11 +171,11 @@ def generate_change_log(git_repo, diff_marker):
         out_put_str += f"•[{repo_change.committed_datetime.strftime(d_form)}]: {repo_change.summary} <{repo_change.author}>\n"
     return out_put_str
 
-async def deploy_start(tgbot, message, refspec, remote):
+async def deploy_start(tg_bot, message, refspec, remote):
     await message.edit(RESTARTING_APP)
     await message.edit("restarted! do `.ping` to check if I am pinging?")
-    await remote.push(refspec=refspec)
-    await tgbot.disconnect()
+    await remote.fetch(refspec=refspec)
+    await tg_bot.disconnect()
     os.execl(sys.executable, sys.executable, *sys.argv)
 
 
@@ -229,7 +229,7 @@ async def chk(message):
     if len(message_one) > 4095:
         with open("change.log", "w+", encoding="utf8") as out_file:
             out_file.write(str(message_one))
-        await tgbot.send_message(
+        await tg_bot.send_message(
             message.chat_id,
             document="change.log",
             caption=message_two
@@ -240,7 +240,7 @@ async def chk(message):
 
     temp_upstream_remote.fetch(active_branch_name)
     repo.git.reset("--hard", "FETCH_HEAD")
-    await bot.disconnect()
+    await tg_bot.disconnect()
     # Spin a new instance of bot
     execl(sys.executable, sys.executable, *sys.argv)
     # Shut the existing one down
