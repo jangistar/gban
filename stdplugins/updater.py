@@ -179,8 +179,8 @@ async def deploy_start(tgbot, message, refspec, remote):
     os.execl(sys.executable, sys.executable, *sys.argv)
 
 
-@borg.on(admin_cmd("chk?(.*)", outgoing=True))
-async def updater(message):
+@borg.on(admin_cmd("chk ?(.*)", outgoing=True))
+async def chk(message):
     try:
         repo = git.Repo()
     except git.exc.InvalidGitRepositoryError as e:
