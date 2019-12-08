@@ -106,7 +106,8 @@ async def updater(message):
 
     if not changelog:
         await message.edit("Updating...")
- 
+        return
+
     message_one = NEW_BOT_UP_DATE_FOUND.format(
         branch_name=active_branch_name,
         changelog=changelog
@@ -114,7 +115,7 @@ async def updater(message):
     message_two = NEW_UP_DATE_FOUND.format(
         branch_name=active_branch_name
     )
-return
+
     if len(message_one) > 4095:
         with open("change.log", "w+", encoding="utf8") as out_file:
             out_file.write(str(message_one))
@@ -214,8 +215,9 @@ async def updater(message):
     )
 
     if not changelog:
-        await message.edit("Updating...")
- 
+        await message.edit("Error")
+        return
+
     message_one = NEW_BOT_UP_DATE_FOUND.format(
         branch_name=active_branch_name,
         changelog=changelog
