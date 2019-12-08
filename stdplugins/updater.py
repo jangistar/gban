@@ -28,7 +28,7 @@ from telethon.tl.types import MessageEntityMentionName
 from telethon import events
 
 from uniborg.util import admin_cmd
-from uniborg import tg_bot
+from uniborg.util import tg_bot
 
 
 from contextlib import suppress
