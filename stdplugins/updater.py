@@ -28,6 +28,7 @@ from telethon.tl.types import MessageEntityMentionName
 from telethon import events
 
 from uniborg.util import admin_cmd
+from uniborg import tg_bot
 
 
 from contextlib import suppress
@@ -62,13 +63,6 @@ RESTARTING_APP = "re-starting heroku application"
 # -- Constants End -- #
 
 
-async def gen_chlog(repo, diff):
-    ch_log = ''
-    d_form = "%d/%m/%y"
-    for c in repo.iter_commits(diff):
-        ch_log += f'•[{c.committed_datetime.strftime(d_form)}]: {c.summary} <{c.author}>\n'
-    return ch_log
-
 @borg.on(admin_cmd("update ?(.*)", outgoing=True))
 async def updater(message):
     try:
@@ -94,9 +88,9 @@ async def updater(message):
         pass
 
     temp_upstream_remote = repo.remote(REPO_REMOTE_NAME)
-    temp_upstream_remote.fetch(active_branch_name)
+    temp_upstream_remote.pull(active_branch_name)
 
-    changelog = gen_chlog(
+    changelog = generate_change_log(
         repo,
         DIFF_MARKER.format(
             remote_name=REPO_REMOTE_NAME,
@@ -106,8 +100,8 @@ async def updater(message):
 
     if not changelog:
         await message.edit("Updating...")
-        return
-
+        await asyncio.sleep(8)
+ 
     message_one = NEW_BOT_UP_DATE_FOUND.format(
         branch_name=active_branch_name,
         changelog=changelog
@@ -174,74 +168,8 @@ def generate_change_log(git_repo, diff_marker):
 async def deploy_start(tg_bot, message, refspec, remote):
     await message.edit(RESTARTING_APP)
     await message.edit("restarted! do `.ping` to check if I am pinging?")
-    await remote.fetch(refspec=refspec)
+    await remote.push(refspec=refspec)
     await tg_bot.disconnect()
     os.execl(sys.executable, sys.executable, *sys.argv)
 
-
-@borg.on(admin_cmd("chk ?(.*)", outgoing=True))
-async def chk(message):
-    try:
-        repo = git.Repo()
-    except git.exc.InvalidGitRepositoryError as e:
-        repo = git.Repo.init()
-        origin = repo.create_remote(REPO_REMOTE_NAME, OFFICIAL_UPSTREAM_REPO)
-        origin.fetch()
-        repo.create_head(IFFUCI_ACTIVE_BRANCH_NAME, origin.refs.master)
-        repo.heads.master.checkout(True)
-
-    active_branch_name = repo.active_branch.name
-    if active_branch_name != IFFUCI_ACTIVE_BRANCH_NAME:
-        await message.edit(IS_SELECTED_DIFFERENT_BRANCH.format(
-            branch_name=active_branch_name
-        ))
-        return False
-
-    try:
-        repo.create_remote(REPO_REMOTE_NAME, OFFICIAL_UPSTREAM_REPO)
-    except Exception as e:
-        print(e)
-        pass
-
-    temp_upstream_remote = repo.remote(REPO_REMOTE_NAME)
-    temp_upstream_remote.fetch(active_branch_name)
-
-    changelog = gen_chlog(
-        repo,
-        DIFF_MARKER.format(
-            remote_name=REPO_REMOTE_NAME,
-            branch_name=active_branch_name
-        )
-    )
-
-    if not changelog:
-        await message.edit("Error")
-        return
-
-    message_one = NEW_BOT_UP_DATE_FOUND.format(
-        branch_name=active_branch_name,
-        changelog=changelog
-    )
-    message_two = NEW_UP_DATE_FOUND.format(
-        branch_name=active_branch_name
-    )
-
-    if len(message_one) > 4095:
-        with open("change.log", "w+", encoding="utf8") as out_file:
-            out_file.write(str(message_one))
-        await tg_bot.send_message(
-            message.chat_id,
-            document="change.log",
-            caption=message_two
-        )
-        os.remove("change.log")
-    else:
-        await message.edit(message_one)
-
-    temp_upstream_remote.fetch(active_branch_name)
-    repo.git.reset("--hard", "FETCH_HEAD")
-    await tg_bot.disconnect()
-    # Spin a new instance of bot
-    execl(sys.executable, sys.executable, *sys.argv)
-    # Shut the existing one down
-    exit()
+    
