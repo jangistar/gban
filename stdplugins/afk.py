@@ -1,8 +1,8 @@
 """AFK Plugin for @UniBorg
 Syntax: .afk REASON"""
 import asyncio
-import time
 import datetime
+import time
 from telethon import events
 from telethon.tl import functions, types
 
@@ -122,10 +122,10 @@ async def on_afk(event):
             else:
                 afk_since = f"`{int(seconds)}s` **ago**"
         msg = None
-        message_to_reply = f"My Master [3Cube](t.me/Three_Cube_TeKnoways) Is **AFK**  \n{afk_since} " + \
-            f"\n\n__I promise I'll back in a few hours__\n\n**REASON**: {reason}" \
+        message_to_reply = f"My Master **3Cube** Is **AFK since**: {afk_time} " + \
+            f"\n\n__I don't promise that HE'll be back within few hours__\n\n**Because my King is** {reason}" \
             if reason \
-            else f"[3Cube](t.me/Three_Cube_TeKnoways) is **AFK** so wait and dont spam PM\n\n**THANKS**"
+            else f"My King **3Cube** is **AFK Since** {afk_since} so wait until He is back.\n\n**THANKS**"
         msg = await event.reply(message_to_reply)
         await asyncio.sleep(5)
         if event.chat_id in last_afk_message:  # pylint:disable=E0602
