@@ -2,6 +2,7 @@
 Syntax: .afk REASON"""
 import asyncio
 import datetime
+import time
 from telethon import events
 from telethon.tl import functions, types
 
@@ -10,7 +11,7 @@ global USER_AFK  # pylint:disable=E0602
 global afk_time  # pylint:disable=E0602
 global last_afk_message  # pylint:disable=E0602
 USER_AFK = {}
-afk_time = None
+afk_time = {}
 last_afk_message = {}
 
 
@@ -36,7 +37,7 @@ async def set_not_afk(event):
                 silent=True
             )
         USER_AFK = {}  # pylint:disable=E0602
-        afk_time = None  # pylint:disable=E0602
+        afk_time = {}  # pylint:disable=E0602
 
 
 @borg.on(events.NewMessage(pattern=r"\.afk ?(.*)", outgoing=True))  # pylint:disable=E0602
