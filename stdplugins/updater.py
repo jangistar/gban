@@ -5,14 +5,15 @@ from os import remove
 from os import execl
 import sys
 
-import git 
-from git.exc import GitCommandError
-from git.exc import InvalidGitRepositoryError
-from git.exc import NoSuchPathError
+# from git import Repo
+# from git.exc import GitCommandError
+# from git.exc import InvalidGitRepositoryError
+# from git.exc import NoSuchPathError
 
+# from .. import bot
 # from uniborg.events import register
 
-
+import git
 import asyncio
 import random
 import re
@@ -41,7 +42,7 @@ IS_SELECTED_DIFFERENT_BRANCH = (
     "in this case, Updater is unable to identify the branch to be updated."
     "please check out to an official branch, and re-start the updater."
 )
-OFFICIAL_UPSTREAM_REPO = "https://www.github.com/mkaraniya/bothub.git"
+OFFICIAL_UPSTREAM_REPO = "https://www.github.com/mkaraniya/BotHub.git"
 BOT_IS_UP_TO_DATE = "the userbot is up-to-date."
 NEW_BOT_UP_DATE_FOUND = (
     "new update found for {branch_name}\n"
@@ -52,7 +53,7 @@ NEW_UP_DATE_FOUND = (
     "new update found for {branch_name}\n"
     "updating ..."
 )
-REPO_REMOTE_NAME = "bothub_teknoways"
+REPO_REMOTE_NAME = "temponame"
 IFFUCI_ACTIVE_BRANCH_NAME = "master"
 DIFF_MARKER = "HEAD..{remote_name}/{branch_name}"
 NO_HEROKU_APP_CFGD = "no heroku application found, but a key given? 😕 "
@@ -61,7 +62,7 @@ RESTARTING_APP = "re-starting heroku application"
 # -- Constants End -- #
 
 
-@borg.on(admin_cmd("update ?(.*)", outgoing=True, allow_sudo=True))
+@borg.on(admin_cmd("update ?(.*)", outgoing=True))
 async def updater(message):
     try:
         repo = git.Repo()
@@ -86,11 +87,10 @@ async def updater(message):
         pass
 
     temp_upstream_remote = repo.remote(REPO_REMOTE_NAME)
-    temp_upstream_remote.pull(active_branch_name)
+    temp_upstream_remote.fetch(active_branch_name)
 
-    changelog = generate_change_log(
-        repo,
-        DIFF_MARKER.format(
+    changelog = generate_change_log(repo, DIFF_MARKER.format
+                                    (
             remote_name=REPO_REMOTE_NAME,
             branch_name=active_branch_name
         )
@@ -120,7 +120,7 @@ async def updater(message):
     else:
         await message.edit(message_one)
 
-    temp_upstream_remote.pull(active_branch_name)
+    temp_upstream_remote.fetch(active_branch_name)
     repo.git.reset("--hard", "FETCH_HEAD")
 
     if Config.HEROKU_API_KEY is not None:
@@ -162,12 +162,12 @@ def generate_change_log(git_repo, diff_marker):
     for repo_change in git_repo.iter_commits(diff_marker):
         out_put_str += f"•[{repo_change.committed_datetime.strftime(d_form)}]: {repo_change.summary} <{repo_change.author}>\n"
     return out_put_str
-
-async def deploy_start(bot, message, refspec, remote):
+"""
+async def deploy_start(tgbot, message, refspec, remote):
     await message.edit(RESTARTING_APP)
     await message.edit("restarted! do `.ping` to check if I am pinging?")
     await remote.push(refspec=refspec)
-    await bot.disconnect()
+    await tgbot.disconnect()
     os.execl(sys.executable, sys.executable, *sys.argv)
 
-    
+    """
