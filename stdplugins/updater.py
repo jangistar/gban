@@ -97,7 +97,7 @@ async def updater(message):
     )
 
     if not changelog:
-        await message.edit("Updating...")
+        await message.edit("no changelogs...")
         await asyncio.sleep(8)
  
     message_one = NEW_BOT_UP_DATE_FOUND.format(
@@ -157,7 +157,7 @@ async def updater(message):
         """
 
 def generate_change_log(git_repo, diff_marker):
-    out_put_str = change.log
+    out_put_str = f
     d_form = "%d/%m/%y"
     for repo_change in git_repo.iter_commits(diff_marker):
         out_put_str += f"•[{repo_change.committed_datetime.strftime(d_form)}]: {repo_change.summary} <{repo_change.author}>\n"
