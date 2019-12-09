@@ -65,7 +65,7 @@ RESTARTING_APP = "re-starting heroku application"
 
 
 @borg.on(admin_cmd("chk ?(.*)", outgoing=True, allow_sudo=True))
-def generate_change_log(git_repo, diff_marker):
+async def chk(message):
     out_put_str = ""
     d_form = "%d/%m/%y"
     for repo_change in git_repo.iter_commits(diff_marker):
