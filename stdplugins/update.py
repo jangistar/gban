@@ -37,7 +37,7 @@ import sys
 import asyncio
 
 async def gen_chlog(repo, diff):
-    ch_log = ""
+    ch_log = "ch_log +"
     d_form = "%d/%m/%y"
     for c in repo.iter_commits(diff):
         ch_log += f"•[{c.committed_datetime.strftime(d_form)}]: {c.summary} <{c.author}>\n"
@@ -57,7 +57,7 @@ async def upstream(ups):
     "For .update command, check if the bot is up to date, update if specified"
     await ups.edit("`Checking for updates, please wait....`")
     conf = ups.pattern_match.group()
-    off_repo = 'https://www.github.com/mkaraniya/bothub.git'
+    off_repo = "https://www.github.com/mkaraniya/bothub"
 
     try:
         txt = "`Oops.. Updater cannot continue due to some problems occured`\n\n**LOGTRACE:**\n"
