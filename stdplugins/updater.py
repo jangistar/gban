@@ -120,7 +120,7 @@ async def updater(message):
     else:
         await message.edit(message_one)
 
-    temp_upstream_remote.fetch(active_branch_name)
+    temp_upstream_remote.pull(active_branch_name)
     repo.git.reset("--hard", "FETCH_HEAD")
 
     if Config.HEROKU_API_KEY is not None:
@@ -166,7 +166,7 @@ def generate_change_log(git_repo, diff_marker):
 async def deploy_start(bot, message, refspec, remote):
     await message.edit(RESTARTING_APP)
     await message.edit("restarted! do `.ping` to check if I am pinging?")
-    await Repo.git.fetch(refspec=refspec)
+    await remote.push(refspec=refspec)
     await bot.disconnect()
     os.execl(sys.executable, sys.executable, *sys.argv)
 
