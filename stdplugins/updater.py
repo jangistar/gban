@@ -10,10 +10,9 @@ import sys
 # from git.exc import InvalidGitRepositoryError
 # from git.exc import NoSuchPathError
 
-# from .. import bot
 # from uniborg.events import register
 
-# import git
+import git
 import asyncio
 import random
 import re
@@ -62,7 +61,7 @@ RESTARTING_APP = "re-starting heroku application"
 # -- Constants End -- #
 
 
-@borg.on(admin_cmd("update ?(.*)", outgoing=True))
+@borg.on(admin_cmd("update ?(.*)", outgoing=True, allow_sudo=True))
 async def updater(message):
     try:
         repo = git.Repo()
@@ -146,7 +145,7 @@ async def updater(message):
                     remote.set_url(heroku_git_url)
                 else:
                     remote = repo.create_remote("heroku", heroku_git_url)
-                asyncio.get_event_loop().create_task(deploy_start(bot, message, HEROKU_GIT_REF_SPEC, remote))
+                asyncio.get_event_loop().create_task(deploy_start(tgbot, message, HEROKU_GIT_REF_SPEC, remote))
 
             else:
                 await message.edit("Please create the var HEROKU_APP_NAME as the key and the name of your bot in heroku as your value.")
