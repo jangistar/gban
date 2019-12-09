@@ -5,14 +5,15 @@ from os import remove
 from os import execl
 import sys
 
-import git 
-from git.exc import GitCommandError
-from git.exc import InvalidGitRepositoryError
-from git.exc import NoSuchPathError
+# from git import Repo
+# from git.exc import GitCommandError
+# from git.exc import InvalidGitRepositoryError
+# from git.exc import NoSuchPathError
 
+# from .. import bot
 # from uniborg.events import register
 
-
+import git
 import asyncio
 import random
 import re
@@ -41,7 +42,7 @@ IS_SELECTED_DIFFERENT_BRANCH = (
     "in this case, Updater is unable to identify the branch to be updated."
     "please check out to an official branch, and re-start the updater."
 )
-OFFICIAL_UPSTREAM_REPO = "https://www.github.com/mkaraniya/bothub.git"
+OFFICIAL_UPSTREAM_REPO = "https://github.com/mkaraniya/BotHub/"
 BOT_IS_UP_TO_DATE = "the userbot is up-to-date."
 NEW_BOT_UP_DATE_FOUND = (
     "new update found for {branch_name}\n"
@@ -61,11 +62,11 @@ RESTARTING_APP = "re-starting heroku application"
 # -- Constants End -- #
 
 
-@borg.on(admin_cmd("update ?(.*)", outgoing=True, allow_sudo=True))
+@borg.on(admin_cmd("update ?(.*)", outgoing=True))
 async def updater(message):
     try:
         repo = git.Repo()
-    except git.exc.InvalidGitRepositoryError as e:
+  #  except git.exc.InvalidGitRepositoryError as e:
         repo = git.Repo.init()
         origin = repo.create_remote(REPO_REMOTE_NAME, OFFICIAL_UPSTREAM_REPO)
         origin.fetch()
@@ -97,7 +98,7 @@ async def updater(message):
     )
 
     if not changelog:
-        await message.edit("no changelogs...")
+        await message.edit("Updating...")
         await asyncio.sleep(8)
  
     message_one = NEW_BOT_UP_DATE_FOUND.format(
@@ -111,7 +112,7 @@ async def updater(message):
     if len(message_one) > 4095:
         with open("change.log", "w+", encoding="utf8") as out_file:
             out_file.write(str(message_one))
-        await bot.send_message(
+        await tgbot.send_message(
             message.chat_id,
             document="change.log",
             caption=message_two
@@ -122,7 +123,7 @@ async def updater(message):
 
     temp_upstream_remote.fetch(active_branch_name)
     repo.git.reset("--hard", "FETCH_HEAD")
-"""
+
     if Config.HEROKU_API_KEY is not None:
         import heroku3
         heroku = heroku3.from_key(Config.HEROKU_API_KEY)
@@ -154,7 +155,7 @@ async def updater(message):
             await message.edit(NO_HEROKU_APP_CFGD)
     else:
         await message.edit("No heroku api key found in HEROKU_API_KEY var")
-        """
+        
 
 def generate_change_log(git_repo, diff_marker):
     out_put_str = ""
@@ -162,13 +163,12 @@ def generate_change_log(git_repo, diff_marker):
     for repo_change in git_repo.iter_commits(diff_marker):
         out_put_str += f"•[{repo_change.committed_datetime.strftime(d_form)}]: {repo_change.summary} <{repo_change.author}>\n"
     return out_put_str
-"""
-async def deploy_start(bot, message, refspec, remote):
+
+async def deploy_start(tgbot, message, refspec, remote):
     await message.edit(RESTARTING_APP)
     await message.edit("restarted! do `.ping` to check if I am pinging?")
-    await remote.fetch(refspec=refspec)
-    await bot.disconnect()
+    await remote.push(refspec=refspec)
+    await tgbot.disconnect()
     os.execl(sys.executable, sys.executable, *sys.argv)
 
     
-"""
