@@ -13,7 +13,7 @@ global USER_AFK  # pylint:disable=E0602
 global afk_time  # pylint:disable=E0602
 global last_afk_message  # pylint:disable=E0602
 USER_AFK = {}
-afk_time = {}
+afk_time = none
 last_afk_message = {}
 
 
@@ -39,7 +39,7 @@ async def set_not_afk(event):
                 silent=True
             )
         USER_AFK = {}  # pylint:disable=E0602
-        afk_time = {}  # pylint:disable=E0602
+        afk_time = none  # pylint:disable=E0602
 
 
 @borg.on(events.NewMessage(pattern=r"\.afk ?(.*)", outgoing=True))  # pylint:disable=E0602
@@ -51,7 +51,7 @@ async def _(event):
     global last_afk_message  # pylint:disable=E0602
     global reason
     USER_AFK = {}
-    afk_time = {}
+    afk_time = none
     last_afk_message = {}
     reason = event.pattern_match.group(1)
     if not USER_AFK:  # pylint:disable=E0602
