@@ -13,7 +13,7 @@ import sys
 # from .. import bot
 # from uniborg.events import register
 
- import git
+# import git
 import asyncio
 import random
 import re
