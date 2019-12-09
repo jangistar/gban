@@ -42,7 +42,7 @@ IS_SELECTED_DIFFERENT_BRANCH = (
     "in this case, Updater is unable to identify the branch to be updated."
     "please check out to an official branch, and re-start the updater."
 )
-OFFICIAL_UPSTREAM_REPO = "https://github.com/mkaraniya/BotHub/"
+OFFICIAL_UPSTREAM_REPO = "https://www.github.com/mkaraniya/BotHub.git"
 BOT_IS_UP_TO_DATE = "the userbot is up-to-date."
 NEW_BOT_UP_DATE_FOUND = (
     "new update found for {branch_name}\n"
@@ -53,7 +53,7 @@ NEW_UP_DATE_FOUND = (
     "new update found for {branch_name}\n"
     "updating ..."
 )
-REPO_REMOTE_NAME = "temponame"
+REPO_REMOTE_NAME = "bothub"
 IFFUCI_ACTIVE_BRANCH_NAME = "master"
 DIFF_MARKER = "HEAD..{remote_name}/{branch_name}"
 NO_HEROKU_APP_CFGD = "no heroku application found, but a key given? 😕 "
@@ -66,7 +66,7 @@ RESTARTING_APP = "re-starting heroku application"
 async def updater(message):
     try:
         repo = git.Repo()
-  #  except git.exc.InvalidGitRepositoryError as e:
+    except git.exc.InvalidGitRepositoryError as e:
         repo = git.Repo.init()
         origin = repo.create_remote(REPO_REMOTE_NAME, OFFICIAL_UPSTREAM_REPO)
         origin.fetch()
@@ -89,9 +89,8 @@ async def updater(message):
     temp_upstream_remote = repo.remote(REPO_REMOTE_NAME)
     temp_upstream_remote.fetch(active_branch_name)
 
-    changelog = generate_change_log(
-        repo,
-        DIFF_MARKER.format(
+    changelog = generate_change_log(repo, DIFF_MARKER.format
+                                    (
             remote_name=REPO_REMOTE_NAME,
             branch_name=active_branch_name
         )
@@ -112,7 +111,7 @@ async def updater(message):
     if len(message_one) > 4095:
         with open("change.log", "w+", encoding="utf8") as out_file:
             out_file.write(str(message_one))
-        await tgbot.send_message(
+        await bot.send_message(
             message.chat_id,
             document="change.log",
             caption=message_two
@@ -158,7 +157,7 @@ async def updater(message):
         
 
 def generate_change_log(git_repo, diff_marker):
-    out_put_str = ""
+    out_put_str = {changelog}
     d_form = "%d/%m/%y"
     for repo_change in git_repo.iter_commits(diff_marker):
         out_put_str += f"•[{repo_change.committed_datetime.strftime(d_form)}]: {repo_change.summary} <{repo_change.author}>\n"
