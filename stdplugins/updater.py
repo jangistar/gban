@@ -157,7 +157,7 @@ async def updater(message):
         """
 
 def generate_change_log(git_repo, diff_marker):
-    out_put_str = "{repo_change.committed_datetime.strftime(d_form)}"
+    out_put_str = repo_change.committed_datetime.strftime(d_form)
     d_form = "%d/%m/%y"
     for repo_change in git_repo.iter_commits(diff_marker):
         out_put_str += f"•[{repo_change.committed_datetime.strftime(d_form)}]: {repo_change.summary} <{repo_change.author}>\n"
