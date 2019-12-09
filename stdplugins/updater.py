@@ -120,9 +120,9 @@ async def updater(message):
     else:
         await message.edit(message_one)
 
-    temp_upstream_remote.pull(active_branch_name)
+    temp_upstream_remote.fetch(active_branch_name)
     repo.git.reset("--hard", "FETCH_HEAD")
-
+"""
     if Config.HEROKU_API_KEY is not None:
         import heroku3
         heroku = heroku3.from_key(Config.HEROKU_API_KEY)
@@ -154,10 +154,10 @@ async def updater(message):
             await message.edit(NO_HEROKU_APP_CFGD)
     else:
         await message.edit("No heroku api key found in HEROKU_API_KEY var")
-        
+        """
 
 def generate_change_log(git_repo, diff_marker):
-    out_put_str = ""
+    out_put_str = "change.log"
     d_form = "%d/%m/%y"
     for repo_change in git_repo.iter_commits(diff_marker):
         out_put_str += f"•[{repo_change.committed_datetime.strftime(d_form)}]: {repo_change.summary} <{repo_change.author}>\n"
