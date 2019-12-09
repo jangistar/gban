@@ -41,7 +41,7 @@ IS_SELECTED_DIFFERENT_BRANCH = (
     "in this case, Updater is unable to identify the branch to be updated."
     "please check out to an official branch, and re-start the updater."
 )
-OFFICIAL_UPSTREAM_REPO = "https://github.com/mkaraniya/BotHub/"
+OFFICIAL_UPSTREAM_REPO = "https://github.com/mkaraniya/BotHub.got"
 BOT_IS_UP_TO_DATE = "the userbot is up-to-date."
 NEW_BOT_UP_DATE_FOUND = (
     "new update found for {branch_name}\n"
@@ -52,7 +52,7 @@ NEW_UP_DATE_FOUND = (
     "new update found for {branch_name}\n"
     "updating ..."
 )
-REPO_REMOTE_NAME = "temponame"
+REPO_REMOTE_NAME = "BotHub"
 IFFUCI_ACTIVE_BRANCH_NAME = "master"
 DIFF_MARKER = "HEAD..{remote_name}/{branch_name}"
 NO_HEROKU_APP_CFGD = "no heroku application found, but a key given? 😕 "
@@ -61,7 +61,7 @@ RESTARTING_APP = "re-starting heroku application"
 # -- Constants End -- #
 
 
-@borg.on(admin_cmd("update ?(.*)", outgoing=True, allow_sudo=True))
+@borg.on(admin_cmd("updater ?(.*)", outgoing=True, allow_sudo=True))
 async def updater(message):
     try:
         repo = git.Repo()
@@ -120,7 +120,7 @@ async def updater(message):
     else:
         await message.edit(message_one)
 
-    temp_upstream_remote.fetch(active_branch_name)
+    temp_upstream_remote.pull(active_branch_name)
     repo.git.reset("--hard", "FETCH_HEAD")
 
     if Config.HEROKU_API_KEY is not None:
@@ -166,7 +166,7 @@ def generate_change_log(git_repo, diff_marker):
 async def deploy_start(bot, message, refspec, remote):
     await message.edit(RESTARTING_APP)
     await message.edit("restarted! do `.ping` to check if I am pinging?")
-    git.remote.fetch(refspec=refspec)
+    await remote.push(refspec=refspec)
     await bot.disconnect()
     os.execl(sys.executable, sys.executable, *sys.argv)
 
