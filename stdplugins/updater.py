@@ -5,14 +5,14 @@ from os import remove
 from os import execl
 import sys
 
- 
-# from git.exc import GitCommandError
-# from git.exc import InvalidGitRepositoryError
-# from git.exc import NoSuchPathError
+import git 
+from git.exc import GitCommandError
+from git.exc import InvalidGitRepositoryError
+from git.exc import NoSuchPathError
 
 # from uniborg.events import register
 
-import git
+
 import asyncio
 import random
 import re
@@ -52,7 +52,7 @@ NEW_UP_DATE_FOUND = (
     "new update found for {branch_name}\n"
     "updating ..."
 )
-REPO_REMOTE_NAME = "bothub"
+REPO_REMOTE_NAME = "bothub_teknoways"
 IFFUCI_ACTIVE_BRANCH_NAME = "master"
 DIFF_MARKER = "HEAD..{remote_name}/{branch_name}"
 NO_HEROKU_APP_CFGD = "no heroku application found, but a key given? 😕 "
