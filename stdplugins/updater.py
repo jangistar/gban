@@ -6,14 +6,14 @@ from os import execl
 import sys
 
  
- from git.exc import GitCommandError
- from git.exc import InvalidGitRepositoryError
- from git.exc import NoSuchPathError
+# from git.exc import GitCommandError
+# from git.exc import InvalidGitRepositoryError
+# from git.exc import NoSuchPathError
 
 # from .. import bot
 # from uniborg.events import register
 
-# import git
+ import git
 import asyncio
 import random
 import re
