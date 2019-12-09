@@ -5,7 +5,7 @@ from os import remove
 from os import execl
 import sys
 
-# from git import Repo
+ 
 # from git.exc import GitCommandError
 # from git.exc import InvalidGitRepositoryError
 # from git.exc import NoSuchPathError
@@ -13,7 +13,7 @@ import sys
 # from .. import bot
 # from uniborg.events import register
 
-import git
+# import git
 import asyncio
 import random
 import re
@@ -112,7 +112,7 @@ async def updater(message):
     if len(message_one) > 4095:
         with open("change.log", "w+", encoding="utf8") as out_file:
             out_file.write(str(message_one))
-        await tgbot.send_message(
+        await bot.send_message(
             message.chat_id,
             document="change.log",
             caption=message_two
@@ -146,7 +146,7 @@ async def updater(message):
                     remote.set_url(heroku_git_url)
                 else:
                     remote = repo.create_remote("heroku", heroku_git_url)
-                asyncio.get_event_loop().create_task(deploy_start(tgbot, message, HEROKU_GIT_REF_SPEC, remote))
+                asyncio.get_event_loop().create_task(deploy_start(bot, message, HEROKU_GIT_REF_SPEC, remote))
 
             else:
                 await message.edit("Please create the var HEROKU_APP_NAME as the key and the name of your bot in heroku as your value.")
@@ -164,11 +164,11 @@ def generate_change_log(git_repo, diff_marker):
         out_put_str += f"•[{repo_change.committed_datetime.strftime(d_form)}]: {repo_change.summary} <{repo_change.author}>\n"
     return out_put_str
 
-async def deploy_start(tgbot, message, refspec, remote):
+async def deploy_start(bot, message, refspec, remote):
     await message.edit(RESTARTING_APP)
     await message.edit("restarted! do `.ping` to check if I am pinging?")
     await remote.push(refspec=refspec)
-    await tgbot.disconnect()
+    await bot.disconnect()
     os.execl(sys.executable, sys.executable, *sys.argv)
 
     
