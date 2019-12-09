@@ -5,6 +5,7 @@ from os import remove
 from os import execl
 import sys
 
+import git
 from git import Repo
 from git.exc import GitCommandError
 from git.exc import InvalidGitRepositoryError
