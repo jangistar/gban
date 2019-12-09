@@ -61,7 +61,7 @@ RESTARTING_APP = "re-starting heroku application"
 # -- Constants End -- #
 
 
-@borg.on(admin_cmd("update ?(.*)", outgoing=True, allow_sudo=True))
+@borg.on(admin_cmd("updater ?(.*)", outgoing=True, allow_sudo=True))
 async def updater(message):
     try:
         repo = git.Repo()
