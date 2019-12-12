@@ -7,17 +7,42 @@
 This module updates the userbot based on Upstream revision
 """
 
-from os import remove, execl
+from os import remove
+from os import execl
 import sys
 
-from telethon import events
+import heroku3
+import git
 from git import Repo
-from git.exc import GitCommandError, InvalidGitRepositoryError, NoSuchPathError
+from git.exc import GitCommandError
+from git.exc import InvalidGitRepositoryError
+from git.exc import NoSuchPathError
 
-#from userbot import CMD_HELP, bot
-#from userbot.events import register
+import asyncio
+import random
+import re
+import time
+
+from collections import deque
+
+import requests
+
+from telethon.tl.functions.users import GetFullUserRequest
+from telethon.tl.types import MessageEntityMentionName
+from telethon import events
 
 from uniborg.util import admin_cmd
+# from uniborg import HEROKU_MEMEZ
+# from uniborg import HEROKU_APIKEY
+# from uniborg import HEROKU_APPNAME
+
+from contextlib import suppress
+import os
+import sys
+import asyncio
+
+# from uniborg import CMD_HELP, bot, HEROKU_MEMEZ, HEROKU_APIKEY, HEROKU_APPNAME
+# from userbot.events import register
 
 
 async def gen_chlog(repo, diff):
@@ -35,12 +60,11 @@ async def is_off_br(br):
             return 1
     return
 
-
 @borg.on(admin_cmd("chk ?(.*)", outgoing=True, allow_sudo=True))
 async def upstream(ups):
     "For .update command, check if the bot is up to date, update if specified"
     await ups.edit("`Checking for updates, please wait....`")
-    conf = ups.pattern_match.group(1)
+    conf = ups.pattern_match.group(1).lower()
     off_repo = 'https://github.com/mkaraniya/BotHub.git'
 
     try:
@@ -49,14 +73,19 @@ async def upstream(ups):
     except NoSuchPathError as error:
         await ups.edit(f'{txt}\n`directory {error} is not found`')
         return
-    except InvalidGitRepositoryError as error:
-        await ups.edit(
-            f'{txt}\n`directory {error} does not seems to be a git repository`'
-        )
-        return
     except GitCommandError as error:
         await ups.edit(f'{txt}\n`Early failure! {error}`')
         return
+    except InvalidGitRepositoryError:
+        repo = Repo.init()
+        await ups.edit(
+            "`Warning: Force-Syncing to the latest stable code from repo.`\
+            \nI may lose my downloaded files during this update."
+        )
+        origin = repo.create_remote('upstream', off_repo)
+        origin.fetch()
+        repo.create_head('master', origin.refs.master)
+        repo.heads.master.checkout(True)
 
     ac_br = repo.active_branch.name
     if not await is_off_br(ac_br):
@@ -95,21 +124,22 @@ async def upstream(ups):
         else:
             await ups.edit(changelog_str)
         await ups.respond(
-            "`do \".cl now\" to update\nDon't if using Heroku`")
+            "`do \".update now\" to update\nDon't if using Heroku`")
         return
 
     await ups.edit('`New update found, updating...`')
     ups_rem.fetch(ac_br)
-    repo.git.reset('--hard', 'FETCH_HEAD')
     await ups.edit('`Successfully Updated!\n'
                    'Bot is restarting... Wait for a second!`')
+    await install_requirements()
     await bot.disconnect()
     # Spin a new instance of bot
     execl(sys.executable, sys.executable, *sys.argv)
     # Shut the existing one down
     exit()
 
-
+    
+    
 """CMD_HELP.update({
     'update':
     ".update\
