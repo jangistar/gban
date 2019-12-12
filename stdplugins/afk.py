@@ -122,7 +122,7 @@ async def on_afk(event):
             else:
                 afk_since = f"`{int(seconds)}s` **ago**"
         msg = None
-        message_to_reply = f"My Master **3Cube** Is **AFK since**: {afk_time} " + \
+        message_to_reply = f"My Master **3Cube** Is **AFK since**: {afk_since} " + \
             f"\n\n__I don't promise that HE'll be back within few hours__\n\n**Because my King is** {reason}" \
             if reason \
             else f"My King **3Cube** is **AFK Since** {afk_since} so wait until He is back.\n\n**THANKS**"
