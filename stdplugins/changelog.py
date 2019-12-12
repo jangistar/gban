@@ -4,7 +4,8 @@
 # you may not use this file except in compliance with the License.
 #
 """
-This module updates the userbot based on Upstream revision
+This module generates the changelog for the userbot based on Upstream revision
+cmd is .chk
 """
 
 from os import remove
