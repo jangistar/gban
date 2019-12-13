@@ -45,6 +45,32 @@ import asyncio
 # from uniborg import CMD_HELP, bot, HEROKU_MEMEZ, HEROKU_APIKEY, HEROKU_APPNAME
 # from userbot.events import register
 
+# -- Constants -- #
+IS_SELECTED_DIFFERENT_BRANCH = (
+    "looks like a custom branch {branch_name} "
+    "is being used:\n"
+    "in this case, Updater is unable to identify the branch to be updated."
+    "please check out to an official branch, and re-start the updater."
+)
+OFFICIAL_UPSTREAM_REPO = "https://github.com/mkaraniya/BotHub/"
+BOT_IS_UP_TO_DATE = "the userbot is up-to-date."
+NEW_BOT_UP_DATE_FOUND = (
+    "new update found for {branch_name}\n"
+    "changelog: \n\n{changelog}\n"
+    "updating ..."
+)
+NEW_UP_DATE_FOUND = (
+    "new update found for {branch_name}\n"
+    "updating ..."
+)
+REPO_REMOTE_NAME = "BotHub_TeKnoways"
+IFFUCI_ACTIVE_BRANCH_NAME = "master"
+DIFF_MARKER = "HEAD..{remote_name}/{branch_name}"
+NO_HEROKU_APP_CFGD = "no heroku application found, but a key given? 😕 "
+HEROKU_GIT_REF_SPEC = "HEAD:refs/heads/master"
+RESTARTING_APP = "re-starting heroku application"
+# -- Constants End -- #
+
 
 async def gen_chlog(repo, diff):
     ch_log = ''
