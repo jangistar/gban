@@ -2,6 +2,7 @@
 #
 # Licensed under the Raphielscape Public License, Version 1.c (the "License");
 # you may not use this file except in compliance with the License.
+# edited by AvinashReddy
 #
 """
 This module generates the changelog for the userbot based on Upstream revision
