@@ -123,6 +123,7 @@ class Config(object):
     #
     LYDIA_API = os.environ.get("LYDIA_API", None)
     #
+    HEROKU_MEMEZ = bool(os.environ.get("HEROKU_MEMEZ", "False"))
     HEROKU_API_KEY = os.environ.get("HEROKU_API_KEY", None)
     HEROKU_APP_NAME = os.environ.get("HEROKU_APP_NAME", None)
     #
