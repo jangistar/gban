@@ -3,8 +3,9 @@
 # Licensed under the Raphielscape Public License, Version 1.c (the "License");
 # you may not use this file except in compliance with the License.
 # edited by @AvinashReddy3108 
-# re-edited by @Mayur_Karaniya make it work for Uniborg.
+# re-edited by @Mayur_Karaniya and @Devpatel_73 to make it work for Uniborg.
 #
+
 """
 This module generates the changelog for the userbot based on Upstream revision
 cmd is .chk
@@ -35,17 +36,13 @@ from telethon.tl.types import MessageEntityMentionName
 from telethon import events
 
 from uniborg.util import admin_cmd
-# from uniborg import HEROKU_MEMEZ
-# from uniborg import HEROKU_APIKEY
-# from uniborg import HEROKU_APPNAME
+
 
 from contextlib import suppress
 import os
 import sys
 import asyncio
 
-# from uniborg import CMD_HELP, bot, HEROKU_MEMEZ, HEROKU_APIKEY, HEROKU_APPNAME
-# from userbot.events import register
 
 
 async def gen_chlog(repo, diff):
