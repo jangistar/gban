@@ -18,6 +18,11 @@
       "description": "Get this value from my.telegram.org! Please do not steal",
       "value": ""
     },
+    "HEROKU_MEMEZ": {
+      "description": "This should be True if the userbor is running on a Heroku Dyno.",
+      "value": "True",
+      "required": true
+    },
     "HEROKU_API_KEY": {
       "description": "Get this value from Heroku Please do not steal",
       "value": ""
