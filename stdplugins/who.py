@@ -13,7 +13,7 @@ def get_who_string(who):
     who_string = html.escape(utils.get_display_name(who))
     if isinstance(who, (types.User, types.Channel)) and who.username:
         who_string += f" <i>(@{who.username})</i>"
-    who_string += f", <a href='tg://user?id={who.id}'>#{who.id}</a>"
+    who_string += f", <a href='tg://user?id={who.id}'>-{who.id}</a>"
     return who_string
 
 
