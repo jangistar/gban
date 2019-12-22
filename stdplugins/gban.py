@@ -7,7 +7,7 @@ import asyncio
 from uniborg.util import admin_cmd
 
 
-@borg.on(admin_cmd("gban ?(.*)"))
+@borg.on(admin_cmd("gban ?(.*)", allow_sudo=True))
 async def _(event):
     if event.fwd_from:
         return
@@ -26,7 +26,7 @@ async def _(event):
     await event.delete()
 
 
-@borg.on(admin_cmd("ungban ?(.*)"))
+@borg.on(admin_cmd("ungban ?(.*)", allow_sudo=True))
 async def _(event):
     if event.fwd_from:
         return
