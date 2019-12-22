@@ -22,7 +22,7 @@ async def _(event):
             Config.G_BAN_LOGGER_GROUP,
             "!gban [user](tg://user?id={}) {}".format(r_from_id, reason)
         )
-    await asyncio.sleep(55)
+    await asyncio.sleep(5)
     await event.delete()
 
 
@@ -38,5 +38,5 @@ async def _(event):
             Config.G_BAN_LOGGER_GROUP,
             "!ungban [user](tg://user?id={}) {}".format(r_from_id, reason)
         )
-    await asyncio.sleep(55)
+    await asyncio.sleep(5)
     await event.delete()
