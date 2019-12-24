@@ -1,3 +1,12 @@
+"""
+AI based Replier Module for Userbot. //lazy af
+cmd: .listDB, .rep, .autochat, .stopchat, .learnstart, .learnstop
+usage-tips: Training Data is still not sufficient. so maybe bot wouldnt be that intelligent. But it is good for having some fun.
+NOTE :- This will only work with MongoDB.
+By: @AyushChatterjee
+"""
+
+
 from chatterbot import ChatBot 
 from chatterbot.conversation import Statement
 from telethon import events
