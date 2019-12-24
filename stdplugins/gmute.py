@@ -1,5 +1,5 @@
 """Plugin for .gmute 
-Made with love for BotHub By @AyushChatterjee
+Made with love for Uniborg By @AyushChatterjee
 """
 
 from telethon import events
