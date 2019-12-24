@@ -5,14 +5,13 @@ import asyncio
 import importlib.util
 import logging
 from pathlib import Path
-
+from pymongo import MongoClient
 from telethon import TelegramClient
 import telethon.utils
 import telethon.events
-from pymongo import MongoClient
+import os
 from .storage import Storage
 from . import hacks
-import os
 
 
 class Uniborg(TelegramClient):
@@ -25,17 +24,18 @@ class Uniborg(TelegramClient):
         # This means that using the Storage type as a storage would work too.
         self._name = "LoggedIn"
         self.storage = storage or (lambda n: Storage(Path("data") / n))
-        self._logger = logging.getLogger("UniBorg")
+        self._logger = logging.getLogger("BotHub")
         self._plugins = {}
         self._plugin_path = plugin_path
         self.config = api_config
         self.mongo = MongoClient(os.environ.get("MONGO_URI",None))
+
         kwargs = {
             "api_id": 6,
             "api_hash": "eb06d4abfb49dc3eeb1aeb98ae0f581e",
-            "device_model": "GNU/Linux nonUI",
-            "app_version": "@UniBorg 9.0.9",
-            "lang_code": "ml",
+            "device_model": "Redmi Note4x (Mido)",
+            "app_version": "@Three_Cube_TeKnoways",
+            "lang_code": "en",
             **kwargs
         }
 
@@ -98,9 +98,9 @@ class Uniborg(TelegramClient):
 
         spec = importlib.util.spec_from_file_location(name, path)
         mod = importlib.util.module_from_spec(spec)
+        mod.mongo_client = self.mongo
 
         mod.borg = self
-        mod.mongo_client = self.mongo
         mod.logger = logging.getLogger(shortname)
         mod.storage = self.storage(f"{self._name}/{shortname}")
         # declare Config and tgbot to be accessible by all modules
@@ -123,7 +123,10 @@ class Uniborg(TelegramClient):
 
         del self._plugins[shortname]
         self._logger.info(f"Removed plugin {shortname}")
-
+        
+        self._logger.info(f"Hurrey You just had deployed BotHub userbot, for support :-https://telegram.me/Bot_Hub_Official, just do .ping to confirm your bot is on in anygroup & do .cl in your private group to know BotHub's cmd list. Bakkaa you can also use .on sometimes if you wish 😉.")
+        
+    
     def await_event(self, event_matcher, filter=None):
         fut = asyncio.Future()
 
