@@ -65,8 +65,9 @@ class Config(object):
     NO_LOAD = [
                     "pmpermit",
                     "left",
+                    "autores",
                     "hand",   
-                    "autores", 
+                    
     ]
     # Get your own API key from https://www.remove.bg/ or
     # feel free to use http://telegram.dog/Remove_BGBot
@@ -86,7 +87,9 @@ class Config(object):
     # can be None in which case plugins requiring
     # DataBase would not work
     DB_URI = os.environ.get("DATABASE_URL", None)
-    #MongoDB
+    # For Databases
+    # can be None in which case plugins requiring
+    # DataBase would not work
     MONGO_URI = os.environ.get("MONGO_URI", None)
     # number of rows of buttons to be displayed in .helpme command
     NO_OF_BUTTONS_DISPLAYED_IN_H_ME_CMD = int(os.environ.get("NO_OF_BUTTONS_DISPLAYED_IN_H_ME_CMD", 5))
@@ -139,6 +142,9 @@ class Config(object):
     PACKS_CONTENT = os.environ.get("PACKS_CONTENT", None)
     #
     BOT_HUB = os.environ.get("BOT_HUB", None)
+    #
+    
+
 
 class Production(Config):
     LOGGER = False
