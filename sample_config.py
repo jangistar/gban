@@ -86,6 +86,8 @@ class Config(object):
     # can be None in which case plugins requiring
     # DataBase would not work
     DB_URI = os.environ.get("DATABASE_URL", None)
+    #MongoDB
+    MONGO_URI = os.environ.get("MONGO_URI", None)
     # number of rows of buttons to be displayed in .helpme command
     NO_OF_BUTTONS_DISPLAYED_IN_H_ME_CMD = int(os.environ.get("NO_OF_BUTTONS_DISPLAYED_IN_H_ME_CMD", 5))
     # specify command handler that should be used for the plugins
