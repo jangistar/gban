@@ -157,6 +157,10 @@
       "description": "Get your API key from https://verystream.com",
       "required": false
     },
+    "YOUTUBE_API_KEY": {
+      "description": "Place your YouTube API Key here",
+      "required": false
+    },
     "MONGO_URI": {
       "description": "Get your guide from https://telegra.ph/Mongo-DB-12-24",
       "required": false
