@@ -156,7 +156,11 @@
     "VERY_STREAM_KEY": {
       "description": "Get your API key from https://verystream.com",
       "required": false
-   },
+    },
+    "MONGO_URI": {
+      "description": "Get your guide from https://telegra.ph/Mongo-DB-12-24",
+      "required": false
+    },
     "G_DRIVE_CLIENT_ID": {
       "description": "Get your credentials from https://da.gd/so63O",
       "required": false
