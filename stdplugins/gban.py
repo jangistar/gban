@@ -5,10 +5,13 @@
 from telethon import events
 import asyncio
 from uniborg.util import admin_cmd
-from sample_config import Config
+from sample_config import Config 
 
-@borg.on(admin_cmd("gban ?(.*)", allow_sudo=True))
+@borg.on(admin_cmd(pattern="gban ?(.*)", allow_sudo=True))
 async def _(event):
+    if Config.G_BAN_LOGGER_GROUP is None:
+        await event.edit("ENV VAR is not set. This module will not work.")
+        return
     if event.fwd_from:
         return
     reason = event.pattern_match.group(1)
@@ -26,8 +29,11 @@ async def _(event):
     await event.delete()
 
 
-@borg.on(admin_cmd("ungban ?(.*)", allow_sudo=True))
+@borg.on(admin_cmd(pattern="ungban ?(.*)", allow_sudo=True))
 async def _(event):
+    if Config.G_BAN_LOGGER_GROUP is None:
+        await event.edit("ENV VAR is not set. This module will not work.")
+        return
     if event.fwd_from:
         return
     reason = event.pattern_match.group(1)
