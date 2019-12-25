@@ -4,12 +4,17 @@
 Audio and video downloader using Youtube-dl
 .yta To Download in mp3 format
 .ytv To Download in mp4 format
+above credits to @AvinashReddy3108
+.yts command, do a YouTube search from Telegram.
+credits to @Mayur_Karaniya
+
 """
 
 import os
 import time
 import math
 import asyncio
+import shutil
 from youtube_dl import YoutubeDL
 from youtube_dl.utils import (DownloadError, ContentTooShortError,
                               ExtractorError, GeoRestrictedError,
@@ -17,7 +22,18 @@ from youtube_dl.utils import (DownloadError, ContentTooShortError,
                               UnavailableVideoError, XAttrMetadataError)
 from asyncio import sleep
 from telethon.tl.types import DocumentAttributeAudio
-from uniborg.util import admin_cmd
+from uniborg.util import admin_cmd, progress, humanbytes, time_formatter
+from collections import deque
+from googleapiclient.discovery import build
+from sample_config import Config
+# from .. import YOUTUBE_API_KEY
+# from app.json import YOUTUBE_API_KEY
+
+import requests
+
+# global YOUTUBE_API_KEY
+# YOUTUBE_API_KEY = {}
+YOUTUBE_API_KEY = Config.YOUTUBE_API_KEY
 
 async def progress(current, total, event, start, type_of_ps, file_name=None):
     """Generic progress_callback for uploads and downloads."""
@@ -212,3 +228,64 @@ async def download_video(v_url):
         os.remove(f"{ytdl_data['id']}.mp4")
         await v_url.delete()
         
+@borg.on(admin_cmd(pattern="yts ?(.*)", allow_sudo=True))
+async def yts_search(video_q):
+    # For .yts command, do a YouTube search from Telegram.
+    query = video_q.pattern_match.group(1)
+    result = ''
+
+    if not YOUTUBE_API_KEY:
+        await video_q.edit(
+            "`Error: YouTube API key missing! Add it to environment vars or config.env.`"
+        )
+        return
+
+    await video_q.edit("```Processing...```")
+
+    full_response = await youtube_search(query)
+    videos_json = full_response[1]
+
+    for video in videos_json:
+        title = f"{unescape(video['snippet']['title'])}"
+        link = f"https://youtu.be/{video['id']['videoId']}"
+        result += f"{title}\n{link}\n\n"
+
+    reply_text = f"**Search Query:**\n`{query}`\n\n**Results:**\n\n{result}"
+
+    await video_q.edit(reply_text)
+
+
+async def youtube_search(query,
+                         order="relevance",
+                         token=None,
+                         location=None,
+                         location_radius=None):
+    """ Do a YouTube search. """
+    youtube = build('youtube',
+                    'v3',
+                    developerKey=YOUTUBE_API_KEY,
+                    cache_discovery=False)
+    search_response = youtube.search().list(
+        q=query,
+        type="video",
+        pageToken=token,
+        order=order,
+        part="id,snippet",
+        maxResults=10,
+        location=location,
+        locationRadius=location_radius).execute()
+
+    videos = []
+
+    for search_result in search_response.get("items", []):
+        if search_result["id"]["kind"] == "youtube#video":
+            videos.append(search_result)
+    try:
+        nexttok = search_response["nextPageToken"]
+        return (nexttok, videos)
+    except HttpError:
+        nexttok = "last_page"
+        return (nexttok, videos)
+    except KeyError:
+        nexttok = "KeyError, try again."
+        return (nexttok, videos)
