@@ -1,4 +1,4 @@
-"""Plugin for .gmute 
+"""Plugin for .gmute, .ungmute and .listgmuted
 Made with love for Uniborg By @AyushChatterjee
 """
 
