@@ -7,7 +7,7 @@ Audio and video downloader using Youtube-dl
 above credits to @AvinashReddy3108
 .yts command, do a YouTube search from Telegram.
 credits to @Mayur_Karaniya
-
+Final touch by @AyushChatterjee
 """
 
 import os
@@ -26,6 +26,7 @@ from uniborg.util import admin_cmd, progress, humanbytes, time_formatter
 from collections import deque
 from googleapiclient.discovery import build
 from sample_config import Config
+from html import unescape
 # from .. import YOUTUBE_API_KEY
 # from app.json import YOUTUBE_API_KEY
 
