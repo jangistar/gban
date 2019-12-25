@@ -5,7 +5,7 @@
 from telethon import events
 import asyncio
 from uniborg.util import admin_cmd
-
+from sample_config import Config
 
 @borg.on(admin_cmd("gban ?(.*)", allow_sudo=True))
 async def _(event):
