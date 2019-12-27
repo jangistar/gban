@@ -93,7 +93,7 @@ def time_formatter(milliseconds: int) -> str:
         ((str(milliseconds) + " millisecond(s), ") if milliseconds else "")
     return tmp[:-2]
 
-@borg.on(admin_cmd(pattern="yt(a|v) (.*)"))
+@borg.on(admin_cmd(pattern="yt(a|v) (.*)", groups_only=False, allow_sudo=True))
 async def download_video(v_url):
     """ For .ytdl command, download media from YouTube and many other sites. """
     url = v_url.pattern_match.group(2)
@@ -229,7 +229,7 @@ async def download_video(v_url):
         os.remove(f"{ytdl_data['id']}.mp4")
         await v_url.delete()
         
-@borg.on(admin_cmd(pattern="yts ?(.*)", allow_sudo=True))
+@borg.on(admin_cmd(pattern="yts ?(.*)", allow_sudo=True, groups_only=False))
 async def yts_search(video_q):
     # For .yts command, do a YouTube search from Telegram.
     query = video_q.pattern_match.group(1)
