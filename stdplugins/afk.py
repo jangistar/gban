@@ -43,11 +43,11 @@ async def set_not_afk(event):
                 await borg.send_message(  # pylint:disable=E0602
                     Config.PRIVATE_GROUP_BOT_API_ID,  # pylint:disable=E0602
                     recvd_messages,
-                    link_preview=False
+                    link_preview=True
                 )
             await borg.send_message(  # pylint:disable=E0602
                 Config.PRIVATE_GROUP_BOT_API_ID,  # pylint:disable=E0602
-                "Set AFK mode to False"
+                "Set AFK mode to True, and Reason is {reason}"
             )
         except Exception as e:  # pylint:disable=C0103,W0703
             await borg.send_message(  # pylint:disable=E0602
