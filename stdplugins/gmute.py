@@ -1,5 +1,5 @@
 """Plugin for .gmute, .ungmute and .listgmuted
-Made with love for Uniborg By @AyushChatterjee
+Made with love for Uniborg By @Zero_cool7870, kanged by @AyushChatterjee
 """
 
 from telethon import events
