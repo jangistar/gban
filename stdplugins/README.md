@@ -7,7 +7,8 @@
         APP_ID: You can get this value from https://my.telegram.org
         API_HASH: You can get this value from https://my.telegram.org
     The userbot will work without setting the non-mandatory environment variables.
-    Please report any issues to the support group: [@BotHub](https://telegram.dog/Bot_Hub_Official_Group)
+    Please report any issues to the support group: [@SpEcHlDe](https://telegram.dog/ShrimadhaVahdamirhS)
+
 
 design
 
