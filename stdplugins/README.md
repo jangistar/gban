@@ -29,3 +29,4 @@ learning
 Check out the already-mentioned plugins directory, or some third-party plugins to learn how to write your own, and consider reading Telethon's documentation.
 
 Note this is the fork of UNIBORG so most of the credits should be given to UNIBORG DEVELOPERS and TO Those who originally used their Brains to create very useful plugins to name them are two in my knowlegde Spechide and Jaskaran.
+and yes our admin team also worked hard to make few things work on this so not forgeting BOTHUB TEAM.
