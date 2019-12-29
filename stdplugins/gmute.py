@@ -1,5 +1,9 @@
-"""Plugin for .gmute, .ungmute and .listgmuted
-Made with love for Uniborg By @Zero_cool7870
+"""
+G-Muter Plugin for userbot. //Needs MongoDB to work.
+cmds: .gmute user_id|reply to user messsage	//G-Mutes a User.
+	  .ungmute user_id|reply to user messsage //Un-Gmutes a User.
+	  .listgmuted //List Currently G-Muted Users.
+By:- JaskaranSM ( @Zero_cool7870 )
 """
 
 from telethon import events
