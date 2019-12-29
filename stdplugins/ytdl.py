@@ -6,8 +6,7 @@ Audio and video downloader using Youtube-dl
 .ytv To Download in mp4 format
 above credits to @AvinashReddy3108
 .yts command, do a YouTube search from Telegram.
-credits to @Mayur_Karaniya
-Final touch by @AyushChatterjee
+credits to @Mayur_Karaniya & @AvinashReddy3108
 """
 
 import os
