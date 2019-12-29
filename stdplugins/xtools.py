@@ -1,8 +1,7 @@
 # This Source Code Form is subject to the terms of the Mozilla Public
 # License, v. 2.0. If a copy of the MPL was not distributed with this
 # file, You can obtain one at http://mozilla.org/MPL/2.0/.
-"""cmd .vtools"""
-
+"""cmd is .xtools"""
 
 from telethon import events
 from datetime import datetime
@@ -10,7 +9,7 @@ import requests
 from uniborg.util import admin_cmd
 
 
-@borg.on(admin_cmd("vtools (.*)"))
+@borg.on(admin_cmd("xtools (.*)"))
 async def _(event):
     if event.fwd_from:
         return
