@@ -1,9 +1,18 @@
 """
-AI based Replier Module for Userbot. //lazy af
-cmd: .listDB, .rep, .autochat, .stopchat, .learnstart, .learnstop
-usage-tips: Training Data is still not sufficient. so maybe bot wouldnt be that intelligent. But it is good for having some fun.
-Please Note - This will only work with MongoDB.
-By: @AyushChatterjee
+DISCLAIMER:- 
+	import disclaimer
+	I am Not Responsible If this Software Causes you Any Kind Of Trouble.
+	Use it on Your Own Risk.
+	If You Blame me for Any Damage Caused by it. I will Laugh at you.
+USAGE:-
+	.rep = Reply To a User's message with ChatBot
+	.autochat = //As a reply to user's Message. Add User in Auto-Chat List
+	.stopchat = //As a reply to user's Message. Remove User from Auto-Chat List.
+	.learnstart = Add Chat in Learning Chats List.
+	.learnstop = Remove Chat from Learning Chats List.
+	.listDB = Output Currently Stored Auto-Chat/Learning-Chat ID Data.
+Credits:-
+	@Zero_Cool7870 (Me)	
 """
 
 
