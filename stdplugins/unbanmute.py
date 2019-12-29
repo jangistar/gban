@@ -1,5 +1,6 @@
 """Restrict Users
-Available Commands: .ban, .unban, .mute, .unmute """
+Available Commands: .ban, .unban, .mute, .unmute
+.unmute added by @Mayur_Karaniya."""
 from telethon import events
 import asyncio
 from datetime import datetime
