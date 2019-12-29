@@ -2,6 +2,7 @@
 Torrent Search Plugin for Userbot. //torrentdownloads.me
 cmd: .search search_string
 Note: Number of results are currently limited to 20
+By:-@Zero_cool7870
 
 """
 from bs4 import BeautifulSoup as bs 
