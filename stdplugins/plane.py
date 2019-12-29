@@ -1,4 +1,5 @@
-#By STARKTM1
+"""By STARKTM1
+cmd : .plane"""
 from telethon import events
 import asyncio
 import os
