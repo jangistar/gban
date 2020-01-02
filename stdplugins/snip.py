@@ -17,7 +17,7 @@ TYPE_PHOTO = 1
 TYPE_DOCUMENT = 2
 
 
-@borg.on(events.NewMessage(pattern=r'\#(\S+)', outgoing=True))
+@borg.on(events.NewMessage(pattern=r'\$(\S+)', outgoing=True))
 async def on_snip(event):
     name = event.pattern_match.group(1)
     snip = get_snips(name)
@@ -48,7 +48,7 @@ async def on_snip(event):
         await event.delete()
 
 
-@borg.on(admin_cmd("snips (.*)"))
+@borg.on(admin_cmd("snips"))
 async def on_snip_save(event):
     name = event.pattern_match.group(1)
     msg = await event.get_reply_message()
