@@ -3,9 +3,9 @@
 # file, You can obtain one at http://mozilla.org/MPL/2.0/.
 """Snips
 Available Commands:
-.snips
-.snipl
-.snipd"""
+.snips to save the snip
+.snipl to list the snip
+.snipd to delete the snip"""
 from telethon import events, utils
 from telethon.tl import types
 from sql_helpers.snips_sql import get_snips, add_snip, remove_snip, get_all_snips
