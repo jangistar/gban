@@ -1,4 +1,5 @@
 aiofiles
+opencv-contrib-python
 aiohttp
 aria2p
 beautifulsoup4
@@ -29,10 +30,15 @@ urbandict
 wikipedia
 youtube-dl
 lxml
-heroku3
+heroku3 
 git+https://github.com/LonamiWebs/Telethon
 git+https://github.com/ahupp/python-magic
 oauth2client
 httplib2
 humanize
 dnspython
+numpy>=1.11.1
+databases[sqlite]
+praw
+opencv_python>=1.1.1
+
