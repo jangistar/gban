@@ -41,7 +41,7 @@ from telethon import *
 
 
 @borg.on(admin_cmd(pattern="PPS ?(.*)", allow_sudo=True))
-async def _(event):
+async def PPScmd(event):
         """Gets the profile photos of replied users, channels or chats"""
         id = event.get_args_raw(event.message)
         user = await event.get_reply_message()
