@@ -14,7 +14,7 @@
 
 #    You should have received a copy of the GNU Affero General Public License
 #    along with this program.  If not, see <https://www.gnu.org/licenses/>.
-"""it's to generate the replied users all profile pics that are not deleted
+"""it's to generate the replied user's, channel's or chat's all profile pics that are not deleted
 cmd is .PPS ,
 ALL credits to the owner of FTG BOT and the dev of this Plugin thou i don't know who is the dev of this plugin
 but still if anyone knows inform me on @Three_Cube_TeKnoways."""
@@ -40,24 +40,32 @@ from telethon.tl.functions.channels import *
 from telethon.tl.functions.photos import *
 from telethon.tl.types import *
 from telethon import *
+import logging
+
+logger = logging.getLogger(__name__)
 
 
-@borg.on(admin_cmd(pattern="PPS ?(.*)", allow_sudo=True))
-async def PPScmd(event):
-        """Gets the profile photos of replied users, channels or chats"""
-        id = event.get_args_raw(event.message)
+
+if 1 == 1:
+    name = "Profile Photos"
+    client = borg
+
+    @borg.on(admin_cmd(pattern="PPS(.*)"))
+    async def PPScmd(event):
+#        """Gets the profile photos of replied users, channels or chats"""
+        id = "".join(event.raw_text.split(maxsplit=2)[1:])
         user = await event.get_reply_message()
-        chat = message.input_chat
+        chat = event.input_chat
         if user:
-            photos = await event.get_profile_photos(user.sender)
+            photos = await event.client.get_profile_photos(user.sender)
         else:
-            photos = await event.get_profile_photos(chat)
+            photos = await event.client.get_profile_photos(chat)
         if id.strip() == "":
             try:
-                await event.send_file(message.chat_id, photos)
+                await event.client.send_file(event.chat_id, photos)
             except a:
-                photo = await event.download_profile_photo(chat)
-                await event.send_file(message.chat_id, photo)
+                photo = await event.client.download_profile_photo(chat)
+                await borg.send_file(event.chat_id, photo)
         else:
             try:
                 id = int(id)
@@ -68,9 +76,8 @@ async def PPScmd(event):
                  await event.edit("<code>ID number you entered is invalid</code>")
                  return
             if int(id) <= (len(photos)):
-                send_photos = await event.download_media(photos[id - 1])
-                await event.send_file(message.chat_id, send_photos)
+                send_photos = await event.client.download_media(photos[id - 1])
+                await borg.send_file(event.chat_id, send_photos)
             else:
                 await event.edit("<code>No photo found with that id</code>")
                 return
-    
