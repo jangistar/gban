@@ -16,8 +16,7 @@
 #    along with this program.  If not, see <https://www.gnu.org/licenses/>.
 """it's to generate the replied user's, channel's or chat's all profile pics that are not deleted
 cmd is .PPS ,
-ALL credits to the owner of FTG BOT and the dev of this Plugin thou i don't know who is the dev of this plugin
-but still if anyone knows inform me on @Three_Cube_TeKnoways."""
+ALL credits to the owner of FTG BOT and the dev of this Plugin Emily Bennett."""
 
 
 import sys
