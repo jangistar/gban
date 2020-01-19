@@ -5,15 +5,14 @@
 # Credits goes to @AvinashReddy3108 for creating this plugin
 # edited to work on Uniborg by @Mayur_Karaniya
 #
- """
- This module updates the userbot based on Upstream revision
-  cmd is .update
-Usage: Checks if the main userbot repository has any updates and shows a changelog if so.
-.
-cmd .update now
-Usage: Updates your userbot, if there are any updates in the main userbot repository."
- """
-
+"""
+   This module updates the userbot based on Upstream revision
+   cmd is .update
+   Usage: Checks if the main userbot repository has any updates and shows a changelog if so.
+   .
+   cmd .update now
+   Usage: Updates your userbot, if there are any updates in the main userbot repository.
+"""
 
 from os import remove, execle, path, makedirs, getenv, environ
 from shutil import rmtree
