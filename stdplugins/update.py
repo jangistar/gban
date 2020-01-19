@@ -2,6 +2,8 @@
 #
 # Licensed under the Raphielscape Public License, Version 1.c (the "License");
 # you may not use this file except in compliance with the License.
+# Credits goes to @AvinashReddy3108 for creating this plugin
+# edited to work on Uniborg by @Mayur_Karaniya
 #
 # """
 # This module updates the userbot based on Upstream revision
