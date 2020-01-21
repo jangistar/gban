@@ -1,7 +1,9 @@
+"""
 # For @UniBorg
 # (c) Shrimadhav U K
 
-""" cmd is -listmyusernames """
+cmd is -listmyusernames
+"""
 
 from telethon import events, functions, types
 import asyncio
