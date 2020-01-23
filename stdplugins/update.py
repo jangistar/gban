@@ -12,6 +12,9 @@
    .
    cmd .update now
    Usage: Updates your userbot, if there are any updates in the main userbot repository.
+   .
+   Credits goes to @AvinashReddy3108 for creating this plugin
+   edited to work on Uniborg by @Mayur_Karaniya
 """
 
 from os import remove, execle, path, makedirs, getenv, environ
