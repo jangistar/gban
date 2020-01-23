@@ -141,7 +141,7 @@ class Config(object):
     CHROME_DRIVER = os.environ.get("CHROME_DRIVER", None)
     CHROME_BIN = os.environ.get("CHROME_BIN", None)
     # define "repo_link" in conig_vars
-    REPO_LINK = os.environ.get("REPO_LINK", None)
+    REPO_LINK = os.environ.get("REPO_LINK", "https://github.com/mkaraniya/BotHub")
     # define "heroku_link" in conig_vars 
     HEROKU_LINK = os.environ.get("HEROKU_LINK", None)
     # define "packs_content" in conig_vars
