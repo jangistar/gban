@@ -18,6 +18,14 @@
       "description": "Get this value from my.telegram.org! Please do not steal",
       "value": ""
     },
+    "API_TOKEN": {
+      "description": "Get this value from http://antiddos.systems! Please do not steal",
+      "value": ""
+    },
+    "API_URL": {
+      "description": "The value is http://antiddos.systems!",
+      "value": "http://antiddos.systems"
+    },
     "HEROKU_MEMEZ": {
       "description": "This should be True if the userbor is running on a Heroku Dyno.",
       "value": "False",
