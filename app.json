@@ -227,6 +227,10 @@
       "description": "This is required for commit functionality to work.",
       "required": false
     },
+    "REPO_LINK": {
+      "description": "This is required for commit functionality to work.",
+      "required": false
+    },
     "OPEN_LOAD_KEY": {
       "description": "I dunno but my repo needs it, u can type 100.",
       "required": false
