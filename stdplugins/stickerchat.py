@@ -13,7 +13,7 @@
 
 #    You should have received a copy of the GNU Affero General Public License
 #    along with this program.  If not, see <https://www.gnu.org/licenses/>.
-"""    Credits to ftg plugins, cmd is .chat """
+"""    Credits to ftg plugins, cmd is .photochat """
 
 import logging
 import requests
@@ -59,7 +59,7 @@ if 1 == 1:
                                           "default_username_color": "#b48bf2"})
     client = borg
 
-    @borg.on(admin_cmd(pattern="chat(.*)"))
+    @borg.on(admin_cmd(pattern="photochat(.*)"))
     async def quotecmd(message):  # noqa: C901
         """Quote a message.
         Usage: .quote [template]
