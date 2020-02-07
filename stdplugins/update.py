@@ -59,7 +59,7 @@ import asyncio
 from sample_config import Config
 # from .uniborg import HEROKU_API_KEY, HEROKU_APP_NAME, REPO_LINK
 
-REPO_LINK = "https://github.com/mkaraniya/BotHub"
+REPO_LINK = "https://github.com/mkaraniya/BotHub.git"
 HEROKU_API_KEY = "your heroku api key here"
 HEROKU_APP_NAME = "your heroku app name"
 
