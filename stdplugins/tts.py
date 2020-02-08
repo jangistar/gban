@@ -11,7 +11,7 @@ from gtts import gTTS
 from uniborg.util import admin_cmd
 
 
-@borg.on(admin_cmd("tts (.*)"))
+@borg.on(admin_cmd(pattern="tts (.*)"))
 async def _(event):
     if event.fwd_from:
         return
@@ -72,3 +72,4 @@ async def _(event):
         await event.delete()
     except Exception as e:
         await event.edit(str(e))
+        
