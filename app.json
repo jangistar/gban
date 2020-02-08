@@ -43,6 +43,10 @@
       "description": "Get this value from my.telegram.org! Please do not steal",
       "value": ""
     },
+    "UPSTREAM_REPO_URL": {
+      "description": "This is required for update functionality to work.",
+      "required": false
+    },
     "HU_STRING_SESSION": {
       "description": "Get this value by running python3 GenerateStringSession.py locally",
       "value": ""
