@@ -21,10 +21,10 @@ from git.exc import GitCommandError, InvalidGitRepositoryError, NoSuchPathError
 # from heroku3 import HEROKU_APIKEY, HEROKU_APPNAME
 from uniborg.util import admin_cmd
 
-# your Heroku ApiKey in place of "None"
-HEROKU_APIKEY = "None"
-# your Heroku AppName in place of "None"
-HEROKU_APPNAME = "None"
+# your Heroku ApiKey in place of ""
+HEROKU_APIKEY = ""
+# your Heroku AppName in place of ""
+HEROKU_APPNAME = ""
 #
 UPSTREAM_REPO_URL = "https://github.com/mkaraniya/BotHub.git"
 
