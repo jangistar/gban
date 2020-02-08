@@ -13,8 +13,8 @@ async def _(event):
         return
     await event.delete()
     start = datetime.now()
-    mone = await event.reply("My 🇵 🇮 🇳 🇬  Is : Calculating...")
+    mone = await event.reply("My P I N G Is : Calculating...")
     end = datetime.now()
     ms = (end - start).microseconds * 0.00001
-    await mone.edit("My 🇵 🇮 🇳 🇬  Is : {} ms".format(ms))
+    await mone.edit("My P I N G Is : {} ms".format(ms))
  
