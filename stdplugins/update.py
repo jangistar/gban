@@ -57,7 +57,8 @@ import sys
 import asyncio
 
 from sample_config import Config
-import HEROKU_API_KEY, HEROKU_APP_NAME, REPO_LINK
+from heroku3 import HEROKU_API_KEY, HEROKU_APP_NAME
+import REPO_LINK
 
 #REPO_LINK = "https://github.com/mkaraniya/BotHub.git"
 #HEROKU_API_KEY = "your heroku api key here"
