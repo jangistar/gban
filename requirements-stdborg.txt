@@ -44,4 +44,3 @@ opencv_python>=1.1.1
 spamwatch
 aioschedule
 REPO_LINK
-UPSTREAM_REPO_URL
