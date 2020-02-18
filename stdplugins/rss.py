@@ -1,5 +1,8 @@
 """created rss plugin for uniborg >> credid : @By_Azade
-cmd .rss <subject>"""
+
+NOTE: In groups, only admins can add/remove RSS links to the group's subscription
+
+cmd .listrss, .addrss <link>, .removerss <link>, .rss <link>"""
 
 import asyncio
 import html
