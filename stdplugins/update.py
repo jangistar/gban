@@ -57,12 +57,12 @@ import sys
 import asyncio
 
 from sample_config import Config
-from heroku3 import HEROKU_API_KEY, HEROKU_APP_NAME
+# from heroku3 import HEROKU_API_KEY, HEROKU_APP_NAME
 import REPO_LINK
 
 #REPO_LINK = "https://github.com/mkaraniya/BotHub.git"
-#HEROKU_API_KEY = "your heroku api key here"
-#HEROKU_APP_NAME = "your heroku app name"
+HEROKU_API_KEY = "your heroku api key here"
+HEROKU_APP_NAME = "your heroku app name"
 
 
 requirements_path = path.join(
