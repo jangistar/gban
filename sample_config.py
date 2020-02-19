@@ -10,6 +10,8 @@ class Config(object):
     APP_ID = int(os.environ.get("APP_ID", 6))
     API_HASH = os.environ.get("API_HASH", "eb06d4abfb49dc3eeb1aeb98ae0f581e")
     API_TOKEN = os.environ.get("API_TOKEN", "15e05de0-0357-4553-b39c-d614443ed91e")
+    # Get this value from https://t.me/SitiSchu! Please do not steal, group for support https://t.me/SpamWatchSupport
+    SPAMWATCH_API = os.environ.get("API_TOKEN", "fjHiOqdWQEv2Q_tT67uzfl3SEQ2PE08Q9c_zinZUiisxy")
     API_URL = os.environ.get("API_URL", "http://antiddos.systems")
     # string session for running on Heroku
     # some people upload their session files on GitHub or other third party hosting
