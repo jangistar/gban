@@ -1,4 +1,5 @@
-"""spamwatch for uniborg users. Credits : @By_Azade"""
+"""spamwatch for uniborg users. Credits : @By_Azade
+cmd is .spamwatch, this was impossible without https://t.me/SitiSchu!."""
 
 from asyncio import sleep
 from os import remove
