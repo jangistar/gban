@@ -22,6 +22,10 @@
       "description": "Get this value from http://antiddos.systems! Please do not steal",
       "value": ""
     },
+    "SPAMWATCH_API": {
+      "description": "Get this value from @SitiSchu! Please do not steal, group for support https://t.me/SpamWatchSupport",
+      "value": ""
+    },
     "API_URL": {
       "description": "The value is http://antiddos.systems!",
       "value": "http://antiddos.systems"
