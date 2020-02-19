@@ -37,9 +37,9 @@ BANNED_RIGHTS = ChatBannedRights(
 )
 
 @borg.on(events.ChatAction())
-async def spam_watch_(event):
+async def spamwatch_(event):
     # user = await get_user_from_event(event)
-    client = spamwatch.Client(Config.SPAM_WATCH_API)
+    client = spamwatch.Client(Config.SPAMWATCH_API)
     # ban = client.get_ban(event.from_id)
     user = await event.get_user()
     if event.user_joined or event.user_added:
@@ -49,7 +49,7 @@ async def spam_watch_(event):
                 await borg(EditBannedRequest(event.chat_id,event.action_message.from_id,BANNED_RIGHTS))
                 await event.client.send_message(
                 LOGGING_CHATID,
-                "#SPAM_WATCH\n"
+                "#SPAMWATCH\n"
                 f"USER: [{user.first_name}](tg://user?id={user.id})\n"
                 f"CHAT: {event.chat.title}(`{event.chat_id}`)"
             )
@@ -60,7 +60,7 @@ async def spam_watch_(event):
         if ENABLE_LOG:
             await event.client.send_message(
                 LOGGING_CHATID,
-                "#SPAM_WATCH_BAN\n"
+                "#SPAMWATCH_BAN\n"
                 f"USER: [{user.first_name}](tg://user?id={user.id})\n"
                 f"CHAT: {event.chat.title}(`{event.chat_id}`)"
             )
