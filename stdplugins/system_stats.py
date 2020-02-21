@@ -14,9 +14,6 @@ from telethon import version
 
 from uniborg.util import admin_cmd
 
-# ================= CONSTANT =================
-
-# ============================================
 
 @borg.on(admin_cmd(pattern="sysd"))
 async def sysdetails(sysd):
@@ -73,56 +70,3 @@ async def bot_ver(event):
             "Shame that you don't have git, You're running 5.0 - 'Extended' anyway"
         )
 
-
-@borg.on(admin_cmd(pattern="pip(?: |$)(.*)"))
-async def pipcheck(pip):
-    """ For .pip command, do a pip search. """
-    pipmodule = pip.pattern_match.group(1)
-    if pipmodule:
-        await pip.edit("`Searching . . .`")
-        invokepip = f"pip3 search {pipmodule}"
-        pipc = await asyncrunapp(
-            invokepip,
-            stdout=asyncPIPE,
-            stderr=asyncPIPE,
-        )
-
-        stdout, stderr = await pipc.communicate()
-        pipout = str(stdout.decode().strip()) \
-            + str(stderr.decode().strip())
-
-        if pipout:
-            if len(pipout) > 4096:
-                await pip.edit("`Output too large, sending as file`")
-                file = open("output.txt", "w+")
-                file.write(pipout)
-                file.close()
-                await pip.client.send_file(
-                    pip.chat_id,
-                    "output.txt",
-                    reply_to=pip.id,
-                )
-                remove("output.txt")
-                return
-            await pip.edit("**Query: **\n`"
-                           f"{invokepip}"
-                           "`\n**Result: **\n`"
-                           f"{pipout}"
-                           "`")
-        else:
-            await pip.edit("**Query: **\n`"
-                           f"{invokepip}"
-                           "`\n**Result: **\n`No Result Returned/False`")
-    else:
-        await pip.edit("`Use .help pip to see an example`")
-
-
-@borg.on(admin_cmd(pattern="alive"))
-async def amireallyalive(alive):
-    """ For .alive command, check if the bot is running.  """
-    await alive.edit("`"
-                     "My bot is running \n\n"
-                     f"Telethon version: {version.__version__} \n"
-                     f"Python: {python_version()} \n"
-                     f"User: {ALIVE_NAME}"
-                     "`")
