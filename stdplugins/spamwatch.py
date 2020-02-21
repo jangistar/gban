@@ -67,18 +67,18 @@ async def spam_watch_(event):
             await event.client(DeleteContactsRequest(id=[user]))
         else:
             return
-    if ENABLE_LOG:
-        await event.client.send_message(
-            LOGGING_CHATID,
-            "#SPAM_WATCH_BAN\n" + \
-            f"USER: [{user.first_name}](tg://user?id={user.id})\n" + \
-            (f"CHAT: {event.chat.title}(`{event.chat_id}`)" if event.chat_id != event.from_id else "")
-        )
+        if ENABLE_LOG:
+            await event.client.send_message(
+                LOGGING_CHATID,
+                "#SPAM_WATCH_BAN\n" + \
+                f"USER: [{user.first_name}](tg://user?id={user.id})\n" + \
+                (f"CHAT: {event.chat.title}(`{event.chat_id}`)" if event.chat_id != event.from_id else "")
+            )
 
 
 async def get_user_from_event(event):
-    user_obj = [await event.client.get_input_peer(event.from_id)]
-    if isinstance(event, MessageService)
+    user_obj = [await event.client.get_input_entity(event.from_id)]
+    if isinstance(event, MessageService):
         if isinstance(event.action, MessageActionChatAddUser):
             user_obj.extend([await event.client.get_input_peer(x) for x in event.action.users])
     return user_obj
