@@ -26,6 +26,10 @@
       "description": "Get this value from https://t.me/SitiSchu! Please do not steal, group for support https://t.me/SpamWatchSupport",
       "value": ""
     },
+    "ALIVE_NAME": {
+      "description": "Name to show in .alive message",
+      "required": false
+    },
     "API_URL": {
       "description": "The value is http://antiddos.systems!",
       "value": "http://antiddos.systems"
