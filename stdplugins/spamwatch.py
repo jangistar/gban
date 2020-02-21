@@ -13,11 +13,14 @@ from telethon.errors.rpcerrorlist import (MessageTooLongError,
 from telethon.tl.functions.channels import (EditAdminRequest,
                                             EditBannedRequest,
                                             EditPhotoRequest)
+from telethon.tl.functions.contacts import BlockRequest
 from telethon.tl.functions.messages import UpdatePinnedMessageRequest
 from telethon.tl.types import (ChannelParticipantsAdmins,
                                ChannelParticipantsBots, ChatAdminRights,
                                ChatBannedRights, MessageEntityMentionName,
-                               MessageMediaPhoto, PeerChat)
+                               MessageMediaPhoto, PeerChat,
+                               MessageService, MessageActionChatAddUser)
+from telethon.tl.functions.contacts import DeleteContactsRequest
 
 from sample_config import Config
 from uniborg.util import admin_cmd
@@ -38,66 +41,44 @@ BANNED_RIGHTS = ChatBannedRights(
 )
 
 @borg.on(events.ChatAction())
-async def spamwatch_(event):
-    # user = await get_user_from_event(event)
-    client = spamwatch.Client(Config.SPAMWATCH_API)
-    # ban = client.get_ban(event.from_id)
-    user = await event.get_user()
-    if event.user_joined or event.user_added:
-        try:
-            ban = client.get_ban(event.action_message.from_id)
-            if ban:
-                await borg(EditBannedRequest(event.chat_id,event.action_message.from_id,BANNED_RIGHTS))
-                await event.client.send_message(
-                LOGGING_CHATID,
-                "#SPAMWATCH\n"
-                f"USER: [{user.first_name}](tg://user?id={user.id})\n"
-                f"CHAT: {event.chat.title}(`{event.chat_id}`)"
-            )
-            else:
+@borg.on(events.NewMessage())
+async def spam_watch_(event):
+    client = spamwatch.Client(Config.SPAM_WATCH_API)
+    users = await get_user_from_event(event)
+    for user in users:
+        ban = client.get_ban(user.id)
+        if event.chat_id != event.from_id and ban:
+            try:
+                await event.client(
+                    EditBannedRequest(
+                        event.chat_id,
+                        user,
+                        BANNED_RIGHTS
+                    )
+                )
+                if isinstance(event, events.NewMessage.Event):
+                    await event.delete()
+                else:
+                    return
+            except BadRequestError:
                 return
-        except BadRequestError:
+        elif ban:
+            await event.client(BlockRequest(user))
+            await event.client(DeleteContactsRequest(id=[user]))
+        else:
             return
-        if ENABLE_LOG:
-            await event.client.send_message(
-                LOGGING_CHATID,
-                "#SPAMWATCH_BAN\n"
-                f"USER: [{user.first_name}](tg://user?id={user.id})\n"
-                f"CHAT: {event.chat.title}(`{event.chat_id}`)"
-            )
+    if ENABLE_LOG:
+        await event.client.send_message(
+            LOGGING_CHATID,
+            "#SPAM_WATCH_BAN\n" + \
+            f"USER: [{user.first_name}](tg://user?id={user.id})\n" + \
+            (f"CHAT: {event.chat.title}(`{event.chat_id}`)" if event.chat_id != event.from_id else "")
+        )
 
 
- async def get_user_from_event(event):
-     if event.reply_to_msg_id:
-         previous_message = await event.get_reply_message()
-         user_obj = await event.client.get_entity(previous_message.from_id)
-     else:
-         user = event.pattern_match.group(1)
-         if user.isnumeric():
-             user = int(user)
-         if not user:
-             await event.edit("`Pass the user's username, id or reply!`")
-             return
-         if event.message.entities is not None:
-             probable_user_mention_entity = event.message.entities[0]
-
-             if isinstance(probable_user_mention_entity, MessageEntityMentionName):
-                 user_id = probable_user_mention_entity.user_id
-                 user_obj = await event.client.get_entity(user_id)
-                 return user_obj
-         try:
-             user_obj = await event.client.get_entity(user)
-         except (TypeError, ValueError) as err:
-             await event.edit(str(err))
-             return None
-     return user_obj
-
-  async def get_user_from_id(user, event):
-     if isinstance(user, str):
-         user = int(user)
-     try:
-         user_obj = await event.client.get_entity(user)
-     except (TypeError, ValueError) as err:
-         await event.edit(str(err))
-         return None
-     return user_obj
+async def get_user_from_event(event):
+    user_obj = [await event.client.get_input_peer(event.from_id)]
+    if isinstance(event, MessageService)
+        if isinstance(event.action, MessageActionChatAddUser):
+            user_obj.extend([await event.client.get_input_peer(x) for x in event.action.users])
+    return user_obj
