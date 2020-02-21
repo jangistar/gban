@@ -13,10 +13,9 @@ from os import remove
 from telethon import version
 
 from uniborg.util import admin_cmd
-from userbot import ALIVE_NAME
 
 # ================= CONSTANT =================
-DEFAULTUSER = str(ALIVE_NAME) if ALIVE_NAME else uname().node
+
 # ============================================
 
 @borg.on(admin_cmd(pattern="sysd"))
@@ -125,5 +124,5 @@ async def amireallyalive(alive):
                      "My bot is running \n\n"
                      f"Telethon version: {version.__version__} \n"
                      f"Python: {python_version()} \n"
-                     f"User: {DEFAULTUSER}"
+                     f"User: {ALIVE_NAME}"
                      "`")
