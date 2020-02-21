@@ -125,4 +125,4 @@ async def amireallyalive(alive):
                      "My bot is running \n\n"
                      f"Telethon version: {version.__version__} \n"
                      f"Python: {python_version()} \n"
-                     f"User: {Default User}"
+                     f"User: {DEFAULTUSER}"
