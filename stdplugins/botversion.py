@@ -3,7 +3,8 @@
 # Licensed under the Raphielscape Public License, Version 1.c (the "License");
 # you may not use this file except in compliance with the License.
 #
-""" Userbot module for getting information about the server. """
+""" Userbot module for getting information about the userbot's version.
+cmd is .botver"""
 
 from asyncio import create_subprocess_shell as asyncrunapp
 from asyncio.subprocess import PIPE as asyncPIPE
@@ -13,26 +14,6 @@ from os import remove
 from telethon import version
 
 from uniborg.util import admin_cmd
-
-
-@borg.on(admin_cmd(pattern="sysd"))
-async def sysdetails(sysd):
-    """ For .sysd command, get system info using neofetch. """
-    try:
-        neo = "neofetch --stdout"
-        fetch = await asyncrunapp(
-            neo,
-            stdout=asyncPIPE,
-            stderr=asyncPIPE,
-        )
-
-        stdout, stderr = await fetch.communicate()
-        result = str(stdout.decode().strip()) \
-            + str(stderr.decode().strip())
-
-        await sysd.edit("`" + result + "`")
-    except FileNotFoundError:
-        await sysd.edit("`Install neofetch first !!`")
 
 
 @borg.on(admin_cmd(pattern="botver"))
