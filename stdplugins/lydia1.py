@@ -16,6 +16,9 @@ Credits: @Zero_cool7870 (For Writing This Module)
 """
 import coffeehouse as cf
 from coffeehouse.exception import CoffeeHouseError
+from coffeehouse.lydia import LydiaAI
+from coffeehouse.api import API
+
 from uniborg.util import admin_cmd
 import asyncio
 import logging
