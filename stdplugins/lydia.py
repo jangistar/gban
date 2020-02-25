@@ -11,6 +11,9 @@ This Module also Needs DB_URI For Storage of Some Data So make sure you have tha
 
 
 import coffeehouse as cf
+from coffeehouse.lydia import LydiaAI
+from coffeehouse.api import API
+
 
 import asyncio
 import io
