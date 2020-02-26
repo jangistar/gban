@@ -40,4 +40,4 @@ BANNED_RIGHTS = ChatBannedRights(
 @borg.on(events.ChatAction())
 async def spam_watch_(event):
     chat_id = event.chat_id
-    client = spamwatch.Client('get api')
+    client = spamwatch.Client('hAlogsz5yVFw4TYjIf6I993YFpZj~AT_5wCNrwnY3YeekgeEH1g62hO1hog02UHO')
