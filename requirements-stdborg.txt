@@ -3,7 +3,7 @@ opencv-contrib-python
 aiohttp
 aria2p
 beautifulsoup4
-coffeehouse
+coffeehouse>=2.1.0
 cowpy
 cfscrape
 cryptg
