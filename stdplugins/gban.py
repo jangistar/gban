@@ -5,7 +5,7 @@
 from telethon import events
 import asyncio
 from uniborg.util import admin_cmd
-from sample_config import Config 
+from sample_config import Config
 
 @borg.on(admin_cmd(pattern="gban ?(.*)", allow_sudo=True))
 async def _(event):
@@ -23,7 +23,7 @@ async def _(event):
             r_from_id = r.from_id
         await borg.send_message(
             Config.G_BAN_LOGGER_GROUP,
-            "!gban [user](tg://user?id={}) {}".format(r_from_id, reason)
+            "!gban 🤮 [{}](tg://user?id={}) `{}`".format(r_from_id, reason)
         )
     await asyncio.sleep(5)
     await event.delete()
@@ -42,7 +42,7 @@ async def _(event):
         r_from_id = r.from_id
         await borg.send_message(
             Config.G_BAN_LOGGER_GROUP,
-            "!ungban [user](tg://user?id={}) {}".format(r_from_id, reason)
+            "!ungban 🤠 [{}](tg://user?id={}) `{}`".format(r_from_id, reason)
         )
     await asyncio.sleep(5)
     await event.delete()
