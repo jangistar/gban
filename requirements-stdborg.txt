@@ -41,7 +41,7 @@ numpy>=1.11.1
 databases[sqlite]
 praw
 opencv_python>=1.1.1
-spamwatch
+spamwatch>=0.2.0
 aioschedule
 REPO_LINK
 feedparser
