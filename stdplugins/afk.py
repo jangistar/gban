@@ -90,7 +90,7 @@ async def on_afkb(event):
     global USER_afkb  # pylint:disable=E0602
     global afkb_time  # pylint:disable=E0602
     global last_afkb_message  # pylint:disable=E0602
-    afkb_since = "**a while ago**"
+    afkb_since  # pylint:disable=E0602
     current_message_text = event.message.message.lower()
     if "afkb" in current_message_text:
         # userbot's should not reply to other userbot's
@@ -126,10 +126,10 @@ async def on_afkb(event):
             else:
                 afkb_since = f"`{int(seconds)}s` **ago**"
         msg = None
-        message_to_reply = f"My Master **👑 {USER_afkb}** Is **afkb since** {afkb_since} " + \
+        message_to_reply = f"My Master Is **afkb since** {afkb_since} " + \
             f"\n\n__and HE may be back soon__\n\n**Because my King is** {reason}" \
             if reason \
-            else f"My King **👑 {USER_afkb}** is **afkb Since** {afkb_since} so wait until He is back.\n\n**THANKS**."
+            else f"My King 👑 is **afkb Since** {afkb_since} so wait until He is back.\n\n**THANKS**."
         msg = await event.reply(message_to_reply)
         await asyncio.sleep(5)
         if event.chat_id in last_afkb_message:  # pylint:disable=E0602
