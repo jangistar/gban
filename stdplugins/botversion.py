@@ -4,7 +4,7 @@
 # you may not use this file except in compliance with the License.
 #
 """ Userbot module for getting information about the userbot's version.
-cmd is .botver"""
+cmd is .ver"""
 
 from asyncio import create_subprocess_shell as asyncrunapp
 from asyncio.subprocess import PIPE as asyncPIPE
@@ -16,9 +16,9 @@ from telethon import version
 from uniborg.util import admin_cmd
 
 
-@borg.on(admin_cmd(pattern="botver"))
+@borg.on(admin_cmd(pattern="ver(.*)"))
 async def bot_ver(event):
-    """ For .botver command, get the bot version. """
+    """ For .ver command, get the bot version. """
     if which("git") is not None:
         invokever = "git describe --all --long"
         ver = await asyncrunapp(
