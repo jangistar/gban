@@ -3,7 +3,8 @@ Syntax: .afkb REASON"""
 import asyncio
 import datetime
 import time
-from time import gmtime, strftime, timedelta
+from time import gmtime, strftime
+from datetime import timedelta
 from telethon import events
 from telethon.tl import functions, types
 from uniborg.util import progress, is_read, humanbytes, time_formatter, admin_cmd
@@ -29,7 +30,7 @@ async def set_not_afkb(event):
         try:
             await borg.send_message(  # pylint:disable=E0602
                 Config.PRIVATE_GROUP_BOT_API_ID,  # pylint:disable=E0602
-                "Set afkb mode to False"
+                "Set afk mode to False"
             )
         except Exception as e:  # pylint:disable=C0103,W0703
             await borg.send_message(  # pylint:disable=E0602
@@ -66,15 +67,15 @@ async def _(event):
             afkb_time = datetime.datetime.now()  # pylint:disable=E0602
         USER_afkb = f"yes: {reason}"  # pylint:disable=E0602
         if reason:
-            await event.edit(f"Set afkb mode to True, and Reason is {reason}")
+            await event.edit(f"Set afk mode to True, and Reason is {reason}")
         else:
-            await event.edit(f"Set afkb mode to True")
+            await event.edit(f"Set afk mode to True")
         await asyncio.sleep(5)
         await event.delete()
         try:
             await borg.send_message(  # pylint:disable=E0602
                 Config.PRIVATE_GROUP_BOT_API_ID,  # pylint:disable=E0602
-                f"Set afkb mode to True, and Reason is {reason}"
+                f"Set afk mode to True, and Reason is {reason}"
             )
         except Exception as e:  # pylint:disable=C0103,W0703
             logger.warn(str(e))  # pylint:disable=E0602
@@ -126,10 +127,10 @@ async def on_afkb(event):
             else:
                 afkb_since = f"`{int(seconds)}s` **ago**"
         msg = None
-        message_to_reply = f"My Master Is **afkb since** {afkb_since} " + \
+        message_to_reply = f"My Master Is **afk since** {afkb_since} " + \
             f"\n\n__and HE may be back soon__\n\n**Because my King is** {reason}" \
             if reason \
-            else f"My King 👑 is **afkb Since** {afkb_since} so wait until He is back.\n\n**THANKS**."
+            else f"My King 👑 is **afk Since** {afkb_since} so wait until He is back.\n\n**THANKS**."
         msg = await event.reply(message_to_reply)
         await asyncio.sleep(5)
         if event.chat_id in last_afkb_message:  # pylint:disable=E0602
