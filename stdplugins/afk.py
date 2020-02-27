@@ -3,7 +3,7 @@ Syntax: .afkb REASON"""
 import asyncio
 import datetime
 import time
-from time import gmtime, strftime
+from time import gmtime, strftime, timedelta
 from telethon import events
 from telethon.tl import functions, types
 from uniborg.util import progress, is_read, humanbytes, time_formatter, admin_cmd
@@ -90,7 +90,7 @@ async def on_afkb(event):
     global USER_afkb  # pylint:disable=E0602
     global afkb_time  # pylint:disable=E0602
     global last_afkb_message  # pylint:disable=E0602
-    global afkb_since  # pylint:disable=E0602
+    afkb_since = "**A While Ago**"
     current_message_text = event.message.message.lower()
     if "afkb" in current_message_text:
         # userbot's should not reply to other userbot's
