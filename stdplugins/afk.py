@@ -90,7 +90,7 @@ async def on_afkb(event):
     global USER_afkb  # pylint:disable=E0602
     global afkb_time  # pylint:disable=E0602
     global last_afkb_message  # pylint:disable=E0602
-    afkb_since  # pylint:disable=E0602
+    global afkb_since  # pylint:disable=E0602
     current_message_text = event.message.message.lower()
     if "afkb" in current_message_text:
         # userbot's should not reply to other userbot's
