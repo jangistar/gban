@@ -9,7 +9,7 @@ lxml
 selenium
 aria2p 
 chatterbot
-chatterbot_corpus>=5.1.2
+chatterbot_corpus>=1.2.0
 -r ./requirements-stdborg.txt
 gitpython
 heroku>=2.7.5
