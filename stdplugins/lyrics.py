@@ -6,9 +6,13 @@
 #
 
 """
-Genius lyrics get this value from https://genius.com/developers
+Copyright (C) 2019 The Raphielscape Company LLC.
+
+Genius lyrics plugin
+	get this value from https://genius.com/developers
 
 Add:-  GENIUS_API_TOKEN and token value in heroku app settings
+     & GENIUS and token value in heroku app settings
 
 Lyrics Plugin Syntax:
 	.lyrics <aritst name, song nane>
