@@ -47,3 +47,12 @@ REPO_LINK
 feedparser
 apscheduler
 setuptools>=39.0.1
+lyricsgenius
+jotquote
+csvfaker
+pytube3
+gitpython
+search-engine-parser>=0.4.2
+wget
+hurry.filesize
+pymongo
