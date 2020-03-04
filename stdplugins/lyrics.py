@@ -6,20 +6,25 @@
 #
 
 """
+Genius lyrics get this value from https://genius.com/developers
+
+Add:-  GENIUS_API_TOKEN and token value in heroku app settings
+
 Lyrics Plugin Syntax:
 	.lyrics <aritst name, song nane>
-  
-
+	
+	
 """
+
 from uniborg.util import admin_cmd
 import os
 from telethon.tl.types import DocumentAttributeFilename, MessageMediaPhoto
 from uniborg import MODULE, SYNTAX
 
 """Genius(lyrics) staff"""
-GApi = Config.GENIUS
+GApi = Config.GENIUS_API_TOKEN
 import lyricsgenius
-genius = lyricsgenius.Genius(GApi)
+GENIUS_API_TOKEN = lyricsgenius.GENIUS_API_TOKEN(GApi)
 
 
 @borg.on(admin_cmd(pattern='lyrics(?: |$)(.*)'))
