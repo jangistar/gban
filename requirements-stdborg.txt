@@ -24,7 +24,7 @@ regex
 requests
 PyGithub
 speedtest-cli
-sqlalchemy
+sqlalchemy>=1.3.13
 telegraph
 urbandict
 wikipedia
@@ -46,4 +46,5 @@ aioschedule
 REPO_LINK
 feedparser
 apscheduler
-
+setuptools>=39.0.1
+python-dateutil 2.7.5
