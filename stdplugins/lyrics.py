@@ -12,8 +12,6 @@ Add:-  GENIUS_API_TOKEN and token value in heroku app settings
 
 Lyrics Plugin Syntax:
 	.lyrics <aritst name, song nane>
-	
-	
 """
 
 from uniborg.util import admin_cmd
