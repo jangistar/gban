@@ -1,4 +1,5 @@
-""" Userbot module containing commands related to android"""
+""" Userbot module containing commands related to android
+cmd is .root but it will search for magisk, 😉"""
 
 import re
 from requests import get
@@ -12,8 +13,8 @@ DEVICES_DATA = 'https://raw.githubusercontent.com/androidtrackers/' \
                'certified-android-devices/master/devices.json'
 
 
-@borg.on(admin_cmd(pattern='magisk(?: |$)(.*)'))
-async def magisk(request):
+@borg.on(admin_cmd(pattern='root(?: |$)(.*)'))
+async def root(request):
     """ magisk latest releases """
     magisk_dict = {
         "Stable":
