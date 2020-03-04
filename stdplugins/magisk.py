@@ -3,7 +3,7 @@
 import re
 from requests import get
 from bs4 import BeautifulSoup
-from uniborg.util import 
+from uniborg.util import admin_cmd
 
 
 
