@@ -13,7 +13,7 @@ class Config(object):
     # Get this value from https://t.me/SitiSchu! Please do not steal, group for support https://t.me/SpamWatchSupport
     SPAMWATCH_API = os.environ.get("SPAMWATCH_API", "hAlogsz5yVFw4TYjIf6I993YFpZj~AT_5wCNrwnY3YeekgeEH1g62hO1hog02UHO")
     # Genius lyrics get this value from https://genius.com/developers
-    GENIUS = os.environ.get("GENIUS_API_TOKEN", None)
+    GENIUS_API_TOKEN = os.environ.get("GENIUS_API_TOKEN", None)
     # Default .alive name
     ALIVE_NAME = os.environ.get("ALIVE_NAME", None)
     #
