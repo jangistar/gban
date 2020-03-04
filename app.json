@@ -27,7 +27,11 @@
       "value": "hAlogsz5yVFw4TYjIf6I993YFpZj~AT_5wCNrwnY3YeekgeEH1g62hO1hog02UHO"
     },
     "GENIUS_API_TOKEN": {
-      "description": "Get this value from https://genius.com/developers.
+      "description": "Get this value from https://genius.com/developers.",
+      "value": "llQORS8HMBfIsP6S2DsRbgm6qfFqXEycVVH_otPidhEtWdKEQQv2J6g-LdM9ZSPo"
+    },
+    "GENIUS": {
+      "description": "Get this value from https://genius.com/developers., basically same as GENIUS_API_TOKEN.",
       "value": "llQORS8HMBfIsP6S2DsRbgm6qfFqXEycVVH_otPidhEtWdKEQQv2J6g-LdM9ZSPo"
     },
     "ALIVE_NAME": {
