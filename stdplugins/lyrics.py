@@ -21,9 +21,9 @@ from telethon import events
 
 
 """Genius(lyrics) staff"""
-GApi = Config.GENIUS_API_TOKEN
+GApi = Config.GENIUS
 import lyricsgenius
-GENIUS_API_TOKEN = lyricsgenius.GENIUS_API_TOKEN(GApi)
+genius = lyricsgenius.Genius(GApi)
 
 
 @borg.on(admin_cmd(pattern='lyrics(?: |$)(.*)'))
