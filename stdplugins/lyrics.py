@@ -17,7 +17,8 @@ Lyrics Plugin Syntax:
 from uniborg.util import admin_cmd
 import os
 from telethon.tl.types import DocumentAttributeFilename, MessageMediaPhoto
-from uniborg import MODULE, SYNTAX
+from telethon import events
+
 
 """Genius(lyrics) staff"""
 GApi = Config.GENIUS_API_TOKEN
