@@ -1,3 +1,9 @@
+# Copyright (C) 2019 The Raphielscape Company LLC.
+#
+# Licensed under the Raphielscape Public License, Version 1.c (the "License");
+# you may not use this file except in compliance with the License.
+#
+
 """ Userbot module containing commands related to android
 cmd is .root but it will search for magisk, 😉 (i had to make this cmd as .root cause of cmd conflict.,
 one more cmd is .twrp <codename> """
