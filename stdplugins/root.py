@@ -1,5 +1,6 @@
 """ Userbot module containing commands related to android
-cmd is .root but it will search for magisk, 😉"""
+cmd is .root but it will search for magisk, 😉 (i had to make this cmd as .root cause of cmd conflict.,
+one more cmd is .twrp <codename> """
 
 import re
 from requests import get
@@ -33,3 +34,35 @@ async def root(request):
                     f'[APK v{data["app"]["version"]}]({data["app"]["link"]}) | ' \
                     f'[Uninstaller]({data["uninstaller"]["link"]})\n'
     await request.edit(releases)
+    
+
+    
+@borg.on(admin_cmd(pattern='twrp(?: |$)(.*)'))
+async def twrp(request):
+    """ get android device twrp """
+    textx = await request.get_reply_message()
+    device = request.pattern_match.group(1)
+    if device:
+        pass
+    elif textx:
+        device = textx.text.split(' ')[0]
+    else:
+        await request.edit("`Usage: .twrp <codename>`")
+        return
+    url = get(f'https://dl.twrp.me/{device}/')
+    if url.status_code == 404:
+        reply = f"`Couldn't find twrp downloads for {device}!`\n"
+        await request.edit(reply)
+        return
+    page = BeautifulSoup(url.content, 'lxml')
+    download = page.find('table').find('tr').find('a')
+    dl_link = f"https://dl.twrp.me{download['href']}"
+    dl_file = download.text
+    size = page.find("span", {"class": "filesize"}).text
+    date = page.find("em").text.strip()
+    reply = f'**Latest TWRP for {device}:**\n' \
+        f'[{dl_file}]({dl_link}) - __{size}__\n' \
+        f'**Updated:** __{date}__\n'
+    await request.edit(reply)
+
+
