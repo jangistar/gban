@@ -20,7 +20,7 @@ from sample_config import Config
 
 
 # ================= CONSTANT =================
-DEFAULTUSER = Config.ALIVE_NAME if ALIVE_NAME else uname().node
+DEFAULTUSER = Config.ALIVE_NAME if Config.ALIVE_NAME else uname().node
 # ============================================
 
 
