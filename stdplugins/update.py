@@ -15,6 +15,7 @@
    .
    Credits goes to @AvinashReddy3108 for creating this plugin
    edited to work on Uniborg by @Mayur_Karaniya
+   this is a Hugh fix thanks to @SpEcHiDe
 """
 
 from os import remove, execle, path, makedirs, getenv, environ
@@ -57,17 +58,16 @@ import sys
 import asyncio
 
 from sample_config import Config
-# from heroku3 import HEROKU_API_KEY, HEROKU_APP_NAME
-# import REPO_LINK
+
 #
-
-# REPO_LINK is as same as below.
-REPO_LINK = "https://github.com/mkaraniya/BotHub.git"
+# ===============================Basic Constants=============================
+# REPO_LINK is as same as below. "https://github.com/mkaraniya/BotHub.git"
+REPO_LINK = Config.REPO_LINK
 # provide your HEROKU_API_KEY in place of this value.
-HEROKU_API_KEY = "1647d1dc-17e8-4e6c-b4af-8a43173e3014"
+HEROKU_API_KEY = Config.HEROKU_API_KEY
 # provide your HEROKU_APP_NAME in place of this value.
-HEROKU_APP_NAME = "teknoways"
-
+HEROKU_APP_NAME = Config.HEROKU_APP_NAME
+# ===============================Basic Constants=============================
 
 requirements_path = path.join(
     path.dirname(path.dirname(path.dirname(__file__))), 'requirements.txt')
