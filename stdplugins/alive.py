@@ -15,11 +15,12 @@ from shutil import which
 from os import remove
 from telethon import version
 
-from userbot import ALIVE_NAME
+from sample_config import Config
+
 
 
 # ================= CONSTANT =================
-DEFAULTUSER = str(ALIVE_NAME) if ALIVE_NAME else uname().node
+DEFAULTUSER = Config.ALIVE_NAME if ALIVE_NAME else uname().node
 # ============================================
 
 
