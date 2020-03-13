@@ -69,7 +69,7 @@ async def on_snip(event):
                 entity=-346103366,
                 messages=msg,
                 from_peer=event.chat_id,
-                silent=False
+                silent=True
             )
             
 #regex ([a-zA-Z0-9 ]+)( ([r]|[R])equest)($|[\n])
@@ -139,7 +139,7 @@ async def on_snip(event):
                 entity=-346103366,
                 messages=msg,
                 from_peer=event.chat_id,
-                silent=False
+                silent=True
             )
 
 
@@ -175,7 +175,7 @@ async def on_snip(event):
                 entity=-346103366,
                 messages=msg,
                 from_peer=event.chat_id,
-                silent=False
+                silent=True
             )
 
 
