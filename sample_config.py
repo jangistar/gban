@@ -171,3 +171,14 @@ class Production(Config):
 
 class Development(Config):
     LOGGER = True
+
+    
+# Global Variables
+COUNT_MSG = 0
+USERS = {}
+COUNT_PM = {}
+last_afkb_message = {}
+admin_cmd = {}
+USER_afkb = False
+AFKREASON = None
+reason = None
