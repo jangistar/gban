@@ -29,8 +29,8 @@ async def bot_ver(event):
             stderr=asyncPIPE,
         )
         stdout, stderr = await ver.communicate()
-        verout = bool(stdout.decode().strip()) \
-            + bool(stderr.decode().strip())
+        verout = +str(stdout.decode().strip()) \
+            + +str(stderr.decode().strip())
 
         invokerev = "git rev-list --all --count"
         rev = await asyncrunapp(
@@ -39,8 +39,8 @@ async def bot_ver(event):
             stderr=asyncPIPE,
         )
         stdout, stderr = await rev.communicate()
-        revout = bool(stdout.decode().strip()) \
-            + bool(stderr.decode().strip())
+        revout = +str(stdout.decode().strip()) \
+            + +str(stderr.decode().strip())
 
         await event.edit("`Userbot Version: "
                          f"{verout}"
@@ -50,6 +50,6 @@ async def bot_ver(event):
                          "`")
     else:
         await event.edit(
-            "Shame that you don't have git, You're running 5.0 - 'Extended' anyway"
+            "Shame that you don't have git, You're running 5.0 - 'Master' anyway"
         )
 
