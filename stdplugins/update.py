@@ -67,6 +67,8 @@ REPO_LINK = Config.REPO_LINK
 HEROKU_API_KEY = Config.HEROKU_API_KEY
 # provide your HEROKU_APP_NAME in place of this value.
 HEROKU_APP_NAME = Config.HEROKU_APP_NAME
+#heroku memes
+HEROKU_MEMEZ = Config.HEROKU_MEMEZ
 # ===============================Basic Constants=============================
 
 requirements_path = path.join(
