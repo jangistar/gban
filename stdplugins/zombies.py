@@ -99,7 +99,7 @@ async def rm_deletedacc(show):
         return
 
     # Here laying the sanity check
-    chat = await show.get_chat()
+    chat = await show.get_chat
     admin = chat.admin_rights
     creator = chat.creator
 
