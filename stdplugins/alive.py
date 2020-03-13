@@ -25,20 +25,22 @@ DEFAULTUSER = Config.ALIVE_NAME if Config.ALIVE_NAME else uname().node
 
 
 # @register(outgoing=True, pattern="^.alive$")
-@borg.on(admin_cmd("alive"))
-async def amireallyalive(alive):
-    """ For .alive command, check if the bot is running.  """
+@borg.on(admin_cmd("on"))
+async def amireallyalive(on):
+    """ For .on command, check if the bot is running.  """
     await alive.edit("`"
-                     "i am alive My Mastor \n\n"
+                     "`i am ON My Mastor` \n\n"
                      " \n\n"
                      f"Telethon version: {version.__version__} \n"
                      f"Python: {python_version()} \n"
                      f"------------------------------------ \n"
                      f"User: {DEFAULTUSER} \n"
                      " \n\n"
-                     f"Creator: Mayur Karaniya \n"
+                     f"Creator: @Mayur_Karaniya \n"
                      " \n\n"
-                     f"Owner: 3Cube TeKnoways \n"
+                     f"Owner: `3Cube TeKnoways` \n"
+                     " \n\n"
+                     f"Website: https://www.facebook.com/Teknoways \n"
                      " \n\n"
                      f"Userbot: testuserbot "
                      "`")    
