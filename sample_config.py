@@ -18,7 +18,9 @@ class Config(object):
     GENIUS = os.environ.get("GENIUS_API_TOKEN", None)
     # Default .alive name
     ALIVE_NAME = os.environ.get("ALIVE_NAME", None)
-    #
+    # Userbot logging feature switch.
+    BOTLOG = bool(os.environ.get("BOTLOG", "False"))
+    # PhotoChat
     API_URL = os.environ.get("API_URL", "http://antiddos.systems")
     # string session for running on Heroku
     # some people upload their session files on GitHub or other third party hosting
