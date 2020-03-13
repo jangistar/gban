@@ -62,7 +62,7 @@ async def send_plug_in(event):
     )
     end = datetime.now()
     time_taken_in_ms = (end - start).seconds
-    await event.edit("Plugin ko upload kar diya {} in {} seconds".format(input_str, time_taken_in_ms))
+    await event.edit("Plugin uploaded {} in {} seconds".format(input_str, time_taken_in_ms))
     await asyncio.sleep(DELETE_TIMEOUT)
     await event.delete()
 
@@ -79,7 +79,7 @@ async def install_plug_in(event):
             )
             if "(" not in downloaded_file_name:
                 borg.load_plugin_from_file(downloaded_file_name)  # pylint:disable=E0602
-                await event.edit("Please, Install Plugin `{}`".format(os.path.basename(downloaded_file_name)))
+                await event.edit("Installed Plugin `{}`".format(os.path.basename(downloaded_file_name)))
             else:
                 os.remove(downloaded_file_name)
                 await event.edit("oh! plugin install na hove.")
