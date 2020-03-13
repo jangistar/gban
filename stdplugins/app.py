@@ -1,6 +1,6 @@
 """Fetch App Details from Playstore.
-.apk <app_name> to fetch app details.
-.apkr <app_name>  to fetch app details with Xpl0iter request link."""
+.app <app_name> to fetch app details.
+.appr <app_name>  to fetch app details with Xpl0iter request link."""
 
 import requests
 import bs4 
