@@ -243,11 +243,6 @@
       "value": "/app/.chromedriver/bin/chromedriver",
       "required": false
     },
-    "CHROME_DRIVER": {
-      "description": "ChromeDriver location for selenium based modules.",
-      "value": "/usr/bin/chromedriver",
-      "required": false
-    },
     "GOOGLE_CHROME_BIN": {
       "description": "Google Chrome (or) Chromium binary location for selenium based modules.",
       "value": "/usr/bin/chromium-browser",
