@@ -1,3 +1,5 @@
+""".on cmd to see if your userbot is ALIVE or Dead"""
+
 import asyncio
 from telethon import events
 from telethon.tl.types import ChannelParticipantsAdmins
