@@ -84,7 +84,8 @@ async def rm_deletedacc(show):
     del_u = 0
     del_status = "`No deleted accounts found, Group is clean`"
 
-    if con != "clean":
+@borg.on(admin_cmd(pattern="zombies_clean(.*)"))
+async def rm_deletedacc(show):
         await show.edit("`Searching for ghost/deleted/zombie accounts...`")
         async for user in show.client.iter_participants(show.chat_id):
 
@@ -93,7 +94,7 @@ async def rm_deletedacc(show):
                 await sleep(1)
         if del_u > 0:
             del_status = f"`Found` **{del_u}** `ghost/deleted/zombie account(s) in this group,\
-            \nclean them by using .zombies clean`"
+            \nclean them by using .zombies_clean`"
         await show.edit(del_status)
         return
 
