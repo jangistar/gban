@@ -30,7 +30,7 @@ DEFAULTUSER = Config.ALIVE_NAME if Config.ALIVE_NAME else uname().node
 @borg.on(admin_cmd("on"))
 async def amireallyalive(on):
     """ For .on command, check if the bot is running.  """
-    await alive.edit("`"
+    await on.edit("`"
                      "`i am ON My Mastor` \n\n"
                      " \n\n"
                      f"Telethon version: {version.__version__} \n"
