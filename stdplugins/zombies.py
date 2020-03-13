@@ -76,7 +76,9 @@ UNMUTE_RIGHTS = ChatBannedRights(until_date=None, send_messages=False)
 
 
 
-@borg.on(admin_cmd(pattern="zombies(.*)"))
+
+
+@borg.on(events.NewMessage(pattern="^.zombies(?: |$)(.*)", outgoing=True))
 async def rm_deletedacc(show):
     """ For .zombies command, list all the ghost/deleted/zombie accounts in a chat. """
 
@@ -84,8 +86,7 @@ async def rm_deletedacc(show):
     del_u = 0
     del_status = "`No deleted accounts found, Group is clean`"
 
-@borg.on(admin_cmd(pattern="zombies_clean(.*)"))
-async def rm_deletedacc(show):
+    if con != "clean":
         await show.edit("`Searching for ghost/deleted/zombie accounts...`")
         async for user in show.client.iter_participants(show.chat_id):
 
@@ -94,12 +95,12 @@ async def rm_deletedacc(show):
                 await sleep(1)
         if del_u > 0:
             del_status = f"`Found` **{del_u}** `ghost/deleted/zombie account(s) in this group,\
-            \nclean them by using .zombies_clean`"
+            \nclean them by using .zombies clean`"
         await show.edit(del_status)
         return
 
     # Here laying the sanity check
-    chat = await show.get_chat
+    chat = await show.get_chat()
     admin = chat.admin_rights
     creator = chat.creator
 
@@ -140,7 +141,7 @@ async def rm_deletedacc(show):
     await sleep(2)
     await show.delete()
 
-
+    
     if BOTLOG:
         await show.client.send_message(
             BOTLOG_CHATID, "#CLEANUP\n"
