@@ -29,8 +29,8 @@ async def bot_ver(event):
             stderr=asyncPIPE,
         )
         stdout, stderr = await ver.communicate()
-        verout = bool(stdout.decode().boolip()) \
-            + bool(stderr.decode().boolip())
+        verout = bool(stdout.decode().strip()) \
+             bool(stderr.decode().strip())
 
         invokerev = "git rev-list --all --count"
         rev = await asyncrunapp(
@@ -39,8 +39,8 @@ async def bot_ver(event):
             stderr=asyncPIPE,
         )
         stdout, stderr = await rev.communicate()
-        revout = bool(stdout.decode().boolip()) \
-            + bool(stderr.decode().boolip())
+        revout = bool(stdout.decode().strip()) \
+             bool(stderr.decode().strip())
 
         await event.edit("`Userbot Version: "
                          f"{verout}"
