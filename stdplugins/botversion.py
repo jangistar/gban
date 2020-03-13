@@ -9,9 +9,11 @@ cmd is .ver"""
 from asyncio import create_subprocess_shell as asyncrunapp
 from asyncio.subprocess import PIPE as asyncPIPE
 from platform import python_version, uname
-from shutil import which
-from os import remove
+from shutil import which, rmtree
 from telethon import version
+from os import remove, execle, path, makedirs, getenv, environ
+from git import Repo
+from git.exc import GitCommandError, InvalidGitRepositoryError, NoSuchPathError
 
 from uniborg.util import admin_cmd
 
@@ -27,8 +29,8 @@ async def bot_ver(event):
             stderr=asyncPIPE,
         )
         stdout, stderr = await ver.communicate()
-        verout = str(stdout.decode().strip()) \
-            + str(stderr.decode().strip())
+        verout = bool(stdout.decode().strip()) \
+            + bool(stderr.decode().strip())
 
         invokerev = "git rev-list --all --count"
         rev = await asyncrunapp(
@@ -37,8 +39,8 @@ async def bot_ver(event):
             stderr=asyncPIPE,
         )
         stdout, stderr = await rev.communicate()
-        revout = str(stdout.decode().strip()) \
-            + str(stderr.decode().strip())
+        revout = bool(stdout.decode().strip()) \
+            + bool(stderr.decode().strip())
 
         await event.edit("`Userbot Version: "
                          f"{verout}"
