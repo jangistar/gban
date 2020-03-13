@@ -14,7 +14,7 @@ from telethon import version
 from os import remove, execle, path, makedirs, getenv, environ
 from git import Repo
 from git.exc import GitCommandError, InvalidGitRepositoryError, NoSuchPathError
-
+import distutils
 from uniborg.util import admin_cmd
 
 
@@ -29,8 +29,8 @@ async def bot_ver(event):
             stderr=asyncPIPE,
         )
         stdout, stderr = await ver.communicate()
-        verout = str(stdout.decode().strip()) \
-            + str(stderr.decode().strip())
+        verout = bool(stdout.decode().boolip()) \
+            + bool(stderr.decode().boolip())
 
         invokerev = "git rev-list --all --count"
         rev = await asyncrunapp(
@@ -39,8 +39,8 @@ async def bot_ver(event):
             stderr=asyncPIPE,
         )
         stdout, stderr = await rev.communicate()
-        revout = str(stdout.decode().strip()) \
-            + str(stderr.decode().strip())
+        revout = bool(stdout.decode().boolip()) \
+            + bool(stderr.decode().boolip())
 
         await event.edit("`Userbot Version: "
                          f"{verout}"
