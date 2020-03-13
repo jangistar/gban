@@ -25,11 +25,14 @@ from telethon.tl.functions.messages import UpdatePinnedMessageRequest
 from telethon.tl.types import (ChannelParticipantsAdmins, ChatAdminRights,
                                ChatBannedRights, MessageEntityMentionName,
                                MessageMediaPhoto)
-
+from sample_config import Config
 
 # from uniborg.events import register
 
 # =================== CONSTANT ===================
+BOTLOG = Config.BOTLOG
+BOTLOG_CHATID = Config.PRIVATE_GROUP_BOT_API_ID
+
 PP_TOO_SMOL = "`The image is too small`"
 PP_ERROR = "`Failure while processing the image`"
 NO_ADMIN = "`I am not an admin!`"
