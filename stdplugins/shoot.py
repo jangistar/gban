@@ -1,4 +1,4 @@
-""".shoot"""
+"""use .shoot as reply"""
 
 import sys
 from telethon import events, functions, __version__
@@ -13,5 +13,5 @@ async def killing (killed):
         if await killed.get_reply_message():
             await killed.edit(
                 "Targeted user killed by Headshot 😈......\n"
-  "#Sad_Reacts_Onli\n"
+  "#Game_Over\n"
             )
