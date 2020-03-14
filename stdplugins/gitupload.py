@@ -68,7 +68,7 @@ async def git_commit(file_name,mone):
         if i == 'ContentFile(path="'+file_name+'")':
             return await mone.edit("`File Already Exists`")
             create_file = False
-    file_name = "userbot/plugins/" + file_name		
+    file_name = "stdplugins/" + file_name		
     if create_file == True:
         file_name = file_name.replace("./userbot/temp/","")
         print(file_name)
@@ -77,7 +77,7 @@ async def git_commit(file_name,mone):
             print("Committed File")
             ccess = Config.GIT_REPO_NAME
             ccess = ccess.strip()
-            await mone.edit(f"`Commited On Your Github Repo`\n\n[Your STDPLUGINS](https://github.com/{ccess}/tree/master/userbot/plugins/)")
+            await mone.edit(f"`Commited On Your Github Repo`\n\n[Your STDPLUGINS](https://github.com/{ccess}/tree/master/stdplugins/)")
         except:    
             print("Cannot Create Plugin")
             await mone.edit("Cannot Upload Plugin")
