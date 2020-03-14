@@ -23,7 +23,7 @@ async def _(event):
             r_from_id = r.from_id
         await borg.send_message(
             Config.G_BAN_LOGGER_GROUP,
-            "!gban 🤮 [{}](tg://user?id={}) `{}`".format(r_from_id, reason)
+            ".ban 🤮 [{}](tg://user?id={}) `{}`".format(r_from_id, reason)
         )
     await asyncio.sleep(5)
     await event.delete()
@@ -42,7 +42,7 @@ async def _(event):
         r_from_id = r.from_id
         await borg.send_message(
             Config.G_BAN_LOGGER_GROUP,
-            "!ungban 🤠 [{}](tg://user?id={}) `{}`".format(r_from_id, reason)
+            ".unban 🤠 [{}](tg://user?id={}) `{}`".format(r_from_id, reason)
         )
     await asyncio.sleep(5)
     await event.delete()
