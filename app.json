@@ -61,6 +61,7 @@
     },
     "UPSTREAM_REPO_URL": {
       "description": "This is required for update functionality to work.",
+      "value": "https://github.com/mkaraniya/BotHub.git"
       "required": false
     },
     "HU_STRING_SESSION": {
@@ -173,6 +174,7 @@
     },
     "COMMAND_HAND_LER": {
       "description": "specify command handler that should be used for the plugins. This should be a valid \"regex\" pattern",
+      "value": "\."
       "required": false
     },
     "SUDO_USERS": {
@@ -243,11 +245,6 @@
       "value": "/app/.chromedriver/bin/chromedriver",
       "required": false
     },
-    "GOOGLE_CHROME_BIN": {
-      "description": "Google Chrome (or) Chromium binary location for selenium based modules.",
-      "value": "/usr/bin/chromium-browser",
-      "required": false
-    },
     "GITHUB_ACCESS_TOKEN": {
       "description": "This is required for commit functionality to work.",
       "required": false
@@ -258,6 +255,7 @@
     },
     "REPO_LINK": {
       "description": "This is required for commit functionality to work.",
+      "value": "https://github.com/mkaraniya/BotHub.git"
       "required": false
     },
     "OPEN_LOAD_KEY": {
