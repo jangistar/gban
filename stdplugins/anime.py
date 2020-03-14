@@ -1,6 +1,7 @@
 """
 Random Anime Chooser Plugin for Userbot
 usage = .{anime_genre} number of times(integer) 
+anime_genre = action, adventure, harem, romance, mecha, slice_of_life, isekai.
 By : - @Zero_cool7870
 
 """
