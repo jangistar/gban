@@ -1,6 +1,9 @@
 # Credits to Anubis
 # This is a troll indeed ffs *facepalm*
 
+"""cmd is .gban reply user., but biggest problem is you can't ungban that person,, rest enjoy for now 
+Credits to Anubis"""
+
 import asyncio
 from telethon import events
 from telethon.tl.functions.users import GetFullUserRequest
