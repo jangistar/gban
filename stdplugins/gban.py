@@ -5,7 +5,7 @@ import asyncio
 from telethon import events
 from telethon.tl.functions.users import GetFullUserRequest
 from telethon.tl.types import ChannelParticipantsAdmins
-from uniborg.utils import admin_cmd
+from uniborg.util import admin_cmd
 
 
 @borg.on(admin_cmd("gban"))
