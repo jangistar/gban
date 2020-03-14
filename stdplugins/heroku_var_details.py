@@ -37,7 +37,7 @@ async def _(event):
             "⬜⬜⬛⬜⬜\n⬜⬜⬛⬜⬜\n⬜⬜🔴⬜⬜",
             "⬜⬜⬛⬜⬜\n⬜⬛⬜⬜⬜\n🔴⬜⬜⬜⬜",
             "🔴⬛⬛⬜⬜\n⬜⬜⬜⬜⬜\n⬜⬜⬜⬜⬜",
-            "⬜⬜⬜⬜⬜\n⬜ [HEROKU_VAR_DETAILS](https://github.com/mkaraniya/BotHub/blob/master/userbot/heroku%20vars%20details.txt) ⬜\n⬜⬜⬜⬜⬜"
+            "⬜⬜⬜⬜⬜\n⬜ [HEROKU_VAR_DETAILS](https://raw.githubusercontent.com/mkaraniya/BotHub/master/userbot/heroku%20vars%20details.txt) ⬜\n⬜⬜⬜⬜⬜"
 
  ]
 
