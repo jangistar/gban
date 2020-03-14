@@ -6,6 +6,7 @@
 """ Userbot module for getting information about the userbot's version.
 cmd is .ver"""
 
+import asyncio
 from asyncio import create_subprocess_shell as asyncrunapp
 from asyncio.subprocess import PIPE as asyncPIPE
 from platform import python_version, uname
@@ -16,6 +17,8 @@ from git import Repo
 from git.exc import GitCommandError, InvalidGitRepositoryError, NoSuchPathError
 import distutils
 from uniborg.util import admin_cmd
+from collections import deque
+
 
 
 @borg.on(admin_cmd(pattern="ver(.*)"))
@@ -29,8 +32,8 @@ async def bot_ver(event):
             stderr=asyncPIPE,
         )
         stdout, stderr = await ver.communicate()
-        verout = bool(stdout.decode().strip()) \
-            + bool(stderr.decode().strip())
+        verout = str(stdout.decode().strip()) \
+            + str(stderr.decode().strip())
 
         invokerev = "git rev-list --all --count"
         rev = await asyncrunapp(
@@ -39,8 +42,8 @@ async def bot_ver(event):
             stderr=asyncPIPE,
         )
         stdout, stderr = await rev.communicate()
-        revout = bool(stdout.decode().strip()) \
-            + bool(stderr.decode().strip())
+        revout = str(stdout.decode().strip()) \
+            + str(stderr.decode().strip())
 
         await event.edit("`Userbot Version: "
                          f"{verout}"
