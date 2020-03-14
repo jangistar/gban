@@ -19,6 +19,8 @@ Usage: As if text spam was not enough !!
 .delayspam <delay> <count> <text>
 Usage: .bigspam but with custom delay.
 NOTE : Spam at your own risk !!"
+-
+Copyright (C) 2019 The Raphielscape Company LLC.
 """
 
 import asyncio
