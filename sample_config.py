@@ -9,6 +9,7 @@ class Config(object):
     # Get this value from my.telegram.org! Please do not steal
     APP_ID = int(os.environ.get("APP_ID", 6))
     API_HASH = os.environ.get("API_HASH", "eb06d4abfb49dc3eeb1aeb98ae0f581e")
+    # Photo Chat - Get this value from http://antiddos.systems
     API_TOKEN = os.environ.get("API_TOKEN", "15e05de0-0357-4553-b39c-d614443ed91e")
     # Get this value from https://t.me/SitiSchu! Please do not steal, group for support https://t.me/SpamWatchSupport
     SPAMWATCH_API = os.environ.get("SPAMWATCH_API", "hAlogsz5yVFw4TYjIf6I993YFpZj~AT_5wCNrwnY3YeekgeEH1g62hO1hog02UHO")
@@ -16,11 +17,11 @@ class Config(object):
     GENIUS_API_TOKEN = os.environ.get("GENIUS", None)
     # Genius lyrics get this value from https://genius.com/developers both has same values
     GENIUS = os.environ.get("GENIUS_API_TOKEN", None)
-    # Default .alive name
+    # Default alive name for .on cmd
     ALIVE_NAME = os.environ.get("ALIVE_NAME", None)
     # Userbot logging feature switch.
     BOTLOG = bool(os.environ.get("BOTLOG", "False"))
-    # PhotoChat
+    # PhotoChat - don't change this value from http://antiddos.systems
     API_URL = os.environ.get("API_URL", "http://antiddos.systems")
     # string session for running on Heroku
     # some people upload their session files on GitHub or other third party hosting
@@ -87,10 +88,12 @@ class Config(object):
     # Get your own API key from https://www.remove.bg/ or
     # feel free to use http://telegram.dog/Remove_BGBot
     REM_BG_API_KEY = os.environ.get("REM_BG_API_KEY", None)
-    # Set to True if you want to block users that are spamming your PMs.
+    # you can set any name here
     SLAP_USERNAME = os.environ.get("SLAP_USERNAME", None)
+    # Get this from Github
     GITHUB_ACCESS_TOKEN = os.environ.get("GITHUB_ACCESS_TOKEN", None)
     GIT_REPO_NAME = os.environ.get("GIT_REPO_NAME", None)
+    # Set to True if you want to block users that are spamming your PMs.
     NO_P_M_SPAM = bool(os.environ.get("NO_P_M_SPAM", False))
     # define "spam" in PMs
     MAX_FLOOD_IN_P_M_s = int(os.environ.get("MAX_FLOOD_IN_P_M_s", 3))
@@ -118,7 +121,9 @@ class Config(object):
     # VeryStream only supports video formats
     VERY_STREAM_LOGIN = os.environ.get("VERY_STREAM_LOGIN", None)
     VERY_STREAM_KEY = os.environ.get("VERY_STREAM_KEY", None)
+    # for temporary saving files on UserBot
     TEMP_DIR = os.environ.get("TEMP_DIR", None)
+    # This is required for few things
     CHANNEL_ID = os.environ.get("CHANNEL_ID", None)
     # Google Drive ()
     G_DRIVE_CLIENT_ID = os.environ.get("G_DRIVE_CLIENT_ID", None)
@@ -133,22 +138,23 @@ class Config(object):
     TELE_GRAM_2FA_CODE = os.environ.get("TELE_GRAM_2FA_CODE", None)
     #
     GROUP_REG_SED_EX_BOT_S = os.environ.get("GROUP_REG_SED_EX_BOT_S", r"(regex|moku|BananaButler_|rgx|l4mR)bot")
-    # rapidleech plugins	
-    OPEN_LOAD_LOGIN = os.environ.get("OPEN_LOAD_LOGIN", "0")	
-    OPEN_LOAD_KEY = os.environ.get("OPEN_LOAD_KEY", "0")
+    # rapidleech plugins
+    # don't change the values
+    OPEN_LOAD_LOGIN = os.environ.get("OPEN_LOAD_LOGIN", "100")	
+    OPEN_LOAD_KEY = os.environ.get("OPEN_LOAD_KEY", "100")
     # Google Chrome Selenium Stuff
     # taken from https://github.com/jaskaranSM/UniBorg/blob/9072e3580cc6c98d46f30e41edbe73ffc9d850d3/sample_config.py#L104-L106
     GOOGLE_CHROME_DRIVER = os.environ.get("GOOGLE_CHROME_DRIVER", None)
     GOOGLE_CHROME_BIN = os.environ.get("GOOGLE_CHROME_BIN", None)
-    #
+    # get your value from https://Intellivoid.info
     LYDIA_API = os.environ.get("LYDIA_API", None)
-    #
+    # get your value from YouTube or Google.
     YOUTUBE_API_KEY = os.environ.get("YOUTUBE_API_KEY", None)
-    #
+    # Heroku API_Key is found under "dashboard.heroku.com/account"
     HEROKU_MEMEZ = bool(os.environ.get("HEROKU_MEMEZ", "False"))
     HEROKU_API_KEY = os.environ.get("HEROKU_API_KEY", None)
     HEROKU_APP_NAME = os.environ.get("HEROKU_APP_NAME", None)
-    #
+    # required for Carbor
     CHROME_DRIVER = os.environ.get("CHROME_DRIVER", None)
     CHROME_BIN = os.environ.get("CHROME_BIN", None)
     # define "repo_link" in conig_vars
