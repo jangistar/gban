@@ -15,10 +15,12 @@ from datetime import datetime
 from telethon import events
 from telethon.tl.types import DocumentAttributeVideo
 from Sample_Config import Config
+from uniborg.util import admin_cmd, humanbytes, progress, time_formatter
+
 
 
 GIT_TEMP_DIR = "./userbot/temp/"
-@command(pattern="^.commit", outgoing=True)
+@borg.on(admin_cmd(pattern="commit ?(.*)",
 async def download(event):
     if event.fwd_from:
         return	
