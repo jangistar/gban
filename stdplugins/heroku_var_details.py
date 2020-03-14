@@ -1,4 +1,4 @@
-"""Available Commands: `.ding`"""
+"""Available Commands: `.VAR`"""
 
 from telethon import events
 
@@ -22,7 +22,7 @@ async def _(event):
 
     input_str = event.pattern_match.group(1)
 
-    if input_str == "ding":
+    if input_str == "VAR":
 
         await event.edit(input_str)
 
@@ -37,7 +37,7 @@ async def _(event):
             "⬜⬜⬛⬜⬜\n⬜⬜⬛⬜⬜\n⬜⬜🔴⬜⬜",
             "⬜⬜⬛⬜⬜\n⬜⬛⬜⬜⬜\n🔴⬜⬜⬜⬜",
             "🔴⬛⬛⬜⬜\n⬜⬜⬜⬜⬜\n⬜⬜⬜⬜⬜",
-            "⬜⬜⬜⬜⬜\n⬜ [BOTHUB](https://github.com/mkaraniya/BotHub/) ⬜\n⬜⬜⬜⬜⬜"
+            "⬜⬜⬜⬜⬜\n⬜ [HEROKU_VAR_DETAILS](https://github.com/mkaraniya/BotHub/blob/master/userbot/heroku%20vars%20details.txt) ⬜\n⬜⬜⬜⬜⬜"
 
  ]
 
