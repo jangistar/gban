@@ -181,7 +181,7 @@
     },
     "COMMAND_HAND_LER": {
       "description": "specify command handler that should be used for the plugins. This should be a valid \"regex\" pattern",
-      "value": "\."
+      "value": "\.",
       "required": false
     },
     "SUDO_USERS": {
