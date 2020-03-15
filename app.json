@@ -311,7 +311,6 @@
   }, {
     "url": "heroku/python"
   }],
-  }
 "Global Variables": [{
     "COUNT_MSG": "0"
   }, {
@@ -328,5 +327,4 @@
     "AFKREASON": "None"
   }, {
     "reason": "None"
-  }]
-}
+}]
