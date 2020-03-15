@@ -84,8 +84,7 @@
     },
     "BOTLOG": {
       "description": "Incase you want to turn off logging, put this to false",
-      "value": "False",
-      "required": false
+      "value": "False"
     },
     "SCREEN_SHOT_LAYER_ACCESS_KEY": {
       "description": "Get your own ACCESS_KEY from http://api.screenshotlayer.com/api/capture",
