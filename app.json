@@ -20,19 +20,23 @@
     },
     "API_TOKEN": {
       "description": "Get this value from http://antiddos.systems! Please do not steal",
-      "value": ""
+      "value": "",
+      "required": false
     },
     "SPAMWATCH_API": {
       "description": "Get this value from https://t.me/SitiSchu! Please do not steal, group for support https://t.me/SpamWatchSupport",
-      "value": "hAlogsz5yVFw4TYjIf6I993YFpZj~AT_5wCNrwnY3YeekgeEH1g62hO1hog02UHO"
+      "value": "hAlogsz5yVFw4TYjIf6I993YFpZj~AT_5wCNrwnY3YeekgeEH1g62hO1hog02UHO",
+      "required": false
     },
     "GENIUS_API_TOKEN": {
       "description": "Get this value from https://genius.com/developers.",
-      "value": "llQORS8HMBfIsP6S2DsRbgm6qfFqXEycVVH_otPidhEtWdKEQQv2J6g-LdM9ZSPo"
+      "value": "llQORS8HMBfIsP6S2DsRbgm6qfFqXEycVVH_otPidhEtWdKEQQv2J6g-LdM9ZSPo",
+      "required": false
     },
     "GENIUS": {
       "description": "Get this value from https://genius.com/developers., basically same as GENIUS_API_TOKEN.",
-      "value": "llQORS8HMBfIsP6S2DsRbgm6qfFqXEycVVH_otPidhEtWdKEQQv2J6g-LdM9ZSPo"
+      "value": "llQORS8HMBfIsP6S2DsRbgm6qfFqXEycVVH_otPidhEtWdKEQQv2J6g-LdM9ZSPo",
+      "required": false
     },
     "ALIVE_NAME": {
       "description": "Name to show in .alive message",
@@ -40,7 +44,8 @@
     },
     "API_URL": {
       "description": "The value is http://antiddos.systems!",
-      "value": "http://antiddos.systems"
+      "value": "http://antiddos.systems",
+      "required": false
     },
     "HEROKU_MEMEZ": {
       "description": "This should be True if the userbor is running on a Heroku Dyno.",
@@ -49,7 +54,8 @@
     },
     "HEROKU_API_KEY": {
       "description": "Get this value from Heroku Please do not steal",
-      "value": ""
+      "value": "",
+      "required": false
     },
     "HEROKU_APP_NAME": {
       "description": "This is required for commit functionality to work.",
@@ -61,7 +67,7 @@
     },
     "UPSTREAM_REPO_URL": {
       "description": "This is required for update functionality to work.",
-      "value": "https://github.com/mkaraniya/BotHub.git"
+      "value": "https://github.com/mkaraniya/BotHub.git",
       "required": false
     },
     "HU_STRING_SESSION": {
@@ -78,7 +84,8 @@
     },
     "BOTLOG": {
       "description": "Incase you want to turn off logging, put this to false",
-      "value": "False"
+      "value": "False",
+      "required": false
     },
     "SCREEN_SHOT_LAYER_ACCESS_KEY": {
       "description": "Get your own ACCESS_KEY from http://api.screenshotlayer.com/api/capture",
@@ -255,7 +262,7 @@
     },
     "REPO_LINK": {
       "description": "This is required for commit functionality to work.",
-      "value": "https://github.com/mkaraniya/BotHub.git"
+      "value": "https://github.com/mkaraniya/BotHub.git",
       "required": false
     },
     "OPEN_LOAD_KEY": {
