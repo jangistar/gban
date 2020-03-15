@@ -61,6 +61,8 @@ from sample_config import Config
 
 #
 # ===============================Basic Constants=============================
+# UPSTREAM_REPO_URL is as same as below. "https://github.com/mkaraniya/BotHub.git"
+UPSTREAM_REPO_URL = Config.UPSTREAM_REPO_URL
 # REPO_LINK is as same as below. "https://github.com/mkaraniya/BotHub.git"
 REPO_LINK = Config.REPO_LINK
 # provide your HEROKU_API_KEY in place of this value.
@@ -101,7 +103,7 @@ async def upstream(ups):
     "For .update command, check if the bot is up to date, update if specified"
     await ups.edit("`Checking for updates, please wait....`")
     conf = ups.pattern_match.group(1)
-    off_repo = REPO_LINK
+    off_repo = UPSTREAM_REPO_URL
     force_update = False
 
     try:
