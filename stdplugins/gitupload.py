@@ -38,7 +38,7 @@ async def download(event):
     try:
         c_time = time.time()
         print("Downloading to TEMP directory")
-        downloaded_file_name = await bot.download_media(
+        downloaded_file_name = await borg.download_media(
                 reply_message.media,
                 GIT_TEMP_DIR
             )
