@@ -25,7 +25,13 @@ from uniborg.util import admin_cmd
 import asyncio
 import shutil 
 import random, re
+from sample_config import Config
 
+
+
+# ================= CONSTANT =================
+DEFAULTUSER = Config.ALIVE_NAME if Config.ALIVE_NAME else uname().node
+# ============================================
 
 FONT_FILE_TO_USE = "/usr/share/fonts/truetype/dejavu/DejaVuSans.ttf"
 
@@ -57,7 +63,7 @@ async def autopic(event):
     
         shutil.copy(downloaded_file_name, photo)
         im = Image.open(photo)
-        current_time = datetime.now().strftime("\n \n \n \n \n \n \n Owner: @kirito6969 . It's Her Choice (- Lawdi) \n \n \n \n \n \n \n \n \n                   Nikal Lawde \n                   Time: %H:%M:%S \n                   Date: %d/%m/%y ")
+        current_time = datetime.now().strftime("\n \n \n \n \n \n \n Owner: {Default_User} . It's My Choice \n \n \n \n                   Time: %H:%M:%S \n                   Date: %d/%m/%y ")
         img = Image.open(photo)
         drawn_text = ImageDraw.Draw(img)
         fnt = ImageFont.truetype(FONT_FILE_TO_USE, 35)
