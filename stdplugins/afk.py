@@ -2,9 +2,12 @@
 Syntax: .afkb REASON"""
 import asyncio
 import datetime
+import shutil 
+import random, re
 import time
 from time import gmtime, strftime
 from datetime import timedelta
+from datetime import datetime
 from telethon import events
 from telethon.tl import functions, types
 from uniborg.util import progress, is_read, humanbytes, time_formatter, admin_cmd
@@ -93,6 +96,7 @@ async def on_afkb(event):
     global last_afkb_message  # pylint:disable=E0602
     afkb_since = "**A While Ago**"
     current_message_text = event.message.message.lower()
+    current_time = datetime.now().strftime(" Time: %H:%M:%S \n  Date: %d/%m/%y ")
     if "afkb" in current_message_text:
         # userbot's should not reply to other userbot's
         # https://core.telegram.org/bots/faq#why-doesn-39t-my-bot-see-messages-from-other-bots
@@ -127,7 +131,7 @@ async def on_afkb(event):
             else:
                 afkb_since = f"`{int(seconds)}s` **ago**"
         msg = None
-        message_to_reply = f"My Master Is **afk since** {afkb_since} " + \
+        message_to_reply = f"My Master Is **afk since** {Time: %H:%M:%S} {Date: %d/%m/%y} " + \
             f"\n\n__and HE may be back soon__\n\n**Because my King is** {reason}" \
             if reason \
             else f"My King 👑 is **afk Since** {afkb_since} so wait until He is back.\n\n**THANKS**."
