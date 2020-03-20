@@ -21,7 +21,7 @@ global last_afkb_message  # pylint:disable=E0602
 USER_afkb = {}
 afkb_time = {}
 last_afkb_message = {}
-
+current_time = datetime.now().strftime(" Time: %H:%M:%S \n  Date: %d/%m/%y ")
 
 @borg.on(events.NewMessage(outgoing=True))  # pylint:disable=E0602
 async def set_not_afkb(event):
@@ -96,13 +96,12 @@ async def on_afkb(event):
     global last_afkb_message  # pylint:disable=E0602
     afkb_since = "**A While Ago**"
     current_message_text = event.message.message.lower()
-    current_time = datetime.now().strftime(" Time: %H:%M:%S \n  Date: %d/%m/%y ")
     if "afkb" in current_message_text:
         # userbot's should not reply to other userbot's
         # https://core.telegram.org/bots/faq#why-doesn-39t-my-bot-see-messages-from-other-bots
         return False
     if USER_afkb and not (await event.get_sender()).bot:  # pylint:disable=E0602
-        if afkb_time:  # pylint:disable=E0602
+        if afkb_time = {}  # pylint:disable=E0602
             now = datetime.datetime.now()
             datime_since_afkb = now - afkb_time  # pylint:disable=E0602
             time = float(datime_since_afkb.seconds)
