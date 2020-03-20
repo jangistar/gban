@@ -7,15 +7,15 @@
 #
 """
    This module updates the userbot based on Upstream revision
-   cmd is .update
+   cmd is .updateme
    Usage: Checks if the main userbot repository has any updates and shows a changelog if so.
    .
-   cmd .update now
+   cmd .updateme now
    Usage: Updates your userbot, if there are any updates in the main userbot repository.
    .
    Credits goes to @AvinashReddy3108 for creating this plugin
    edited to work on Uniborg by @Mayur_Karaniya
-   this is a Hugh fix thanks to @SpEcHiDe
+   this is a Hugh fix thanks to @SpEcHiDe and @devpatel_73
 """
 
 from os import remove, execle, path, makedirs, getenv, environ
@@ -85,7 +85,7 @@ async def gen_chlog(repo, diff):
     return ch_log
 
 
-async def update_requirements():
+async def updateme_requirements():
     reqs = str(requirements_path)
     try:
         process = await asyncio.create_subprocess_shell(
@@ -98,13 +98,13 @@ async def update_requirements():
         return repr(e)
 
 
-@borg.on(admin_cmd("update ?(.*)", outgoing=True, allow_sudo=True))
+@borg.on(admin_cmd("updateme ?(.*)", outgoing=True, allow_sudo=True))
 async def upstream(ups):
-    "For .update command, check if the bot is up to date, update if specified"
+    "For .updateme command, check if the bot is up to date, update if specified"
     await ups.edit("`Checking for updates, please wait....`")
     conf = ups.pattern_match.group(1)
     off_repo = UPSTREAM_REPO_URL
-    force_update = False
+    force_updateme = False
 
     try:
         txt = "`Oops.. Updater cannot continue due to "
@@ -122,13 +122,13 @@ async def upstream(ups):
         if conf != "now":
             await ups.edit(
                 f"`Unfortunately, the directory {error} does not seem to be a git repository.\
-            \nBut we can fix that by force updating the userbot using .update now.`"
+            \nBut we can fix that by force updating the userbot using .updateme now.`"
             )
             return
         repo = Repo.init()
         origin = repo.create_remote('upstream', off_repo)
         origin.fetch()
-        force_update = True
+        force_updateme = True
         repo.create_head('master', origin.refs.master)
         repo.heads.master.set_tracking_branch(origin.refs.master)
         repo.heads.master.checkout(True)
@@ -153,13 +153,13 @@ async def upstream(ups):
 
     changelog = await gen_chlog(repo, f'HEAD..upstream/{ac_br}')
 
-    if not changelog and not force_update:
+    if not changelog and not force_updateme:
         await ups.edit(
             f'\n`Your BOT is`  **up-to-date**  `with`  **{ac_br}**\n')
         repo.__del__()
         return
 
-    if conf != "now" and not force_update:
+    if conf != "now" and not force_updateme:
         changelog_str = f'**New UPDATE available for [{ac_br}]:\n\nCHANGELOG:**\n`{changelog}`'
         if len(changelog_str) > 4096:
             await ups.edit("`Changelog is too big, view the file to see it.`")
@@ -174,10 +174,10 @@ async def upstream(ups):
             remove("output.txt")
         else:
             await ups.edit(changelog_str)
-        await ups.respond('`do \".update now\" to update`')
+        await ups.respond('`do \".updateme now\" to update`')
         return
 
-    if force_update:
+    if force_updateme:
         await ups.edit(
             '`Force-Syncing to latest stable userbot code, please wait...`')
     else:
@@ -230,7 +230,7 @@ async def upstream(ups):
             ups_rem.pull(ac_br)
         except GitCommandError:
             repo.git.reset("--hard", "FETCH_HEAD")
-        reqs_upgrade = await update_requirements()
+        reqs_upgrade = await updateme_requirements()
         await ups.edit('`Successfully Updated!\n'
                        'Bot is restarting... Wait for a second!`')
         # Spin a new instance of bot
@@ -238,11 +238,5 @@ async def upstream(ups):
         execle(sys.executable, *args, environ)
         return
 
-"""CMD_HELP.update({
-    'update':
-    ".update\
-\nUsage: Checks if the main userbot repository has any updates and shows a changelog if so.\
-\n\n.update now\
-\nUsage: Updates your userbot, if there are any updates in the main userbot repository."
-})
-"""
+
+     
