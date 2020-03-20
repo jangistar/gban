@@ -18,6 +18,7 @@ from uniborg.util import progress, is_read, humanbytes, time_formatter, admin_cm
 global USER_afkb  # pylint:disable=E0602
 global afkb_time  # pylint:disable=E0602
 global last_afkb_message  # pylint:disable=E0602
+global current_time = datetime.now().strftime(" Time: %H:%M:%S \n  Date: %d/%m/%y ")
 USER_afkb = {}
 afkb_time = {}
 last_afkb_message = {}
@@ -67,7 +68,7 @@ async def _(event):
             )
         )
         if isinstance(last_seen_status.rules, types.PrivacyValueAllowAll):
-            afkb_time = datetime.datetime.now()  # pylint:disable=E0602
+            afkb_time = datetime.now()  # pylint:disable=E0602
         USER_afkb = f"yes: {reason}"  # pylint:disable=E0602
         if reason:
             await event.edit(f"Set afk mode to True, and Reason is {reason}")
@@ -101,9 +102,9 @@ async def on_afkb(event):
         # https://core.telegram.org/bots/faq#why-doesn-39t-my-bot-see-messages-from-other-bots
         return False
     if USER_afkb and not (await event.get_sender()).bot:  # pylint:disable=E0602
-        if afkb_time = {}  # pylint:disable=E0602
-            now = datetime.datetime.now()
-            datime_since_afkb = now - afkb_time  # pylint:disable=E0602
+        if afkb_time :  # pylint:disable=E0602
+            now = datetime.now()
+            datime_since_afkb = now - current_time  # pylint:disable=E0602
             time = float(datime_since_afkb.seconds)
             days = time // (24 * 3600)
             time = time % (24 * 3600)
