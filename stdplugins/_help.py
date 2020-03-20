@@ -40,17 +40,19 @@ async def _(event):
 async def _(event):
     if event.fwd_from:
         return
-    result = await borg(functions.helpme.GetNearestDcRequest())  # pylint:disable=E0602
-    await event.edit(result.stringify())
+    result = await borg(functions.help.GetNearestDcRequest())  # pylint:disable=E0602
+    await event.edit(f"**Country** : `{result.country}`\n"
+                     f"**Nearest DC** : `{result.nearest_dc}`\n"
+                     f"**This DC** : `{result.this_dc}`")
 
 
 @borg.on(admin_cmd(pattern="config"))  # pylint:disable=E0602
 async def _(event):
     if event.fwd_from:
         return
-    result = await borg(functions.helpme.GetConfigRequest())  # pylint:disable=E0602
+    result = await borg(functions.help.GetConfigRequest())  # pylint:disable=E0602
     result = result.stringify()
-    logger.helpme(result)  # pylint:disable=E0602
+    logger.info(result)  # pylint:disable=E0602
     await event.edit("""Telethon UserBot powered by @Bot_Hub_Official""")
 
 
