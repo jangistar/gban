@@ -1,7 +1,7 @@
 # This Source Code Form is subject to the terms of the Mozilla Public
 # License, v. 2.0. If a copy of the MPL was not distributed with this
 # file, You can obtain one at http://mozilla.org/MPL/2.0/.
-"""use cmd .load <plugin.py name>, .unload <plugin.py name>, send plugin <plugin.py name>, instol <plugin.py name>."""
+"""use cmd .load <plugin.py name>, .unload <plugin.py name>, send plugin <plugin.py name>, install <plugin.py name>."""
 import asyncio
 import traceback
 import os
@@ -67,7 +67,7 @@ async def send_plug_in(event):
     await event.delete()
 
 
-@borg.on(util.admin_cmd(pattern="instol plugin"))  # pylint:disable=E0602
+@borg.on(util.admin_cmd(pattern="install plugin"))  # pylint:disable=E0602
 async def install_plug_in(event):
     if event.fwd_from:
         return
@@ -82,7 +82,7 @@ async def install_plug_in(event):
                 await event.edit("Installed Plugin `{}`".format(os.path.basename(downloaded_file_name)))
             else:
                 os.remove(downloaded_file_name)
-                await event.edit("oh! plugin install na hove.")
+                await event.edit("oh! plugin is not installed or it may be already installed check your github repo first.")
         except Exception as e:  # pylint:disable=C0103,W0703
             await event.edit(str(e))
             os.remove(downloaded_file_name)
