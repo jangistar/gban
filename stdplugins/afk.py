@@ -18,9 +18,11 @@ from uniborg.util import progress, is_read, humanbytes, time_formatter, admin_cm
 global USER_afkb  # pylint:disable=E0602
 global afkb_time  # pylint:disable=E0602
 global last_afkb_message  # pylint:disable=E0602
+global afkb_since # pylint:disable=E0602
 USER_afkb = {}
 afkb_time = {}
 last_afkb_message = {}
+afkb_since = {}
 # current_time = datetime.now().strftime(" Time: %H:%M:%S \n  Date: %d/%m/%y ")
 
 @borg.on(events.NewMessage(outgoing=True))  # pylint:disable=E0602
@@ -28,6 +30,7 @@ async def set_not_afkb(event):
     global USER_afkb  # pylint:disable=E0602
     global afkb_time  # pylint:disable=E0602
     global last_afkb_message  # pylint:disable=E0602
+    global afkb_since # pylint:disable=E0602
     current_message = event.message.message
     if ".afkb" not in current_message and "yes" in USER_afkb:  # pylint:disable=E0602
         try:
@@ -46,6 +49,7 @@ async def set_not_afkb(event):
             )
         USER_afkb = {}  # pylint:disable=E0602
         afkb_time = {}  # pylint:disable=E0602
+        afkb_since = {}  # pylint:disable=E0602
 
 
 @borg.on(events.NewMessage(pattern=r"\.afkb ?(.*)", outgoing=True))  # pylint:disable=E0602
@@ -56,9 +60,11 @@ async def _(event):
     global afkb_time  # pylint:disable=E0602
     global last_afkb_message  # pylint:disable=E0602
     global reason
+    global afkb_since # pylint:disable=E0602
     USER_afkb = {}
     afkb_time = {}
     last_afkb_message = {}
+    afkb_since = {}
     reason = event.pattern_match.group(1)
     if not USER_afkb:  # pylint:disable=E0602
         last_seen_status = await borg(  # pylint:disable=E0602
@@ -94,7 +100,8 @@ async def on_afkb(event):
     global USER_afkb  # pylint:disable=E0602
     global afkb_time  # pylint:disable=E0602
     global last_afkb_message  # pylint:disable=E0602
- #   afkb_since = "**A While Ago**"
+    global afkb_since # pylint:disable=E0602
+    afkb_since = "**A While Ago**"
     current_message_text = event.message.message.lower()
     if "afkb" in current_message_text:
         # userbot's should not reply to other userbot's
