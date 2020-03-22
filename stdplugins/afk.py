@@ -21,7 +21,7 @@ global last_afkb_message  # pylint:disable=E0602
 USER_afkb = {}
 afkb_time = {}
 last_afkb_message = {}
-current_time = datetime.now().strftime(" Time: %H:%M:%S \n  Date: %d/%m/%y ")
+# current_time = datetime.now().strftime(" Time: %H:%M:%S \n  Date: %d/%m/%y ")
 
 @borg.on(events.NewMessage(outgoing=True))  # pylint:disable=E0602
 async def set_not_afkb(event):
@@ -94,7 +94,7 @@ async def on_afkb(event):
     global USER_afkb  # pylint:disable=E0602
     global afkb_time  # pylint:disable=E0602
     global last_afkb_message  # pylint:disable=E0602
-    afkb_since = "**A While Ago**"
+ #   afkb_since = "**A While Ago**"
     current_message_text = event.message.message.lower()
     if "afkb" in current_message_text:
         # userbot's should not reply to other userbot's
