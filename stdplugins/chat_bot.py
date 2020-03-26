@@ -11,6 +11,7 @@ import asyncio
 from chatterbot import ChatBot 
 from chatterbot.trainers import ChatterBotCorpusTrainer
 import os
+from sample_config import Config
 
 # ================= CONSTANT =================
 DEFAULTUSER = Config.ALIVE_NAME if Config.ALIVE_NAME else uname().node
