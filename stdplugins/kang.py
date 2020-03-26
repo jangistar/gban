@@ -27,6 +27,7 @@ from telethon.tl.types import (
     MessageMediaPhoto
 )
 from uniborg.util import admin_cmd
+from sample_config import Config
 
 # ================= CONSTANT =================
 DEFAULTUSER = Config.ALIVE_NAME if Config.ALIVE_NAME else uname().node
