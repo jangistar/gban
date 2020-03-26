@@ -24,6 +24,7 @@ import os
 from uniborg.util import admin_cmd
 import logging
 logging.basicConfig(level=logging.INFO)
+from sample_config import Config
 
 # ================= CONSTANT =================
 DEFAULTUSER = Config.ALIVE_NAME if Config.ALIVE_NAME else uname().node
