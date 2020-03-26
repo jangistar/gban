@@ -23,7 +23,9 @@ import json
 from sample_config import Config
 
 # ================= CONSTANT =================
-Heroku = heroku3.from_key(Config.HEROKU_API_KEY)
+HEROKU_API_KEY = Config.HEROKU_API_KEY
+HEROKU_APP_NAME = Config.HEROKU_APP_NAME
+Heroku = heroku3.from_key(HEROKU_API_KEY)
 DEFAULTUSER = Config.ALIVE_NAME if Config.ALIVE_NAME else uname().node
 # ============================================
 
@@ -46,7 +48,7 @@ async def heroku_manager(heroku):
     await heroku.edit("`Processing...`")
     await asyncio.sleep(3)
     conf = heroku.pattern_match.group(1)
-    result = await subprocess_run(f'heroku ps -a {Config.HEROKU_APP_NAME}', heroku)
+    result = await subprocess_run(f'heroku ps -a {HEROKU_APP_NAME}', heroku)
     if result[2] != 0:
         return
     hours_remaining = result[0]
