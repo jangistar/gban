@@ -28,6 +28,9 @@ from telethon.tl.types import (
 )
 from uniborg.util import admin_cmd
 
+# ================= CONSTANT =================
+DEFAULTUSER = Config.ALIVE_NAME if Config.ALIVE_NAME else uname().node
+# ============================================
 
 @borg.on(admin_cmd("copi ?(.*)"))
 async def _(event):
@@ -44,18 +47,18 @@ async def _(event):
 
     me = borg.me
     userid = event.from_id
-    packname = f"@TeKnoways"
-    packshortname = f"TeKnoways{userid}"  # format: Uni_Borg_userid
+    packname = f"{DEFAULTUSER}"
+    packshortname = f"{DEFAULTUSER}_{userid}"  # format: Uni_Borg_userid
 
     is_a_s = is_it_animated_sticker(reply_message)
-    file_ext_ns_ion = "TeKnoways_Sticker.png"
+    file_ext_ns_ion = "BotHub_Sticker.png"
     file = await borg.download_file(reply_message.media)
     uploaded_sticker = None
     if is_a_s:
-        file_ext_ns_ion = "AnimatedSticker.tgs"
+        file_ext_ns_ion = "BotHub_AnimatedSticker.tgs"
         uploaded_sticker = await borg.upload_file(file, file_name=file_ext_ns_ion)
-        packname = f"TeKnoways_AnimatedStickers"
-        packshortname = f"TeKnoways_Animated"  # format: Uni_Borg_userid
+        packname = f"{DEFAULTUSER}_AnimatedStickers"
+        packshortname = f"{DEFAULTUSER}_Animated"  # format: Uni_Borg_userid
     elif not is_message_image(reply_message):
         await event.edit("Invalid message type")
         return
