@@ -25,6 +25,9 @@ from uniborg.util import admin_cmd
 import logging
 logging.basicConfig(level=logging.INFO)
 
+# ================= CONSTANT =================
+DEFAULTUSER = Config.ALIVE_NAME if Config.ALIVE_NAME else uname().node
+# ============================================
 
 #Initialise Stuff
 logic_adapters = [
@@ -82,7 +85,7 @@ async def chat_bot(event):
 	msg = str(text.message)
 	reply = bot.get_response(msg)
 	print(reply)
-	await event.edit("**Jas's Bot:\n"+str(reply)+"**")
+	await event.edit("**{DEFAULTUSER}:\n"+str(reply)+"**")
 
 @borg.on(admin_cmd(pattern="autochat", allow_sudo=True))
 async def chat_bot(event):
