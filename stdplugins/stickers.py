@@ -28,6 +28,9 @@ from telethon.tl.types import (
 )
 from uniborg.util import admin_cmd
 
+# ================= CONSTANT =================
+DEFAULTUSER = Config.ALIVE_NAME if Config.ALIVE_NAME else uname().node
+# ============================================
 
 @borg.on(admin_cmd(pattern="kangsticker ?(.*)"))
 async def _(event):
@@ -44,19 +47,19 @@ async def _(event):
 
     me = borg.me
     userid = event.from_id
-    packname = f"{userid}'s @UniBorg Pack"
-    packshortname = f"Uni_Borg_{userid}"  # format: Uni_Borg_userid
+    packname = f"{userid}'s {DEFAULTUSER}"
+    packshortname = f"Bot_Hub_{userid}"  # format: Uni_Borg_userid # format: Bot_Hub_userid
 
     is_a_s = is_it_animated_sticker(reply_message)
-    file_ext_ns_ion = "@UniBorg_Sticker.png"
+    file_ext_ns_ion = "BotHub_Sticker.png"
     file = await borg.download_file(reply_message.media)
     uploaded_sticker = None
     if is_a_s:
         file_ext_ns_ion = "AnimatedSticker.tgs"
         uploaded_sticker = await borg.upload_file(file, file_name=file_ext_ns_ion)
         packname = f"{userid}'s @AnimatedStickersGroup"
-        if userid == 719877937:
-            packshortname = "SnapDragon_Animated"
+        if userid == {userid}:
+            packshortname = "BotHub_Animated"
         else:
             packshortname = f"Uni_Borg_{userid}_as" # format: Uni_Borg_userid
     elif not is_message_image(reply_message):
@@ -120,7 +123,7 @@ async def _(event):
             await silently_send_message(bot_conv, sticker_emoji)
             await silently_send_message(bot_conv, "/done")
 
-    await event.edit(f"R.I.P this sticker! This Sticker's Soul is [here](t.me/addstickers/{packshortname})")
+    await event.edit(f"R.I.P this sticker! This Sticker's is [here](t.me/addstickers/{packshortname})")
 
 
 @borg.on(admin_cmd(pattern="packinfo"))
