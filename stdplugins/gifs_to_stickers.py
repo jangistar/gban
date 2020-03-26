@@ -86,7 +86,7 @@ async def on_gif(event):
     access_hash = access_hashes[str(sticker_id)]
     sticker = types.InputDocument(sticker_id, access_hash, b'')
 
-    await event.delete()
+ #   await event.delete()
     await event.client.send_message(
         await event.get_input_chat(),
         file=sticker,
