@@ -1,13 +1,13 @@
 """Globally Ban users from all the Group Administrations where you are SUDO.
-.gban REASON
-.ungban REASON"""
+.fgban REASON
+.unfgban REASON"""
 
 from telethon import events
 import asyncio
 from uniborg.util import admin_cmd
 from sample_config import Config
 
-@borg.on(admin_cmd(pattern="gban ?(.*)", allow_sudo=True))
+@borg.on(admin_cmd(pattern="fgban ?(.*)", allow_sudo=True))
 async def _(event):
     if Config.G_BAN_LOGGER_GROUP is None:
         await event.edit("ENV VAR is not set. This module will not work.")
@@ -29,7 +29,7 @@ async def _(event):
     await event.delete()
 
 
-@borg.on(admin_cmd(pattern="ungban ?(.*)", allow_sudo=True))
+@borg.on(admin_cmd(pattern="unfgban ?(.*)", allow_sudo=True))
 async def _(event):
     if Config.G_BAN_LOGGER_GROUP is None:
         await event.edit("ENV VAR is not set. This module will not work.")
