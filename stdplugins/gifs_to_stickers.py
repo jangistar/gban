@@ -3,9 +3,11 @@
 from io import BytesIO
 
 from uniborg import util
-from PIL import Image
+from PIL import Image, ImageDraw, ImageFont
+from pySmartDL import SmartDL
 from telethon import types, utils, events
 from telethon.tl.functions.messages import SaveGifRequest, UploadMediaRequest
+from telethon import events
 from sample_config import Config
 
 sticker_to_gif = storage.sticker_to_gif or {}
@@ -52,7 +54,7 @@ async def convert_sticker_to_gif(sticker):
 
 @borg.on(events.NewMessage(pattern=r"\.ss", outgoing=True))
 async def on_save(event):
-    await event.delete()
+  #  await event.delete()
     target = await event.get_reply_message()
     media = target.gif or target.sticker
     if not media:
