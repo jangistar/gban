@@ -1,7 +1,7 @@
 # Credits to Anubis
 # This is a troll indeed ffs *facepalm*
 
-"""cmd is .gban reply user., but biggest problem is you can't ungban that person,, rest enjoy for now 
+"""cmd is .fgban reply user., but biggest problem is you can't unfgban that person,, rest enjoy for now 
 Credits to Anubis"""
 
 import asyncio
@@ -11,12 +11,12 @@ from telethon.tl.types import ChannelParticipantsAdmins
 from uniborg.util import admin_cmd
 
 
-@borg.on(admin_cmd("gban"))
-async def gban(event):
+@borg.on(admin_cmd("fgban"))
+async def fgban(event):
     if event.fwd_from:
         return
-    gbanVar = event.text
-    gbanVar = gbanVar[6:]
+    fgbanVar = event.text
+    fgbanVar = fgbanVar[6:]
     mentions = "`Warning!! User is Globally 𝘽𝘼𝙉𝙉𝙀𝘿 By Admin...\n`"
     no_reason = "__Reason: forgot to add reason. __"
     await event.edit("**Kicking this person out ❗️⚜️☠️**")
@@ -45,10 +45,10 @@ async def gban(event):
                 jnl += "**🤮's username: ** `Doesn't own a username!`\n"
             elif usname != "None":
                 jnl += "**🤮's username** : @{}\n".format(usname)
-            if len(gbanVar) > 0:
-                gbanm = "`{}`".format(gbanVar)
-                gbanr = "**Reason: **"+gbanm
-                jnl += gbanr
+            if len(fgbanVar) > 0:
+                fgbanm = "`{}`".format(fgbanVar)
+                fgbanr = "**Reason: **"+fgbanm
+                jnl += fgbanr
             else:
                 jnl += no_reason
             await reply_message.reply(jnl)
