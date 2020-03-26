@@ -60,7 +60,7 @@ async def on_save(event):
     if target.sticker:
         media = await convert_sticker_to_gif(media)
     await event(
-        SaveGifRequest(id=media, save=True)
+        SaveGifRequest(id=media, unsave=True)
     )
 
 
@@ -70,7 +70,7 @@ async def on_sticker(event):
         return
     media = await convert_sticker_to_gif(event.sticker)
     await event(
-        SaveGifRequest(id=media, save=True)
+        SaveGifRequest(id=media, unsave=True)
     )
 
 
