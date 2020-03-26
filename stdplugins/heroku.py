@@ -24,6 +24,19 @@ Heroku = heroku3.from_key(Config.HEROKU_API_KEY)
 DEFAULTUSER = Config.ALIVE_NAME if Config.ALIVE_NAME else uname().node
 # ============================================
 
+async def subprocess_run(cmd, heroku):
+    subproc = await asyncSubprocess(cmd, stdout=asyncPIPE, stderr=asyncPIPE)
+    stdout, stderr = await subproc.communicate()
+    exitCode = subproc.returncode
+    if exitCode != 0:
+        await heroku.edit(
+            '**An error was detected while running subprocess**\n'
+            f'```exitCode: {exitCode}\n'
+            f'stdout: {stdout.decode().strip()}\n'
+            f'stderr: {stderr.decode().strip()}```')
+        return exitCode
+    return stdout.decode().strip(), stderr.decode().strip(), exitCode
+
   
 @borg.on(admin_cmd(pattern="heroku ?(.*)"))
 async def heroku_manager(heroku):
