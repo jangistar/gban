@@ -13,7 +13,9 @@ from telethon.tl import functions, types
 from uniborg.util import progress, is_read, humanbytes, time_formatter, admin_cmd
 
 
-
+# ================= CONSTANT =================
+DEFAULTUSER = Config.ALIVE_NAME if Config.ALIVE_NAME else uname().node
+# ============================================
 
 global USER_afkb  # pylint:disable=E0602
 global afkb_time  # pylint:disable=E0602
@@ -137,10 +139,10 @@ async def on_afkb(event):
             else:
                 afkb_since = f"`{int(seconds)}s` **ago**"
         msg = None
-        message_to_reply = f"My Master Is **afk since** {afkb_since}" + \
+        message_to_reply = f"My Master {DEFAULTUSER} Is **afk since** {afkb_since}" + \
             f"\n\n__and HE may be back soon__\n\n**Because my King is** {reason}" \
             if reason \
-            else f"My King 👑 is **afk Since** {afkb_since} so wait until He is back.\n\n**THANKS**."
+            else f"My King 👑 {DEFAULTUSER} 👑 is **afk Since** {afkb_since} so wait until He is back.\n\n**THANKS**."
         msg = await event.reply(message_to_reply)
         await asyncio.sleep(5)
         if event.chat_id in last_afkb_message:  # pylint:disable=E0602
