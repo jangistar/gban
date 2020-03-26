@@ -18,7 +18,11 @@ import io
 import git
 import heroku3
 import json
+
+# ================= CONSTANT =================
 Heroku = heroku3.from_key(Config.HEROKU_API_KEY)
+DEFAULTUSER = Config.ALIVE_NAME if Config.ALIVE_NAME else uname().node
+# ============================================
 
   
 @borg.on(admin_cmd(pattern="heroku ?(.*)"))
