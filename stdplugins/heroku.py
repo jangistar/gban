@@ -15,9 +15,10 @@ from os import execl
 import sys
 import os
 import io
+import git
 import heroku3
 import json
-
+Heroku = heroku3.from_key(Config.HEROKU_API_KEY)
 
   
 @borg.on(admin_cmd(pattern="heroku ?(.*)"))
