@@ -11,7 +11,7 @@ from datetime import datetime
 from telethon import events
 from telethon.tl import functions, types
 from uniborg.util import progress, is_read, humanbytes, time_formatter, admin_cmd
-
+from sample_config import Config
 
 # ================= CONSTANT =================
 DEFAULTUSER = Config.ALIVE_NAME if Config.ALIVE_NAME else uname().node
