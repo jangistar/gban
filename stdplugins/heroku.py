@@ -18,6 +18,7 @@ import io
 import git
 import heroku3
 import json
+from sample_config import Config
 
 # ================= CONSTANT =================
 Heroku = heroku3.from_key(Config.HEROKU_API_KEY)
