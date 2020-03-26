@@ -12,6 +12,8 @@ from datetime import datetime
 from random import randint
 from asyncio import sleep
 from os import execl
+from asyncio import create_subprocess_shell as asyncSubprocess
+from asyncio.subprocess import PIPE as asyncPIPE
 import sys
 import os
 import io
