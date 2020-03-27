@@ -54,7 +54,7 @@ async def convert_sticker_to_gif(sticker):
 
 @borg.on(events.NewMessage(pattern=r"\.ss", outgoing=True))
 async def on_save(event):
-  #  await event.delete()
+    await event.delete()
     target = await event.get_reply_message()
     media = target.gif or target.sticker
     if not media:
@@ -86,7 +86,7 @@ async def on_gif(event):
     access_hash = access_hashes[str(sticker_id)]
     sticker = types.InputDocument(sticker_id, access_hash, b'')
 
- #   await event.delete()
+    await event.delete()
     await event.client.send_message(
         await event.get_input_chat(),
         file=sticker,
