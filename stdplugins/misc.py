@@ -42,9 +42,6 @@ DEFAULTUSER = Config.ALIVE_NAME if Config.ALIVE_NAME else uname().node
 # ============================================
 
 
-            ccess = Config.GIT_REPO_NAME
-            ccess = ccess.strip()
-
 
 
 @borg.on(events.NewMessage(pattern=r"\.(.*)", outgoing=True))
@@ -152,11 +149,5 @@ async def user(e):
         f"{DEFAULTUSER}")
 
 
-#@register(outgoing=True, pattern="^.myrepo$")
-@borg.on(admin_cmd(pattern="myrepo ?(.*)", allow_sudo=False))
-async def myrepo_is_here(wannasee):
-    await wannasee.edit(
-        f"Click [here](https://github.com/{ccess}/tree/master/) to open {DEFAULTUSER}'s GitHub page."
-    )
 
 
