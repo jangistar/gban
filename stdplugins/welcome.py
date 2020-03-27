@@ -12,6 +12,23 @@ Usage: Deletes the welcome note for the current chat.\
 
 """
 
+import asyncio
+from telethon import events
+from telethon.tl.types import ChannelParticipantsAdmins
+from uniborg.util import admin_cmd
+import uniborg
+from os import remove
+from platform import python_version, uname
+from shutil import which
+from telethon import version
+
+from asyncio import create_subprocess_shell as asyncrunapp
+from asyncio.subprocess import PIPE as asyncPIPE
+from platform import python_version, uname
+from shutil import which
+from os import remove
+from telethon import version
+
 from telethon import events, utils
 from telethon.tl import types
 # from sql_helpers.welcome_sql import get_current_welcome_settings, add_welcome_setting, rm_welcome_setting, update_previous_welcome
