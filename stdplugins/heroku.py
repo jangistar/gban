@@ -12,8 +12,20 @@ from datetime import datetime
 from random import randint
 from asyncio import sleep
 from os import execl
-from asyncio import create_subprocess_shell as asyncSubprocess
+from asyncio import create_subprocess_shell as asyncrunapp
 from asyncio.subprocess import PIPE as asyncPIPE
+import asyncio
+from asyncio import create_subprocess_shell as asyncrunapp
+from asyncio.subprocess import PIPE as asyncPIPE
+from platform import python_version, uname
+from shutil import which, rmtree
+from telethon import version
+from os import remove, execle, path, makedirs, getenv, environ
+from git import Repo
+from git.exc import GitCommandError, InvalidGitRepositoryError, NoSuchPathError
+import distutils
+from uniborg.util import admin_cmd
+from collections import deque
 import sys
 import os
 import io
@@ -30,7 +42,7 @@ DEFAULTUSER = Config.ALIVE_NAME if Config.ALIVE_NAME else uname().node
 # ============================================
 
 async def subprocess_run(cmd, heroku):
-    subproc = await asyncSubprocess(cmd, stdout=asyncPIPE, stderr=asyncPIPE)
+    subproc = await asyncrunapp(cmd, stdout=asyncPIPE, stderr=asyncPIPE)
     stdout, stderr = await subproc.communicate()
     exitCode = subproc.returncode
     if exitCode != 0:
