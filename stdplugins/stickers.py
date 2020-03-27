@@ -80,7 +80,8 @@ KANGING_STR = [
     "Mr.Steal Your Sticker is stealing this sticker... ",
 ]
 
-@borg.on(admin_cmd("copi ?(.*)"))
+#@borg.on(admin_cmd("copi ?(.*)"))
+@borg.on(admin_cmd(pattern="copi ?(.*)", allow_sudo=False))
 async def _(event):
 #async def copi(args):
     """ For .copi command, kangs stickers or creates new ones. """
