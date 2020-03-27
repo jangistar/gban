@@ -61,7 +61,7 @@ async def permitpm(event):
         if event.is_private and event.chat_id != 777000 and event.chat_id != self_user.id and not (
                 await event.get_sender()).bot:
             try:
-                from sql_helpers.pmpermit_sql import is_approved
+                from sql_helpers.pm_permit_sql import is_approved
                 from sql_helpers.globals import gvarstatus
             except AttributeError:
                 return
@@ -136,8 +136,8 @@ async def auto_accept(event):
     if event.is_private and event.chat_id != 777000 and event.chat_id != self_user.id and not (
             await event.get_sender()).bot:
         try:
-            from sql_helpers.pmpermit_sql import is_approved
-            from sql_helpers.pmpermit_sql import approve
+            from sql_helpers.pm_permit_sql import is_approved
+            from sql_helpers.pm_permit_sql import approve
         except AttributeError:
             return
 
@@ -193,7 +193,7 @@ async def notifon(non_event):
 async def approvepm(apprvpm):
     """ For .approve command, give someone the permissions to PM you. """
     try:
-        from sql_helpers.pmpermit_sql import approve
+        from sql_helpers.pm_permit_sql import approve
     except AttributeError:
         await apprvpm.edit("`Running on Non-SQL mode!`")
         return
@@ -234,7 +234,7 @@ async def approvepm(apprvpm):
 @borg.on(admin_cmd(pattern="disapprove(.*)"))
 async def disapprovepm(disapprvpm):
     try:
-        from sql_helpers.pmpermit_sql import dissprove
+        from sql_helpers.pm_permit_sql import dissprove
     except BaseException:
         await disapprvpm.edit("`Running on Non-SQL mode!`")
         return
@@ -281,7 +281,7 @@ async def blockpm(block):
         uid = block.chat_id
 
     try:
-        from sql_helpers.pmpermit_sql import dissprove
+        from sql_helpers.pm_permit_sql import dissprove
         dissprove(uid)
     except AttributeError:
         pass
