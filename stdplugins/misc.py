@@ -140,7 +140,8 @@ async def user(e):
     await e.edit("{DEFAULTUSER}")
 
 
-@register(outgoing=True, pattern="^.myrepo$")
+#@register(outgoing=True, pattern="^.myrepo$")
+@borg.on(admin_cmd(pattern="myrepo ?(.*)", allow_sudo=False))
 async def myrepo_is_here(wannasee):
     await wannasee.edit(
         "Click [here](https://github.com/{ccess}/tree/master/) to open {DEFAULTUSER}'s GitHub page."
