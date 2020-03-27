@@ -23,6 +23,12 @@ from uniborg.util import admin_cmd
 from telethon.tl.functions.messages import GetStickerSetRequest
 from telethon.tl.types import InputStickerSetID
 from telethon.tl.types import DocumentAttributeSticker
+from sample_config import Config
+
+# ================= CONSTANT =================
+DEFAULTUSER = Config.ALIVE_NAME if Config.ALIVE_NAME else uname().node
+# ============================================
+
 
 KANGING_STR = [
     "Plagiarising hehe...",
@@ -35,17 +41,12 @@ KANGING_STR = [
     "Imprisoning this sticker...",
     "Mr.Steal Your Sticker is stealing this sticker... ",
 ]
-from sample_config import Config
-
-# ================= CONSTANT =================
-DEFAULTUSER = Config.ALIVE_NAME if Config.ALIVE_NAME else uname().node
-# ============================================
 
 @borg.on(admin_cmd("copi ?(.*)"))
-# async def _(event):
-async def copi(args):
+async def _(event):
+#async def copi(args):
     """ For .copi command, kangs stickers or creates new ones. """
-    user = await tgbot.get_me()
+    user = await user.username.get_me()
     if not user.username:
         user.username = user.first_name
     message = await args.get_reply_message()
@@ -58,18 +59,18 @@ async def copi(args):
         if isinstance(message.media, MessageMediaPhoto):
             await args.edit(f"`{random.choice(KANGING_STR)}`")
             photo = io.BytesIO()
-            photo = await tgbot.download_media(message.photo, photo)
+            photo = await user.username.download_media(message.photo, photo)
         elif "image" in message.media.document.mime_type.split('/'):
             await args.edit(f"`{random.choice(KANGING_STR)}`")
             photo = io.BytesIO()
-            await tgbot.download_file(message.media.document, photo)
+            await user.username.download_file(message.media.document, photo)
             if (DocumentAttributeFilename(file_name='sticker.webp') in
                     message.media.document.attributes):
                 emoji = message.media.document.attributes[1].alt
                 emojibypass = True
         elif "tgsticker" in message.media.document.mime_type:
             await args.edit(f"`{random.choice(KANGING_STR)}`")
-            await tgbot.download_file(message.media.document,
+            await user.username.download_file(message.media.document,
                                     'AnimatedSticker.tgs')
 
             attributes = message.media.document.attributes
@@ -124,11 +125,11 @@ async def copi(args):
         htmlstr = response.read().decode("utf8").split('\n')
 
         if "  A <strong>Telegram</strong> user has created the <strong>Sticker&nbsp;Set</strong>." not in htmlstr:
-            async with tgbot.conversation('Stickers') as conv:
+            async with user.username.conversation('Stickers') as conv:
                 await conv.send_message('/addsticker')
                 await conv.get_response()
                 # Ensure user doesn't get spamming notifications
-                await tgbot.send_read_acknowledge(conv.chat_id)
+                await user.username.send_read_acknowledge(conv.chat_id)
                 await conv.send_message(packname)
                 x = await conv.get_response()
                 while "120" in x.text:
@@ -143,11 +144,11 @@ async def copi(args):
                         await conv.send_message(cmd)
                         await conv.get_response()
                         # Ensure user doesn't get spamming notifications
-                        await tgbot.send_read_acknowledge(conv.chat_id)
+                        await user.username.send_read_acknowledge(conv.chat_id)
                         await conv.send_message(packnick)
                         await conv.get_response()
                         # Ensure user doesn't get spamming notifications
-                        await tgbot.send_read_acknowledge(conv.chat_id)
+                        await user.username.send_read_acknowledge(conv.chat_id)
                         if is_anim:
                             await conv.send_file('AnimatedSticker.tgs')
                             remove('AnimatedSticker.tgs')
@@ -157,7 +158,7 @@ async def copi(args):
                         await conv.get_response()
                         await conv.send_message(emoji)
                         # Ensure user doesn't get spamming notifications
-                        await tgbot.send_read_acknowledge(conv.chat_id)
+                        await user.username.send_read_acknowledge(conv.chat_id)
                         await conv.get_response()
                         await conv.send_message("/publish")
                         if is_anim:
@@ -165,17 +166,17 @@ async def copi(args):
                             await conv.send_message(f"<{packnick}>")
                         # Ensure user doesn't get spamming notifications
                         await conv.get_response()
-                        await tgbot.send_read_acknowledge(conv.chat_id)
+                        await user.username.send_read_acknowledge(conv.chat_id)
                         await conv.send_message("/skip")
                         # Ensure user doesn't get spamming notifications
-                        await tgbot.send_read_acknowledge(conv.chat_id)
+                        await user.username.send_read_acknowledge(conv.chat_id)
                         await conv.get_response()
                         await conv.send_message(packname)
                         # Ensure user doesn't get spamming notifications
-                        await tgbot.send_read_acknowledge(conv.chat_id)
+                        await user.username.send_read_acknowledge(conv.chat_id)
                         await conv.get_response()
                         # Ensure user doesn't get spamming notifications
-                        await tgbot.send_read_acknowledge(conv.chat_id)
+                        await user.username.send_read_acknowledge(conv.chat_id)
                         await args.edit(f"`Sticker added in a Different Pack !\
                             \nThis Pack is Newly created!\
                             \nYour pack can be found [here](t.me/addstickers/{packname})",
@@ -195,23 +196,23 @@ async def copi(args):
                     return
                 await conv.send_message(emoji)
                 # Ensure user doesn't get spamming notifications
-                await tgbot.send_read_acknowledge(conv.chat_id)
+                await user.username.send_read_acknowledge(conv.chat_id)
                 await conv.get_response()
                 await conv.send_message('/done')
                 await conv.get_response()
                 # Ensure user doesn't get spamming notifications
-                await tgbot.send_read_acknowledge(conv.chat_id)
+                await user.username.send_read_acknowledge(conv.chat_id)
         else:
             await args.edit("`Brewing a new Pack...`")
-            async with tgbot.conversation('Stickers') as conv:
+            async with user.username.conversation('Stickers') as conv:
                 await conv.send_message(cmd)
                 await conv.get_response()
                 # Ensure user doesn't get spamming notifications
-                await tgbot.send_read_acknowledge(conv.chat_id)
+                await user.username.send_read_acknowledge(conv.chat_id)
                 await conv.send_message(packnick)
                 await conv.get_response()
                 # Ensure user doesn't get spamming notifications
-                await tgbot.send_read_acknowledge(conv.chat_id)
+                await user.username.send_read_acknowledge(conv.chat_id)
                 if is_anim:
                     await conv.send_file('AnimatedSticker.tgs')
                     remove('AnimatedSticker.tgs')
@@ -226,7 +227,7 @@ async def copi(args):
                     return
                 await conv.send_message(emoji)
                 # Ensure user doesn't get spamming notifications
-                await tgbot.send_read_acknowledge(conv.chat_id)
+                await user.username.send_read_acknowledge(conv.chat_id)
                 await conv.get_response()
                 await conv.send_message("/publish")
                 if is_anim:
@@ -234,17 +235,17 @@ async def copi(args):
                     await conv.send_message(f"<{packnick}>")
                 # Ensure user doesn't get spamming notifications
                 await conv.get_response()
-                await tgbot.send_read_acknowledge(conv.chat_id)
+                await user.username.send_read_acknowledge(conv.chat_id)
                 await conv.send_message("/skip")
                 # Ensure user doesn't get spamming notifications
-                await tgbot.send_read_acknowledge(conv.chat_id)
+                await user.username.send_read_acknowledge(conv.chat_id)
                 await conv.get_response()
                 await conv.send_message(packname)
                 # Ensure user doesn't get spamming notifications
-                await tgbot.send_read_acknowledge(conv.chat_id)
+                await user.username.send_read_acknowledge(conv.chat_id)
                 await conv.get_response()
                 # Ensure user doesn't get spamming notifications
-                await tgbot.send_read_acknowledge(conv.chat_id)
+                await user.username.send_read_acknowledge(conv.chat_id)
 
         await args.edit(f"`Sticker kanged successfully!`\
             \nPack can be found [here](t.me/addstickers/{packname})",
