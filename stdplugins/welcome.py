@@ -20,6 +20,9 @@ from uniborg.util import admin_cmd
 # from userbot import CMD_HELP, bot, LOGS, CLEAN_WELCOME, BOTLOG_CHATID
 from telethon.events import ChatAction
 
+LOGS = Config.LOGGER
+CLEAN_WELCOME = Config.HEROKU_MEMEZ
+BOTLOG_CHATID = Config.PRIVATE_GROUP_BOT_API_ID
 
 
 @borg.on(ChatAction)
