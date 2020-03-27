@@ -113,7 +113,7 @@
       "description": "This is required for the speech to text module. Get your PASSWORD from https://console.bluemix.net/docs/services/speech-to-text/getting-started.html",
       "required": false
     },
-    "LYDIA_ANTI-PM": {
+    "LYDIA_ANTI_PM": {
       "description": "Set to True if you want to.",
       "required": false
     },
