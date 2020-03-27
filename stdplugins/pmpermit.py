@@ -27,6 +27,13 @@ from telethon.tl.functions.contacts import BlockRequest, UnblockRequest
 from telethon.tl.functions.messages import ReportSpamRequest
 from telethon.tl.types import User
 from sqlalchemy.exc import IntegrityError
+from telethon import events
+
+import sql_helpers.no_log_pms_sql as no_log_pms_sql
+import sql_helpers.pmpermit_sql as pmpermit_sql
+
+import sql_helpers.pm_permit_sql as pm_permit_sql
+from telethon import events, errors, functions, types
 
 # from userbot import (COUNT_PM, CMD_HELP, BOTLOG, BOTLOG_CHATID, PM_AUTO_BAN,
                 #     LASTMSG, LOGS)
@@ -51,7 +58,7 @@ UNAPPROVED_MSG = (
 # =================================================================
 
 
-@borg.on(incoming=True, disable_edited=True, disable_errors=True)
+@borg.on(events.NewMessage(incoming=True))
 async def permitpm(event):
     """ Prohibits people from PMing you without approval. \
         Will block retarded nibbas automatically. """
@@ -126,7 +133,7 @@ async def permitpm(event):
                         )
 
 
-@borg.on(disable_edited=True, outgoing=True, disable_errors=True)
+@borg.on(events.NewMessage(outgoing=True))
 async def auto_accept(event):
     """ Will approve automatically if you texted them first. """
     if not PM_AUTO_BAN:
