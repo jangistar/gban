@@ -205,8 +205,8 @@ if 1 == 1:
 
         img = Image.open(file)
         with BytesIO() as sticker:
-            img.save(sticker, "tgs")
-            sticker.name = "sticker.tgs"
+            img.save(sticker, "webp")
+            sticker.name = "sticker.webp"
             sticker.seek(0)
             try:
                 await reply.reply(file=sticker)
