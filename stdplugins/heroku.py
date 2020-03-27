@@ -41,11 +41,11 @@ HEROKU_APP_NAME = Config.HEROKU_APP_NAME
 DEFAULTUSER = Config.ALIVE_NAME if Config.ALIVE_NAME else uname().node
 # ============================================
 
-async def subprocess_run(cmd, heroku):
-    subproc = await asyncrunapp(cmd, stdout=asyncPIPE, stderr=asyncPIPE)
+async def subprocess_run(heroku):
+    subproc = await asyncrunapp(stdout=asyncPIPE, stderr=asyncPIPE)
     stdout, stderr = await subproc.communicate()
     exitCode = subproc.returncode
-    if exitCode == 0:
+    if exitCode != 0:
         await heroku.edit(
             '**An error was detected while running subprocess**\n'
             f'```exitCode: {exitCode}\n'
@@ -61,7 +61,7 @@ async def _event(heroku):
     await asyncio.sleep(3)
     conf = heroku.pattern_match.group(1)
     result = await subprocess_run(f'heroku ps -a {HEROKU_APP_NAME}', heroku)
-    if result[2] <= 0:
+    if result[2] != 0:
         return
     hours_remaining = result[0]
     await heroku.edit('`' + hours_remaining + '`')
