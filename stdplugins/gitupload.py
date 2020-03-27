@@ -20,6 +20,7 @@ from uniborg.util import admin_cmd, humanbytes, progress, time_formatter
 
 # ================= CONSTANT =================
 DEFAULTUSER = Config.ALIVE_NAME if Config.ALIVE_NAME else uname().node
+GIT_REPO_NAME = Config.GIT_REPO_NAME if Config.GIT_REPO_NAME else uname().node
 # ============================================
 
 
@@ -95,5 +96,5 @@ async def git_commit(file_name,mone):
 @borg.on(admin_cmd(pattern="myrepo ?(.*)", allow_sudo=False))
 async def myrepo_is_here(mone):
     await mone.edit(
-        f"Click [here](https://github.com/{ccess}/tree/master/) to open {DEFAULTUSER}'s GitHub page."
+        f"Click [here](https://github.com/{GIT_REPO_NAME}/tree/master/) to open {DEFAULTUSER}'s GitHub page."
     )
