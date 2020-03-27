@@ -32,7 +32,7 @@ from sample_config import Config
 # ================= CONSTANT =================
 DEFAULTUSER = Config.ALIVE_NAME if Config.ALIVE_NAME else uname().node
 # ============================================
-
+"""
 @borg.on(admin_cmd("copi ?(.*)"))
 async def _(event):
     if event.fwd_from:
@@ -122,7 +122,7 @@ async def _(event):
             await silently_send_message(bot_conv, "/done")
 
     await event.edit(f"[kanged](t.me/addstickers/{packshortname})")
-   
+"""   
 
 @borg.on(admin_cmd("packinfo"))
 async def _(event):
