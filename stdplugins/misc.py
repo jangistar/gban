@@ -42,7 +42,8 @@ DEFAULTUSER = Config.ALIVE_NAME if Config.ALIVE_NAME else uname().node
 # ============================================
 
 
-
+            ccess = Config.GIT_REPO_NAME
+            ccess = ccess.strip()
 
 
 
