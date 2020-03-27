@@ -79,7 +79,7 @@ class Config(object):
     # foloowing plugins won't work on Heroku,
     # ⚡Remove This To Make Them Work But Would Make Bot Unstable AF...⚡
     NO_LOAD = [
-                    "pmpermit",
+                    
                     "left",
                     "autores",
                     "hand",   
