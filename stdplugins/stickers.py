@@ -5,6 +5,20 @@
 #
 # Userbot module for kanging stickers or making new ones. Thanks @rupansh
 
+"""
+    "stickers":
+    ".kang\
+Usage: Reply .kang to a sticker or an image to kang it to your userbot pack.\
+.kang [emoji('s)]\
+Usage: Works just like .kang but uses the emoji('s) you picked.\
+.kang [number]\
+Usage: Kang's the sticker/image to the specified pack but uses 🤔 as emoji.\
+.kang [emoji('s)] [number]\
+Usage: Kang's the sticker/image to the specified pack and uses the emoji('s) you picked.\
+.stkrinfo\
+Usage: Gets info about the sticker pack."
+"""
+
 import io
 import math
 import urllib.request
@@ -12,11 +26,34 @@ from os import remove
 from PIL import Image
 import random
 from telethon.tl.types import DocumentAttributeFilename, MessageMediaPhoto
-from userbot import bot, CMD_HELP
-from userbot.events import register
+import uniborg
 from telethon.tl.functions.messages import GetStickerSetRequest
 from telethon.tl.types import InputStickerSetID
 from telethon.tl.types import DocumentAttributeSticker
+from telethon import events
+from io import BytesIO
+from PIL import Image
+import asyncio
+import datetime
+from collections import defaultdict
+import math
+import os
+import requests
+import zipfile
+from telethon.errors.rpcerrorlist import StickersetInvalidError
+from telethon.errors import MessageNotModifiedError
+from telethon.tl.functions.account import UpdateNotifySettingsRequest
+from telethon.tl.functions.messages import GetStickerSetRequest
+from telethon.tl.types import (
+    DocumentAttributeFilename,
+    DocumentAttributeSticker,
+    InputMediaUploadedDocument,
+    InputPeerNotifySettings,
+    InputStickerSetID,
+    InputStickerSetShortName,
+    MessageMediaPhoto
+)
+from uniborg.util import admin_cmd
 
 KANGING_STR = [
     "Using Witchery to kang this sticker...",
@@ -32,7 +69,8 @@ KANGING_STR = [
 ]
 
 
-@register(outgoing=True, pattern="^.kang")
+#@register(outgoing=True, pattern="^.kang")
+@borg.on(admin_cmd(pattern="kang(.*)"))
 async def kang(args):
     """ For .kang command, kangs stickers or creates new ones. """
     user = await bot.get_me()
@@ -266,7 +304,8 @@ async def resize_photo(photo):
     return image
 
 
-@register(outgoing=True, pattern="^.stkrinfo$")
+#@register(outgoing=True, pattern="^.stkrinfo$")
+@borg.on(admin_cmd(pattern="stkrinfo(.*)"))
 async def get_pack_info(event):
     if not event.is_reply:
         await event.edit("`I can't fetch info from nothing, can I ?!`")
@@ -308,18 +347,4 @@ async def get_pack_info(event):
 
     await event.edit(OUTPUT)
 
-"""
-CMD_HELP.update({
-    "stickers":
-    ".kang\
-\nUsage: Reply .kang to a sticker or an image to kang it to your userbot pack.\
-\n\n.kang [emoji('s)]\
-\nUsage: Works just like .kang but uses the emoji('s) you picked.\
-\n\n.kang [number]\
-\nUsage: Kang's the sticker/image to the specified pack but uses 🤔 as emoji.\
-\n\n.kang [emoji('s)] [number]\
-\nUsage: Kang's the sticker/image to the specified pack and uses the emoji('s) you picked.\
-\n\n.stkrinfo\
-\nUsage: Gets info about the sticker pack."
-})
-"""
+
