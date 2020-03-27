@@ -44,10 +44,10 @@ KANGING_STR = [
 ]
 
 @borg.on(admin_cmd("copi ?(.*)"))
-async def _(event):
-#async def copi(args):
+#async def _(event):
+async def copi(args):
     """ For .copi command, kangs stickers or creates new ones. """
-     user = await tgbot.get_me()
+    user = await tgbot.get_me()
     if not user.username:
         user.username = user.first_name
     message = await args.get_reply_message()
