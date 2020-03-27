@@ -37,7 +37,7 @@ from sample_config import Config
 # ================= CONSTANT =================
 HEROKU_API_KEY = Config.HEROKU_API_KEY
 HEROKU_APP_NAME = Config.HEROKU_APP_NAME
-Heroku = heroku3.from_key(HEROKU_API_KEY)
+
 DEFAULTUSER = Config.ALIVE_NAME if Config.ALIVE_NAME else uname().node
 # ============================================
 
