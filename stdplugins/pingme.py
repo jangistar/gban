@@ -25,5 +25,5 @@ async def _(event):
     end = datetime.now()
     ms = (end - start).microseconds * 0.00001
     await mone.edit(
-        f"{DEFAULTUSER} P I N G Is : {} ms".format(ms))
+        f"{DEFAULTUSER}'s P I N G Is : {} ms".format(ms))
  
