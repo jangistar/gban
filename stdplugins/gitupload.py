@@ -93,7 +93,7 @@ async def git_commit(file_name,mone):
     
 #@register(outgoing=True, pattern="^.myrepo$")
 @borg.on(admin_cmd(pattern="myrepo ?(.*)", allow_sudo=False))
-async def myrepo_is_here(wannasee):
-    await wannasee.edit(
+async def myrepo_is_here(mone):
+    await mone.edit(
         f"Click [here](https://github.com/{ccess}/tree/master/) to open {DEFAULTUSER}'s GitHub page."
     )
