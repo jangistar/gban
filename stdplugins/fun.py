@@ -1,4 +1,4 @@
-"""COMMAND : .runs , .metoo , .pro """
+"""COMMAND : .runs , .metoo , .pro, .nub """
 
 from telethon import events
 import random, re
@@ -30,6 +30,7 @@ PRO_STRINGS = [
      "`You is pro user.`",
      "`Pros here -_- Time to Leave`",
      "`Pros everywhere`",
+     "`Pro Pro Pro ; What a tragedy`",
 ]
 INSULT_STRINGS = [ 
     "`Owww ... Such a stupid idiot.`",
@@ -89,5 +90,15 @@ async def _(event):
     bro = random.randint(0, len(PRO_STRINGS) - 1)    
     input_str = event.pattern_match.group(1)
     reply_text = PRO_STRINGS[bro]
+    await event.edit(reply_text)
+	
+	
+@borg.on(admin_cmd("nub ?(.*)"))
+async def _(event):
+    if event.fwd_from:
+         return
+    bro = random.randint(0, len(INSULT_STRINGS) - 1)    
+    input_str = event.pattern_match.group(1)
+    reply_text = INSULT_STRINGS[bro]
     await event.edit(reply_text)
 			  
