@@ -118,7 +118,7 @@ async def bot_community(community):
     await community.edit(
         "Join SpEcHlDe's Uniborg userbot community: https://t.me/SpEcHlDe"
         "\nDo note that BotHub is an unoficial fork of their "
-        "Uniborg project and it may get limited or no support for bugs.")
+        "Uniborg project and it may get limited or no support for bugs from them.")
 
 
 #@register(outgoing=True, pattern="^.support$")
@@ -137,14 +137,15 @@ async def creator(e):
 #@register(outgoing=True, pattern="^.user$")
 @borg.on(admin_cmd(pattern="user ?(.*)", allow_sudo=False))
 async def user(e):
-    await e.edit("{DEFAULTUSER}")
+    await e.edit(
+        f"{DEFAULTUSER}")
 
 
 #@register(outgoing=True, pattern="^.myrepo$")
 @borg.on(admin_cmd(pattern="myrepo ?(.*)", allow_sudo=False))
 async def myrepo_is_here(wannasee):
     await wannasee.edit(
-        "Click [here](https://github.com/{ccess}/tree/master/) to open {DEFAULTUSER}'s GitHub page."
+        f"Click [here](https://github.com/{ccess}/tree/master/) to open {DEFAULTUSER}'s GitHub page."
     )
 
 
