@@ -6,7 +6,7 @@
 # Userbot module for kanging stickers or making new ones. Thanks @rupansh
 
 """Make / Download Telegram Sticker Packs without installing Third Party applications
-.copi [Optional Emoji]
+.copi Emoji
 .packinfo
 .ZIP {for zip sticker pack}"""
 
