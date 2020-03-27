@@ -3,18 +3,46 @@
 # Licensed under the Raphielscape Public License, Version 1.c (the "License");
 # you may not use this file except in compliance with the License.
 #
-""" Userbot module for keeping control who PM you. """
+""" Userbot module for keeping control who PM you. 
+add LYDIA_ANTI_PM = True in your heroku vars. and delete LYDIA_ANTI-PM heroku var
+
+    "pmpermit":
+   
+.approve\
+Usage: Approves the mentioned/replied person to PM.\
+.disapprove\
+Usage: Disapproves the mentioned/replied person to PM.\
+.block\
+Usage: Blocks the person.\
+.unblock\
+Usage: Unblocks the person so they can PM you.\
+.notifoff\
+Usage: Clears/Disables any notifications of unapproved PMs.\
+.notifon\
+Usage: Allows notifications for unapproved PMs.
+
+"""
 
 from telethon.tl.functions.contacts import BlockRequest, UnblockRequest
 from telethon.tl.functions.messages import ReportSpamRequest
 from telethon.tl.types import User
 from sqlalchemy.exc import IntegrityError
 
-from userbot import (COUNT_PM, CMD_HELP, BOTLOG, BOTLOG_CHATID, PM_AUTO_BAN,
-                     LASTMSG, LOGS)
+# from userbot import (COUNT_PM, CMD_HELP, BOTLOG, BOTLOG_CHATID, PM_AUTO_BAN,
+                #     LASTMSG, LOGS)
 
-from userbot.events import register
+from uniborg.util import admin_cmd
+from sample_config import Config
 
+
+# ========================= CONSTANTS ============================
+BOTLOG = Config.BOTLOG
+BOTLOG_CHATID = Config.PM_LOGGR_BOT_API_ID
+PM_AUTO_BAN = Config.LYDIA_ANTI_PM
+LOGS = Config.LOGGER
+LASTMSG = Config.LASTMSG
+COUNT_PM = Config.COUNT_PM
+# ========================= CONSTANTS ============================
 # ========================= CONSTANTS ============================
 UNAPPROVED_MSG = (
     "`HeY! This is an automated message.\n\n`"
@@ -24,7 +52,7 @@ UNAPPROVED_MSG = (
 # =================================================================
 
 
-@register(incoming=True, disable_edited=True, disable_errors=True)
+@borg.on(incoming=True, disable_edited=True, disable_errors=True)
 async def permitpm(event):
     """ Prohibits people from PMing you without approval. \
         Will block retarded nibbas automatically. """
@@ -99,7 +127,7 @@ async def permitpm(event):
                         )
 
 
-@register(disable_edited=True, outgoing=True, disable_errors=True)
+@borg.on(disable_edited=True, outgoing=True, disable_errors=True)
 async def auto_accept(event):
     """ Will approve automatically if you texted them first. """
     if not PM_AUTO_BAN:
@@ -134,7 +162,8 @@ async def auto_accept(event):
                     )
 
 
-@register(outgoing=True, pattern="^.notifoff$")
+#@register(outgoing=True, pattern="^.notifoff$")
+@borg.on(admin_cmd(pattern="notifoff(.*)"))
 async def notifoff(noff_event):
     """ For .notifoff command, stop getting notifications from unapproved PMs. """
     try:
@@ -146,7 +175,8 @@ async def notifoff(noff_event):
     await noff_event.edit("`Notifications from unapproved PM's are silenced!`")
 
 
-@register(outgoing=True, pattern="^.notifon$")
+#@register(outgoing=True, pattern="^.notifon$")
+@borg.on(admin_cmd(pattern="notifon(.*)"))
 async def notifon(non_event):
     """ For .notifoff command, get notifications from unapproved PMs. """
     try:
@@ -158,7 +188,8 @@ async def notifon(non_event):
     await non_event.edit("`Notifications from unapproved PM's unmuted!`")
 
 
-@register(outgoing=True, pattern="^.approve$")
+#@register(outgoing=True, pattern="^.approve$")
+@borg.on(admin_cmd(pattern="approve(.*)"))
 async def approvepm(apprvpm):
     """ For .approve command, give someone the permissions to PM you. """
     try:
@@ -199,7 +230,8 @@ async def approvepm(apprvpm):
         )
 
 
-@register(outgoing=True, pattern="^.disapprove$")
+#@register(outgoing=True, pattern="^.disapprove$")
+@borg.on(admin_cmd(pattern="disapprove(.*)"))
 async def disapprovepm(disapprvpm):
     try:
         from userbot.modules.sql_helper.pm_permit_sql import dissprove
@@ -229,7 +261,8 @@ async def disapprovepm(disapprvpm):
         )
 
 
-@register(outgoing=True, pattern="^.block$")
+#@register(outgoing=True, pattern="^.block$")
+@borg.on(admin_cmd(pattern="block(.*)"))
 async def blockpm(block):
     """ For .block command, block people from PMing you! """
     if block.reply_to_msg_id:
@@ -260,7 +293,8 @@ async def blockpm(block):
         )
 
 
-@register(outgoing=True, pattern="^.unblock$")
+#@register(outgoing=True, pattern="^.unblock$")
+@borg.on(admin_cmd(pattern="unblock(.*)"))
 async def unblockpm(unblock):
     """ For .unblock command, let people PMing you again! """
     if unblock.reply_to_msg_id:
@@ -278,19 +312,3 @@ async def unblockpm(unblock):
         )
 
 
-"""
-    "pmpermit":
-   
-.approve\
-Usage: Approves the mentioned/replied person to PM.\
-.disapprove\
-Usage: Disapproves the mentioned/replied person to PM.\
-.block\
-Usage: Blocks the person.\
-.unblock\
-Usage: Unblocks the person so they can PM you.\
-.notifoff\
-Usage: Clears/Disables any notifications of unapproved PMs.\
-.notifon\
-Usage: Allows notifications for unapproved PMs.
-"""
