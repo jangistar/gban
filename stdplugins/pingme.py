@@ -20,10 +20,8 @@ async def _(event):
         return
     await event.delete()
     start = datetime.now()
-    mone = await event.reply(
-        f"{DEFAULTUSER}'s P I N G Is : Calculating...")
+    mone = await event.reply(f"{DEFAULTUSER}'s P I N G Is : Calculating...")
     end = datetime.now()
     ms = (end - start).microseconds * 0.00001
-    await mone.edit(
-        f"{DEFAULTUSER}'s P I N G Is : {} ms".format(ms))
+    await mone.edit(f'"{DEFAULTUSER}`s P I N G Is : {} ms".format(ms)')
  
