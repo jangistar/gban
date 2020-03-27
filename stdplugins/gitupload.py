@@ -18,6 +18,10 @@ from sample_config import Config
 from uniborg.util import admin_cmd, humanbytes, progress, time_formatter
 
 
+# ================= CONSTANT =================
+DEFAULTUSER = Config.ALIVE_NAME if Config.ALIVE_NAME else uname().node
+# ============================================
+
 
 GIT_TEMP_DIR = "./userbot/temp/"
 @borg.on(admin_cmd(pattern="commit ?(.*)", allow_sudo=False))
