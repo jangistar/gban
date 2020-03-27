@@ -44,7 +44,7 @@ async def subprocess_run(cmd, heroku):
 
   
 @borg.on(admin_cmd(pattern="heroku ?(.*)"))
-async def heroku_manager(heroku):
+async def _event(heroku):
     await heroku.edit("`Processing...`")
     await asyncio.sleep(3)
     conf = heroku.pattern_match.group(1)
