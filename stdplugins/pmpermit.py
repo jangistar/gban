@@ -28,11 +28,6 @@ from telethon.tl.functions.messages import ReportSpamRequest
 from telethon.tl.types import User
 from sqlalchemy.exc import IntegrityError
 from telethon import events
-
-import sql_helpers.no_log_pms_sql as no_log_pms_sql
-import sql_helpers.pmpermit_sql as pmpermit_sql
-
-import sql_helpers.pm_permit_sql as pm_permit_sql
 from telethon import events, errors, functions, types
 
 # from userbot import (COUNT_PM, CMD_HELP, BOTLOG, BOTLOG_CHATID, PM_AUTO_BAN,
