@@ -33,6 +33,7 @@ from sqlalchemy.exc import IntegrityError
 
 from uniborg.util import admin_cmd
 from sample_config import Config
+from sample_config import LASTMSG, COUNT_PM
 
 
 # ========================= CONSTANTS ============================
@@ -40,8 +41,6 @@ BOTLOG = Config.BOTLOG
 BOTLOG_CHATID = Config.PM_LOGGR_BOT_API_ID
 PM_AUTO_BAN = Config.LYDIA_ANTI_PM
 LOGS = Config.LOGGER
-LASTMSG = Config.LASTMSG
-COUNT_PM = Config.COUNT_PM
 # ========================= CONSTANTS ============================
 # ========================= CONSTANTS ============================
 UNAPPROVED_MSG = (
