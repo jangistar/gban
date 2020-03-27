@@ -9,16 +9,27 @@ add LYDIA_ANTI_PM = True in your heroku vars. and delete LYDIA_ANTI-PM heroku va
     "pmpermit":
    
 .approve\
+
 Usage: Approves the mentioned/replied person to PM.\
+
 .disapprove\
+
 Usage: Disapproves the mentioned/replied person to PM.\
+
 .block\
+
 Usage: Blocks the person.\
+
 .unblock\
+
 Usage: Unblocks the person so they can PM you.\
+
 .notifoff\
+
 Usage: Clears/Disables any notifications of unapproved PMs.\
+
 .notifon\
+
 Usage: Allows notifications for unapproved PMs.
 
 """
