@@ -23,6 +23,6 @@ async def _(event):
     mone = await event.reply(f"{DEFAULTUSER}'s P I N G Is : Calculating...")
     end = datetime.now()
     ms = (end - start).microseconds * 0.00001
-    await mone.edit(f"{DEFAULTUSER}'s P I N G Is : {} ms".format(ms))"
+    await mone.edit({DEFAULTUSER}'s P I N G Is : {} ms".format(ms))
 return
                     
