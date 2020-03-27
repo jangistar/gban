@@ -1,4 +1,4 @@
-
+""" cmd is .ss as reply to a gif file """
 
 from io import BytesIO
 
