@@ -91,6 +91,7 @@ async def subprocess_run(cmd, heroku):
             f'stdout: {stdout.decode().strip()}\n'
             f'stderr: {stderr.decode().strip()}```')
         return exitCode
+else
     return stdout.decode().strip(), stderr.decode().strip(), exitCode
 
   
@@ -99,7 +100,7 @@ async def heroku(event):
     await event.edit("`Processing...`")
     await asyncio.sleep(3)
     conf = event.pattern_match.group(1)
-    result = await subprocess_run(f'event ps -a {HEROKU_APP_NAME}', heroku)
+    result = await subprocess_run(f'heroku ps -a {HEROKU_APP_NAME}', event)
     if result[2] != 0:
         return
     hours_remaining = result[0]
