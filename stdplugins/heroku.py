@@ -43,8 +43,6 @@ import os
 import io
 import heroku3
 import asyncio
-from asyncio import create_subprocess_shell as asyncSubprocess
-from asyncio.subprocess import PIPE as asyncPIPE
 import sys
 import json
 from speedtest import Speedtest
@@ -82,8 +80,8 @@ HEROKU_APP_NAME = Config.HEROKU_APP_NAME
 DEFAULTUSER = Config.ALIVE_NAME if Config.ALIVE_NAME else uname().node
 # ============================================
 
-async def subprocess_run(heroku):
-    subproc = await asyncrunapp(stdout=asyncPIPE, stderr=asyncPIPE)
+async def subprocess_run(cmd, heroku):
+    subproc = await asyncrunapp(cmd, stdout=asyncPIPE, stderr=asyncPIPE)
     stdout, stderr = await subproc.communicate()
     exitCode = subproc.returncode
     if exitCode != 0:
