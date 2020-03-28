@@ -82,8 +82,8 @@ HEROKU_APP_NAME = Config.HEROKU_APP_NAME
 DEFAULTUSER = Config.ALIVE_NAME if Config.ALIVE_NAME else uname().node
 # ============================================
 
-async def subprocess_run(cmd, heroku):
-    subproc = await asyncrunapp(cmd, stdout=asyncPIPE, stderr=asyncPIPE)
+async def subprocess_run(heroku):
+    subproc = await asyncrunapp(stdout=asyncPIPE, stderr=asyncPIPE)
     stdout, stderr = await subproc.communicate()
     exitCode = subproc.returncode
     if exitCode != 0:
