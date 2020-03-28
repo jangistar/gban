@@ -102,7 +102,7 @@ async def heroku(event):
     await asyncio.sleep(3)
     conf = event.pattern_match.group(1)
     result = await subprocess_run(f'heroku ps -a {HEROKU_APP_NAME}', event)
-    if result[1] != 0:
+    if result[] != 0:
         return
     hours_remaining = result[0]
     await event.edit('`' + hours_remaining + '`')
