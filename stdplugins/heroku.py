@@ -91,7 +91,6 @@ async def subprocess_run(cmd, heroku):
             f'stdout: {stdout.decode().strip()}\n'
             f'stderr: {stderr.decode().strip()}```')
         return exitCode
-else
     return stdout.decode().strip(), stderr.decode().strip(), exitCode
 
   
