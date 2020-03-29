@@ -14,7 +14,7 @@ from telethon import version
 @borg.on(events.NewMessage(pattern=r"\.sysd", outgoing=True))
 async def sysdetails(sysd):
     """ a. """
-    if not sysd.text[0].isalpha() and sysd.text[0] not in ("/", "#", "@", "!"):
+   # if not sysd.text[0].isalpha() and sysd.text[0] not in ("/", "#", "@", "!"):
         try:
             neo = "neofetch --stdout"
             fetch = await asyncrunapp(
