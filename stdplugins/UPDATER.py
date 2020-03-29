@@ -63,6 +63,7 @@ from sample_config import Config
 HEROKU_API_KEY = Config.HEROKU_API_KEY
 HEROKU_APP_NAME = Config.HEROKU_APP_NAME
 REPO_LINK = Config.REPO_LINK
+# heroku_git_url = Config.HEROKU_GIT_URL
 ####
 
 requirements_path = path.join(
