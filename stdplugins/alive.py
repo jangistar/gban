@@ -12,13 +12,13 @@ from telethon import version
 
 from asyncio import create_subprocess_shell as asyncrunapp
 from asyncio.subprocess import PIPE as asyncPIPE
-from platform import python_version, uname
+
 from shutil import which
 from os import remove
 from telethon import version
 
+from platform import python_version, uname
 from sample_config import Config
-
 
 
 # ================= CONSTANT =================
