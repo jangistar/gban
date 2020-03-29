@@ -162,6 +162,8 @@ class Config(object):
     REPO_LINK = os.environ.get("REPO_LINK", "https://github.com/mkaraniya/BotHub.git")
     # define "UPSTREAM_REPO_URL" in conig_vars
     UPSTREAM_REPO_URL = os.environ.get("UPSTREAM_REPO_URL", "https://github.com/mkaraniya/BotHub.git")
+    # define "HEROKU_GIT_URL" | https://git.heroku.com/YOUR_HEROKU_APP_NAME.git
+    HEROKU_GIT_URL = os.environ.get("HEROKU_GIT_URL", "YOUR HEROKU GIT URL")
     # define "heroku_link" in conig_vars 
     HEROKU_LINK = os.environ.get("HEROKU_LINK", None)
     # define "packs_content" in conig_vars
