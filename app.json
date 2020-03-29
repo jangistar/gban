@@ -70,6 +70,11 @@
       "value": "https://github.com/mkaraniya/BotHub.git",
       "required": false
     },
+    "HEROKU_GIT_URL": {
+      "description": "This is required for update functionality to work.",
+      "value": "https://github.com/mkaraniya/BotHub.git",
+      "required": false
+    },
     "HU_STRING_SESSION": {
       "description": "Get this value by running python3 GenerateStringSession.py locally",
       "value": ""
