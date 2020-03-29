@@ -16,10 +16,7 @@ async def sysdetails(sysd):
     """ a. """
     if not sysd.text[0].isalpha() and sysd.text[0] not in ("/", "#", "@", "!"):
         try:
-            neo = "neofetch/neofetch --on --color_blocks on --bold on --cpu_temp=C \
-                    --cpu_speed on --cpu_cores physical --kernel_shorthand on \
-                    --gpu_brand on --refresh_rate on --gtk_shorthand on --colors=distro  --backend ascii \
-                    --source=auto --Redhat source --stdout"
+            neo = "neofetch --stdout"
             fetch = await asyncrunapp(
                 neo,
                 stdout=asyncPIPE,
@@ -30,7 +27,7 @@ async def sysdetails(sysd):
             result = str(stdout.decode().strip()) \
                 + str(stderr.decode().strip())
 
-            await sysd.edit("Neofetch Result: `" + result + "`")
+            await sysd.edit("`" + result + "`")
         except FileNotFoundError:
             await sysd.edit("`Hey, on mkaraniya/BotHub install .neofetch first kthx`")
 
