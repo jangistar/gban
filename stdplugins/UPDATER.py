@@ -1,13 +1,21 @@
+
+# edited for Uniborg (BOTHUB) Mayur Karaniya
 # Copyright (C) 2019 The Raphielscape Company LLC.
 #
 # Licensed under the Raphielscape Public License, Version 1.c (the "License");
 # you may not use this file except in compliance with the License.
-# credits to AvinashReddy for this plugin
-# edited for Uniborg (BOTHUB) Mayur Karaniya
+#
+# """
+# This module updates the userbot based on Upstream revision
+# """
 
-"""
-This module UPDATEs the userbot based on Upstream revision
-cmd is .UPDATE
+
+""" 'update':
+    ".update\
+Usage: Checks if the main userbot repository has any updates and shows a changelog if so.
+
+.update now
+Usage: Updates your userbot, if there are any updates in the main userbot repository."
 """
 
 from os import remove, execle, path, makedirs, getenv, environ
@@ -17,17 +25,45 @@ import sys
 
 from git import Repo
 from git.exc import GitCommandError, InvalidGitRepositoryError, NoSuchPathError
+from os import remove
+from os import execl
+import sys
 
-# from heroku3 import HEROKU_APIKEY, HEROKU_APPNAME
+import heroku3
+import git
+from git import Repo
+from git.exc import GitCommandError
+from git.exc import InvalidGitRepositoryError
+from git.exc import NoSuchPathError
+
+import asyncio
+import random
+import re
+import time
+
+from collections import deque
+
+import requests
+
+from telethon.tl.functions.users import GetFullUserRequest
+from telethon.tl.types import MessageEntityMentionName
+from telethon import events
+
 from uniborg.util import admin_cmd
 
-# your Heroku ApiKey in place of ""
-HEROKU_APIKEY = ""
-# your Heroku AppName in place of ""
-HEROKU_APPNAME = ""
-#
-UPSTREAM_REPO_URL = "https://github.com/mkaraniya/BotHub.git"
 
+from contextlib import suppress
+import os
+import sys
+import asyncio
+
+from sample_config import Config
+
+###
+HEROKU_API_KEY = Config.HEROKU_API_KEY
+HEROKU_APP_NAME = Config.HEROKU_APP_NAME
+REPO_LINK = Config.REPO_LINK
+####
 
 requirements_path = path.join(
     path.dirname(path.dirname(path.dirname(__file__))), 'requirements.txt')
@@ -41,7 +77,7 @@ async def gen_chlog(repo, diff):
     return ch_log
 
 
-async def UPDATE_requirements():
+async def update_requirements():
     reqs = str(requirements_path)
     try:
         process = await asyncio.create_subprocess_shell(
@@ -54,16 +90,16 @@ async def UPDATE_requirements():
         return repr(e)
 
 
-@borg.on(admin_cmd("UPDATE ?(.*)", outgoing=True, allow_sudo=True))
+@borg.on(admin_cmd("update ?(.*)", outgoing=True, allow_sudo=True))
 async def upstream(ups):
-    "For .UPDATE command, check if the bot is up to date, UPDATE if specified"
-    await ups.edit("`Checking for UPDATEs, please wait....`")
+    "For .update command, check if the bot is up to date, update if specified"
+    await ups.edit("`Checking for updates, please wait....`")
     conf = ups.pattern_match.group(1)
-    off_repo = UPSTREAM_REPO_URL
-    force_UPDATE = False
+    off_repo = REPO_LINK
+    force_update = False
 
     try:
-        txt = "`Oops.. UPDATEr cannot continue due to "
+        txt = "`Oops.. Updater cannot continue due to "
         txt += "some problems occured`\n\n**LOGTRACE:**\n"
         repo = Repo()
     except NoSuchPathError as error:
@@ -78,13 +114,13 @@ async def upstream(ups):
         if conf != "now":
             await ups.edit(
                 f"`Unfortunately, the directory {error} does not seem to be a git repository.\
-            \nBut we can fix that by force updating the userbot using .UPDATE now.`"
+            \nBut we can fix that by force updating the userbot using .update now.`"
             )
             return
         repo = Repo.init()
         origin = repo.create_remote('upstream', off_repo)
         origin.fetch()
-        force_UPDATE = True
+        force_update = True
         repo.create_head('master', origin.refs.master)
         repo.heads.master.set_tracking_branch(origin.refs.master)
         repo.heads.master.checkout(True)
@@ -93,7 +129,7 @@ async def upstream(ups):
     if ac_br != 'master':
         await ups.edit(
             f'**[UPDATER]:**` Looks like you are using your own custom branch ({ac_br}). '
-            'in that case, UPDATEr is unable to identify '
+            'in that case, Updater is unable to identify '
             'which branch is to be merged. '
             'please checkout to any official branch`')
         repo.__del__()
@@ -109,13 +145,13 @@ async def upstream(ups):
 
     changelog = await gen_chlog(repo, f'HEAD..upstream/{ac_br}')
 
-    if not changelog and not force_UPDATE:
+    if not changelog and not force_update:
         await ups.edit(
             f'\n`Your BOT is`  **up-to-date**  `with`  **{ac_br}**\n')
         repo.__del__()
         return
 
-    if conf != "now" and not force_UPDATE:
+    if conf != "now" and not force_update:
         changelog_str = f'**New UPDATE available for [{ac_br}]:\n\nCHANGELOG:**\n`{changelog}`'
         if len(changelog_str) > 4096:
             await ups.edit("`Changelog is too big, view the file to see it.`")
@@ -130,28 +166,28 @@ async def upstream(ups):
             remove("output.txt")
         else:
             await ups.edit(changelog_str)
-        await ups.respond('`do \".UPDATE now\" to UPDATE`')
+        await ups.respond('`do \".update now\" to update`')
         return
 
-    if force_UPDATE:
+    if force_update:
         await ups.edit(
             '`Force-Syncing to latest stable userbot code, please wait...`')
     else:
         await ups.edit('`Updating userbot, please wait....`')
     # We're in a Heroku Dyno, handle it's memez.
-    if HEROKU_APIKEY is not None:
+    if HEROKU_API_KEY is not None:
         import heroku3
-        heroku = heroku3.from_key(HEROKU_APIKEY)
+        heroku = heroku3.from_key(HEROKU_API_KEY)
         heroku_app = None
         heroku_applications = heroku.apps()
-        if not HEROKU_APPNAME:
+        if not HEROKU_APP_NAME:
             await ups.edit(
-                '`[HEROKU MEMEZ] Please set up the HEROKU_APPNAME variable to be able to UPDATE userbot.`'
+                '`[HEROKU MEMEZ] Please set up the HEROKU_APP_NAME variable to be able to update userbot.`'
             )
             repo.__del__()
             return
         for app in heroku_applications:
-            if app.name == HEROKU_APPNAME:
+            if app.name == HEROKU_APP_NAME:
                 heroku_app = app
                 break
         if heroku_app is None:
@@ -166,7 +202,7 @@ async def upstream(ups):
         ups_rem.fetch(ac_br)
         repo.git.reset("--hard", "FETCH_HEAD")
         heroku_git_url = heroku_app.git_url.replace(
-            "https://", "https://api:" + HEROKU_APIKEY + "@")
+            "https://", "https://api:" + HEROKU_API_KEY + "@")
         if "heroku" in repo.remotes:
             remote = repo.remote("heroku")
             remote.set_url(heroku_git_url)
@@ -178,20 +214,18 @@ async def upstream(ups):
             await ups.edit(f'{txt}\n`Here is the error log:\n{error}`')
             repo.__del__()
             return
-        await ups.edit('`Successfully UPDATEd!\n'
+        await ups.edit('`Successfully Updated!\n'
                        'Restarting, please wait...`')
     else:
-        # Classic UPDATEr, pretty straightforward.
+        # Classic Updater, pretty straightforward.
         try:
             ups_rem.pull(ac_br)
         except GitCommandError:
             repo.git.reset("--hard", "FETCH_HEAD")
-        reqs_upgrade = await UPDATE_requirements()
-        await ups.edit('`Successfully UPDATEd!\n'
+        reqs_upgrade = await update_requirements()
+        await ups.edit('`Successfully Updated!\n'
                        'Bot is restarting... Wait for a second!`')
         # Spin a new instance of bot
         args = [sys.executable, "-m", "userbot"]
         execle(sys.executable, *args, environ)
         return
-
-
