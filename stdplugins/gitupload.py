@@ -16,11 +16,12 @@ from telethon import events
 from telethon.tl.types import DocumentAttributeVideo
 from sample_config import Config
 from uniborg.util import admin_cmd, humanbytes, progress, time_formatter
+from platform import python_version, uname
 
 
 # ================= CONSTANT =================
 DEFAULTUSER = Config.ALIVE_NAME if Config.ALIVE_NAME else uname().node
-GIT_REPO_NAME = Config.GIT_REPO_NAME
+GIT_REPO_NAME = Config.GIT_REPO_NAME if Config.ALIVE_NAME else uname().node
 # ============================================
 
 
