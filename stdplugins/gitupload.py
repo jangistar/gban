@@ -20,7 +20,7 @@ from uniborg.util import admin_cmd, humanbytes, progress, time_formatter
 
 # ================= CONSTANT =================
 DEFAULTUSER = Config.ALIVE_NAME if Config.ALIVE_NAME else uname().node
-GIT_REPO_NAME = Config.GIT_REPO_NAME if Config.GIT_REPO_NAME else uname().node
+GIT_REPO_NAME = Config.GIT_REPO_NAME
 # ============================================
 
 
