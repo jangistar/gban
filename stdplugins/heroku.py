@@ -71,6 +71,13 @@ from platform import python_version, uname
 from shutil import which
 from os import remove
 from telethon import version
+#
+from platform import python_version, uname
+from shutil import which
+from telethon import events
+import asyncio
+from collections import deque
+
 
 
 # ================= CONSTANT =================
@@ -100,10 +107,33 @@ async def asyncrunapp_run(cmd, heroku):
 async def heroku(event):
     await event.edit("`Processing...`")
     await asyncio.sleep(3)
-    conf = event.pattern_match.group()
+    conf = event.pattern_match.group(1)
     result = await asyncrunapp_run(f'heroku ps -a {HEROKU_APP_NAME}', event)
     if result[2] != 0:
         return
     hours_remaining = result[0]
     await event.edit('`' + hours_remaining + '`')
     return
+
+@borg.on(events.NewMessage(pattern=r"\.sysd", outgoing=True))
+async def sysdetails(sysd):
+    """ a. """
+    if not sysd.text[0].isalpha() and sysd.text[0] not in ("/", "#", "@", "!"):
+        try:
+            neo = "neofetch/neofetch --on --color_blocks on --bold on --cpu_temp=C \
+                    --cpu_speed on --cpu_cores physical --kernel_shorthand on \
+                    --gpu_brand on --refresh_rate on --gtk_shorthand on --colors=distro  --backend ascii \
+                    --source=auto --Redhat source --stdout"
+            fetch = await asyncrunapp(
+                neo,
+                stdout=asyncPIPE,
+                stderr=asyncPIPE,
+            )
+
+            stdout, stderr = await fetch.communicate()
+            result = str(stdout.decode().strip()) \
+                + str(stderr.decode().strip())
+
+            await sysd.edit("Neofetch Result: `" + result + "`")
+        except FileNotFoundError:
+            await sysd.edit("`Hey, on mkaraniya/BotHub install .neofetch first kthx`")
