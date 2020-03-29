@@ -21,3 +21,5 @@ hiredis>=1.0.0
 dill>=0.3.1.1
 covid
 heroku3
+bash>=3.2
+ncurses
