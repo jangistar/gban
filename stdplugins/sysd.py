@@ -35,21 +35,4 @@ async def sysdetails(sysd):
             await sysd.edit("`Hey, on mkaraniya/BotHub install .neofetch first kthx`")
 
 
-@borg.on(admin_cmd(pattern=r"\.sysd", outgoing=True))
-async def sysdetails(sysd):
-    """ For .sysd command, get system info using neofetch. """
-    try:
-        neo = "neofetch --stdout"
-        fetch = await asyncrunapp(
-            neo,
-            stdout=asyncPIPE,
-            stderr=asyncPIPE,
-        )
 
-        stdout, stderr = await fetch.communicate()
-        result = str(stdout.decode().strip()) \
-            + str(stderr.decode().strip())
-
-        await sysd.edit("`" + result + "`")
-    except FileNotFoundError:
-        await sysd.edit("`Install neofetch first !!`")
