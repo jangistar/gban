@@ -34,7 +34,7 @@ import io
 import sys
 import json
 from uniborg.util import progress, is_read, humanbytes, time_formatter, admin_cmd
-
+from platform import python_version, uname
 from sample_config import Config
 
 # ================= CONSTANT =================

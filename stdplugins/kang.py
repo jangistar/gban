@@ -28,6 +28,7 @@ from telethon.tl.types import (
 )
 from uniborg.util import admin_cmd
 from sample_config import Config
+from platform import python_version, uname
 
 # ================= CONSTANT =================
 DEFAULTUSER = Config.ALIVE_NAME if Config.ALIVE_NAME else uname().node
