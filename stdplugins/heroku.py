@@ -94,7 +94,9 @@ async def asyncrunapp_run(cmd, heroku):
     return stdout.decode().strip(), stderr.decode().strip(), exitCode
 
   
-@borg.on(admin_cmd(pattern="heroku ?(.*)"))
+#@borg.on(pattern="heroku ?(.*)"))
+@borg.on(events.NewMessage(pattern=r"\.heroku", outgoing=True))
+#async def checker(e):
 async def heroku(event):
     await event.edit("`Processing...`")
     await asyncio.sleep(3)
