@@ -47,7 +47,7 @@ from telethon import events, errors, functions, types
 from uniborg.util import admin_cmd
 from sample_config import Config
 from sample_config import LASTMSG, COUNT_PM
-
+from platform import python_version, uname
 
 # ========================= CONSTANTS ============================
 BOTLOG = Config.BOTLOG
