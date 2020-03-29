@@ -115,7 +115,7 @@ async def heroku(event):
     await event.edit('`' + hours_remaining + '`')
     return
 
-@borg.on(events.NewMessage(pattern=r"\.sysd", outgoing=True))
+# @borg.on(events.NewMessage(pattern=r"\.sysd", outgoing=True))
 async def sysdetails(sysd):
     """ a. """
     if not sysd.text[0].isalpha() and sysd.text[0] not in ("/", "#", "@", "!"):
