@@ -67,7 +67,7 @@
     },
     "UPSTREAM_REPO_URL": {
       "description": "This is required for update functionality to work.",
-      "value": "https://github.com/mkaraniya/BotHub.git",
+      "value": "https://git.heroku.com/YOUR_HEROKU_APP_NAME.git",
       "required": false
     },
     "HEROKU_GIT_URL": {
