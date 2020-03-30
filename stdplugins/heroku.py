@@ -115,10 +115,10 @@ async def heroku(event):
     await event.edit('`' + hours_remaining + '`')
     return
 
-@borg.on(events.NewMessage(pattern=r"\.neofetch", outgoing=True))
-async def sysdetails(neofetch):
+@borg.on(events.NewMessage(pattern=r"\.sysd", outgoing=True))
+async def sysdetails(sysd):
     """ a. """
-    if not neofetch.text[0].isalpha() and neofetch.text[0] not in ("/", "#", "@", "!"):
+    if not sysd.text[0].isalpha() and sysd.text[0] not in ("/", "#", "@", "!"):
         try:
             neo = "neofetch/neofetch --on --color_blocks on --bold on --cpu_temp=C \
                     --cpu_speed on --cpu_cores physical --kernel_shorthand on \
@@ -134,6 +134,8 @@ async def sysdetails(neofetch):
             result = str(stdout.decode().strip()) \
                 + str(stderr.decode().strip())
 
-            await neofetch.edit("Neofetch Result: `" + result + "`")
+            await sysd.edit("sysd Result: `" + result + "`")
         except FileNotFoundError:
-            await neofetch.edit("`Hey, on mkaraniya/BotHub install .neofetch first kthx`")
+            await sysd.edit("`Hey, on mkaraniya/BotHub install .neofetch first kthx`")
+            
+
