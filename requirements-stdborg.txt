@@ -57,4 +57,3 @@ wget
 hurry.filesize
 pymongo
 telethon-session-sqlalchemy>=0.2.6
-neofetch
