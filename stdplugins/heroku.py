@@ -88,7 +88,7 @@ DEFAULTUSER = Config.ALIVE_NAME if Config.ALIVE_NAME else uname().node
 # ============================================
 
 async def asyncrunapp_run(cmd, heroku):
-    subproc = await asyncrunapp((cmd), stdout=asyncPIPE, stderr=asyncPIPE))
+    subproc = await asyncrunapp(cmd, stdout=asyncPIPE, stderr=asyncPIPE)
     await subproc.communicate()
     exitCode = subproc.returncode
     if exitCode != 0:
