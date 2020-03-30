@@ -88,9 +88,9 @@ DEFAULTUSER = Config.ALIVE_NAME if Config.ALIVE_NAME else uname().node
 # ============================================
 
 async def asyncrunapp_run(cmd, heroku):
-    subproc = await asyncrunapp(cmd, stdout=asyncio.subprocess.PIPE, stderr=asyncio.subprocess.PIPE)
+    subproc = await asyncio.create_subprocess_shell(cmd, stdout=asyncio.subprocess.PIPE, stderr=asyncio.subprocess.PIPE)
     await subproc.communicate()
-    exitCode = subproc.returncode
+    exitCode = return subproc.returncode
     if exitCode != 0:
         await heroku.edit(
             '**An error was detected while running subprocess**\n'
