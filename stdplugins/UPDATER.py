@@ -227,6 +227,6 @@ async def upstream(ups):
         await ups.edit('`Successfully Updated!\n'
                        'Bot is restarting... Wait for a second!`')
         # Spin a new instance of bot
-        args = [sys.executable, "-m", "userbot"]
+        args = [sys.executable, "-m", "stdborg"]
         execle(sys.executable, *args, environ)
         return
