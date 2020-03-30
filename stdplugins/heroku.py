@@ -107,7 +107,7 @@ async def asyncrunapp_run(cmd, heroku):
 async def heroku(event):
     await event.edit("`Processing...`")
     await asyncio.sleep(3)
-    conf = event.pattern_match.group(1)
+    conf = event.pattern_match.group()
     result = await asyncrunapp_run(f'heroku ps -a {HEROKU_APP_NAME}', event)
     if result[2] != 0:
         return
