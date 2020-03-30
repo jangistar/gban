@@ -11,7 +11,7 @@ emoji
 googletrans
 google_images_download>=2.7.1
 google-api-python-client
-google_auth_oauthlib>=1.10.0
+google_auth_oauthlib
 gsearch>=1.6.0
 gtts
 hachoir
