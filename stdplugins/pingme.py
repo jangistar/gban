@@ -24,6 +24,5 @@ async def _(event):
     mone = await event.reply(f"{DEFAULTUSER}'s P I N G Is : Calculating...")
     end = datetime.now()
     ms = (end - start).microseconds * 0.00001
-    await mone.edit(f'("{DEFAULTUSER} has this ping : {} ms".format(ms))')
-
+    await mone.edit("This is MY P I N G : {} ms".format(ms))
                     

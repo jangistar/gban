@@ -3,12 +3,10 @@ from asyncio import create_subprocess_shell as asyncrunapp
 from asyncio.subprocess import PIPE as asyncPIPE
 from platform import python_version, uname
 from shutil import which
-from uniborg.util import admin_cmd
+
 from telethon import events
 import asyncio
 from collections import deque
-from os import remove
-from telethon import version
 
 
 @borg.on(events.NewMessage(pattern=r"\.sysd", outgoing=True))
@@ -30,6 +28,4 @@ async def sysdetails(sysd):
             await sysd.edit("`" + result + "`")
         except FileNotFoundError:
             await sysd.edit("`Hey, on mkaraniya/BotHub install .neofetch first kthx`")
-
-
 

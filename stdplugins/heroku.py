@@ -89,7 +89,7 @@ DEFAULTUSER = Config.ALIVE_NAME if Config.ALIVE_NAME else uname().node
 
 async def asyncrunapp_run(cmd, heroku):
     subproc = await asyncrunapp(cmd, stdout=asyncPIPE, stderr=asyncPIPE)
-    stdout, stderr = await subproc.communicate()
+    await subproc.communicate()
     exitCode = subproc.returncode
     if exitCode != 0:
         await heroku.edit(
@@ -107,7 +107,7 @@ async def asyncrunapp_run(cmd, heroku):
 async def heroku(event):
     await event.edit("`Processing...`")
     await asyncio.sleep(3)
-    conf = event.pattern_match.group(1)
+    conf = event.pattern_match.group()
     result = await asyncrunapp_run(f'heroku ps -a {HEROKU_APP_NAME}', event)
     if result[2] != 0:
         return
@@ -115,7 +115,7 @@ async def heroku(event):
     await event.edit('`' + hours_remaining + '`')
     return
 
-# @borg.on(events.NewMessage(pattern=r"\.sysd", outgoing=True))
+@borg.on(events.NewMessage(pattern=r"\.sysd", outgoing=True))
 async def sysdetails(sysd):
     """ a. """
     if not sysd.text[0].isalpha() and sysd.text[0] not in ("/", "#", "@", "!"):
@@ -134,6 +134,8 @@ async def sysdetails(sysd):
             result = str(stdout.decode().strip()) \
                 + str(stderr.decode().strip())
 
-            await sysd.edit("Neofetch Result: `" + result + "`")
+            await sysd.edit("sysd Result: `" + result + "`")
         except FileNotFoundError:
             await sysd.edit("`Hey, on mkaraniya/BotHub install .neofetch first kthx`")
+            
+
