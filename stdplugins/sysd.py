@@ -28,7 +28,7 @@ async def sysdetails(sysd):
             result = str(stdout.decode().strip()) \
                 + str(stderr.decode().strip())
 
-            await sysd.edit("Sysd Result: `" + result + "`")
+            await sysd.edit("sysd Result: `" + result + "`")
         except FileNotFoundError:
             await sysd.edit("`Hey, on mkaraniya/BotHub install .neofetch first kthx`")
 
