@@ -148,19 +148,6 @@ class Config(object):
     GOOGLE_CHROME_BIN = os.environ.get("GOOGLE_CHROME_BIN", None)
     # get your value from https://Intellivoid.info
     LYDIA_API = os.environ.get("LYDIA_API", None)
-<<<<<<< HEAD
-    #
-    HEROKU_API_KEY = os.environ.get("HEROKU_API_KEY", None)
-    HEROKU_APP_NAME = os.environ.get("HEROKU_APP_NAME", None)
-    #
-    CHROME_DRIVER = os.environ.get("CHROME_DRIVER", None)
-    CHROME_BIN = os.environ.get("CHROME_BIN", None)
-    # define "heroku_link" in conig_vars 
-    HEROKU_LINK = os.environ.get("HEROKU_LINK", None)
-    # define "repo_link" in conig_vars
-    REPO_LINK = os.environ.get("REPO_LINK", None)
-    # define "repo_link" in conig_vars
-=======
     LYDIA_ANTI_PM = bool(os.environ.get("LYDIA_ANTI_PM", "True"))
     # get your value from YouTube or Google.
     YOUTUBE_API_KEY = os.environ.get("YOUTUBE_API_KEY", None)
@@ -180,7 +167,6 @@ class Config(object):
     # define "heroku_link" in conig_vars 
     HEROKU_LINK = os.environ.get("HEROKU_LINK", None)
     # define "packs_content" in conig_vars
->>>>>>> b387c9f97040811fb15405edd4c526a7a01ee08a
     PACKS_CONTENT = os.environ.get("PACKS_CONTENT", None)
     #
     BOT_HUB = os.environ.get("BOT_HUB", None)
