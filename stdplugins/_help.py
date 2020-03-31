@@ -5,7 +5,7 @@ from telethon import events, functions, __version__
 from uniborg.util import admin_cmd
 
 
-@borg.on(admin_cmd(pattern="helpme ?(.*)", allow_sudo=True))  # pylint:disable=E0602
+@borg.on(admin_cmd(pattern="helpme ?(.*)", allow_sudo=False))  # pylint:disable=E0602
 async def _(event):
     if event.fwd_from:
         return
@@ -14,7 +14,7 @@ async def _(event):
         s_helpme_string = borg._plugins[splugin_name].__doc__
     else:
         s_helpme_string = "****:"
-    helpme_string = """@Bot_Hub_Official™️ ( **Custom Built By** @Three_Cube_TeKnoways_bot ) \n**Verified Account**: ✅\n**Official Website**: http://www.threecube.tk\n**NOTICE**: **COMMANDS** are CASE **sensitive**\n**DESCRIPTION**: https://telegra.ph/command-list-for-BotHub-Userbot-11-08\nPithun {}\nTalethrun {}\n
+    helpme_string = """@Bot_Hub_Official™️ ( **Custom Built By** @Three_Cube_TeKnoways_bot ) \n**Verified Account**: ✅\n**Official \n**NOTICE**: **COMMANDS** are CASE **sensitive**\n**DESCRIPTION**: https://telegra.ph/command-list-for-BotHub-Userbot-11-08\n
  """.format(
         sys.version,
         __version__
@@ -36,21 +36,23 @@ async def _(event):
         await event.delete()
 
 
-@borg.on(admin_cmd(pattern="dc ?(.*)" ))  # pylint:disable=E0602
+@borg.on(admin_cmd(pattern="dc"))  # pylint:disable=E0602
 async def _(event):
     if event.fwd_from:
         return
-    result = await borg(functions.helpme.GetNearestDcRequest())  # pylint:disable=E0602
-    await event.edit(result.stringify())
+    result = await borg(functions.help.GetNearestDcRequest())  # pylint:disable=E0602
+    await event.edit(f"**Country** : `{result.country}`\n"
+                     f"**Nearest DC** : `{result.nearest_dc}`\n"
+                     f"**This DC** : `{result.this_dc}`")
 
 
-@borg.on(admin_cmd(pattern="config ?(.*)" ))  # pylint:disable=E0602
+@borg.on(admin_cmd(pattern="config"))  # pylint:disable=E0602
 async def _(event):
     if event.fwd_from:
         return
-    result = await borg(functions.helpme.GetConfigRequest())  # pylint:disable=E0602
+    result = await borg(functions.help.GetConfigRequest())  # pylint:disable=E0602
     result = result.stringify()
-    logger.helpme(result)  # pylint:disable=E0602
+    logger.info(result)  # pylint:disable=E0602
     await event.edit("""Telethon UserBot powered by @Bot_Hub_Official""")
 
 

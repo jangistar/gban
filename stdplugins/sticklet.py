@@ -13,8 +13,12 @@
 # You should have received a copy of the GNU Affero General Public License
 # along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
+<<<<<<< HEAD
 """ use cmd .slet"""
 
+=======
+""" use cmd .slet """
+>>>>>>> b387c9f97040811fb15405edd4c526a7a01ee08a
 
 import io
 import textwrap

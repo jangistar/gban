@@ -1,10 +1,50 @@
+# Copyright (C) 2020 BotHub.
+#
+# You can find misc modules, which dont fit in anything xD
 
+"""
+.bguide command, returns BotHub's basic setup-guide.
+.readme command, returns Bothub's Readme Url from git.
+.community command, just returns OG Uniborg's group link.
+.support command, just returns the group link.
+.myrepo command, just returns the user's personal repo URL. 
+.creator command, returns the name of the creator of this BotHub bot.
+.user command, returns the name of the person who is using it.
+"""
+
+<<<<<<< HEAD
 """cmd : .bguide , .readme """
 
+=======
+>>>>>>> b387c9f97040811fb15405edd4c526a7a01ee08a
 from telethon import events
+from github import Github
+import aiohttp
+import asyncio
+import os
+import time
+from datetime import datetime
+from telethon import events
+from telethon.tl.types import DocumentAttributeVideo
+from sample_config import Config
+from uniborg.util import admin_cmd, humanbytes, progress, time_formatter
 
 import asyncio
+from random import randint
+from asyncio import sleep
+from os import execl
+import sys
+import os
+import io
+import sys
+import json
+from uniborg.util import progress, is_read, humanbytes, time_formatter, admin_cmd
+from platform import python_version, uname
+from sample_config import Config
 
+# ================= CONSTANT =================
+DEFAULTUSER = Config.ALIVE_NAME if Config.ALIVE_NAME else uname().node
+# ============================================
 
 
 
@@ -40,16 +80,6 @@ async def _(event):
             await asyncio.sleep(animation_interval)
 
             await event.edit(animation_chars[i % 3])
-
-
-
-
-"""cmd : .readme """
-
-from telethon import events
-
-import asyncio
-
 
 
 
@@ -175,6 +205,34 @@ async def _(event):
 
 
 
+
+#@register(outgoing=True, pattern="^.community$")
+@borg.on(admin_cmd(pattern="community ?(.*)", allow_sudo=False))
+async def bot_community(community):
+    await community.edit(
+        "Join SpEcHlDe's Uniborg userbot community: https://t.me/SpEcHlDe"
+        "\nDo note that BotHub is an unoficial fork of their "
+        "Uniborg project and it may get limited or no support for bugs from them.")
+
+
+#@register(outgoing=True, pattern="^.support$")
+@borg.on(admin_cmd(pattern="support ?(.*)", allow_sudo=False))
+async def bot_support(wannahelp):
+    await wannahelp.edit(
+        "Join the BotHub Channel: https://t.me/Bot_Hub_Official_Group : @Bot_Hub_Official_Group \
+        \nJoin the BotHub Chat: https://t.me/Bot_Hub_Official : @Bot_Hub_Official")
+
+
+#@register(outgoing=True, pattern="^.creator$")
+@borg.on(admin_cmd(pattern="creator ?(.*)", allow_sudo=False))
+async def creator(e):
+    await e.edit("[TeKnoways](https://t.me/Three_Cube_TeKnoways)")
+    
+#@register(outgoing=True, pattern="^.user$")
+@borg.on(admin_cmd(pattern="user ?(.*)", allow_sudo=False))
+async def user(e):
+    await e.edit(
+        f"{DEFAULTUSER}")
 
 
 

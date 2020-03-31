@@ -5,11 +5,20 @@ import asyncio
 import importlib.util
 import logging
 from pathlib import Path
+from pymongo import MongoClient
+
+from youtube_dl import YoutubeDL
+from youtube_dl.utils import (DownloadError, ContentTooShortError,
+                              ExtractorError, GeoRestrictedError,
+                              MaxDownloadsReached, PostProcessingError,
+                              UnavailableVideoError, XAttrMetadataError)
+from googleapiclient.discovery import build
+# from youtube_dl import YOUTUBE_API_KEY
 
 from telethon import TelegramClient
 import telethon.utils
 import telethon.events
-
+import os
 from .storage import Storage
 from . import hacks
 
@@ -28,6 +37,8 @@ class Uniborg(TelegramClient):
         self._plugins = {}
         self._plugin_path = plugin_path
         self.config = api_config
+        self.mongo = MongoClient(os.environ.get("MONGO_URI",None))
+      #  self.youtube = YOUTUBE_API_KEY(os.environ.get("YOUTUBE_API_KEY",None))
 
         kwargs = {
             "api_id": 6,
@@ -97,6 +108,7 @@ class Uniborg(TelegramClient):
 
         spec = importlib.util.spec_from_file_location(name, path)
         mod = importlib.util.module_from_spec(spec)
+        mod.mongo_client = self.mongo
 
         mod.borg = self
         mod.logger = logging.getLogger(shortname)

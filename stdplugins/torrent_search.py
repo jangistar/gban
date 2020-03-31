@@ -1,7 +1,8 @@
 """
 Torrent Search Plugin for Userbot. //torrentdownloads.me
 cmd: .search search_string
-Note: Number of results are currently limited to 20
+Note: Number of results are currently limited to 30
+By:-@Zero_cool7870
 
 """
 from bs4 import BeautifulSoup as bs 
@@ -47,7 +48,7 @@ async def tor_search(event):
 			urls.append("https://www.torrentdownloads.me"+a['href'])
 		except:
 			pass
-		if counter == 19:
+		if counter == 30:
 			break		
 		counter = counter + 1
 	if not urls:

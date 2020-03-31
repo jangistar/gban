@@ -3,9 +3,9 @@
 # file, You can obtain one at http://mozilla.org/MPL/2.0/.
 """Snips
 Available Commands:
-.snips
-.snipl
-.snipd"""
+.snips to save the snip
+.snipl to list the snip
+.snipd to delete the snip"""
 from telethon import events, utils
 from telethon.tl import types
 from sql_helpers.snips_sql import get_snips, add_snip, remove_snip, get_all_snips
@@ -84,7 +84,7 @@ async def on_snip_list(event):
     if len(OUT_STR) > Config.MAX_MESSAGE_SIZE_LIMIT:
         with io.BytesIO(str.encode(OUT_STR)) as out_file:
             out_file.name = "snips.text"
-            await event.client.send_file(
+            await borg.send_file(
                 event.chat_id,
                 out_file,
                 force_document=True,

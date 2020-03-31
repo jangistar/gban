@@ -1,11 +1,14 @@
-
+""" cmd is .ss as reply to a gif file """
 
 from io import BytesIO
 
 from uniborg import util
-from PIL import Image
+from PIL import Image, ImageDraw, ImageFont
+from pySmartDL import SmartDL
 from telethon import types, utils, events
 from telethon.tl.functions.messages import SaveGifRequest, UploadMediaRequest
+from telethon import events
+from sample_config import Config
 
 sticker_to_gif = storage.sticker_to_gif or {}
 access_hashes = storage.access_hashes or {}

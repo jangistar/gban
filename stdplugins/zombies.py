@@ -25,11 +25,14 @@ from telethon.tl.functions.messages import UpdatePinnedMessageRequest
 from telethon.tl.types import (ChannelParticipantsAdmins, ChatAdminRights,
                                ChatBannedRights, MessageEntityMentionName,
                                MessageMediaPhoto)
-
+from sample_config import Config
 
 # from uniborg.events import register
 
 # =================== CONSTANT ===================
+BOTLOG = Config.BOTLOG
+BOTLOG_CHATID = Config.PRIVATE_GROUP_BOT_API_ID
+
 PP_TOO_SMOL = "`The image is too small`"
 PP_ERROR = "`Failure while processing the image`"
 NO_ADMIN = "`I am not an admin!`"
@@ -73,7 +76,9 @@ UNMUTE_RIGHTS = ChatBannedRights(until_date=None, send_messages=False)
 
 
 
-@borg.on(outgoing=True, pattern="^.zombies(?: |$)(.*)", groups_only=False)
+
+
+@borg.on(events.NewMessage(pattern="^.zombies(?: |$)(.*)", outgoing=True))
 async def rm_deletedacc(show):
     """ For .zombies command, list all the ghost/deleted/zombie accounts in a chat. """
 
@@ -136,7 +141,7 @@ async def rm_deletedacc(show):
     await sleep(2)
     await show.delete()
 
-
+    
     if BOTLOG:
         await show.client.send_message(
             BOTLOG_CHATID, "#CLEANUP\n"

@@ -1,5 +1,5 @@
 # (c) @UniBorg
-# Original written by @UniBorg edit by @Three_Cube_TeKnoways
+# Original written by @UniBorg edit by @I_m_Rock
 """.earth Plugin for @BotHub"""
 
 

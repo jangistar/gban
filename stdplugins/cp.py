@@ -1,3 +1,5 @@
+"""do .cp <text> or reply .cp to any text to corrept phase (CP)"""
+
 import asyncio
 import random
 import re

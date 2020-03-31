@@ -9,6 +9,20 @@ class Config(object):
     # Get this value from my.telegram.org! Please do not steal
     APP_ID = int(os.environ.get("APP_ID", 6))
     API_HASH = os.environ.get("API_HASH", "eb06d4abfb49dc3eeb1aeb98ae0f581e")
+    # Photo Chat - Get this value from http://antiddos.systems
+    API_TOKEN = os.environ.get("API_TOKEN", "15e05de0-0357-4553-b39c-d614443ed91e")
+    # Get this value from https://t.me/SitiSchu! Please do not steal, group for support https://t.me/SpamWatchSupport
+    SPAMWATCH_API = os.environ.get("SPAMWATCH_API", "hAlogsz5yVFw4TYjIf6I993YFpZj~AT_5wCNrwnY3YeekgeEH1g62hO1hog02UHO")
+    # Genius lyrics get this value from https://genius.com/developers both has same values
+    GENIUS_API_TOKEN = os.environ.get("GENIUS", None)
+    # Genius lyrics get this value from https://genius.com/developers both has same values
+    GENIUS = os.environ.get("GENIUS_API_TOKEN", None)
+    # Default alive name for .on cmd
+    ALIVE_NAME = os.environ.get("ALIVE_NAME", None)
+    # Userbot logging feature switch.
+    BOTLOG = bool(os.environ.get("BOTLOG", "False"))
+    # PhotoChat - don't change this value from http://antiddos.systems
+    API_URL = os.environ.get("API_URL", "http://antiddos.systems")
     # string session for running on Heroku
     # some people upload their session files on GitHub or other third party hosting
     # websites, this might prevent the un-authorized use of the
@@ -16,6 +30,8 @@ class Config(object):
     HU_STRING_SESSION = os.environ.get("HU_STRING_SESSION", None)
     # Get your own APPID from https://api.openweathermap.org/data/2.5/weather
     OPEN_WEATHER_MAP_APPID = os.environ.get("OPEN_WEATHER_MAP_APPID", None)
+    # Your City
+    WEATHER_DEFCITY = os.environ.get("WEATHER_DEFCITY", None)
     # Get your own ACCESS_KEY from http://api.screenshotlayer.com/api/capture
     SCREEN_SHOT_LAYER_ACCESS_KEY = os.environ.get("SCREEN_SHOT_LAYER_ACCESS_KEY", None)
     # Send .get_id in any group to fill this value.
@@ -63,7 +79,7 @@ class Config(object):
     # foloowing plugins won't work on Heroku,
     # ⚡Remove This To Make Them Work But Would Make Bot Unstable AF...⚡
     NO_LOAD = [
-                    "pmpermit",
+                    
                     "left",
                     "autores",
                     "hand",   
@@ -72,10 +88,12 @@ class Config(object):
     # Get your own API key from https://www.remove.bg/ or
     # feel free to use http://telegram.dog/Remove_BGBot
     REM_BG_API_KEY = os.environ.get("REM_BG_API_KEY", None)
-    # Set to True if you want to block users that are spamming your PMs.
+    # you can set any name here
     SLAP_USERNAME = os.environ.get("SLAP_USERNAME", None)
+    # Get this from Github
     GITHUB_ACCESS_TOKEN = os.environ.get("GITHUB_ACCESS_TOKEN", None)
     GIT_REPO_NAME = os.environ.get("GIT_REPO_NAME", None)
+    # Set to True if you want to block users that are spamming your PMs.
     NO_P_M_SPAM = bool(os.environ.get("NO_P_M_SPAM", False))
     # define "spam" in PMs
     MAX_FLOOD_IN_P_M_s = int(os.environ.get("MAX_FLOOD_IN_P_M_s", 3))
@@ -87,6 +105,10 @@ class Config(object):
     # can be None in which case plugins requiring
     # DataBase would not work
     DB_URI = os.environ.get("DATABASE_URL", None)
+    # For Databases
+    # can be None in which case plugins requiring
+    # DataBase would not work
+    MONGO_URI = os.environ.get("MONGO_URI", None)
     # number of rows of buttons to be displayed in .helpme command
     NO_OF_BUTTONS_DISPLAYED_IN_H_ME_CMD = int(os.environ.get("NO_OF_BUTTONS_DISPLAYED_IN_H_ME_CMD", 5))
     # specify command handler that should be used for the plugins
@@ -99,7 +121,9 @@ class Config(object):
     # VeryStream only supports video formats
     VERY_STREAM_LOGIN = os.environ.get("VERY_STREAM_LOGIN", None)
     VERY_STREAM_KEY = os.environ.get("VERY_STREAM_KEY", None)
+    # for temporary saving files on UserBot
     TEMP_DIR = os.environ.get("TEMP_DIR", None)
+    # This is required for few things
     CHANNEL_ID = os.environ.get("CHANNEL_ID", None)
     # Google Drive ()
     G_DRIVE_CLIENT_ID = os.environ.get("G_DRIVE_CLIENT_ID", None)
@@ -114,15 +138,17 @@ class Config(object):
     TELE_GRAM_2FA_CODE = os.environ.get("TELE_GRAM_2FA_CODE", None)
     #
     GROUP_REG_SED_EX_BOT_S = os.environ.get("GROUP_REG_SED_EX_BOT_S", r"(regex|moku|BananaButler_|rgx|l4mR)bot")
-    # rapidleech plugins	
-    OPEN_LOAD_LOGIN = os.environ.get("OPEN_LOAD_LOGIN", "0")	
-    OPEN_LOAD_KEY = os.environ.get("OPEN_LOAD_KEY", "0")
+    # rapidleech plugins
+    # don't change the values
+    OPEN_LOAD_LOGIN = os.environ.get("OPEN_LOAD_LOGIN", "100")	
+    OPEN_LOAD_KEY = os.environ.get("OPEN_LOAD_KEY", "100")
     # Google Chrome Selenium Stuff
     # taken from https://github.com/jaskaranSM/UniBorg/blob/9072e3580cc6c98d46f30e41edbe73ffc9d850d3/sample_config.py#L104-L106
     GOOGLE_CHROME_DRIVER = os.environ.get("GOOGLE_CHROME_DRIVER", None)
     GOOGLE_CHROME_BIN = os.environ.get("GOOGLE_CHROME_BIN", None)
-    #
+    # get your value from https://Intellivoid.info
     LYDIA_API = os.environ.get("LYDIA_API", None)
+<<<<<<< HEAD
     #
     HEROKU_API_KEY = os.environ.get("HEROKU_API_KEY", None)
     HEROKU_APP_NAME = os.environ.get("HEROKU_APP_NAME", None)
@@ -134,9 +160,33 @@ class Config(object):
     # define "repo_link" in conig_vars
     REPO_LINK = os.environ.get("REPO_LINK", None)
     # define "repo_link" in conig_vars
+=======
+    LYDIA_ANTI_PM = bool(os.environ.get("LYDIA_ANTI_PM", "True"))
+    # get your value from YouTube or Google.
+    YOUTUBE_API_KEY = os.environ.get("YOUTUBE_API_KEY", None)
+    # Heroku API_Key is found under "dashboard.heroku.com/account"
+    HEROKU_MEMEZ = bool(os.environ.get("HEROKU_MEMEZ", "False"))
+    HEROKU_API_KEY = os.environ.get("HEROKU_API_KEY", None)
+    HEROKU_APP_NAME = os.environ.get("HEROKU_APP_NAME", None)
+    # required for Carbor
+    CHROME_DRIVER = os.environ.get("CHROME_DRIVER", None)
+    CHROME_BIN = os.environ.get("CHROME_BIN", None)
+    # define "repo_link" in conig_vars
+    REPO_LINK = os.environ.get("REPO_LINK", "https://github.com/mkaraniya/BotHub.git")
+    # define "UPSTREAM_REPO_URL" in conig_vars
+    UPSTREAM_REPO_URL = os.environ.get("UPSTREAM_REPO_URL", "https://github.com/mkaraniya/BotHub.git")
+    # define "HEROKU_GIT_URL" | https://git.heroku.com/YOUR_HEROKU_APP_NAME.git
+    HEROKU_GIT_URL = os.environ.get("HEROKU_GIT_URL", "YOUR HEROKU GIT URL")
+    # define "heroku_link" in conig_vars 
+    HEROKU_LINK = os.environ.get("HEROKU_LINK", None)
+    # define "packs_content" in conig_vars
+>>>>>>> b387c9f97040811fb15405edd4c526a7a01ee08a
     PACKS_CONTENT = os.environ.get("PACKS_CONTENT", None)
     #
     BOT_HUB = os.environ.get("BOT_HUB", None)
+    #
+    
+
 
 class Production(Config):
     LOGGER = False
@@ -144,3 +194,14 @@ class Production(Config):
 
 class Development(Config):
     LOGGER = True
+
+    
+# Global Variables
+COUNT_MSG = 0
+USERS = {}
+COUNT_PM = {}
+LASTMSG = {}
+admin_cmd = {}
+USER_afkb = False
+AFKBREASON = None
+reason = None
