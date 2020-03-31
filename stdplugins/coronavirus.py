@@ -16,6 +16,6 @@ async def _(event):
 
 def get_country_data(country, world):
     for country_data in world:
-        if country_data["country"].lower() == country.lower():
+        if country_data["country"] == country:
             return country_data
     return {"Status": "No information yet about this country!"}
