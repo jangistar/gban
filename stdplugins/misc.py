@@ -12,11 +12,6 @@
 .user command, returns the name of the person who is using it.
 """
 
-<<<<<<< HEAD
-"""cmd : .bguide , .readme """
-
-=======
->>>>>>> b387c9f97040811fb15405edd4c526a7a01ee08a
 from telethon import events
 from github import Github
 import aiohttp
