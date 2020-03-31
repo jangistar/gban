@@ -30,10 +30,8 @@ PRO_STRINGS = [
      "`You is pro user.`",
      "`Pros here -_- Time to Leave`",
      "`Pros everywhere`",
-<<<<<<< HEAD
-=======
      "`Pro Pro Pro ; What a tragedy`",
->>>>>>> b387c9f97040811fb15405edd4c526a7a01ee08a
+
 ]
 INSULT_STRINGS = [ 
     "`Owww ... Such a stupid idiot.`",
