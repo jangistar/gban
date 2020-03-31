@@ -25,12 +25,7 @@ Read code in noice.py """
 # .lgfy Let me Google that for you real quick !!
 # Thanks to 🅱️ottom🅱️ext🅱️ot (@NotAMemeBot) for some of these.
 
-<<<<<<< HEAD
-from os import remove
-from os import execl
-=======
 from os import remove, execl
->>>>>>> b387c9f97040811fb15405edd4c526a7a01ee08a
 import sys
 
 from git import Repo
@@ -716,10 +711,6 @@ async def let_me_google_that_for_you(lmgtfy_q):
         await lmgtfy_q.edit(f"[{query}]({r.json()['shorturl']})")
 
         
-<<<<<<< HEAD
-    
-=======
->>>>>>> b387c9f97040811fb15405edd4c526a7a01ee08a
 @borg.on(admin_cmd("shalom ?(.*)", outgoing=True))
 async def shalom(e):
     await e.edit(
@@ -760,8 +751,6 @@ async def shalom(e):
         "\n☁️☁️☁️☁️☁️☁️⭐️☁️☁️"
         "\n☁️⭐️⭐️⭐️⭐️⭐️⭐️⭐️☁️"
         "\n☁️☁️☁️☁️☁️☁️☁️☁️☁️")
-<<<<<<< HEAD
-=======
   
   
   
@@ -806,4 +795,3 @@ async def BH(e):
         "\n⚪️❤️⚪️⚪️❤️⚪️⚪️❤️⚪️"
         "\n⚪️⚪️❤️❤️⚪️❤️❤️⚪️⚪️"
         "\n⚪️⚪️⚪️⚪️⚪️⚪️⚪️⚪️⚪️")
->>>>>>> b387c9f97040811fb15405edd4c526a7a01ee08a
