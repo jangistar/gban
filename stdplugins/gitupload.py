@@ -59,39 +59,6 @@ async def download(event):
         await git_commit(downloaded_file_name, mone)
 
 async def git_commit(file_name,mone):        
-<<<<<<< HEAD
-	content_list = []
-	access_token = Config.GITHUB_ACCESS_TOKEN
-	g = Github(access_token)
-	file = open(file_name,"r",encoding='utf-8')
-	commit_data = file.read()
-	repo = g.get_repo(Config.GIT_REPO_NAME)
-	print(repo.name)
-	create_file = True
-	contents = repo.get_contents("")
-	for content_file in contents:
-		content_list.append(str(content_file))
-		print(content_file)
-	for i in content_list:
-		create_file = True
-		if i == 'ContentFile(path="'+file_name+'")':
-			return await mone.edit("`File Already Exists`")
-			create_file = False
-	file_name = "stdplugins/"+file_name		
-	if create_file == True:
-		file_name = file_name.replace("./temp/","")
-		print(file_name)
-		try:
-			repo.create_file(file_name, "Uploaded New Plugin", commit_data, branch="master")
-			print("Committed File")
-			await mone.edit("`Committed on Your Github Repo.`\n\n░░░░░░░░░░░█▀▀░░█░░░░░░\n░░░░░░▄▀▀▀▀░░░░░█▄▄░░░░\n░░░░░░█░█░░░░░░░░░░▐░░░ \n░░░░░░▐▐░░░░░░░░░▄░▐░░░\n░░░░░░█░░░░░░░░▄▀▀░▐░░░ \n░░░░▄▀░░░░░░░░▐░▄▄▀░░░░ \n░░▄▀░░░▐░░░░░█▄▀░▐░░░░░ \n░░█░░░▐░░░░░░░░▄░█░░░░░ \n░░░█▄░░▀▄░░░░▄▀▐░█░░░░░ \n░░░█▐▀▀▀░▀▀▀▀░░▐░█░░░░░ \n░░▐█▐▄░░▀░░░░░░▐░█▄▄░░░ \n░░░▀▀░▄[Stdplugins](https://github.com/prono69/PepeBot/blob/master/stdplugins)░▐▄▄▄▀░░░\n░░░░░░░░░░░░░░░░░░░░░░░ ")
-		except:
-			print("Cannot Create Plugin")
-			await mone.edit("Cannot Upload Plugin")
-	else:
-		return await mone.edit("`Committed Suicide`")
-
-=======
     content_list = []
     access_token = Config.GITHUB_ACCESS_TOKEN
     g = Github(access_token)
@@ -124,7 +91,6 @@ async def git_commit(file_name,mone):
             await mone.edit("Cannot Upload Plugin")
     else:
         return await mone.edit("`Committed Suicide`")
->>>>>>> b387c9f97040811fb15405edd4c526a7a01ee08a
 
     
 #@register(outgoing=True, pattern="^.myrepo$")
