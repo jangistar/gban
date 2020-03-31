@@ -295,8 +295,7 @@ RUN_REACTS = [
 HELLOSTR = [
     "`Hi !`",
     "`‘Ello, gov'nor!`",
-    "`What’s crackin’?`",
-    "`‘Sup, homeslice?`",
+    "What’s crackin’?",
     "`Howdy, howdy ,howdy!`",
     "`Hello, who's there, I'm talking.`",
     "`You know who this is.`",
@@ -310,9 +309,9 @@ HELLOSTR = [
     "`Howdy-doody!`",
     "`Hey there, freshman!`",
     "`I come in peace!`",
+    "`I come for peace!`",
     "`Ahoy, matey!`",
-    "`Hiya!`",
-     "`Oh retarded gey! Well Hello`",
+    "Hi !",
 ]
 
 SHGS = [
