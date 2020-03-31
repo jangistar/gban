@@ -34,9 +34,9 @@ authored = "{author}` authored and `{committer}` committed {elapsed} ago`\n"
 main_repo = "https://github.com/mkaraniya/BotHub.git"
 
 
-@client.onMessage(command="update",
+@client.onMessage(command="botupdate",
                   outgoing=True,
-                  regex="update(?: |$)(reset|add)?$",
+                  regex="botupdate(?: |$)(reset|add)?$",
                   builtin=True)
 async def updater(event: NewMessage.Event) -> None:
     """Pull newest changes from the official repo and update the script/app."""
@@ -71,7 +71,7 @@ async def updater(event: NewMessage.Event) -> None:
     for diff_added in old_commit.diff('FETCH_HEAD').iter_change_type('M'):
         if "requirements.txt" in diff_added.b_path:
             await event.answer("`Updating the pip requirements!`")
-            updated = await update_requirements()
+            updated = await botupdate_requirements()
             if updated == 0:
                 await event.answer("`Successfully updated the requirements.`")
             else:
@@ -137,13 +137,13 @@ async def updater(event: NewMessage.Event) -> None:
 
     toast = await event.answer(
         "`Successfully pulled the new commits. Updating the bot!`",
-        log=("update", changelog.strip()))
+        log=("botupdate", changelog.strip()))
     if not client.logger:
         await event.answer(changelog.strip(),
                            reply_to=toast.id,
                            link_preview=False)
 
-    os.environ['stdborg_update'] = "True"
+    os.environ['stdborg_botupdate'] = "True"
     heroku_api_key = client.config['api_keys'].get('api_key_heroku', False)
     if os.getenv("DYNO", False) and heroku_api_key:
         heroku_conn = heroku3.from_key(heroku_api_key)
@@ -169,14 +169,14 @@ async def updater(event: NewMessage.Event) -> None:
                     return
             # Don't update the telethon environment varaibles
             stdborg_config = client.config['stdborg']
-            app.config().update(dict(stdborg_config))
-            app.config().update({
+            app.config().botupdate(dict(stdborg_config))
+            app.config().botupdate({
                 "stdborg_restarted": f"{event.chat_id}/{event.message.id}",
-                "stdborg_update": "True"
+                "stdborg_botupdate": "True"
             })
             if event.client.disabled_commands:
                 disabled_list = ", ".join(client.disabled_commands.keys())
-                app.config().update(
+                app.config().botupdate(
                     {"stdborg_disabled_commands": disabled_list})
 
             url = f"https://api:{heroku_api_key}@git.heroku.com/{app.name}.git"
@@ -206,7 +206,7 @@ async def updater(event: NewMessage.Event) -> None:
         await restart(event)
 
 
-async def update_requirements():
+async def botupdate_requirements():
     reqs = ' '.join(
         [sys.executable, "-m", "pip", "install", "-r", 'requirements.txt'])
     try:
