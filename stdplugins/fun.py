@@ -34,9 +34,9 @@ PRO_STRINGS = [
 
 ]
 NUBSTR = [
+    "`Only few were Pro and you join the Party`",
     "Only few were Pro and you join the Party",
-    "Only few were Pro and you join the Party",
-    "Only few were Pro and you join the Party",
+    "`Only few were Pro and you join the Party`",
     "Only few were Pro and you join the Party",
 ]
 INSULT_STRINGS = [ 
