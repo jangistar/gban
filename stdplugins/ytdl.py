@@ -1,29 +1,19 @@
-<<<<<<< HEAD
-# Thanks to @Ravana for this plugin
-=======
 
->>>>>>> b387c9f97040811fb15405edd4c526a7a01ee08a
 
 """
 Audio and video downloader using Youtube-dl
 .yta To Download in mp3 format
 .ytv To Download in mp4 format
-<<<<<<< HEAD
-=======
 above credits to @AvinashReddy3108
 .yts command, do a YouTube search from Telegram.
 credits to @Mayur_Karaniya & @AvinashReddy3108
->>>>>>> b387c9f97040811fb15405edd4c526a7a01ee08a
 """
 
 import os
 import time
 import math
 import asyncio
-<<<<<<< HEAD
-=======
 import shutil
->>>>>>> b387c9f97040811fb15405edd4c526a7a01ee08a
 from youtube_dl import YoutubeDL
 from youtube_dl.utils import (DownloadError, ContentTooShortError,
                               ExtractorError, GeoRestrictedError,
@@ -31,9 +21,6 @@ from youtube_dl.utils import (DownloadError, ContentTooShortError,
                               UnavailableVideoError, XAttrMetadataError)
 from asyncio import sleep
 from telethon.tl.types import DocumentAttributeAudio
-<<<<<<< HEAD
-from uniborg.util import admin_cmd
-=======
 from uniborg.util import admin_cmd, progress, humanbytes, time_formatter
 from collections import deque
 from googleapiclient.discovery import build
@@ -47,7 +34,6 @@ import requests
 # global YOUTUBE_API_KEY
 # YOUTUBE_API_KEY = {}
 YOUTUBE_API_KEY = Config.YOUTUBE_API_KEY
->>>>>>> b387c9f97040811fb15405edd4c526a7a01ee08a
 
 async def progress(current, total, event, start, type_of_ps, file_name=None):
     """Generic progress_callback for uploads and downloads."""
@@ -242,8 +228,6 @@ async def download_video(v_url):
         os.remove(f"{ytdl_data['id']}.mp4")
         await v_url.delete()
         
-<<<<<<< HEAD
-=======
 @borg.on(admin_cmd(pattern="yts ?(.*)"))
 async def yts_search(video_q):
     # For .yts command, do a YouTube search from Telegram.
@@ -305,4 +289,3 @@ async def youtube_search(query,
     except KeyError:
         nexttok = "KeyError, try again."
         return (nexttok, videos)
->>>>>>> b387c9f97040811fb15405edd4c526a7a01ee08a
