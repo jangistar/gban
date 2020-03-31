@@ -9,9 +9,14 @@ from telethon.tl.functions.photos import GetUserPhotosRequest
 from telethon.utils import get_input_location
 from telethon.tl.functions.users import GetFullUserRequest
 from telethon.tl.types import MessageEntityMentionName
-
-
 from uniborg.util import admin_cmd
+from platform import python_version, uname
+from sample_config import Config
+
+
+# ================= CONSTANT =================
+DEFAULTUSER = Config.ALIVE_NAME if Config.ALIVE_NAME else uname().node
+# ============================================
 
 TMP_DOWNLOAD_DIRECTORY = "./"
 
@@ -116,11 +121,8 @@ async def fetch_info(replied_user, event):
         common_chat += "They're in all the same places I am... oh. It's me."
         
     
-<<<<<<< HEAD
-    caption = "<b>General Info OF:</b> \n"
-=======
-    caption = "<b>General Info OF this user:</b> \n"
->>>>>>> b387c9f97040811fb15405edd4c526a7a01ee08a
+
+    caption += f"<b>General Info OF {DEFAULTUSER}:</b> \n"
     caption += f"<a href=\"tg://user?id={user_id}\">{first_name}</a> \n"
     caption += f"<b>First Name</b>: {first_name} \n"
     caption += f"<b>ID</b>: <code>{user_id}</code> \n"
