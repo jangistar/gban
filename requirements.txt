@@ -12,9 +12,6 @@ chatterbot
 chatterbot_corpus>=1.2.0
 -r ./requirements-stdborg.txt
 gitpython
-<<<<<<< HEAD
-heroku
-=======
 heroku>=0.1.4
 dnspython
 opencv-contrib-python
@@ -25,4 +22,3 @@ dill>=0.3.1.1
 covid
 heroku3
 bash
->>>>>>> b387c9f97040811fb15405edd4c526a7a01ee08a
