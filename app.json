@@ -18,11 +18,6 @@
       "description": "Get this value from my.telegram.org! Please do not steal",
       "value": ""
     },
-<<<<<<< HEAD
-    "HEROKU_API_KEY": {
-      "description": "Get this value from Heroku Please do not steal",
-      "value": ""
-=======
     "API_TOKEN": {
       "description": "Get this value from http://antiddos.systems! Please do not steal",
       "value": "",
@@ -61,7 +56,6 @@
       "description": "Get this value from Heroku Please do not steal",
       "value": "",
       "required": false
->>>>>>> b387c9f97040811fb15405edd4c526a7a01ee08a
     },
     "HEROKU_APP_NAME": {
       "description": "This is required for commit functionality to work.",
