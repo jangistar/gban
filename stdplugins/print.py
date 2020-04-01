@@ -7,7 +7,7 @@ from telethon import events
 from telethon.tl import functions, types
 from uniborg.util import admin_cmd
 
-deploylink = Config.HEROKU_LINK
+deploylink = Config.HEROKU_GIT_URL
 repolink = Config.REPO_LINK
 packs = Config.PACKS_CONTENT
 
