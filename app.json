@@ -269,6 +269,11 @@
       "value": "https://github.com/mkaraniya/BotHub.git",
       "required": false
     },
+    "HEROKU_LINK": {
+      "description": "This is required for commit functionality to work.",
+      "value": "as same as HEROKU GIT URL",
+      "required": false
+    },
     "OPEN_LOAD_KEY": {
       "description": "I dunno but my repo needs it, u can type 100.",
       "required": false
