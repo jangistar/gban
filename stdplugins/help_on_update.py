@@ -37,8 +37,8 @@ DEFAULTUSER = Config.ALIVE_NAME if Config.ALIVE_NAME else uname().node
 # ============================================
 
 
-@borg.on(admin_cmd(pattern="useit (.*)"))
-#async def _(event):
+
+@borg.on(events.NewMessage(pattern=r"\.useit", outgoing=True))
 async def usit(e):
     await e.edit(
         f"Here's something for {DEFAULTUSER} to use it for help_on_update on **BotHub**:\n"
