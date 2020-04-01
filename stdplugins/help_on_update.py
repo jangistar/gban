@@ -41,7 +41,7 @@ DEFAULTUSER = Config.ALIVE_NAME if Config.ALIVE_NAME else uname().node
 #async def _(event):
 async def usit(e):
     await e.edit(
-        f"Here's something for {DEFAULTUSER} to use it for help_on_update:\n"
+        f"Here's something for {DEFAULTUSER} to use it for help_on_update on **BotHub**:\n"
         "\n[Windows Method](https://telegra.ph/How-to-keep-BotHub-repo-updated-while-keeping-your-changes-through-windows-cmd-method-04-01)"
         "\n[Termux Method](https://telegra.ph/How-to-keep-BotHub-repo-updated-while-keeping-your-changes-through-windows-cmd-method-04-01-2)"
         "\n[Kali Linux Method](https://telegra.ph/How-to-keep-BotHub-repo-updated-while-keeping-your-changes-through-windows-cmd-method-04-01-2)"
