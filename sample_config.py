@@ -165,7 +165,7 @@ class Config(object):
     # define "HEROKU_GIT_URL" | https://git.heroku.com/YOUR_HEROKU_APP_NAME.git
     HEROKU_GIT_URL = os.environ.get("HEROKU_GIT_URL", "YOUR HEROKU GIT URL")
     # define "heroku_link" in conig_vars 
-    HEROKU_LINK = os.environ.get("HEROKU_LINK", None)
+    HEROKU_LINK = os.environ.get("HEROKU_LINK", "YOUR HEROKU GIT URL")
     # define "packs_content" in conig_vars
     PACKS_CONTENT = os.environ.get("PACKS_CONTENT", None)
     #
