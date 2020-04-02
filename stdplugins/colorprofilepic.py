@@ -46,6 +46,7 @@ TELEGRAPH_MEDIA_LINKS = ["https://telegra.ph/file/8e9effb5ba79a94e44f18.jpg",
                          "https://telegra.ph/file/64d69c69f03372d18a5a9.jpg",
                          "https://telegra.ph/file/1b2928c73612cf856c32b.jpg",
                          "https://telegra.ph/file/e07a24aaa229b0c51471b.jpg",
+                         "https://telegra.ph/file/d04a1724c6dd8a957bd0e.jpg",
                          "https://telegra.ph/file/7bbb6813da08d5bccbb56.jpg"
                         ]
 @borg.on(admin_cmd(pattern="cpp ?(.*)"))
