@@ -60,9 +60,9 @@ async def _(event):
             afkb_time = datetime.datetime.now()  # pylint:disable=E0602
         USER_AFKB = f"yes: {reason}"  # pylint:disable=E0602
         if reason:
-            await borg.send_message(event.chat_id, f"**I shall be Going afk!** __because ~ {reason}__")
+            await borg.send_message(event.Config.PRIVATE_GROUP_BOT_API_ID, f"**I shall be Going afk!** __because ~ {reason}__")
         else:
-            await borg.send_message(event.chat_id, f"**I am Going afk!**")
+            await borg.send_message(event.Config.PRIVATE_GROUP_BOT_API_ID, f"**I am Going afk!**")
         await asyncio.sleep(5)
         await event.delete()
         try:
@@ -86,7 +86,7 @@ async def set_not_afkb(event):
     total_afkb_time = str((afkb_end - afkb_start))
     current_message = event.message.message
     if ".afkb" not in current_message and "yes" in USER_AFKB:  # pylint:disable=E0602
-        shite = await borg.send_message(event.chat_id, "__Back alive!__\n**No Longer afk.**\n `Was afk for:``" + total_afkb_time + "`")
+        shite = await borg.send_message(event.Config.PRIVATE_GROUP_BOT_API_ID, "__Back alive!__\n**No Longer afk.**\n `Was afk for:``" + total_afkb_time + "`")
         try:
             await borg.send_message(  # pylint:disable=E0602
                 Config.PRIVATE_GROUP_BOT_API_ID,  # pylint:disable=E0602
@@ -164,6 +164,6 @@ async def on_afkb(event):
             else f"My King 👑 {DEFAULTUSER} 👑 is **afk Since** {total_afkb_time} so wait until He is back.\n\n**THANKS**.  "
         msg = await event.reply(message_to_reply)
         await asyncio.sleep(5)
-        if event.chat_id in last_afk_message:  # pylint:disable=E0602
-            await last_afk_message[event.chat_id].delete()  # pylint:disable=E0602
-        last_afk_message[event.chat_id] = msg  # pylint:disable=E0602
+        if event.chat_id in last_afkb_message:  # pylint:disable=E0602
+            await last_afkb_message[event.chat_id].delete()  # pylint:disable=E0602
+        last_afkb_message[event.chat_id] = msg  # pylint:disable=E0602
