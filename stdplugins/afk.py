@@ -86,7 +86,7 @@ async def set_not_afkb(event):
     total_afkb_time = str((afkb_end - afkb_start))
     current_message = event.message.message
     if ".afkb" not in current_message and "yes" in USER_AFKB:  # pylint:disable=E0602
-        shite = await borg.send_message(event.Config.PRIVATE_GROUP_BOT_API_ID, "__Back alive!__\n**No Longer afk.**\n `Was afk for:``" + total_afkb_time + "`")
+        shite = await borg.send_message(event.Config.PRIVATE_GROUP_BOT_API_ID, "__My Master is Back!__\n**He is No Longer afk.**\n `Was afk for:``" + total_afkb_time + "`")
         try:
             await borg.send_message(  # pylint:disable=E0602
                 Config.PRIVATE_GROUP_BOT_API_ID,  # pylint:disable=E0602
