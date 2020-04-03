@@ -170,7 +170,7 @@ async def _(event):
         ms = (end - start).seconds
         await mone.edit("Uploaded in {} seconds.".format(ms))
     else:
-        await mone.edit("6969: maa chuda bsdk, File Not Found")
+        await mone.edit("File Not Found")
 
 
 def get_video_thumb(file, output=None, width=90):
