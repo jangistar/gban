@@ -114,12 +114,13 @@ async def variable(var):
 
 #@register(outgoing=True, pattern=r"^.usage(?: |$)")
 #@register(outgoing=True, pattern=r"^.usage(?: |$)(.*)")
-@borg.on(admin_cmd(pattern=r"\.usage ?(.*)", outgoing=True)) 
-async def dyno_usage(dyno):
+@borg.on(events.NewMessage(pattern=r"\.usage ?(.*)", outgoing=True))  # pylint:disable=E0602
+async def _(event):
+#async def dyno_usage(dyno):
     """
         Get your account Dyno Usage
     """
-    await dyno.edit("`Processing...`")
+    await event.edit("`Processing...`")
     useragent = ('Mozilla/5.0 (Linux; Android 10; SM-G975F) '
                  'AppleWebKit/537.36 (KHTML, like Gecko) '
                  'Chrome/80.0.3987.149 Mobile Safari/537.36'
@@ -133,7 +134,7 @@ async def dyno_usage(dyno):
     path = "/accounts/" + u_id + "/actions/get-quota"
     r = requests.get(heroku_api + path, headers=headers)
     if r.status_code != 200:
-        return await dyno.edit("`Error: something bad happened`\n\n"
+        return await event.edit("`Error: something bad happened`\n\n"
                                f">.`{r.reason}`\n")
     result = r.json()
     quota = result['account_quota']
@@ -161,7 +162,7 @@ async def dyno_usage(dyno):
 
     await asyncio.sleep(1.5)
 
-    return await dyno.edit("**Dyno Usage**:\n\n"
+    return await event.edit("**Dyno Usage**:\n\n"
                            f" -> `Dyno usage for`  **{HEROKU_APP_NAME}**:\n"
                            f"     •  `{AppHours}`**h**  `{AppMinutes}`**m**  "
                            f"**|**  [`{AppPercentage}`**%**]"
