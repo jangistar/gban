@@ -1,9 +1,16 @@
 """Pins the replied message
-Syntax: .cpin [LOUD]"""
+Syntax: .cpin [LOUD], pin [silent]"""
 from telethon import events
 from telethon.tl import functions, types
 from uniborg.util import admin_cmd
+from platform import python_version, uname
+from sample_config import Config
 
+
+# ================= CONSTANT =================
+BOTLOG = Config.BOTLOG
+BOTLOG_CHATID = Config.PRIVATE_GROUP_BOT_API_ID
+# ================= CONSTANT =================
 
 @borg.on(admin_cmd("cpin ?(.*)"))
 async def _(event):
@@ -27,3 +34,48 @@ async def _(event):
             await event.delete()
     else:
         await event.edit("Reply to a message to pin the message in this Channel.")
+
+        
+@borg.on(admin_cmd("pin ?(.*)"))
+async def pin(msg):
+    """ For .pin command, pins the replied/tagged message on the top the chat. """
+    # Admin or creator check
+    chat = await msg.get_chat()
+    admin = chat.admin_rights
+    creator = chat.creator
+
+    # If not admin and not creator, return
+    if not admin and not creator:
+        await msg.edit(NO_ADMIN)
+        return
+
+    to_pin = msg.reply_to_msg_id
+
+    if not to_pin:
+        await msg.edit("`Reply to a message to pin it.`")
+        return
+
+    options = msg.pattern_match.group(1)
+
+    is_silent = True
+
+    if options.lower() == "loud":
+        is_silent = False
+
+    try:
+        await msg.client(
+            UpdatePinnedMessageRequest(msg.to_id, to_pin, is_silent))
+    except BadRequestError:
+        await msg.edit(NO_PERM)
+        return
+
+    await msg.edit("`Pinned Successfully!`")
+
+    user = await get_user_from_id(msg.from_id, msg)
+
+    if BOTLOG:
+        await msg.client.send_message(
+            BOTLOG_CHATID, "#PIN\n"
+            f"ADMIN: [{user.first_name}](tg://user?id={user.id})\n"
+            f"CHAT: {msg.chat.title}(`{msg.chat_id}`)\n"
+            f"LOUD: {not is_silent}")
