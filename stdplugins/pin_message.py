@@ -1,3 +1,5 @@
+# pin courtsey PAPERPLANE
+
 """Pins the replied message
 Syntax: .cpin [LOUD], pin [silent]"""
 from telethon import events
