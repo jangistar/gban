@@ -105,9 +105,7 @@ async def ungban(un_gbon):
     try:
         await un_gbon.client(
             EditBannedRequest(un_gbon.chat_id, user.id, UNBAN_RIGHTS))
-        await un_gbon.edit("
-Ungbanned Successfully
-")
+        await un_gbon.edit("Ungbanned Successfully")
 
         if BOTLOG:
             await un_gbon.client.send_message(
