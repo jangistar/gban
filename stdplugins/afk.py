@@ -109,7 +109,7 @@ async def set_not_afkb(event):
 
 @borg.on(events.NewMessage(  # pylint:disable=E0602
     incoming=True,
-    func=lambda e: str(e.mentioned or e.is_private)
+    func=lambda e: bool(e.mentioned or e.is_private)
 ))
 async def on_afkb(event):
     if event.fwd_from:
