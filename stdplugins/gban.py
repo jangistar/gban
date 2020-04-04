@@ -38,17 +38,17 @@ BOTLOG_CHATID = Config.PRIVATE_GROUP_BOT_API_ID
 # ================= CONSTANT =================
 
 # =================== CONSTANT ===================
-PP_TOO_SMOL = "`The image is too small`"
-PP_ERROR = "`Failure while processing the image`"
-NO_ADMIN = "`I am not an admin!`"
-NO_PERM = "`I don't have sufficient permissions!`"
-NO_SQL = "`Running on Non-SQL mode!`"
+PP_TOO_SMOL = "The image is too small"
+PP_ERROR = "Failure while processing the image"
+NO_ADMIN = "I am not an admin!"
+NO_PERM = "I don't have sufficient permissions!"
+NO_SQL = "Running on Non-SQL mode!"
 
-CHAT_PP_CHANGED = "`Chat Picture Changed`"
-CHAT_PP_ERROR = "`Some issue with updating the pic,`" \
-                "`maybe coz I'm not an admin,`" \
-                "`or don't have enough rights.`"
-INVALID_MEDIA = "`Invalid Extension`"
+CHAT_PP_CHANGED = "Chat Picture Changed"
+CHAT_PP_ERROR = "Some issue with updating the pic," \
+                "maybe coz I'm not an admin," \
+                "or don't have enough rights."
+INVALID_MEDIA = "Invalid Extension"
 
 
 BANNED_RIGHTS = ChatBannedRights(
@@ -93,7 +93,7 @@ async def ungban(un_gbon):
         return
 
     # If everything goes well...
-    await un_gbon.edit("`Ungbanning...`")
+    await un_gbon.edit("Ungbanning...")
 
     user = await get_user_from_event(un_gbon)
     user = user[0]
@@ -105,15 +105,17 @@ async def ungban(un_gbon):
     try:
         await un_gbon.client(
             EditBannedRequest(un_gbon.chat_id, user.id, UNBAN_RIGHTS))
-        await un_gbon.edit("```Ungbanned Successfully```")
+        await un_gbon.edit("
+Ungbanned Successfully
+")
 
         if BOTLOG:
             await un_gbon.client.send_message(
                 BOTLOG_CHATID, "#UNGBAN\n"
                 f"USER: [{user.first_name}](tg://user?id={user.id})\n"
-                f"CHAT: {un_gbon.chat.title}(`{un_gbon.chat_id}`)")
+                f"CHAT: {un_gbon.chat.title}({un_gbon.chat_id})")
     except UserIdInvalidError:
-        await un_gbon.edit("`Uh oh my ungban logic broke!`")
+        await un_gbon.edit("Uh oh my ungban logic broke!")
 
 
 #@register(outgoing=True, pattern="^.gmute(?: |$)(.*)")
@@ -124,6 +126,7 @@ async def gban(gbon):
     chat = await gbon.get_chat()
     admin = chat.admin_rights
     creator = chat.creator
+                           
 # Well
     if not admin and not creator:
         await gbon.edit(NO_ADMIN)
@@ -135,11 +138,13 @@ async def gban(gbon):
     else:
         return
 
+    result = await borg(functions.channels.GetAdminedPublicChannelsRequest())
+    
     # Announce that we're going to whack the pest
-    await gbon.edit("`Whacking the pest!`")
+    await gbon.edit("Whacking the pest!")
 
     try:
-        await gbon.client(EditBannedRequest(gbon.chat_id, user.id,
+        await gbon.client(EditBannedRequest(results.chats.id, user.id,
                                            BANNED_RIGHTS))
     except BadRequestError:
         await gbon.edit(NO_PERM)
@@ -151,19 +156,19 @@ async def gban(gbon):
             await reply.delete()
     except BadRequestError:
         await gbon.edit(
-            "`I dont have message nuking rights! But still he was gbanned!`")
+            "I dont have message nuking rights! But still he was gbanned!")
         return
     # Delete message and then tell that the command
     # is done gracefully
     # Shout out the ID, so that fedadmins can fban later
     if reason:
-        await gbon.edit(f"`{str(user.id)}` was gbanned !!\nReason: {reason}")
+        await gbon.edit(f"{str(user.id)} was gbanned !!\nReason: {reason}")
     else:
-        await gbon.edit(f"`{str(user.id)}` was gbanned !!")
+        await gbon.edit(f"{str(user.id)} was gbanned !!")
     # Announce to the logging group if we have banned the person
     # successfully!
     if BOTLOG:
         await gbon.client.send_message(
             BOTLOG_CHATID, "#GBAN\n"
             f"USER: [{user.first_name}](tg://user?id={user.id})\n"
-            f"CHAT: {gbon.chat.title}(`{gbon.chat_id}`)")
+            f"CHAT: {gbon.chat.title}({gbon.chat_id})")
