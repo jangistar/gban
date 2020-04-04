@@ -122,19 +122,8 @@ async def gban(gbon):
     """ For .gban command, globally bans the replied/tagged person """
     # Admin or creator check
     chat = await gbon.get_chat()
-    admin = chat.admin_rights
-    creator = chat.creator
-# Well
-    if not admin and not creator:
-        await gbon.edit(NO_ADMIN)
-        return
 
     user = await get_user_from_event(gbon)
-    user = user[0]
-    if user:
-        pass
-    else:
-        return
 
     result = await borg(functions.channels.GetAdminedPublicChannelsRequest())
     
