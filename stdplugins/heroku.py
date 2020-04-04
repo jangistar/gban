@@ -29,6 +29,7 @@ import math
 from uniborg.prettyjson import prettyjson
 from platform import python_version, uname
 from sample_config import Config
+from uniborg.util import admin_cmd
 
 # ================= CONSTANT =================
 Heroku = heroku3.from_key(Config.HEROKU_API_KEY)
