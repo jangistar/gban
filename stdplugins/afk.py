@@ -4,9 +4,11 @@
 """AFK Plugin for @UniBorg
 Syntax: .afkb REASON"""
 import asyncio
+from asyncio import sleep
 import datetime
 import shutil 
 import random, re
+from random import choice, randint
 import time
 from time import gmtime, strftime
 from datetime import timedelta
