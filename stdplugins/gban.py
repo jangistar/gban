@@ -38,6 +38,19 @@ BOTLOG_CHATID = Config.PRIVATE_GROUP_BOT_API_ID
 # ================= CONSTANT =================
 
 # =================== CONSTANT ===================
+PP_TOO_SMOL = "`The image is too small`"
+PP_ERROR = "`Failure while processing the image`"
+NO_ADMIN = "`I am not an admin!`"
+NO_PERM = "`I don't have sufficient permissions!`"
+NO_SQL = "`Running on Non-SQL mode!`"
+
+CHAT_PP_CHANGED = "`Chat Picture Changed`"
+CHAT_PP_ERROR = "`Some issue with updating the pic,`" \
+                "`maybe coz I'm not an admin,`" \
+                "`or don't have enough rights.`"
+INVALID_MEDIA = "`Invalid Extension`"
+
+
 BANNED_RIGHTS = ChatBannedRights(
     until_date=None,
     view_messages=True,
@@ -76,13 +89,13 @@ async def ungban(un_gbon):
 
     # Well
     if not admin and not creator:
-        await ungbon.edit(NO_ADMIN)
+        await un_gbon.edit(NO_ADMIN)
         return
 
     # If everything goes well...
-    await ungbon.edit("`Ungbanning...`")
+    await un_gbon.edit("`Ungbanning...`")
 
-    user = await get_user_from_event(ungbon)
+    user = await get_user_from_event(un_gbon)
     user = user[0]
     if user:
         pass
@@ -90,17 +103,17 @@ async def ungban(un_gbon):
         return
 
     try:
-        await ungbon.client(
-            EditBannedRequest(ungbon.chat_id, user.id, UNBAN_RIGHTS))
-        await ungbon.edit("```Ungbanned Successfully```")
+        await un_gbon.client(
+            EditBannedRequest(un_gbon.chat_id, user.id, UNBAN_RIGHTS))
+        await un_gbon.edit("```Ungbanned Successfully```")
 
         if BOTLOG:
-            await ungbon.client.send_message(
+            await un_gbon.client.send_message(
                 BOTLOG_CHATID, "#UNGBAN\n"
                 f"USER: [{user.first_name}](tg://user?id={user.id})\n"
-                f"CHAT: {ungbon.chat.title}(`{ungbon.chat_id}`)")
+                f"CHAT: {un_gbon.chat.title}(`{un_gbon.chat_id}`)")
     except UserIdInvalidError:
-        await ungbon.edit("`Uh oh my ungban logic broke!`")
+        await un_gbon.edit("`Uh oh my ungban logic broke!`")
 
 
 #@register(outgoing=True, pattern="^.gmute(?: |$)(.*)")
