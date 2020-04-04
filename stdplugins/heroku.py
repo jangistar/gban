@@ -38,7 +38,7 @@ HEROKU_API_KEY = Config.HEROKU_API_KEY
 # ================= CONSTANT =================
 
 #@register(outgoing=True, pattern=r"^.(set|get|del) var(?: |$)(.*)(?: |$)")
-@borg.on(admin_cmd(outgoing=True, pattern=r"^.(set|get|del) var(?: |$)(.*)")
+@borg.on(admin_cmd(pattern=r"^.(set|get|del) var ?(.*)", outgoing=True))
 #@register(outgoing=True, pattern=r"^.(set|get|del) var(?: |$)(.*)")
 async def variable(var):
     """
