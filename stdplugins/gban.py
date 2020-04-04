@@ -129,7 +129,8 @@ async def gban(gbon):
         await gbon.edit(NO_ADMIN)
         return
 
-    user, reason = await get_user_from_event(gbon)
+    user = await get_user_from_event(gbon)
+    user = user[0]
     if user:
         pass
     else:
@@ -158,14 +159,4 @@ async def gban(gbon):
     # Delete message and then tell that the command
     # is done gracefully
     # Shout out the ID, so that fedadmins can fban later
-    if reason:
-        await gbon.edit(f"`{str(user.id)}` was gbanned !!\nReason: {reason}")
-    else:
-        await gbon.edit(f"`{str(user.id)}` was gbanned !!")
-    # Announce to the logging group if we have banned the person
-    # successfully!
-    if BOTLOG:
-        await gbon.client.send_message(
-            BOTLOG_CHATID, "#GBAN\n"
-            f"USER: [{user.first_name}](tg://user?id={user.id})\n"
-            f"CHAT: {gbon.chat.title}(`{gbon.chat_id}`)")
+    await gbon.edit(f"`{str(user.id)}` was gbanned !!")
