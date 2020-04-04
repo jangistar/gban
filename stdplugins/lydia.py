@@ -7,6 +7,7 @@
 Description: A module that Act as a chatbot and chat with a User/other Bot.
 This Module Needs CoffeeHouse API to work. so Join https://telegram.dog/IntellivoidDev and send #activateapi and follow instructions.
 This Module also Needs DB_URI For Storage of Some Data So make sure you have that too.
+Note :- from now on get your Lydia value from `https://coffeehouse.intellivoid.info/dashboard`.
 
 Credits:
 @Hackintosh5 (for inspiring me to write this module)
