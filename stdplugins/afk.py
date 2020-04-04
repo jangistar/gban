@@ -113,7 +113,7 @@ async def set_not_afkb(event):
     global afkb_end
     back_alive = datetime.now()
     afkb_end = back_alive.replace(microsecond=0)
-    total_afkb_time = str(afkb_end - afkb_start)
+    total_afkb_time = (str((afkb_end) - (afkb_start)))
     current_message = event.message.message
     if ".afkb" not in current_message and "yes" in USER_AFKB:  # pylint:disable=E0602
         shite = await borg.send_message(event.chat_id, "__My Master is Back!__\n**He is No Longer afk.**\n `Was afk for:``" + total_afkb_time + "`")
