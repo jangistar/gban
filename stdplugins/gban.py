@@ -152,7 +152,7 @@ async def gban(gbon):
     
     
     ####
-    
+    @borg.on(admin_cmd(pattern="^.users ?(.*)", allow_sudo=True))
     async def get_users(show):
  #   """ For .users command, list all of the users in a chat. """
     info = await show.client.get_entity(show.chat_id)
