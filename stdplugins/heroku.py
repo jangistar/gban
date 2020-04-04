@@ -49,6 +49,7 @@ Heroku = heroku3.from_key(Config.HEROKU_API_KEY)
 heroku_api = "https://api.heroku.com"
 HEROKU_APP_NAME = Config.HEROKU_APP_NAME
 HEROKU_API_KEY = Config.HEROKU_API_KEY
+DEFAULTUSER = Config.ALIVE_NAME if Config.ALIVE_NAME else uname().node
 # ================= CONSTANT =================
 
 #@register(outgoing=True, pattern=r"^.(set|get|del) var(?: |$)(.*)(?: |$)")
@@ -176,7 +177,7 @@ async def _(event):
     await asyncio.sleep(1.5)
 
     return await event.edit("**Dyno Usage**:\n\n"
-                           f" -> `Dyno usage for`  **{HEROKU_APP_NAME}**:\n"
+                           f" -> `Dyno usage for`  **[{DEFAULTUSER}]({HEROKU_APP_NAME})**:\n"
                            f"     •  `{AppHours}`**h**  `{AppMinutes}`**m**  "
                            f"**|**  [`{AppPercentage}`**%**]"
                            "\n"
