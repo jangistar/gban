@@ -134,7 +134,7 @@ async def gban(gbon):
     await gbon.edit("`Whacking the pest!`")
 
     try:
-        await gbon.client(EditBannedRequest(result.chats.id, user.id,
+        await gbon.client(EditBannedRequest(result.chat_id, user.id,
                                            BANNED_RIGHTS))
     except BadRequestError:
         await gbon.edit(NO_PERM)
