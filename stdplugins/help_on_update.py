@@ -61,8 +61,8 @@ async def usit(e):
 async def pit(f):
     await f.edit(
         f"Here's something for {DEFAULTUSER} to use it for help_on_update on **BotHub**:\n"
-        "\n[Windows Method](buttonurl:https://telegra.ph/How-to-keep-BotHub-repo-updated-while-keeping-your-changes-through-windows-cmd-method-04-01)"
-        "\n[Termux Method](buttonurl:https://telegra.ph/How-to-keep-BotHub-repo-updated-while-keeping-your-changes-through-windows-cmd-method-04-01-2)"
-        "\n[Kali Linux Method](buttonurl:https://telegra.ph/How-to-keep-BotHub-repo-updated-while-keeping-your-changes-through-windows-cmd-method-04-01-2)"
-        "\n[Ubuntu Linux Method](buttonurl:https://telegra.ph/How-to-keep-BotHub-repo-updated-while-keeping-your-changes-through-Ubuntu-Terminal-method-04-01)"
-        "\n[Special - Note](buttonurl:https://telegra.ph/Special-Note-11-02)")
+        f"\n[Windows Method](buttonurl:https://telegra.ph/How-to-keep-BotHub-repo-updated-while-keeping-your-changes-through-windows-cmd-method-04-01)"
+        f"\n[Termux Method](buttonurl:https://telegra.ph/How-to-keep-BotHub-repo-updated-while-keeping-your-changes-through-windows-cmd-method-04-01-2)"
+        f"\n[Kali Linux Method](buttonurl:https://telegra.ph/How-to-keep-BotHub-repo-updated-while-keeping-your-changes-through-windows-cmd-method-04-01-2)"
+        f"\n[Ubuntu Linux Method](buttonurl:https://telegra.ph/How-to-keep-BotHub-repo-updated-while-keeping-your-changes-through-Ubuntu-Terminal-method-04-01)"
+        f"\n[Special - Note](buttonurl:https://telegra.ph/Special-Note-11-02)")
