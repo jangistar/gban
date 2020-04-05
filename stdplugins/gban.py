@@ -134,7 +134,7 @@ async def gban(gbon):
 
     if gbon.reply_to_msg_id:
         reply_message = await gbon.get_reply_message()
-        replied_user = await event.client(GetFullUserRequest(reply_message.from_id))
+        replied_user = await gbon.client(GetFullUserRequest(reply_message.from_id))
         user = replied_user.user
         
 
