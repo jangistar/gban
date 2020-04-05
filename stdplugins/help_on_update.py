@@ -57,9 +57,10 @@ async def usit(e):
     
 @borg.on(events.NewMessage(pattern=r"\.puseit", outgoing=True))
 async def pusit(f):
-    await f.edit(
-        f"Here's something for {DEFAULTUSER} to use it for help_on_update on **BotHub**:\n"
- buttons=[
+     result = builder.article(
+   # await f.edit(
+        text="""Here's something for {DEFAULTUSER} to use it for help_on_update on **BotHub**""",
+            buttons=[
                     [custom.Button.url("👤Contact Creator👤", "https://telegram.dog/Three_Cube_TeKnoways"), custom.Button.url(
                         "🎞My YouTube Channel🎞", "https://www.youtube.com/channel/UCeKQxQK7XZ3jGi3541uWATg?sub_confirmation=1")],
                     [custom.Button.url("🎛Source Code🎛", "https://github.com/mkaraniya/BotHub"), custom.Button.url(
@@ -67,8 +68,9 @@ async def pusit(f):
                     [custom.Button.url("🔰Update Fork🔰", "tg://need_update_for_some_feature"), custom.Button.url(
                         "✳️Fork Boost✳️", "tg://some_unsupported_feature"), custom.Button.url(
                         "♻️Refresh Heroku♻️", "tg://some_unsupported_feature")]
+               
                 ],
                 link_preview=True
             )
-
+        await event.answer([result] if result else None)
   
