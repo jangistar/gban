@@ -57,9 +57,9 @@ async def usit(e):
     
     
     
-@borg.on(events.NewMessage(pattern=r"\.pushit", outgoing=True))
-async def pushit(e):
-    await e.edit(
+@borg.on(events.NewMessage(pattern=r"\.pit", outgoing=True))
+async def pit(f):
+    await f.edit(
         f"Here's something for {DEFAULTUSER} to use it for help_on_update on **BotHub**:\n"
         "\n[Windows Method](buttonurl:https://telegra.ph/How-to-keep-BotHub-repo-updated-while-keeping-your-changes-through-windows-cmd-method-04-01)"
         "\n[Termux Method](buttonurl:https://telegra.ph/How-to-keep-BotHub-repo-updated-while-keeping-your-changes-through-windows-cmd-method-04-01-2)"
