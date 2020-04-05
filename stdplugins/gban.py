@@ -20,6 +20,8 @@ from telethon.tl.types import (PeerChannel, ChannelParticipantsAdmins,
                                MessageEntityMentionName, MessageMediaPhoto,
                                ChannelParticipantsBots)
 
+from telethon.tl.functions.users import GetFullUserRequest
+
 #from userbot import BOTLOG, BOTLOG_CHATID, CMD_HELP, bot
 #from userbot.events import register
 
@@ -132,14 +134,16 @@ async def gban(gbon):
 
     if gbon.reply_to_msg_id:
         reply_message = await gbon.get_reply_message()
-        idd = reply_message.from_id
+        replied_user = await event.client(GetFullUserRequest(reply_message.from_id))
+        user = replied_user.user
+        
 
     result = await borg(functions.channels.GetAdminedPublicChannelsRequest())
     for channel_obj in result.chats:
         chat_id = channel_obj.id
 
     try:
-        await gbon.client(EditBannedRequest(chat_id, idd,
+        await gbon.client(EditBannedRequest(chat_id, user.id,
                                            BANNED_RIGHTS))
     except BadRequestError:
         await gbon.edit(NO_PERM)
@@ -148,7 +152,7 @@ async def gban(gbon):
     try:
         reply = await gbon.get_reply_message()
         if reply:
-            await reply.delete()
+            await reply.delete()yy
     except BadRequestError:
         await gbon.edit(
             "`I dont have message nuking rights! But still he was gbanned!`")
