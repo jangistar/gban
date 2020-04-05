@@ -58,7 +58,7 @@ async def usit(e):
 @borg.on(events.NewMessage(pattern=r"\.puseit", outgoing=True))
 async def pusit(f):
      result = builder.article(
-   # await f.edit(
+    await f.edit(
         text="""Here's something for {DEFAULTUSER} to use it for help_on_update on **BotHub**""",
             buttons=[
                     [custom.Button.url("👤Contact Creator👤", "https://telegram.dog/Three_Cube_TeKnoways"), custom.Button.url(
@@ -72,5 +72,5 @@ async def pusit(f):
                 ],
                 link_preview=True
             )
-        await event.answer([result] if result else None)
+        await f.answer([result] if result else None)
   
