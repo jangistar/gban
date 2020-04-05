@@ -203,11 +203,11 @@ async def get_user_from_id(user, event):
         return None
 
     return user_obj
-
+"""
 
 @borg.on(events.NewMessage())     
 async def muter(moot):
- """Used for deleting the messages of muted people """
+ ""Used for deleting the messages of muted people ""
     
     try:
         from sql_helpers.spam_mute_sql import is_muted
@@ -236,3 +236,4 @@ async def muter(moot):
         if i.sender == str(moot.sender_id):
             await moot.delete()
 
+"""
