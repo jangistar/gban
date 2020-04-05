@@ -70,5 +70,4 @@ async def pusit(f):
                         "♻️Refresh Heroku♻️", "tg://some_unsupported_feature")]
                
                 ],
-                link_preview=True
-            )
+                link_preview=True))
