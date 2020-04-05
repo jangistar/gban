@@ -216,41 +216,41 @@ async def _(event):
 async def _(event):
     """ For .gban command, globally mutes the replied/tagged person """
     # Admin or creator check
-    chat = await gspdr.get_chat()
+    chat = await event.get_chat()
     admin = chat.admin_rights
     creator = chat.creator
 
     # If not admin and not creator, return
     if not admin and not creator:
-        await gspdr.edit(NO_ADMIN)
+        await event.edit(NO_ADMIN)
         return
 
     # Check if the function running under SQL mode
     try:
         from sql_helpers.global_bans_sq import gban_user
     except AttributeError:
-        await gspdr.edit(NO_SQL)
+        await event.edit(NO_SQL)
         return
 
-    user, reason = await get_user_from_event(gspdr)
+    user, reason = await get_user_from_event(event)
     if user:
         pass
     else:
         return
 
     # If pass, inform and start gmuting
-    await gspdr.edit("`Grabs a huge, sticky duct tape!`")
+    await event.edit("`Grabs a huge, sticky duct tape!`")
     if gban(user.id) is False:
-        await gspdr.edit(
+        await event.edit(
             '`Error! User probably already gbaned.\nRe-rolls the tape.`')
     else:
         if reason:
-            await gspdr.edit(f"`Globally taped!`Reason: {reason}")
+            await event.edit(f"`Globally taped!`Reason: {reason}")
         else:
-            await gspdr.edit("`Globally taped!`")
+            await event.edit("`Globally taped!`")
 
         if BOTLOG:
-            await gspdr.client.send_message(
+            await event.client.send_message(
                 BOTLOG_CHATID, "#GBAN\n"
                 f"USER: [{user.first_name}](tg://user?id={user.id})\n"
-                f"CHAT: {gspdr.chat.title}(`{gspdr.chat_id}`)")
+                f"CHAT: {event.chat.title}(`{event.chat_id}`)")
