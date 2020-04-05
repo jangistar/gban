@@ -138,16 +138,15 @@ async def get_user_from_id(user, event):
 @borg.on(events.NewMessage(incoming=True))
 async def on_new_message(event):
 #async def muter(moot):
-chat_id = event.chat_id
-user_id = event.sender_id
+
     """ Used for deleting the messages of muted people """
     try:
         from sql_helpers.locks_sql import init_locks
         from sql_helpers.global_bans_sql import gban_user
     except AttributeError:
         return
-    locked = init_locks(chat_id, reset=False)
-    gbaned = gban_user(user_id, name, reason=None)
+    locked = init_locks(event.chat_id, reset=False)
+    gbaned = gban_user(event.sender_id, name, reason=None)
     rights = ChatBannedRights(
         until_date=None,
         send_messages=True,
@@ -160,12 +159,12 @@ user_id = event.sender_id
     )
     if locked:
         for i in locked:
-            if str(i.sender) == str(event.user_id):
+            if str(i.sender) == str(event.sender_id):
                 await event.delete()
                 await event.client(
-                    EditBannedRequest(event.chat_id, event.user_id, rights))
+                    EditBannedRequest(event.chat_id, event.sender_id, rights))
     for i in gbaned:
-        if i.sender == str(event.user_id):
+        if i.sender == str(event.sender_id):
             await event.ban()
 
 
