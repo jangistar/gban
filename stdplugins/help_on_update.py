@@ -58,8 +58,7 @@ async def usit(e):
 @borg.on(events.NewMessage(pattern=r"\.puseit", outgoing=True))
 async def pusit(f):
       builder = event.builder
-        query = event.text
-     result = builder.article(
+      result = builder.article(
     await f.edit(
         text="""Here's something for {DEFAULTUSER} to use it for help_on_update on **BotHub**""",
             buttons=[
