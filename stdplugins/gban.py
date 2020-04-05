@@ -203,12 +203,12 @@ async def get_user_from_id(user, event):
     return user_obj
 
 
-@register(incoming=True)
+@borg.on(incoming=True)
 async def muter(moot):
     """ Used for deleting the messages of muted people """
     try:
-        from userbot.modules.sql_helper.spam_mute_sql import is_muted
-        from userbot.modules.sql_helper.gmute_sql import is_gmuted
+        from sql_helpers.spam_mute_sql import is_muted
+        from sql_helpers.gmute_sql import is_gmuted
     except AttributeError:
         return
     muted = is_muted(moot.chat_id)
