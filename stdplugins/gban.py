@@ -1,6 +1,7 @@
 """.gban , .ungban"""
 
 from asyncio import sleep
+import requests
 from os import remove
 from telethon import events, errors, functions, types
 from telethon.tl import functions, types
