@@ -203,7 +203,7 @@ async def get_user_from_id(user, event):
     return user_obj
 
 
-@borg.on(incoming=True)
+@borg(incoming=True)
 async def muter(moot):
     """ Used for deleting the messages of muted people """
     try:
