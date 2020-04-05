@@ -143,7 +143,7 @@ async def on_new_message(event):
     except AttributeError:
         return
     locked = init_locks(event.chat_id)
-    gbaned = gban_user(event.sender_id)
+    gbaned = gban_user(name, event.sender_id)
     rights = ChatBannedRights(
         until_date=None,
         send_messages=True,
