@@ -124,26 +124,22 @@ async def ungban(un_gbon):
 @borg.on(admin_cmd(pattern="gban ?(.*)", allow_sudo=True))
 async def gban(gbon):
     """ For .gban command, globally bans the replied/tagged person """
-    # Admin or creator check
+
     chat = await gbon.get_chat()
-    admin = chat.admin_rights
-    creator = chat.creator
-# Well
-    if not admin and not creator:
-        await gbon.edit(NO_ADMIN)
+
+    if gbon.fwd_from:
         return
 
-    user, reason = await get_user_from_event(gbon)
-    if user:
-        pass
-    else:
-        return
+    if gbon.reply_to_msg_id:
+        reply_message = await gbon.get_reply_message()
+        idd = reply_message.from_id
 
-    # Announce that we're going to whack the pest
-    await gbon.edit("`Whacking the pest!`")
+    result = await borg(functions.channels.GetAdminedPublicChannelsRequest())
+    for channel_obj in result.chats:
+        chat_id = channel_obj.id
 
     try:
-        await gbon.client(EditBannedRequest(gbon.chat_id, user.id,
+        await gbon.client(EditBannedRequest(chat_id, user.id,
                                            BANNED_RIGHTS))
     except BadRequestError:
         await gbon.edit(NO_PERM)
@@ -157,22 +153,8 @@ async def gban(gbon):
         await gbon.edit(
             "`I dont have message nuking rights! But still he was gbanned!`")
         return
-    # Delete message and then tell that the command
-    # is done gracefully
-    # Shout out the ID, so that fedadmins can fban later
-    if reason:
-        await gbon.edit(f"`{str(user.id)}` was gbanned !!\nReason: {reason}")
-    else:
-        await gbon.edit(f"`{str(user.id)}` was gbanned !!")
-    # Announce to the logging group if we have banned the person
-    # successfully!
-    if BOTLOG:
-        await gbon.client.send_message(
-            BOTLOG_CHATID, "#GBAN\n"
-            f"USER: [{user.first_name}](tg://user?id={user.id})\n"
-            f"CHAT: {gbon.chat.title}(`{gbon.chat_id}`)")    
-    ####
-  
+        await gbon.edit("done") 
+ 
 async def get_user_from_event(event):
     """ Get the user from argument or replied message. """
     args = event.pattern_match.group(1).split(' ', 1)
