@@ -82,9 +82,10 @@ MUTE_RIGHTS = ChatBannedRights(until_date=None, send_messages=True)
 UNMUTE_RIGHTS = ChatBannedRights(until_date=None, send_messages=False)
 # ================================================
 
+"""
 @borg.on(admin_cmd(pattern="ungban ?(.*)", allow_sudo=True))
 async def ungban(un_gbon):
-   # """ For .ungban command, Globaly ungbans the target in the userbot """
+   # "" For .ungban command, Globaly ungbans the target in the userbot ""
     # Admin or creator check
     chat = await un_gbon.get_chat()
     admin = chat.admin_rights
@@ -122,7 +123,7 @@ async def ungban(un_gbon):
 #@register(outgoing=True, pattern="^.gmute(?: |$)(.*)")
 @borg.on(admin_cmd(pattern="gban ?(.*)", allow_sudo=True))
 async def gban(gbon):
- #   """ For .gban command, globally bans the replied/tagged person """
+ #   "" For .gban command, globally bans the replied/tagged person ""
     # Admin or creator check
     chat = await gbon.get_chat()
 
@@ -157,7 +158,7 @@ async def gban(gbon):
     ####
   
 async def get_user_from_event(event):
-    """ Get the user from argument or replied message. """
+    "" Get the user from argument or replied message. ""
     args = event.pattern_match.group(1).split(' ', 1)
     extra = None
     if event.reply_to_msg_id and not len(args) == 2:
@@ -208,7 +209,7 @@ async def get_user_from_id(user, event):
 
 @borg.on(events.NewMessage())     
 async def muter(moot):
-    """ Used for deleting the messages of muted people """
+   ""Used for deleting the messages of muted people ""
     try:
         from sql_helpers.spam_mute_sql import is_muted
         from sql_helpers.gmute_sql import is_gmuted
@@ -236,3 +237,4 @@ async def muter(moot):
         if i.sender == str(moot.sender_id):
             await moot.delete()
 
+"""
