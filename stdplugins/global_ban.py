@@ -83,8 +83,7 @@ MUTE_RIGHTS = ChatBannedRights(until_date=None, send_messages=True)
 
 UNMUTE_RIGHTS = ChatBannedRights(until_date=None, send_messages=False)
 
-chat_id = event.chat_id
-user_id = event.sender_id
+
 # ================================================
 
 async def get_user_from_event(event):
@@ -139,6 +138,8 @@ async def get_user_from_id(user, event):
 @borg.on(events.NewMessage(incoming=True))
 async def on_new_message(event):
 #async def muter(moot):
+chat_id = event.chat_id
+user_id = event.sender_id
     """ Used for deleting the messages of muted people """
     try:
         from sql_helpers.locks_sql import init_locks
