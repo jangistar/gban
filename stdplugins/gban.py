@@ -85,23 +85,25 @@ UNMUTE_RIGHTS = ChatBannedRights(until_date=None, send_messages=False)
 # ================================================
 
 
-@borg.on(admin_cmd(pattern="ungban ?(.*)", allow_sudo=True))
-async def ungban(un_gbon):
+#@borg.on(admin_cmd(pattern="ungban ?(.*)", allow_sudo=True))
+#async def ungban(event):
+@borg.on(events.NewMessage(pattern=r"\.ungban", outgoing=True))
+async def _(event):
     """ For .ungban command, Globaly ungbans the target in the userbot """
     # Admin or creator check
-    chat = await un_gbon.get_chat()
+    chat = await event.get_chat()
     admin = chat.admin_rights
     creator = chat.creator
 
     # Well
     if not admin and not creator:
-        await un_gbon.edit(NO_ADMIN)
+        await event.edit(NO_ADMIN)
         return
 
     # If everything goes well...
-    await un_gbon.edit("`Ungbanning...`")
+    await event.edit("`Ungbanning...`")
 
-    user = await get_user_from_event(un_gbon)
+    user = await get_user_from_event(event)
     user = user[0]
     if user:
         pass
@@ -109,32 +111,35 @@ async def ungban(un_gbon):
         return
 
     try:
-        await un_gbon.client(
-            EditBannedRequest(un_gbon.chat_id, user.id, UNBAN_RIGHTS))
-        await un_gbon.edit("```Ungbanned Successfully```")
+        await event.client(
+            EditBannedRequest(event.chat_id, user.id, UNBAN_RIGHTS))
+        await event.edit("```Ungbanned Successfully```")
 
         if BOTLOG:
-            await un_gbon.client.send_message(
+            await event.client.send_message(
                 BOTLOG_CHATID, "#UNGBAN\n"
                 f"USER: [{user.first_name}](tg://user?id={user.id})\n"
-                f"CHAT: {un_gbon.chat.title}(`{un_gbon.chat_id}`)")
+                f"CHAT: {event.chat.title}(`{event.chat_id}`)")
     except UserIdInvalidError:
-        await un_gbon.edit("`Uh oh my ungban logic broke!`")
+        await event.edit("`Uh oh my ungban logic broke!`")
 
 
 #@register(outgoing=True, pattern="^.gmute(?: |$)(.*)")
-@borg.on(admin_cmd(pattern="gban ?(.*)", allow_sudo=True))
-async def gban(gbon):
+#async def gban(event):
+@borg.on(events.NewMessage(pattern=r"\.gban", outgoing=True))
+async def _(event):
+
+
     """ For .gban command, globally bans the replied/tagged person """
 
-    chat = await gbon.get_chat()
+    chat = await event.get_chat()
 
-    if gbon.fwd_from:
+    if event.fwd_from:
         return
 
-    if gbon.reply_to_msg_id:
-        reply_message = await gbon.get_reply_message()
-        replied_user = await gbon.client(GetFullUserRequest(reply_message.from_id))
+    if event.reply_to_msg_id:
+        reply_message = await event.get_reply_message()
+        replied_user = await event.client(GetFullUserRequest(reply_message.from_id))
         user = replied_user.user
         
 
@@ -143,21 +148,21 @@ async def gban(gbon):
         chat_id = channel_obj.id
 
     try:
-        await gbon.client(EditBannedRequest(chat_id, user.id,
+        await event.client(EditBannedRequest(chat_id, user.id,
                                            BANNED_RIGHTS))
     except BadRequestError:
-        await gbon.edit(NO_PERM)
+        await event.edit(NO_PERM)
         return
     # Helps ban group join spammers more easily
     try:
-        reply = await gbon.get_reply_message()
+        reply = await event.get_reply_message()
         if reply:
             await reply.delete()
     except BadRequestError:
-        await gbon.edit(
+        await event.edit(
             "`I dont have message nuking rights! But still he was gbanned!`")
         return
-        await gbon.edit("done") 
+        await event.edit("done") 
  
 async def get_user_from_event(event):
     """ Get the user from argument or replied message. """
