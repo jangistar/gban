@@ -2,7 +2,7 @@ import threading
 
 from sqlalchemy import Column, UnicodeText, Integer, String, Boolean
 
-from sql_helppers import BASE, SESSION
+from sql_helpers import BASE, SESSION
 
 
 class GloballyBannedUsers(BASE):
