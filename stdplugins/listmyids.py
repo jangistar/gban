@@ -2,7 +2,7 @@
 # For @UniBorg
 # (c) Shrimadhav U K
 
-cmd is -listmyusernames
+cmd is -listmychatids
 """
 
 from telethon import events, functions, types
