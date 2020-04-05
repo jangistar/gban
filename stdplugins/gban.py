@@ -152,7 +152,7 @@ async def gban(gbon):
     try:
         reply = await gbon.get_reply_message()
         if reply:
-            await reply.delete()yy
+            await reply.delete()
     except BadRequestError:
         await gbon.edit(
             "`I dont have message nuking rights! But still he was gbanned!`")
