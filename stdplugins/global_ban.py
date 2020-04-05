@@ -162,7 +162,7 @@ async def on_new_message(event):
                     EditBannedRequest(event.chat_id, event.sender_id, rights))
     for i in gbaned:
         if i.sender == str(event.sender_id):
-            await event.kick()
+            await event.ban()
 
 
 #@register(outgoing=True, pattern="^.ungmute(?: |$)(.*)")
