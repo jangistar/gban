@@ -82,10 +82,10 @@ MUTE_RIGHTS = ChatBannedRights(until_date=None, send_messages=True)
 UNMUTE_RIGHTS = ChatBannedRights(until_date=None, send_messages=False)
 # ================================================
 
-"""
+
 @borg.on(admin_cmd(pattern="ungban ?(.*)", allow_sudo=True))
 async def ungban(un_gbon):
-   # "" For .ungban command, Globaly ungbans the target in the userbot ""
+    """ For .ungban command, Globaly ungbans the target in the userbot """
     # Admin or creator check
     chat = await un_gbon.get_chat()
     admin = chat.admin_rights
@@ -123,19 +123,27 @@ async def ungban(un_gbon):
 #@register(outgoing=True, pattern="^.gmute(?: |$)(.*)")
 @borg.on(admin_cmd(pattern="gban ?(.*)", allow_sudo=True))
 async def gban(gbon):
- #   "" For .gban command, globally bans the replied/tagged person ""
+    """ For .gban command, globally bans the replied/tagged person """
     # Admin or creator check
     chat = await gbon.get_chat()
+    admin = chat.admin_rights
+    creator = chat.creator
+# Well
+    if not admin and not creator:
+        await gbon.edit(NO_ADMIN)
+        return
 
-    user = await get_user_from_event(gbon)
+    user, reason = await get_user_from_event(gbon)
+    if user:
+        pass
+    else:
+        return
 
-    result = await borg(functions.channels.GetAdminedPublicChannelsRequest())
-    
     # Announce that we're going to whack the pest
     await gbon.edit("`Whacking the pest!`")
 
     try:
-        await gbon.client(EditBannedRequest(result.chat_id, user.id,
+        await gbon.client(EditBannedRequest(gbon.chat_id, user.id,
                                            BANNED_RIGHTS))
     except BadRequestError:
         await gbon.edit(NO_PERM)
@@ -152,9 +160,17 @@ async def gban(gbon):
     # Delete message and then tell that the command
     # is done gracefully
     # Shout out the ID, so that fedadmins can fban later
-    await gbon.edit(f"`{str(user.id)}` was gbanned !!")
-    
-    
+    if reason:
+        await gbon.edit(f"`{str(user.id)}` was gbanned !!\nReason: {reason}")
+    else:
+        await gbon.edit(f"`{str(user.id)}` was gbanned !!")
+    # Announce to the logging group if we have banned the person
+    # successfully!
+    if BOTLOG:
+        await gbon.client.send_message(
+            BOTLOG_CHATID, "#GBAN\n"
+            f"USER: [{user.first_name}](tg://user?id={user.id})\n"
+            f"CHAT: {gbon.chat.title}(`{gbon.chat_id}`)")    
     ####
   
 async def get_user_from_event(event):
@@ -237,4 +253,3 @@ async def muter(moot):
         if i.sender == str(moot.sender_id):
             await moot.delete()
 
-"""
