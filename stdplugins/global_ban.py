@@ -142,8 +142,8 @@ async def on_new_message(event):
         from sql_helpers.global_bans_sql import gban_user
     except AttributeError:
         return
-    locked = init_locks(event.chat_id)
-    gbaned = gban_user(name, event.sender_id)
+    locked = init_locks(chat_id, reset=False, event.chat_id)
+    gbaned = gban_user(user_id, name, reason=None event.sender_id)
     rights = ChatBannedRights(
         until_date=None,
         send_messages=True,
