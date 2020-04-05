@@ -82,6 +82,9 @@ UNBAN_RIGHTS = ChatBannedRights(
 MUTE_RIGHTS = ChatBannedRights(until_date=None, send_messages=True)
 
 UNMUTE_RIGHTS = ChatBannedRights(until_date=None, send_messages=False)
+
+chat_id = event.chat_id
+user_id = event.sender_id
 # ================================================
 
 async def get_user_from_event(event):
@@ -156,12 +159,12 @@ async def on_new_message(event):
     )
     if locked:
         for i in locked:
-            if str(i.sender) == str(event.sender_id):
+            if str(i.sender) == str(event.user_id):
                 await event.delete()
                 await event.client(
-                    EditBannedRequest(event.chat_id, event.sender_id, rights))
+                    EditBannedRequest(event.chat_id, event.user_id, rights))
     for i in gbaned:
-        if i.sender == str(event.sender_id):
+        if i.sender == str(event.user_id):
             await event.ban()
 
 
