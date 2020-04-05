@@ -72,5 +72,3 @@ async def pusit(f):
                 ],
                 link_preview=True
             )
-        
-  
