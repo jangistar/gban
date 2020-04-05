@@ -139,7 +139,7 @@ async def gban(gbon):
         chat_id = channel_obj.id
 
     try:
-        await gbon.client(EditBannedRequest(chat_id, user.id,
+        await gbon.client(EditBannedRequest(chat_id, idd,
                                            BANNED_RIGHTS))
     except BadRequestError:
         await gbon.edit(NO_PERM)
