@@ -174,7 +174,7 @@ async def gban(gbon):
     ####
   
 async def get_user_from_event(event):
-    "" Get the user from argument or replied message. ""
+    """ Get the user from argument or replied message. """
     args = event.pattern_match.group(1).split(' ', 1)
     extra = None
     if event.reply_to_msg_id and not len(args) == 2:
@@ -225,7 +225,7 @@ async def get_user_from_id(user, event):
 
 @borg.on(events.NewMessage())     
 async def muter(moot):
-   ""Used for deleting the messages of muted people ""
+ """Used for deleting the messages of muted people """
     try:
         from sql_helpers.spam_mute_sql import is_muted
         from sql_helpers.gmute_sql import is_gmuted
