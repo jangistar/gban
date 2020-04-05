@@ -72,5 +72,5 @@ async def pusit(f):
                 ],
                 link_preview=True
             )
-        await f.answer([result] if result else None)
+        
   
