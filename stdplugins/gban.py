@@ -2,7 +2,7 @@
 
 from asyncio import sleep
 from os import remove
-from telethon import events
+from telethon import events, errors, functions, types
 from telethon.tl import functions, types
 from platform import python_version, uname
 from telethon.errors import (BadRequestError, ChatAdminRequiredError,
@@ -30,6 +30,8 @@ from telethon.tl import functions, types
 from uniborg.util import admin_cmd
 from platform import python_version, uname
 from sample_config import Config
+import io
+import re
 
 
 # ================= CONSTANT =================
