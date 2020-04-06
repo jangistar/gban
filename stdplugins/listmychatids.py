@@ -3,6 +3,7 @@
 # (c) Shrimadhav U K
 
 cmd is -listmychatids
+do this in your private group for security purpose.
 """
 
 from telethon import events, functions, types
