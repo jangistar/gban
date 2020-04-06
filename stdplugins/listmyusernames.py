@@ -3,6 +3,7 @@
 # (c) Shrimadhav U K
 
 cmd is -listmyusernames
+do this in your private group for security purpose.
 """
 
 from telethon import events, functions, types
