@@ -71,6 +71,8 @@ HEROKU_API_KEY = Config.HEROKU_API_KEY
 HEROKU_APP_NAME = Config.HEROKU_APP_NAME
 #heroku memes
 HEROKU_MEMEZ = Config.HEROKU_MEMEZ
+# getting you git repo name is also needed
+GIT_REPO_NAME = Config.GIT_REPO_NAME
 # ===============================Basic Constants=============================
 
 requirements_path = path.join(
@@ -121,8 +123,9 @@ async def upstream(ups):
     except InvalidGitRepositoryError as error:
         if conf != "now":
             await ups.edit(
-                f"`Unfortunately, the directory {error} does not seem to be a git repository.\
-            \nBut we can fix that by force updating the userbot using .updateme now.`"
+                f"**Unfortunately, the directory {error} does not seem to be a git repository.\
+                \nOr Maybe it just needs a sync verification with [github repo]{GIT_REPO_NAME}\
+            \nBut we can fix that by force updating the userbot using** `.updateme now.`"
             )
             return
         repo = Repo.init()
