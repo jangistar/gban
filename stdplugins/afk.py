@@ -61,7 +61,7 @@ afkb_time = None
 last_afkb_message = {}
 afkb_start = {}
 
-AFKSK = (str(choice(AFKSTR)))
+AFKSK = str(choice(AFKSTR))
 
 @borg.on(events.NewMessage(pattern=r"\.afkb ?(.*)", outgoing=True))  # pylint:disable=E0602
 async def _(event):
