@@ -11,7 +11,6 @@ from uniborg.util import admin_cmd
 async def _(event):
     if event.fwd_from:
         return
-    await event.delete()
     mentions = "@SAB"
     chat = await event.get_input_chat()
     async for x in borg.iter_participants(chat, 100):
