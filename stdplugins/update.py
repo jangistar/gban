@@ -124,7 +124,7 @@ async def upstream(ups):
         if conf != "now":
             await ups.edit(
                 f"**Unfortunately, the directory {error} does not seem to be a git repository.\
-                \nOr Maybe it just needs a sync verification with [github repo]{GIT_REPO_NAME}\
+                \nOr Maybe it just needs a sync verification with [github repo]({GIT_REPO_NAME})\
             \nBut we can fix that by force updating the userbot using** `.updateme now.`"
             )
             return
