@@ -29,6 +29,7 @@ from sample_config import Config
 # ================= CONSTANT =================
 BOTLOG = Config.BOTLOG
 BOTLOG_CHATID = Config.PRIVATE_GROUP_BOT_API_ID
+NO_ADMIN = "`I am not an admin!`"
 # ================= CONSTANT =================
 
 @borg.on(admin_cmd("cpin ?(.*)"))
