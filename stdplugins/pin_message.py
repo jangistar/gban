@@ -1,7 +1,7 @@
 # pin courtsey PAPERPLANE
 
 """Pins the replied message
-Syntax: .cpin [LOUD], pin [silent]"""
+Syntax: .cpin [LOUD], Pin [silent]"""
 from telethon import events
 from asyncio import sleep
 from os import remove
