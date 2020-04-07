@@ -86,7 +86,7 @@ async def pin(msg):
         await msg.client(
             UpdatePinnedMessageRequest(msg.to_id, to_pin, is_silent))
     except BadRequestError:
-        await msg.edit(NO_PERM)
+        await msg.edit("`I don't have enough permissions!`")
         return
 
     await msg.edit("`Pinned Successfully!`")
