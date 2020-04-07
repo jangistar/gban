@@ -56,9 +56,9 @@ async def _(event):
         await event.edit("Reply to a message to pin the message in this Channel.")
 
         
-@borg.on(admin_cmd("pin ?(.*)"))
+@borg.on(admin_cmd("Pin ?(.*)"))
 async def pin(msg):
-    """ For .pin command, pins the replied/tagged message on the top the chat. """
+    """ For .Pin command, pins the replied/tagged message on the top the chat. """
     # Admin or creator check
     chat = await msg.get_chat()
     admin = chat.admin_rights
