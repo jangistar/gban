@@ -1,7 +1,7 @@
 # pin courtsey PAPERPLANE
 
 """Pins the replied message
-Syntax: .cpin [LOUD], Pin [silent]"""
+Syntax: .cpin [LOUD], pin [Silent]"""
 from telethon import events
 from asyncio import sleep
 from os import remove
@@ -56,9 +56,9 @@ async def _(event):
         await event.edit("Reply to a message to pin the message in this Channel.")
 
         
-@borg.on(admin_cmd("Pin ?(.*)"))
+@borg.on(admin_cmd("pin ?(.*)"))
 async def pin(msg):
-    """ For .Pin command, pins the replied/tagged message on the top the chat. """
+    """ For .pin command, pins the replied/tagged message on the top the chat. """
     # Admin or creator check
     chat = await msg.get_chat()
     admin = chat.admin_rights
