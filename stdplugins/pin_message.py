@@ -1,7 +1,7 @@
 # pin courtsey PAPERPLANE
 
 """Pins the replied message
-Syntax: .cpin [LOUD], pin [Silent]"""
+Syntax: .cpin [LOUD], pin [silent]"""
 from telethon import events
 from asyncio import sleep
 from os import remove
@@ -26,10 +26,47 @@ from platform import python_version, uname
 from sample_config import Config
 
 
-# ================= CONSTANT =================
+# =================== CONSTANT ===================
+PP_TOO_SMOL = "`The image is too small`"
+PP_ERROR = "`Failure while processing the image`"
+NO_ADMIN = "`I am not an admin!`"
+NO_PERM = "`I don't have sufficient permissions!`"
+NO_SQL = "`Running on Non-SQL mode!`"
+
+CHAT_PP_CHANGED = "`Chat Picture Changed`"
+CHAT_PP_ERROR = "`Some issue with updating the pic,`" \
+                "`maybe coz I'm not an admin,`" \
+                "`or don't have enough rights.`"
+INVALID_MEDIA = "`Invalid Extension`"
+
+BANNED_RIGHTS = ChatBannedRights(
+    until_date=None,
+    view_messages=True,
+    send_messages=True,
+    send_media=True,
+    send_stickers=True,
+    send_gifs=True,
+    send_games=True,
+    send_inline=True,
+    embed_links=True,
+)
+
+UNBAN_RIGHTS = ChatBannedRights(
+    until_date=None,
+    send_messages=None,
+    send_media=None,
+    send_stickers=None,
+    send_gifs=None,
+    send_games=None,
+    send_inline=None,
+    embed_links=None,
+)
+
+MUTE_RIGHTS = ChatBannedRights(until_date=None, send_messages=True)
+
+UNMUTE_RIGHTS = ChatBannedRights(until_date=None, send_messages=False)
 BOTLOG = Config.BOTLOG
 BOTLOG_CHATID = Config.PRIVATE_GROUP_BOT_API_ID
-NO_ADMIN = "`I am not an admin!`"
 # ================= CONSTANT =================
 
 @borg.on(admin_cmd("cpin ?(.*)"))
@@ -56,9 +93,9 @@ async def _(event):
         await event.edit("Reply to a message to pin the message in this Channel.")
 
         
-@borg.on(admin_cmd("pin ?(.*)"))
+@borg.on(admin_cmd("Pin ?(.*)"))
 async def pin(msg):
-    """ For .pin command, pins the replied/tagged message on the top the chat. """
+    """ For .Pin command, pins the replied/tagged message on the top the chat. """
     # Admin or creator check
     chat = await msg.get_chat()
     admin = chat.admin_rights
@@ -86,7 +123,7 @@ async def pin(msg):
         await msg.client(
             UpdatePinnedMessageRequest(msg.to_id, to_pin, is_silent))
     except BadRequestError:
-        await msg.edit("`I don't have enough permissions!`")
+        await msg.edit(NO_PERM)
         return
 
     await msg.edit("`Pinned Successfully!`")
