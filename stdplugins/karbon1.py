@@ -1,5 +1,5 @@
 """Carbon Scraper Plugin for Userbot. //text in creative way.
-usage: .karbon1 //as a reply to any text message
+usage: .kar1 //as a reply to any text message
 
 Thanks to @r4v4n4 for vars"""
 
@@ -13,12 +13,12 @@ from time import sleep
 import asyncio
 import os
 
-@borg.on(events.NewMessage(pattern=r"\.karbon1", outgoing=True))
+@borg.on(events.NewMessage(pattern=r"\.kar1", outgoing=True))
 async def carbon_api(e):
  if not e.text[0].isalpha() and e.text[0] not in ("/", "#", "@", "!"):
    """ A Wrapper for carbon.now.sh """
-   await e.edit("⬜⬜⬜⬜⬜")
-   CARBON = 'https://carbon.now.sh/?bg=rgba(239%2C40%2C44%2C0)&t=one-light&wt=none&l={lang}&ds=true&dsyoff=20px&dsblur=68px&wc=true&wa=true&pv=56px&ph=56px&ln=false&fl=1&fm=Hack&fs=14px&lh=143%25&si=false&es=2x&wm=false&code={code}'
+   await e.edit("🔲🔲🔲🔲🔲")
+   CARBON = 'https://carbon.now.sh/?bg=rgba(249%2C237%2C212%2C0)&t=synthwave-84&wt=none&l=application%2Fjson&ds=true&dsyoff=20px&dsblur=0px&wc=true&wa=true&pv=56px&ph=0px&ln=false&fl=1&fm=IBM%20Plex%20Mono&fs=14.5px&lh=153%25&si=false&es=4x&wm=false&code={code}'
    CARBONLANG = "en"
    textx = await e.get_reply_message()
    pcode = e.text
@@ -37,7 +37,7 @@ async def carbon_api(e):
    chrome_options.add_argument('--disable-gpu')
    prefs = {'download.default_directory' : './'}
    chrome_options.add_experimental_option('prefs', prefs)
-   await e.edit("⬛⬛⬜⬜⬜")
+   await e.edit("🔳🔳🔲🔲🔲")
 
    driver = webdriver.Chrome(executable_path=Config.CHROME_DRIVER, options=chrome_options)
    driver.get(url)
@@ -50,17 +50,17 @@ async def carbon_api(e):
    sleep(5) # this might take a bit.
    driver.find_element_by_xpath("//button[contains(text(),'4x')]").click()
    sleep(5)
-   await e.edit("⬛⬛⬛⬜⬜")
+   await e.edit("🔳🔳🔳🔲🔲")
    driver.find_element_by_xpath("//button[contains(text(),'PNG')]").click()
    sleep(5) #Waiting for downloading
 
-   await e.edit("⬛⬛⬛⬛⬛")
+   await e.edit("🔳🔳🔳🔳🔳")
    file = './carbon.png'
-   await e.edit("✅Karbon1 Completed, Uploading Karbon✅")
+   await e.edit("Karbon1 Completed, Uploading Karbon")
    await e.client.send_file(
          e.chat_id,
          file,
-         caption="Karbon1 by [@Three_Cube_TeKnoways](https://www.github.com/mkaraniya/BotHub)",
+         caption="Karbon1 by [@PhycoNinja13b](https://github.com/Phyco-Ninja/UniNinja)",
          force_document=True,
          reply_to=e.message.reply_to_msg_id,
          )
