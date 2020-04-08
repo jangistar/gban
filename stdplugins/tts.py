@@ -11,7 +11,7 @@ from gtts import gTTS
 from uniborg.util import admin_cmd
 
 
-@borg.on(admin_cmd(pattern="tts (.*)"))
+@borg.on(admin_cmd(pattern="tts ?(.*)"))
 async def _(event):
     if event.fwd_from:
         return
@@ -20,11 +20,11 @@ async def _(event):
     if event.reply_to_msg_id:
         previous_message = await event.get_reply_message()
         text = previous_message.message
-        lan = input_str
+        lan = input_str or "en"
     elif "|" in input_str:
         lan, text = input_str.split("|")
     else:
-        await event.edit("Invalid Syntax. Module stopping.")
+        await event.edit("`Invalid Syntax. Module Stopping.`")
         return
     text = text.strip()
     lan = lan.strip()
@@ -68,8 +68,7 @@ async def _(event):
         )
         os.remove(required_file_name)
         await event.edit("Processed {} ({}) in {} seconds!".format(text[0:97], lan, ms))
-        await asyncio.sleep(5)
+        await asyncio.sleep(3)
         await event.delete()
     except Exception as e:
         await event.edit(str(e))
-        
