@@ -1,7 +1,7 @@
 # For @UniBorg
 # (c) <GNU/std::sakty_]> a.k.a. @sunda001
 
-
+ 
 from telethon import events
 import asyncio
 import requests
@@ -17,7 +17,7 @@ async def _(event):
         await event.edit("Invalid Syntax")
         return False
     lang, code = input_str.split(DELIMITER)
-    url = "http://apikuu.herokuapp.com/api/v0/sakty/karbon"
+    url = "http://www.suka.ml/api/v0/sakty/karbon"
     a = requests.get(url, params={
         "code": code,
         "lang": lang,
