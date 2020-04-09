@@ -1,5 +1,5 @@
 """  syntax:
-    .useit
+    .useitbh
     Usage: Provide links to update repo guides while you keep your changes on the floor.
  """
 from math import ceil
@@ -45,7 +45,7 @@ DEFAULTUSER = Config.ALIVE_NAME if Config.ALIVE_NAME else uname().node
 
 
 
-@borg.on(events.NewMessage(pattern=r"\.useit", outgoing=True))
+@borg.on(events.NewMessage(pattern=r"\.useitbh", outgoing=True))
 async def usit(e):
     await e.edit(
         f"Here's something for {DEFAULTUSER} to use it for help_on_update on **BotHub**:\n"
