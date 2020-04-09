@@ -8,10 +8,10 @@ import os
 import subprocess
 from datetime import datetime
 from gtts import gTTS
-from uniborg.util import admin_cmd
+from userbot.utils import admin_cmd
 
 
-@borg.on(admin_cmd(pattern="tts ?(.*)"))
+@borg.on(admin_cmd("tts (.*)"))
 async def _(event):
     if event.fwd_from:
         return
@@ -20,11 +20,11 @@ async def _(event):
     if event.reply_to_msg_id:
         previous_message = await event.get_reply_message()
         text = previous_message.message
-        lan = input_str or "en"
+        lan = input_str
     elif "|" in input_str:
         lan, text = input_str.split("|")
     else:
-        await event.edit("`Invalid Syntax. Module Stopping.`")
+        await event.edit("Invalid Syntax. Module stopping.")
         return
     text = text.strip()
     lan = lan.strip()
@@ -32,7 +32,8 @@ async def _(event):
         os.makedirs(Config.TMP_DOWNLOAD_DIRECTORY)
     required_file_name = Config.TMP_DOWNLOAD_DIRECTORY + "voice.ogg"
     try:
-        tts = gTTS(text, lan)
+        #https://github.com/SpEcHiDe/UniBorg/commit/17f8682d5d2df7f3921f50271b5b6722c80f4106
+        tts = gTTS(text, lang=lan)
         tts.save(required_file_name)
         command_to_execute = [
             "ffmpeg",
@@ -68,7 +69,7 @@ async def _(event):
         )
         os.remove(required_file_name)
         await event.edit("Processed {} ({}) in {} seconds!".format(text[0:97], lan, ms))
-        await asyncio.sleep(3)
+        await asyncio.sleep(5)
         await event.delete()
     except Exception as e:
         await event.edit(str(e))
