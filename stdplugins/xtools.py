@@ -8,7 +8,7 @@ import requests
 from uniborg.util import admin_cmd
 
 
-@borg.on(admin_cmd(pattern="xtools (.*)"))
+@borg.on(admin_cmd("xtools (.*)"))
 async def _(event):
     if event.fwd_from:
         return
@@ -28,3 +28,4 @@ async def _(event):
     output_str = "edit count of {} ({}) in {} seconds. \n {}".format(
         username, sub_domain, str(ms), result_text)
     await event.edit(output_str)
+    
