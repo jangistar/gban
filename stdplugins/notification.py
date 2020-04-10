@@ -245,21 +245,21 @@ async def on_new_channel_message(event):
         )
 
 
-@borg.on(events.Raw())
+"""@borg.on(events.Raw())
 async def _(event):
     if Config.PM_LOGGR_BOT_API_ID is None:
         return
     if tgbot is None:
         return
-    logger.info(event.stringify())
+    logger.info(event.stringify())"""
 
 
-if tgbot is not None:
+"""if tgbot is not None:
     @tgbot.on(events.Raw())
     async def _(event):
         if Config.PM_LOGGR_BOT_API_ID is None:
             return
-        logger.info(event.stringify())
+        logger.info(event.stringify())"""
 
 
 async def do_pm_permit_action(chat_id, event):
