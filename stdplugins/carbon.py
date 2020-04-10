@@ -17,7 +17,7 @@ import os
 
 @borg.on(events.NewMessage(pattern=r"\.carbon", outgoing=True))
 async def carbon_api(e):
- if not e.text[0].isalpha() and e.text[0] not in ("/", "#", "@", "!"):
+ #if not e.text[0].isalpha() and e.text[0] not in ("/", "#", "@", "!"):
    """ A Wrapper for carbon.now.sh """
    await e.edit("⬜⬜⬜⬜⬜ 00%")
    CARBON = 'https://carbon.now.sh/?l={lang}&code={code}'
@@ -50,10 +50,10 @@ async def carbon_api(e):
 
    driver.find_element_by_xpath("//button[contains(text(),'Export')]").click()
    sleep(5) # this might take a bit.
-   driver.find_element_by_xpath("//button[contains(text(),'4x')]").click()
-   sleep(5)
+   #driver.find_element_by_xpath("//button[contains(text(),'4x')]").click()
+   #sleep(5)
    await e.edit("⬛⬛⬛⬜⬜ 50%")
-   driver.find_element_by_xpath("//button[contains(text(),'PNG')]").click()
+   #driver.find_element_by_xpath("//button[contains(text(),'PNG')]").click()
    sleep(5) #Waiting for downloading
 
    await e.edit("⬛⬛⬛⬛⬛ 100%")
