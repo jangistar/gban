@@ -17,7 +17,7 @@ import os
 
 @borg.on(events.NewMessage(pattern=r"\.carbon", outgoing=True))
 async def carbon_api(e):
- #if not e.text[0].isalpha() and e.text[0] not in ("/", "#", "@", "!"):
+ if not e.text[0].isalpha() and e.text[0] not in ("/", "#", "@", "!"):
    """ A Wrapper for carbon.now.sh """
    await e.edit("⬜⬜⬜⬜⬜ 00%")
    CARBON = 'https://carbon.now.sh/?l={lang}&code={code}'
@@ -42,7 +42,7 @@ async def carbon_api(e):
    await e.edit("⬛⬛⬜⬜⬜ 30%")
 
    driver = webdriver.Chrome(executable_path=Config.CHROME_DRIVER, options=chrome_options)
-   driver.get(url)
+  # driver.get(url)
    download_path = '/root/userbot/.bin'
    driver.command_executor._commands["send_command"] = ("POST", '/session/$sessionId/chromium/send_command')
    params = {'cmd': 'Page.setDownloadBehavior', 'params': {'behavior': 'allow', 'downloadPath': download_path}}
@@ -54,7 +54,7 @@ async def carbon_api(e):
    #sleep(5)
    await e.edit("⬛⬛⬛⬜⬜ 50%")
    #driver.find_element_by_xpath("//button[contains(text(),'PNG')]").click()
-   sleep(5) #Waiting for downloading
+   #sleep(5) #Waiting for downloading
 
    await e.edit("⬛⬛⬛⬛⬛ 100%")
    file = '/root/userbot/.bin/carbon.png'
