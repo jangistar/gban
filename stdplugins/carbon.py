@@ -43,7 +43,7 @@ async def carbon_api(e):
 
    driver = webdriver.Chrome(executable_path=Config.CHROME_DRIVER, options=chrome_options)
    driver.get(url)
-   download_path = './'
+   download_path = '/root/userbot/.bin'
    driver.command_executor._commands["send_command"] = ("POST", '/session/$sessionId/chromium/send_command')
    params = {'cmd': 'Page.setDownloadBehavior', 'params': {'behavior': 'allow', 'downloadPath': download_path}}
    command_result = driver.execute("send_command", params)
@@ -57,7 +57,7 @@ async def carbon_api(e):
    sleep(5) #Waiting for downloading
 
    await e.edit("⬛⬛⬛⬛⬛ 100%")
-   file = './carbon.png'
+   file = '/root/userbot/.bin/carbon.png'
    await e.edit("✅Carbon Completed, Uploading Carbon✅")
    await e.client.send_file(
          e.chat_id,
@@ -67,6 +67,6 @@ async def carbon_api(e):
          reply_to=e.message.reply_to_msg_id,
          )
 
-   os.remove('./carbon.png')
+   os.remove('/root/userbot/.bin/carbon.png')
    # Removing carbon.png after uploading
    await e.delete() # Deleting msg
