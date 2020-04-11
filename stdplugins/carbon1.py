@@ -4,7 +4,7 @@ usage: .carbon //as a reply to any text message
 
 Thanks to @NeoMatrix90 for vars
 
-Type : .kar00
+Type : .carbon1
 
 """
 from selenium.webdriver.support.ui import Select
@@ -32,7 +32,7 @@ async def setlang(prog):
     await prog.edit(f"Language for carbon.now.sh set to {CARBONLANG}")
 
 
-@borg.on(admin_cmd(pattern="kar00 ?(.*)"))
+@borg.on(admin_cmd(pattern="carbon1 ?(.*)"))
 async def carbon_api(e):
     """ A Wrapper for carbon.now.sh """
     await e.edit("`Processing..`")
