@@ -1,6 +1,6 @@
 """
 Carbon Scraper Plugin for Userbot. //text in creative way.
-usage: .carbon //as a reply to any text message
+usage: .carbon1 //as a reply to any text message
 
 Thanks to @NeoMatrix90 for vars
 
