@@ -36,6 +36,11 @@ async def _(event):
     if first_name is not None:
         # some weird people (like me) have more than 4096 characters in their names
         first_name = first_name.replace("\u2060", "")
+        last_name = replied_user.user.last_name
+    # last_name is not Manadatory in @Telegram
+    if last_name is not None:
+        last_name = html.escape(last_name)
+        last_name = last_name.replace("\u2060", "")
     # inspired by https://telegram.dog/afsaI181
     user_bio = replied_user.about
     if user_bio is not None:
@@ -50,6 +55,7 @@ async def _(event):
 
 🔖ID: <code>{}</code>
 🤵Name: <a href='tg://user?id={}'>{}</a>
+🤦‍♂️ Last Name: {}
 ✍️Bio: {}
 🌏Data Centre Number: {}
 🖼Number of Profile Pics: {}
@@ -70,6 +76,7 @@ DC5 : SUN, UNIVERSE
         user_id,
         user_id,
         first_name,
+        last_name,
         user_bio,
         dc_id,
         replied_user_profile_photos_count,
