@@ -1,6 +1,6 @@
 """
 Carbon Scraper Plugin for Userbot. //text in creative way.
-usage: .carbon //as a reply to any text message
+usage: .carbon0 //as a reply to any text message
 
 Thanks to @NeoMatrix90 for vars
 
@@ -15,7 +15,7 @@ from time import sleep
 import asyncio
 import os
 
-@borg.on(events.NewMessage(pattern=r"\.carbon", outgoing=True))
+@borg.on(events.NewMessage(pattern=r"\.carbon0", outgoing=True))
 async def carbon_api(e):
  if not e.text[0].isalpha() and e.text[0] not in ("/", "#", "@", "!"):
    """ A Wrapper for carbon.now.sh """
