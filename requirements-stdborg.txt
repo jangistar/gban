@@ -48,7 +48,7 @@ aioschedule
 REPO_LINK
 feedparser
 apscheduler
-setuptools>=40.3.0
+#setuptools>=40.3.0
 lyricsgenius
 jotquote
 csvfaker
@@ -59,7 +59,7 @@ wget
 hurry.filesize
 pymongo
 telethon-session-sqlalchemy>=0.2.6
-TgCrypto>=1.2.0
+#TgCrypto>=1.2.0
 #SpeechRecognition>=3.4.6
 covid
 #wheel>=0.30.0a0
