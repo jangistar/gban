@@ -23,6 +23,16 @@
       "value": "",
       "required": false
     },
+    "CARBON_DRIVER": {
+      "description": "ChromeDriver location for selenium based modules.",
+      "value": "/usr/bin/chromedriver",
+      "required": false
+    },
+    "CARBON_BIN": {
+      "description": "Google Chrome (or) Chromium binary location for selenium based modules.",
+      "value": "/usr/bin/chromium-browser",
+      "required": false
+    },
     "SPAMWATCH_API": {
       "description": "Get this value from https://t.me/SitiSchu! Please do not steal, group for support https://t.me/SpamWatchSupport",
       "value": "hAlogsz5yVFw4TYjIf6I993YFpZj~AT_5wCNrwnY3YeekgeEH1g62hO1hog02UHO",
