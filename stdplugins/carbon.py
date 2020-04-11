@@ -32,7 +32,7 @@ async def carbon_api(e):
    url = CARBON.format(code=code, lang=CARBONLANG)
    chrome_options = Options()
    chrome_options.add_argument("--headless")
-   chrome_options.binary_location = Config.GOOGLE_CHROME_BIN
+   chrome_options.binary_location = Config.CARBON_BIN
    chrome_options.add_argument("--window-size=1920x1080")
    chrome_options.add_argument("--disable-dev-shm-usage")
    chrome_options.add_argument("--no-sandbox")
@@ -41,7 +41,7 @@ async def carbon_api(e):
    chrome_options.add_experimental_option('prefs', prefs)
    await e.edit("⬛⬛⬜⬜⬜ 30%")
 
-   driver = webdriver.Chrome(executable_path=Config.CHROME_DRIVER, options=chrome_options)
+   driver = webdriver.Chrome(executable_path=Config.CARBON_DRIVER, options=chrome_options)
    driver.get(url)
    download_path = '/root/userbot/.bin'
    driver.command_executor._commands["send_command"] = ("POST", '/session/$sessionId/chromium/send_command')
