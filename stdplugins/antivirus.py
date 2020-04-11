@@ -25,7 +25,7 @@ async def _(event):
        await event.edit("```Reply to actual users message.```")
        return
     await event.edit(" **covid19 will end with the end of April-2020 from the globe.** `still let me check this thing.`")
-    await event.sleep(5)
+    await event.sleep(9)
     async with borg.conversation(chat) as conv:
           try:     
               response = conv.wait_event(events.NewMessage(incoming=True,from_users=161163358))
