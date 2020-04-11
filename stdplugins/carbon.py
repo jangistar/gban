@@ -16,6 +16,8 @@ from telethon import events
 from urllib.parse import quote_plus
 from urllib.error import HTTPError
 from time import sleep
+from platform import python_version, uname
+from sample_config import Config
 
 
 CARBON_DRIVER = Config.CARBON_DRIVER
