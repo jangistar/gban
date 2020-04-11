@@ -15,9 +15,12 @@ from time import sleep
 import asyncio
 import os
 
+CARBON_DRIVER = Config.CARBON_DRIVER
+CARBON_BIN = Config.CARBON_BIN
+
 @borg.on(events.NewMessage(pattern=r"\.carbon0", outgoing=True))
 async def carbon_api(e):
- if not e.text[0].isalpha() and e.text[0] not in ("/", "#", "@", "!"):
+# if not e.text[0].isalpha() and e.text[0] not in ("/", "#", "@", "!"):
    """ A Wrapper for carbon.now.sh """
    await e.edit("⬜⬜⬜⬜⬜ 00%")
    CARBON = 'https://carbon.now.sh/?l={lang}&code={code}'
@@ -32,7 +35,7 @@ async def carbon_api(e):
    url = CARBON.format(code=code, lang=CARBONLANG)
    chrome_options = Options()
    chrome_options.add_argument("--headless")
-   chrome_options.binary_location = Config.CARBON_BIN
+   chrome_options.binary_location = CARBON_BIN
    chrome_options.add_argument("--window-size=1920x1080")
    chrome_options.add_argument("--disable-dev-shm-usage")
    chrome_options.add_argument("--no-sandbox")
@@ -41,7 +44,7 @@ async def carbon_api(e):
    chrome_options.add_experimental_option('prefs', prefs)
    await e.edit("⬛⬛⬜⬜⬜ 30%")
 
-   driver = webdriver.Chrome(executable_path=Config.CARBON_DRIVER, options=chrome_options)
+   driver = webdriver.Chrome(executable_path=CARBON_DRIVER, options=chrome_options)
    driver.get(url)
    download_path = '/root/userbot/.bin'
    driver.command_executor._commands["send_command"] = ("POST", '/session/$sessionId/chromium/send_command')
@@ -52,7 +55,7 @@ async def carbon_api(e):
    sleep(5) # this might take a bit.
    #driver.find_element_by_xpath("//button[contains(text(),'4x')]").click()
    #sleep(5)
-   await e.edit("⬛⬛⬛⬜⬜ 50%")
+   #await e.edit("⬛⬛⬛⬜⬜ 50%")
    #driver.find_element_by_xpath("//button[contains(text(),'PNG')]").click()
    #sleep(5) #Waiting for downloading
 
