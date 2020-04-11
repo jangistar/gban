@@ -5,15 +5,18 @@ usage: .carbon0 //as a reply to any text message
 Thanks to @NeoMatrix90 for vars
 
 """
+import asyncio
+import os
+from bs4 import BeautifulSoup
+import re
+from selenium import webdriver
 from selenium.webdriver.support.ui import Select
 from selenium.webdriver.chrome.options import Options
-from selenium import webdriver
 from telethon import events
 from urllib.parse import quote_plus
 from urllib.error import HTTPError
 from time import sleep
-import asyncio
-import os
+
 
 CARBON_DRIVER = Config.CARBON_DRIVER
 CARBON_BIN = Config.CARBON_BIN
