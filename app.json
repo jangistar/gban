@@ -192,7 +192,7 @@
       "value": "9"
     },
     "COMMAND_HAND_LER": {
-      "description": "specify command handler that should be used for the plugins. please input "\." in value or else This should be a valid \"regex\" pattern",
+      "description": "specify command handler that should be used for the plugins. This should be a valid \"regex\" pattern",
       "value": "",
       "required": false
     },
