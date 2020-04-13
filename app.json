@@ -49,7 +49,7 @@
       "required": false
     },
     "ALIVE_NAME": {
-      "description": "Name to show in .alive message",
+      "description": "Name to show in .alive message, Now very important do fill all the values of this form for better UserBot functionning.",
       "required": false
     },
     "API_URL": {
