@@ -21,4 +21,5 @@ numpy>=1.11.1
 hiredis>=1.0.0
 # dill>=0.3.1.1
 # wheel>=0.30.0a0
+chromium-chromedriver==80.0.3987.149-r0
 chromedriver==80.0.3987.149-r0
