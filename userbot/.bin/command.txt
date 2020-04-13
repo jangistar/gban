@@ -1,0 +1,2 @@
+just copy-paste below regex pattern in COMMAND_HAND_LER
+\.
