@@ -59,8 +59,7 @@
     },
     "HEROKU_MEMEZ": {
       "description": "This should be True if the userbor is running on a Heroku Dyno.",
-      "value": "False",
-      "required": false
+      "value": "True"
     },
     "HEROKU_API_KEY": {
       "description": "Get this value from Heroku Please do not steal",
@@ -68,7 +67,7 @@
       "required": false
     },
     "HEROKU_APP_NAME": {
-      "description": "This is required for commit functionality to work.",
+      "description": "This is required for update commit functionality to work.",
       "required": false
     },
     "API_HASH": {
@@ -77,8 +76,7 @@
     },
     "UPSTREAM_REPO_URL": {
       "description": "This is required for update functionality to work.",
-      "value": "https://github.com/mkaraniya/BotHub.git",
-      "required": false
+      "value": "https://github.com/mkaraniya/BotHub.git"
     },
     "HEROKU_GIT_URL": {
       "description": "This is required for update functionality to work.",
@@ -190,13 +188,12 @@
       "required": false
     },
     "NO_OF_BUTTONS_DISPLAYED_IN_H_ME_CMD": {
-      "description": "Number of rows of modules that needs to be displayed in the .helpme command",
-      "required": false
+      "description": "Number of rows of modules that needs to be displayed in the .helpme command, max is 9",
+      "value": "9"
     },
     "COMMAND_HAND_LER": {
       "description": "specify command handler that should be used for the plugins. This should be a valid \"regex\" pattern",
-      "value": "",
-      "required": false
+      "value": "\."
     },
     "SUDO_USERS": {
       "description": "Makes Your Account Stable.",
@@ -276,8 +273,7 @@
     },
     "REPO_LINK": {
       "description": "This is required for commit functionality to work.",
-      "value": "https://github.com/mkaraniya/BotHub.git",
-      "required": false
+      "value": "https://github.com/mkaraniya/BotHub.git"
     },
     "HEROKU_LINK": {
       "description": "This is required for commit functionality to work.",
@@ -286,11 +282,11 @@
     },
     "OPEN_LOAD_KEY": {
       "description": "I dunno but my repo needs it, u can type 100.",
-      "required": false
+      "value": "100"
     },
     "OPEN_LOAD_LOGIN": {
       "description": "Same Description As Above.",
-      "required": false
+      "value": "100"
     },
     "TEMP_DIR": {
       "description": ":p",
