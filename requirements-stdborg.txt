@@ -64,5 +64,6 @@ TgCrypto>=1.2.0
 #SpeechRecognition>=3.4.6
 covid
 #wheel>=0.30.0a0
+screencapture
 
 
