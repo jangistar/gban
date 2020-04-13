@@ -192,7 +192,7 @@
       "value": "9"
     },
     "COMMAND_HAND_LER": {
-      "description": "specify command handler that should be used for the plugins.get it from 'https://del.dog/ahekirewim.txt' or else This should be a valid \"regex\" pattern",
+      "description": "specify command handler that should be used for the plugins. Get it from 'https://del.dog/ahekirewim.txt' or else This should be a valid \"regex\" pattern",
       "value": "",
       "required": false
     },
