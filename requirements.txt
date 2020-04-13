@@ -6,7 +6,7 @@ pybase64
 zalgo_text
 pyfiglet
 lxml
-selenium=<3.12.0
+selenium==3.12.0
 aria2p 
 chatterbot
 chatterbot_corpus>=1.2.0
