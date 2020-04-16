@@ -3,6 +3,8 @@ Syntax: .dice"""
 #from telethon.tl.types import InputMediaDice
 import telethon
 from uniborg.util import admin_cmd
+import telethon.tl.types
+from telethon.tl.types import InputMediaDice
 
 
 @borg.on(admin_cmd(pattern="dice ?(.*)"))
