@@ -46,7 +46,7 @@ async def amireallyalive(on):
 
     
 @borg.on(admin_cmd("3"))
-async def amireallyalive(3):
+async def cube(3):
     """ For .3 command, to print 3Cubes Logo in Ascii.  """
     await 3.edit(
 f"%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%\n"
