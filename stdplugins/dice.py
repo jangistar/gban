@@ -4,7 +4,7 @@ Syntax: .dice"""
 import telethon
 from uniborg.util import admin_cmd
 import telethon.tl.types
-from telethon.tl.types import InputMediaDice
+from telethon.tl.types import *
 
 
 @borg.on(admin_cmd(pattern="dice ?(.*)"))
