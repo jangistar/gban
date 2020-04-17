@@ -2,6 +2,7 @@ telethon>=1.11.3
 pip>=19.2.3
 async_generator
 pybase64
+pastebin.py
 zalgo_text
 pyfiglet
 lxml
