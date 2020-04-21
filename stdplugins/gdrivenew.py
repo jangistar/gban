@@ -22,9 +22,9 @@ from telethon import events
 from uniborg.util import admin_cmd, progress, humanbytes
 #
 from mimetypes import guess_type
-from apiclient.discovery import build
-from apiclient.http import MediaFileUpload
-from apiclient.errors import ResumableUploadError
+from googleapiclient.discovery import build
+from googleapiclient.http import MediaFileUpload
+from googleapiclient.errors import ResumableUploadError
 from oauth2client.client import OAuth2WebServerFlow
 from oauth2client.file import Storage
 from oauth2client import file, client, tools
