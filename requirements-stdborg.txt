@@ -1,6 +1,6 @@
 aiofiles
 chromedriver>=2.21
-#bs4
+bs4
 opencv-contrib-python
 aiohttp
 aria2p
