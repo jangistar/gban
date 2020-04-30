@@ -26,11 +26,13 @@ def admin_cmd(pattern=None, allow_sudo=False, **args):
             args["pattern"] = re.compile(pattern)
         else:
             args["pattern"] = re.compile(Config.COMMAND_HAND_LER + pattern)
+        args["outgoing"] = True   
+        
     if allow_sudo:
         args["from_users"] = list(Config.SUDO_USERS)
     else:
         args["func"] = lambda e: e.via_bot_id is None
-        args["outgoing"] = True
+       
     # Mutually exclusive with outgoing (can only set one of either).
         args["incoming"] = True
         del args["allow_sudo"]
