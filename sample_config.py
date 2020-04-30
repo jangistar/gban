@@ -177,7 +177,7 @@ class Config(object):
     BOT_HUB = os.environ.get("BOT_HUB", None)
     #
     # Init Mongo
-MONGOCLIENT = MongoClient(MONGO_URI, 27017, serverSelectionTimeoutMS=1)
+MONGOCLIENT = MongoClient(Config.MONGO_URI, 27017, serverSelectionTimeoutMS=1)
 MONGO = MONGOCLIENT.userbot
 
 
