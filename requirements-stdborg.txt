@@ -57,7 +57,7 @@ gitpython
 search-engine-parser>=0.4.2
 wget
 hurry.filesize
-pymongo
+pymongo[srv]
 telethon-session-sqlalchemy>=0.2.6
 TgCrypto>=1.2.0
 covid
