@@ -90,9 +90,9 @@ async def _(event):
             afkb_time = datetime.datetime.now()  # pylint:disable=E0602
         USER_AFKB = f"yes: {reason}"  # pylint:disable=E0602
         if reason:
-            await borg.send_message(event.chat_id, f"**My King 👑 {DEFAULTUSER} 👑 is Going afk!** __because ~ {reason}__")
+            await borg.send_message(event.chat_id, f"**My King 👑 {DEFAULTUSER} 👑 is Going afk!** __because My Master is {reason}__")
         else:
-            await borg.send_message(event.chat_id, f"**My King 👑 {DEFAULTUSER} 👑 is Going afk!**")
+            await borg.send_message(event.chat_id, f"**My King 👑 {DEFAULTUSER} 👑 is Going afk!** __because My Master is {reason}__")
         await asyncio.sleep(5)
         await event.delete()
         try:
