@@ -6,6 +6,7 @@
 # Licensed under the General Public License, Version 3 (the "License");
 # you may use this file in compliance with the License.
 #
+# thanks to penn5 for bug fixing
 
 """RapidLeech plugin: Inspired by @SjProjects
 cmd .rl <url_link>"""
