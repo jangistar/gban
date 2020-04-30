@@ -7,7 +7,8 @@
 # you may use this file in compliance with the License.
 #
 
-"""RapidLeech plugin: Inspired by @SjProjects"""
+"""RapidLeech plugin: Inspired by @SjProjects
+cmd .rl <url_link>"""
 
 import aiohttp
 import asyncio
@@ -36,7 +37,7 @@ async def _(event):
             reply_message.message, reply_message.entities)
     converted_links = ""
     if len(list_of_urls) > 0:
-        converted_links += "Trying to generate IP specific link\n\nഞെക്കി പിടി \n"
+        converted_links += "Trying to generate IP specific link\n\nBhagwan se prathna karo.... \n"
         for a_url in list_of_urls:
             converted_link_infos = await get_direct_ip_specific_link(a_url)
             if "url" in converted_link_infos:
