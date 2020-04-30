@@ -101,7 +101,7 @@ async def _(event):
     else:
         return False
     try:
-        await borg(EditBannedRequest(listmychatids.chat_ids, to_ban_id, rights))
+        await borg(EditBannedRequest(chat_ids, to_ban_id, rights))
     except (Exception) as exc:
         await event.edit(str(exc))
     else:
