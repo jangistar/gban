@@ -10,7 +10,7 @@ from uniborg.util import admin_cmd
 from sample_config import Config
 #from sql_helpers.gban_sql import listmychatids
 
-chat_ids = Config.CHAT_IDS
+chat_ids = str(Config.CHAT_IDS)
 
 #@borg.on(events.NewMessage(pattern=r"\-listmychatids", outgoing=True))
 """async def listmychatids(chat_ids):
