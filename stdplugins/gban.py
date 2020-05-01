@@ -5,6 +5,7 @@ from telethon import events, functions, types
 import asyncio
 from datetime import datetime
 from telethon.tl.functions.channels import EditBannedRequest
+from telethon.tl.functions.channels import GetAdminedPublicChannelsRequest
 from telethon.tl.types import ChatBannedRights
 from uniborg.util import admin_cmd
 from sample_config import Config
