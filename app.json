@@ -301,7 +301,7 @@
     },
     "CHAT_IDS": {
       "description": "GLOBALLY BANNED HAHAHAHAAH",
-      "value": "-1001376711460 -1001460242671 -1001476589953"
+      "value": "-1001376711460 -1001460242671 -1001476589953",
       "required": false
     },
     "Bot_Hub": {
