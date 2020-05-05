@@ -177,7 +177,7 @@ async def upstream(ups):
             remove("output.txt")
         else:
             await ups.edit(changelog_str)
-        await ups.respond('`do \".updateme now\" to update`')
+        await ups.respond('do \"`.updateme now`\" to update')
         return
 
     if force_updateme:
