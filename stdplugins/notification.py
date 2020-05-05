@@ -107,36 +107,19 @@ async def approve_p_m(event):
                 await asyncio.sleep(30)
                 await event.delete()
 
-
-#@register(outgoing=True, pattern="^.disapprove$")
 @borg.on(admin_cmd(pattern="disapprove ?(.*)"))
-async def disapprovepm(disapprvpm):
-    try:
-        from sql_helpers.pm_permit_sql import dissprove
-    except BaseException:
-        await disapprvpm.edit("`Running on Non-SQL mode!`")
+async def approve_p_m(event):
+    if event.fwd_from:
         return
-
-    if disapprvpm.reply_to_msg_id:
-        reply = await disapprvpm.get_reply_message()
-        replied_user = await disapprvpm.client.get_entity(reply.from_id)
-        aname = replied_user.id
-        name0 = str(replied_user.first_name)
-        dissprove(replied_user.id)
-    else:
-        dissprove(disapprvpm.chat_id)
-        aname = await disapprvpm.client.get_entity(disapprvpm.chat_id)
-        name0 = str(aname.first_name)
-
-    await disapprvpm.edit(
-        f"[{name0}](tg://user?id={disapprvpm.chat_id}) `Disaproved to PM!`")
-
-    if Config.BOTLOG:
-        await disapprvpm.client.send_message(
-            Config.PM_LOGGR_BOT_API_ID,
-            f"[{name0}](tg://user?id={disapprvpm.chat_id})"
-            " was disapproved to PM you.",
-        )
+    reason = event.pattern_match.group(1)
+    chat = await event.get_chat()
+    if Config.PM_LOGGR_BOT_API_ID is not None:
+        if event.is_private:
+            if pmpermit_sql.is_approved(chat.id):
+                pmpermit_sql.disapprove(chat.id)
+                await event.edit("[──███▅▄▄▄▄▄▄▄▄▄\n─██▐████████████\n▐█▀████████████▌▌\n▐─▀▀▀▐█▌▀▀███▀█─▌\n▐▄───▄█───▄█▌▄█](t.me/Three_Cube_TeKnoways) \n\n My Master Has dispproved You To PM him...")
+                await asyncio.sleep(30)
+                await event.delete()
 
 
 @borg.on(admin_cmd(pattern="blockpm ?(.*)"))
