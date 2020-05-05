@@ -11,6 +11,11 @@ import asyncio
 import io
 import sql_helpers.no_log_pms_sql as no_log_pms_sql
 import sql_helpers.pmpermit_sql as pmpermit_sql
+import sql_helpers.pm_permit_sql
+from telethon.tl.functions.contacts import BlockRequest, UnblockRequest
+from telethon.tl.functions.messages import ReportSpamRequest
+from telethon.tl.types import User
+from sqlalchemy.exc import IntegrityError
 from telethon import events, errors, functions, types
 from uniborg.util import admin_cmd
 
@@ -127,7 +132,7 @@ async def disapprovepm(disapprvpm):
     await disapprvpm.edit(
         f"[{name0}](tg://user?id={disapprvpm.chat_id}) `Disaproved to PM!`")
 
-    if Config.NC_LOG_P_M_S:
+    if Config.BOTLOG:
         await disapprvpm.client.send_message(
             Config.PM_LOGGR_BOT_API_ID,
             f"[{name0}](tg://user?id={disapprvpm.chat_id})"
