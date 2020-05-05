@@ -3,6 +3,7 @@
 .nolog
 .dellog
 .apm
+.disapprove
 .blockpm
 .lapms"""
 
@@ -12,6 +13,7 @@ import sql_helpers.no_log_pms_sql as no_log_pms_sql
 import sql_helpers.pmpermit_sql as pmpermit_sql
 from telethon import events, errors, functions, types
 from uniborg.util import admin_cmd
+
 
 
 PM_WARNS = {}
@@ -100,6 +102,37 @@ async def approve_p_m(event):
                 await event.edit("[──███▅▄▄▄▄▄▄▄▄▄\n─██▐████████████\n▐█▀████████████▌▌\n▐─▀▀▀▐█▌▀▀███▀█─▌\n▐▄───▄█───▄█▌▄█](t.me/Three_Cube_TeKnoways) \n\n My Master Has Approved You To PM him...")
                 await asyncio.sleep(30)
                 await event.delete()
+
+
+#@register(outgoing=True, pattern="^.disapprove$")
+@borg.on(admin_cmd(pattern="disapprove ?(.*)"))
+async def disapprovepm(disapprvpm):
+    try:
+        from sql_helpers.pm_permit_sql import dissprove
+    except BaseException:
+        await disapprvpm.edit("`Running on Non-SQL mode!`")
+        return
+
+    if disapprvpm.reply_to_msg_id:
+        reply = await disapprvpm.get_reply_message()
+        replied_user = await disapprvpm.client.get_entity(reply.from_id)
+        aname = replied_user.id
+        name0 = str(replied_user.first_name)
+        dissprove(replied_user.id)
+    else:
+        dissprove(disapprvpm.chat_id)
+        aname = await disapprvpm.client.get_entity(disapprvpm.chat_id)
+        name0 = str(aname.first_name)
+
+    await disapprvpm.edit(
+        f"[{name0}](tg://user?id={disapprvpm.chat_id}) `Disaproved to PM!`")
+
+    if Config.NC_LOG_P_M_S:
+        await disapprvpm.client.send_message(
+            Config.PM_LOGGR_BOT_API_ID,
+            f"[{name0}](tg://user?id={disapprvpm.chat_id})"
+            " was disapproved to PM you.",
+        )
 
 
 @borg.on(admin_cmd(pattern="blockpm ?(.*)"))
