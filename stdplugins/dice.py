@@ -1,8 +1,7 @@
 #bug fixed by @d3athwarrior
 
-
 """@RollADie
-Syntax: .dice"""
+Syntax: .dice or .dice 1 to 6 any value """
 from telethon.tl.types import InputMediaDice
 from uniborg.util import admin_cmd
 
