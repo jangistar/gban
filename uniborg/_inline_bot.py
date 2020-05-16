@@ -87,12 +87,7 @@ if Config.TG_BOT_USER_NAME_BF_HER is not None and tgbot is not None:
             result = builder.article(
                 "© @Bot_Hub_Official™️",
                 text="""@Bot_Hub_Official **( Custom Built By** @Three_Cube_TeKnoways_bot **)** 
-**Verified Account:** ✅
-**Official Website:** http://www.threecube.tk
-**Pithun 3.7.7 (default, Dec 16 1981, 01:14:52)** 
-**[GCC 7.7.7]**
-**Talethrun 1.10.10**
-**Custom Built Fork:** https://github.com/mkaraniya/BotHub""",
+**Verified Account:** ✅""",
                 buttons=[
                     [custom.Button.url("👤Contact Creator👤", "https://telegram.dog/Three_Cube_TeKnoways"), custom.Button.url(
                         "🎞My YouTube Channel🎞", "https://www.youtube.com/channel/UCeKQxQK7XZ3jGi3541uWATg?sub_confirmation=1")],
