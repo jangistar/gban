@@ -9,17 +9,13 @@ from redis import StrictRedis
 class Config(object):
     LOGGER = True
     # Get this value from my.telegram.org! Please do not steal
-    APP_ID = int(os.environ.get("APP_ID", 6))
+    APP_KEY = int(os.environ.get("APP_ID", 6))
     API_HASH = os.environ.get("API_HASH", "eb06d4abfb49dc3eeb1aeb98ae0f581e")
     # Photo Chat - Get this value from http://antiddos.systems
     API_TOKEN = os.environ.get("API_TOKEN", "15e05de0-0357-4553-b39c-d614443ed91e")
     # Get this value from https://t.me/SitiSchu! Please do not steal, group for support https://t.me/SpamWatchSupport
     SPAMWATCH_API = os.environ.get("SPAMWATCH_API", "hAlogsz5yVFw4TYjIf6I993YFpZj~AT_5wCNrwnY3YeekgeEH1g62hO1hog02UHO")
     # Genius lyrics get this value from https://genius.com/developers both has same values
-    GENIUS_API_TOKEN = os.environ.get("GENIUS", None)
-    # Genius lyrics get this value from https://genius.com/developers both has same values
-    GENIUS = os.environ.get("GENIUS_API_TOKEN", None)
-    # Default alive name for .on cmd
     ALIVE_NAME = os.environ.get("ALIVE_NAME", None)
     # Userbot logging feature switch.
     BOTLOG = bool(os.environ.get("BOTLOG", "False"))
@@ -31,26 +27,11 @@ class Config(object):
     # confidential session files
     HU_STRING_SESSION = os.environ.get("HU_STRING_SESSION", None)
     # Get your own APPID from https://api.openweathermap.org/data/2.5/weather
-    OPEN_WEATHER_MAP_APPID = os.environ.get("OPEN_WEATHER_MAP_APPID", None)
-    # Your City
-    WEATHER_DEFCITY = os.environ.get("WEATHER_DEFCITY", None)
-    # Get your own ACCESS_KEY from http://api.screenshotlayer.com/api/capture
-    SCREEN_SHOT_LAYER_ACCESS_KEY = os.environ.get("SCREEN_SHOT_LAYER_ACCESS_KEY", None)
-    # Send .get_id in any group to fill this value.
     PRIVATE_GROUP_BOT_API_ID = int(os.environ.get("PRIVATE_GROUP_BOT_API_ID", -100123456789))
     # Send .get_id in any channel to fill this value. ReQuired for @Manuel15 inspiration to work!
     PRIVATE_CHANNEL_BOT_API_ID = int(os.environ.get("PRIVATE_CHANNEL_BOT_API_ID", -100123456789))
     # This is required for the plugins involving the file system.
     TMP_DOWNLOAD_DIRECTORY = os.environ.get("TMP_DOWNLOAD_DIRECTORY", "./DOWNLOADS/")
-    # This is required for the speech to text module. Get your USERNAME from https://console.bluemix.net/docs/services/speech-to-text/getting-started.html
-    IBM_WATSON_CRED_URL = os.environ.get("IBM_WATSON_CRED_URL", None)
-    IBM_WATSON_CRED_PASSWORD = os.environ.get("IBM_WATSON_CRED_PASSWORD", None)
-    # This is required for the hash to torrent file functionality to work.
-    HASH_TO_TORRENT_API = os.environ.get("HASH_TO_TORRENT_API", "https://example.com/torrent/{}");
-    # This is required for the @telegraph functionality.
-    TELEGRAPH_SHORT_NAME = os.environ.get("TELEGRAPH_SHORT_NAME", "UniBorg")
-    # Get a Free API Key from OCR.Space
-    OCR_SPACE_API_KEY = os.environ.get("OCR_SPACE_API_KEY", None)
     # Send .get_id in any group with all your administration bots (added)
     G_BAN_LOGGER_GROUP = int(os.environ.get("G_BAN_LOGGER_GROUP", -100123456789))
     # TG API limit. An album can have atmost 10 media!
@@ -65,10 +46,8 @@ class Config(object):
     MAX_MESSAGE_SIZE_LIMIT = 4095
     # set blacklist_chats where you do not want userbot's features
     UB_BLACK_LIST_CHAT = set(int(x) for x in os.environ.get("UB_BLACK_LIST_CHAT", "").split())
-    # set chats_ids where you want users to be banned
-    CHAT_IDS = set(int(x) for x in os.environ.get("CHAT_IDS", "").split())
     # maximum number of messages for antiflood
-    MAX_ANTI_FLOOD_MESSAGES = 10
+    MAX_ANTI_FLOOD_MESSAGES = 9
     # warn mode for anti flood
     ANTI_FLOOD_WARN_MODE = ChatBannedRights(
         until_date=None,
@@ -84,19 +63,9 @@ class Config(object):
     # ⚡Remove This To Make Them Work But Would Make Bot Unstable AF...⚡
     NO_LOAD = [
                     
-                    "left",
-                    "autores",
-                    "hand",   
+                    "notification",   
                     
     ]
-    # Get your own API key from https://www.remove.bg/ or
-    # feel free to use http://telegram.dog/Remove_BGBot
-    REM_BG_API_KEY = os.environ.get("REM_BG_API_KEY", None)
-    # you can set any name here
-    SLAP_USERNAME = os.environ.get("SLAP_USERNAME", None)
-    # Get this from Github
-    GITHUB_ACCESS_TOKEN = os.environ.get("GITHUB_ACCESS_TOKEN", None)
-    GIT_REPO_NAME = os.environ.get("GIT_REPO_NAME", None)
     # Set to True if you want to block users that are spamming your PMs.
     NO_P_M_SPAM = bool(os.environ.get("NO_P_M_SPAM", False))
     # define "spam" in PMs
@@ -122,22 +91,10 @@ class Config(object):
     # WARNING: be careful who you grant access to your bot.
     # malicious users could do ".exec rm -rf /*"
     SUDO_USERS = set(int(x) for x in os.environ.get("SUDO_USERS", "").split())
-    # VeryStream only supports video formats
-    VERY_STREAM_LOGIN = os.environ.get("VERY_STREAM_LOGIN", None)
-    VERY_STREAM_KEY = os.environ.get("VERY_STREAM_KEY", None)
     # for temporary saving files on UserBot
     TEMP_DIR = os.environ.get("TEMP_DIR", None)
     # This is required for few things
     CHANNEL_ID = os.environ.get("CHANNEL_ID", None)
-    # Google Drive ()
-    G_DRIVE_CLIENT_ID = os.environ.get("G_DRIVE_CLIENT_ID", None)
-    G_DRIVE_CLIENT_SECRET = os.environ.get("G_DRIVE_CLIENT_SECRET", None)
-    GDRIVE_FOLDER_ID = os.environ.get("GDRIVE_FOLDER_ID", None)
-    AUTH_TOKEN_DATA = os.environ.get("AUTH_TOKEN_DATA", None)
-    os.makedirs(TMP_DOWNLOAD_DIRECTORY, exist_ok=True)
-    t_file = open(TMP_DOWNLOAD_DIRECTORY+"auth_token.txt","w")
-    t_file.write(AUTH_TOKEN_DATA)
-    t_file.close()
     #
     TELE_GRAM_2FA_CODE = os.environ.get("TELE_GRAM_2FA_CODE", None)
     #
@@ -153,30 +110,10 @@ class Config(object):
     # Chrome Driver and Headless Google Chrome Binaries
     CARBON_DRIVER = os.environ.get("CARBON_DRIVER", None)
     CARBON_BIN = os.environ.get("CARBON_BIN", None)
-    # get your value from https://Intellivoid.info
-    LYDIA_API = os.environ.get("LYDIA_API", None)
-    LYDIA_ANTI_PM = bool(os.environ.get("LYDIA_ANTI_PM", "True"))
-    # get your value from YouTube or Google.
-    YOUTUBE_API_KEY = os.environ.get("YOUTUBE_API_KEY", None)
-    # Heroku API_Key is found under "dashboard.heroku.com/account"
-    HEROKU_MEMEZ = bool(os.environ.get("HEROKU_MEMEZ", "False"))
-    HEROKU_API_KEY = os.environ.get("HEROKU_API_KEY", None)
-    HEROKU_APP_NAME = os.environ.get("HEROKU_APP_NAME", None)
     # required for Carbor
     CHROME_DRIVER = os.environ.get("CHROME_DRIVER", None)
     CHROME_BIN = os.environ.get("CHROME_BIN", None)
-    # define "repo_link" in conig_vars
-    REPO_LINK = os.environ.get("REPO_LINK", "https://github.com/mkaraniya/BotHub.git")
-    # define "UPSTREAM_REPO_URL" in conig_vars
-    UPSTREAM_REPO_URL = os.environ.get("UPSTREAM_REPO_URL", "https://github.com/mkaraniya/BotHub.git")
-    # define "HEROKU_GIT_URL" | https://git.heroku.com/YOUR_HEROKU_APP_NAME.git
-    HEROKU_GIT_URL = os.environ.get("HEROKU_GIT_URL", "YOUR HEROKU GIT URL")
-    # define "heroku_link" in conig_vars 
-    HEROKU_LINK = os.environ.get("HEROKU_LINK", "YOUR HEROKU GIT URL")
-    # define "packs_content" in conig_vars
-    PACKS_CONTENT = os.environ.get("PACKS_CONTENT", None)
-    #
-    BOT_HUB = os.environ.get("BOT_HUB", None)
+    G_BAN = os.environ.get("G_BAN", None)
     #
     # Init Mongo
 MONGOCLIENT = MongoClient(Config.MONGO_URI, 27017, serverSelectionTimeoutMS=1)
