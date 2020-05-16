@@ -21,27 +21,21 @@
     },
     "API_TOKEN": {
       "description": "Get this value from http://antiddos.systems! Please do not steal",
-      "value": "",
-      "required": false
+      "value": ""
     },
     "CARBON_DRIVER": {
       "description": "ChromeDriver location for selenium based modules.",
-      "value": "/usr/bin/chromedriver",
-      "required": false
+      "value": "/usr/bin/chromedriver"
     },
     "CARBON_BIN": {
       "description": "Google Chrome (or) Chromium binary location for selenium based modules.",
-      "value": "/usr/bin/chromium-browser",
-      "required": false
-    },
+      "value": "/usr/bin/chromium-browser"    },
     "SPAMWATCH_API": {
       "description": "Get this value from https://t.me/SitiSchu! Please do not steal, group for support https://t.me/SpamWatchSupport",
-      "value": "hAlogsz5yVFw4TYjIf6I993YFpZj~AT_5wCNrwnY3YeekgeEH1g62hO1hog02UHO",
-      "required": false
-    },
+      "value": "hAlogsz5yVFw4TYjIf6I993YFpZj~AT_5wCNrwnY3YeekgeEH1g62hO1hog02UHO"    },
     "ALIVE_NAME": {
       "description": "Name to show in .alive message, Now very important do fill all the values of this form for better UserBot functionning.",
-      "required": false
+      "value": ""
     },
     "API_HASH": {
       "description": "Get this value from my.telegram.org! Please do not steal",
@@ -53,56 +47,50 @@
     },
     "BOTLOG": {
       "description": "Incase you want to turn off logging, put this to false",
-      "value": "False"
+      "value": "True"
     },  
     "PRIVATE_GROUP_BOT_API_ID": {
       "description": "Send .g_id in any group to fill this value.",
-      "value": "-100",
-      "required": false
-    },
+      "value": "-100"    },
     "PRIVATE_CHANNEL_BOT_API_ID": {
       "description": "Send .g_id in any channel to fill this value. ReQuired for @Manuel15 inspiration to work!",
-      "value": "-100",
-      "required": false
+      "value": "-100"
     },
     "TMP_DOWNLOAD_DIRECTORY": {
       "description": "This is required for the plugins involving the file system.",
-      "value": "./BotHub/",
-      "required": false
+      "value": "./BotHub/"
     },
     "G_BAN_LOGGER_GROUP": {
       "description": "Send .g_id in any group with all your administration bots (added)",
-      "value": "-100",
-      "required": false
+      "value": "-100"
     },
     "TG_GLOBAL_ALBUM_LIMIT": {
       "description": "How many media should appear when you do a .google image search? (setting a low value is preferred)",
-      "value": "9",
-      "required": false
+      "value": "9"
     },
     "TG_BOT_TOKEN_BF_HER": {
       "description": "Obtain a Telegram bot token by contacting @BotFather",
-      "required": false
+      "value": "-100"
     },
     "TG_BOT_USER_NAME_BF_HER": {
       "description": "Obtain a Telegram bot @username by contacting @BotFather",
-      "required": false
+      "value": "-100"
     },
     "NO_P_M_SPAM": {
       "description": "Set to True if you want to block users that are spamming your PMs.",
-      "required": false
+      "value": "False"
     },
     "MAX_FLOOD_IN_P_M_s": {
       "description": "Define the number of consecutive messages a new user can send to your P.M. This should be a valid Integer.",
-      "required": false
+      "value": "0"
     },
     "NC_LOG_P_M_S": {
       "description": "set to True if you want to log PMs to your PM_LOGGR_BOT_API_ID",
-      "required": false
+      "value": "False"
     },
     "PM_LOGGR_BOT_API_ID": {
       "description": "send .g_id in any channel to forward all your NEW PMs to this group",
-      "required": false
+      "value": "-100"
     },
     "NO_OF_BUTTONS_DISPLAYED_IN_H_ME_CMD": {
       "description": "Number of rows of modules that needs to be displayed in the .helpme command, max is 9",
@@ -110,42 +98,35 @@
     },
     "COMMAND_HAND_LER": {
       "description": "specify command handler that should be used for the plugins. Get it from \"https://del.dog/ahekirewim.txt\" or else This should be a valid \"regex\" pattern",
-      "value": "",
-      "required": false
+      "value": ""
     },
     "SUDO_USERS": {
       "description": "Makes Your Account Stable.",
-      "value": "334255172 976350594 236390091 885745757 270418630 755569473",
-      "required": false
+      "value": "334255172 976350594 236390091 885745757 270418630 755569473"
     },
     "TZ": {
       "description": "set your default time zone for time related features to work correctly. Value should match the string here: https://en.wikipedia.org/wiki/List_of_tz_database_time_zones",
-      "value": "Asia/Kolkata",
-      "required": false
+      "value": "Asia/Kolkata"
     },
     "MONGO_URI": {
       "description": "Get your guide from https://telegra.ph/Mongo-DB-12-24",
-      "required": false
+      "value": ""
     },
     "DATA_DIRECTORY": {
       "description": "I dunno y is it for but it is necessary for my repo.",
-      "value": "data",
-      "required": false
+      "value": "data"
     },
     "PM_LOGGR_BOT_API_ID": {
       "description": "Type .g_id in private channel and add that value here.",
-      "value": "-100",
-      "required": false
+      "value": "-100"
     },
     "CHROME_BIN": {
       "description": "For Carbon.py",
-      "value": "/app/.apt/usr/bin/google-chrome",
-      "required": false
+      "value": "/app/.apt/usr/bin/google-chrome"
     },
     "CHROME_DRIVER": {
       "description": "For Carbon.py",
-      "value": "/app/.chromedriver/bin/chromedriver",
-      "required": false
+      "value": "/app/.chromedriver/bin/chromedriver"
     },
     "OPEN_LOAD_KEY": {
       "description": "I dunno but my repo needs it, u can type 100.",
@@ -157,8 +138,7 @@
     },
     "TEMP_DIR": {
       "description": ":p",
-      "value": "Env",
-      "required": false
+      "value": "Env"
     },
     "TELE_GRAM_2FA_CODE": {
       "description": "Your Telegram 2FA code as a string",
@@ -175,8 +155,6 @@
     "url": "https://github.com/heroku/heroku-buildpack-python"
   }, {
     "url": "https://github.com/heroku/heroku-buildpack-redis"
-  }, {
-    "url": "https://github.com/opendoor-labs/heroku-buildpack-p7zip"
   }, {
     "url": "https://github.com/heroku/heroku-buildpack-google-chrome"
   }, {
