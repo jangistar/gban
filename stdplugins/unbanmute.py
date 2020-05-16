@@ -1,5 +1,5 @@
 """Restrict Users
-Available Commands: .ban, .unban, .mute, .unmute
+Available Commands: .gban, .ungban, .gmute, .ungmute
 .unmute added by @Mayur_Karaniya."""
 from telethon import events
 import asyncio
@@ -56,7 +56,7 @@ banned_rights = ChatBannedRights(
 
 
 
-@borg.on(admin_cmd("(ban|unban|mute|unmute) ?(.*)"))
+@borg.on(admin_cmd("(gban|ungban|gmute|ungmute) ?(.*)"))
 async def _(event):
     # Space weirdness in regex required because argument is optional and other
     # commands start with ".unban"
@@ -66,13 +66,13 @@ async def _(event):
     to_ban_id = None
     rights = None
     input_cmd = event.pattern_match.group(1)
-    if input_cmd == "ban":
+    if input_cmd == "gban":
         rights = banned_rights
-    elif input_cmd == "unban":
+    elif input_cmd == "ungban":
         rights = unbanned_rights
-    elif input_cmd == "mute":
+    elif input_cmd == "gmute":
         rights = muted_rights
-    elif input_cmd == "unmute":
+    elif input_cmd == "ungmute":
         rights = unmuted_rights
     input_str = event.pattern_match.group(2)
     reply_msg_id = event.reply_to_msg_id
