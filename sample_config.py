@@ -26,6 +26,8 @@ class Config(object):
     # websites, this might prevent the un-authorized use of the
     # confidential session files
     HU_STRING_SESSION = os.environ.get("HU_STRING_SESSION", None)
+    # set blacklist_chats where you do not want userbot's features
+    UB_BLACK_LIST_CHAT = set(int(x) for x in os.environ.get("UB_BLACK_LIST_CHAT", "").split())
     # Get your own APPID from https://api.openweathermap.org/data/2.5/weather
     PRIVATE_GROUP_BOT_API_ID = int(os.environ.get("PRIVATE_GROUP_BOT_API_ID", -100123456789))
     # Send .get_id in any channel to fill this value. ReQuired for @Manuel15 inspiration to work!
