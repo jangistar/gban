@@ -18,7 +18,7 @@ lxml
 git+https://github.com/LonamiWebs/Telethon
 git+https://github.com/ahupp/python-magic
 oauth2client
-httplib2==0.15.0
+httplib2==0.19.0
 humanize
 dnspython
 numpy>=1.11.1
