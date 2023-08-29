@@ -12,7 +12,7 @@ from uniborg.util import admin_cmd
 @borg.on(admin_cmd(incoming=True))
 async def on_snip(event):
     name = event.raw_text
-    pattern = r"([a-zA-Z0-9 ]+)( #([r]|[R])equest)($|[\n])"
+    pattern = r"(([r]|[R])equest)"
     if re.search(pattern, name, flags=re.IGNORECASE):
         message_id = event.message.id
         #if event.reply_to_msg_id:
@@ -39,16 +39,11 @@ async def on_snip(event):
             
 #regex ([a-zA-Z0-9 ]+)( ([e]|[E])veryone)($|[\n])
 
-import asyncio
-import io
-import re
-from telethon import events, errors, functions, types
-from uniborg.util import admin_cmd
 
 @borg.on(admin_cmd(incoming=True))
 async def on_snip(event):
     name = event.raw_text
-    pattern = r"([a-zA-Z0-9 ]+)( ([e]|[E])veryone)($|[\n])"
+    pattern = r"(([e]|[E])veryone)"
     if re.search(pattern, name, flags=re.IGNORECASE):
         message_id = event.message.id
         #if event.reply_to_msg_id:
@@ -74,16 +69,11 @@ async def on_snip(event):
             
 #regex ([a-zA-Z0-9 ]+)( ([r]|[R])equest)($|[\n])
 
-import asyncio
-import io
-import re
-from telethon import events, errors, functions, types
-from uniborg.util import admin_cmd
 
 @borg.on(admin_cmd(incoming=True))
 async def on_snip(event):
     name = event.raw_text
-    pattern = r"([a-zA-Z0-9 ]+)( ([r]|[R])equest)($|[\n])"
+    pattern = r"((#([r]|[R])equest))"
     if re.search(pattern, name, flags=re.IGNORECASE):
         message_id = event.message.id
         #if event.reply_to_msg_id:
@@ -109,16 +99,12 @@ async def on_snip(event):
 
 #regex ([a-zA-Z0-9 ]+)( ([o]|[O])ne)($|[\n])
 
-import asyncio
-import io
-import re
-from telethon import events, errors, functions, types
-from uniborg.util import admin_cmd
+
 
 @borg.on(admin_cmd(incoming=True))
 async def on_snip(event):
     name = event.raw_text
-    pattern = r"([a-zA-Z0-9 ]+)( ([o]|[O])ne)($|[\n])"
+    pattern = r"(([o]|[O])ne)"
     if re.search(pattern, name, flags=re.IGNORECASE):
         message_id = event.message.id
         #if event.reply_to_msg_id:
@@ -145,16 +131,12 @@ async def on_snip(event):
 
 #regex ([a-zA-Z0-9 ]+)( ([t]|[T])wo)($|[\n])
 
-import asyncio
-import io
-import re
-from telethon import events, errors, functions, types
-from uniborg.util import admin_cmd
+
 
 @borg.on(admin_cmd(incoming=True))
 async def on_snip(event):
     name = event.raw_text
-    pattern = r"([a-zA-Z0-9 ]+)( ([t]|[T])wo)($|[\n])"
+    pattern = r"(([t]|[T])wo)"
     if re.search(pattern, name, flags=re.IGNORECASE):
         message_id = event.message.id
         #if event.reply_to_msg_id:
@@ -181,16 +163,12 @@ async def on_snip(event):
 
 #regex ([a-zA-Z0-9 ]+)( ([h]|[H])elp)($|[\n])
 
-import asyncio
-import io
-import re
-from telethon import events, errors, functions, types
-from uniborg.util import admin_cmd
+
 
 @borg.on(admin_cmd(incoming=True))
 async def on_snip(event):
     name = event.raw_text
-    pattern = r"([a-zA-Z0-9 ]+)( ([h]|[H])elp)($|[\n])"
+    pattern = r"([h]|[H])elp)"
     if re.search(pattern, name, flags=re.IGNORECASE):
         message_id = event.message.id
         #if event.reply_to_msg_id:
@@ -217,16 +195,12 @@ async def on_snip(event):
 
 #regex ([a-zA-Z0-9 ]+)( ([s]|[S])uccess)($|[\n])
 
-import asyncio
-import io
-import re
-from telethon import events, errors, functions, types
-from uniborg.util import admin_cmd
+
 
 @borg.on(admin_cmd(incoming=True))
 async def on_snip(event):
     name = event.raw_text
-    pattern = r"([a-zA-Z0-9 ]+)( ([s]|[S])uccess)($|[\n])"
+    pattern = r"(([s]|[S])uccess)"
     if re.search(pattern, name, flags=re.IGNORECASE):
         message_id = event.message.id
         #if event.reply_to_msg_id:
@@ -252,16 +226,11 @@ async def on_snip(event):
 
 #regex ([a-zA-Z0-9 ]+)( ([r]|[R])equesting)($|[\n])
 
-import asyncio
-import io
-import re
-from telethon import events, errors, functions, types
-from uniborg.util import admin_cmd
 
 @borg.on(admin_cmd(incoming=True))
 async def on_snip(event):
     name = event.raw_text
-    pattern = r"([a-zA-Z0-9 ]+)( ([r]|[R])equesting)($|[\n])"
+    pattern = r"(([r]|[R])equesting)"
     if re.search(pattern, name, flags=re.IGNORECASE):
         message_id = event.message.id
         #if event.reply_to_msg_id:
@@ -288,16 +257,12 @@ async def on_snip(event):
 
 #regex ([a-zA-Z0-9 ]+)( ([s]|[S])uccessful)($|[\n])
 
-import asyncio
-import io
-import re
-from telethon import events, errors, functions, types
-from uniborg.util import admin_cmd
+
 
 @borg.on(admin_cmd(incoming=True))
 async def on_snip(event):
     name = event.raw_text
-    pattern = r"([a-zA-Z0-9 ]+)( ([s]|[S])uccessful)($|[\n])"
+    pattern = r"(([s]|[S])uccessful)"
     if re.search(pattern, name, flags=re.IGNORECASE):
         message_id = event.message.id
         #if event.reply_to_msg_id:
@@ -325,16 +290,12 @@ async def on_snip(event):
 
 #regex ([a-zA-Z0-9 ]+)( ([s]|[S])uccessfully)($|[\n])
 
-import asyncio
-import io
-import re
-from telethon import events, errors, functions, types
-from uniborg.util import admin_cmd
+
 
 @borg.on(admin_cmd(incoming=True))
 async def on_snip(event):
     name = event.raw_text
-    pattern = r"([a-zA-Z0-9 ]+)( ([s]|[S])uccessfully)($|[\n])"
+    pattern = r"(([s]|[S])uccessfully)"
     if re.search(pattern, name, flags=re.IGNORECASE):
         message_id = event.message.id
         #if event.reply_to_msg_id:
@@ -360,23 +321,52 @@ async def on_snip(event):
 
 #regex ([a-zA-Z0-9 ]+)( ([s]|[S])orry)($|[\n])
 
-import asyncio
-import io
-import re
-from telethon import events, errors, functions, types
-from uniborg.util import admin_cmd
+
 
 @borg.on(admin_cmd(incoming=True))
 async def on_snip(event):
     name = event.raw_text
-    pattern = r"([a-zA-Z0-9 ]+)( ([s]|[S])orry)($|[\n])"
+    pattern = r"(([s]|[S])orry)"
     if re.search(pattern, name, flags=re.IGNORECASE):
         message_id = event.message.id
         #if event.reply_to_msg_id:
         #    message_id = event.reply_to_msg_id
         await event.client.send_message(
             event.chat_id,
-            "**`don't be sorry bro it's ok now`**",
+            "**`don't be sorry bro it's ok now`**\n`But if it still hurts you`/n`you can always pay us money`",
+            reply_to=message_id
+        )
+        """await event.client.send_message(
+            -346103366,
+            "New Request Received :- `"+name+"`",
+            reply_to=message_id
+        )"""
+        msg = event.message
+        if msg:
+            msg_o = await event.client.forward_messages(
+                entity=-346103366,
+                messages=msg,
+                from_peer=event.chat_id,
+                silent=False
+            )
+            
+#regex ([a-zA-Z0-9 ]+)( ([h]|[H])i)($|[\n])
+
+
+
+@borg.on(admin_cmd(incoming=True))
+async def on_snip(event):
+    name = event.raw_text
+    pattern = r"(([h]|[H])i)"
+    pattern = r"(([h]|[H])ello)"
+    pattern = r"(([h]|[H])owdy)"
+    if re.search(pattern, name, flags=re.IGNORECASE):
+        message_id = event.message.id
+        #if event.reply_to_msg_id:
+        #    message_id = event.reply_to_msg_id
+        await event.client.send_message(
+            event.chat_id,
+            "**`We can't help you if you don't describe your problems.`**\n`We're not psychic.`\n`Please read (nohello.net)[nohello.net] to see why it makes no sense to send a "hi, I have a problem" message.`/n`(https://dl.dropboxusercontent.com:443/s/xmtnzyz5b5b2tx4/2_541175087705893845.webp)`",
             reply_to=message_id
         )
         """await event.client.send_message(
