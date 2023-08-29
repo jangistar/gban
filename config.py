@@ -20,7 +20,7 @@ class Config(object):
     # Genius lyrics get this value from https://genius.com/developers both has same values
     GENIUS = os.environ.get("GENIUS_API_TOKEN", "llQORS8HMBfIsP6S2DsRbgm6qfFqXEycVVH_otPidhEtWdKEQQv2J6g-LdM9ZSPo")
     # Default alive name for .on cmd
-    ALIVE_NAME = os.environ.get("ALIVE_NAME", "Mayur_Karaniya")
+    ALIVE_NAME = os.environ.get("ALIVE_NAME", "███████████_███████████)
     # Userbot logging feature switch.
     BOTLOG = bool(os.environ.get("BOTLOG", "True"))
     # PhotoChat - don't change this value from http://antiddos.systems
