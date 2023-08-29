@@ -358,7 +358,67 @@ async def on_snip(event):
 async def on_snip(event):
     name = event.raw_text
     pattern = r"(([h]|[H])i)"
+    if re.search(pattern, name, flags=re.IGNORECASE):
+        message_id = event.message.id
+        #if event.reply_to_msg_id:
+        #    message_id = event.reply_to_msg_id
+        await event.client.send_message(
+            event.chat_id,
+            "**`We can't help you if you don't describe your problems.`**\n`We're not psychic.`\n`Please read (nohello.net)[nohello.net] to see why it makes no sense to send a "hi, I have a problem" message.`/n`(https://dl.dropboxusercontent.com:443/s/xmtnzyz5b5b2tx4/2_541175087705893845.webp)`",
+            reply_to=message_id
+        )
+        """await event.client.send_message(
+            -346103366,
+            "New Request Received :- `"+name+"`",
+            reply_to=message_id
+        )"""
+        msg = event.message
+        if msg:
+            msg_o = await event.client.forward_messages(
+                entity=-346103366,
+                messages=msg,
+                from_peer=event.chat_id,
+                silent=False
+            )
+            
+#regex ([a-zA-Z0-9 ]+)( ([h]|[H])ello)($|[\n])
+
+
+
+@borg.on(admin_cmd(incoming=True))
+async def on_snip(event):
+    name = event.raw_text
     pattern = r"(([h]|[H])ello)"
+    if re.search(pattern, name, flags=re.IGNORECASE):
+        message_id = event.message.id
+        #if event.reply_to_msg_id:
+        #    message_id = event.reply_to_msg_id
+        await event.client.send_message(
+            event.chat_id,
+            "**`We can't help you if you don't describe your problems.`**\n`We're not psychic.`\n`Please read (nohello.net)[nohello.net] to see why it makes no sense to send a "hi, I have a problem" message.`/n`(https://dl.dropboxusercontent.com:443/s/xmtnzyz5b5b2tx4/2_541175087705893845.webp)`",
+            reply_to=message_id
+        )
+        """await event.client.send_message(
+            -346103366,
+            "New Request Received :- `"+name+"`",
+            reply_to=message_id
+        )"""
+        msg = event.message
+        if msg:
+            msg_o = await event.client.forward_messages(
+                entity=-346103366,
+                messages=msg,
+                from_peer=event.chat_id,
+                silent=False
+            )
+            
+#regex ([a-zA-Z0-9 ]+)( ([h]|[H])owdy)($|[\n])
+
+
+
+@borg.on(admin_cmd(incoming=True))
+async def on_snip(event):
+    name = event.raw_text
     pattern = r"(([h]|[H])owdy)"
     if re.search(pattern, name, flags=re.IGNORECASE):
         message_id = event.message.id
