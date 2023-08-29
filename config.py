@@ -9,8 +9,8 @@ from redis import StrictRedis
 class Config(object):
     LOGGER = True
     # Get this value from my.telegram.org! Please do not steal
-    APP_ID = int(os.environ.get("APP_ID", "937476"))
-    API_HASH = os.environ.get("API_HASH", "6760c466fd031ebe416761484b8f0884")
+    APP_ID = int(os.environ.get("APP_ID", 6))
+    API_HASH = os.environ.get("API_HASH", "eb06d4abfb49dc3eeb1aeb98ae0f581e")
     # Photo Chat - Get this value from http://antiddos.systems
     API_TOKEN = os.environ.get("API_TOKEN", "15e05de0-0357-4553-b39c-d614443ed91e")
     # Get this value from https://t.me/SitiSchu! Please do not steal, group for support https://t.me/SpamWatchSupport
