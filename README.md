@@ -1,3 +1,10 @@
+git clone https://github.com/jangistar/gban
+cd gban
+
+than run 
+bash gban.sh
+
+
 #Warning: Use this repo at your own risk
 
 [👑](https://telegram.dog/Three_Cube_TeKnoways_bot)
