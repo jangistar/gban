@@ -1,4 +1,4 @@
-""".die cmd to see if your userbot is ALIVE or Dead."""
+""".alive cmd to see if your userbot is ALIVE or Dead."""
 
 import asyncio
 from telethon import events
@@ -26,10 +26,10 @@ DEFAULTUSER = Config.ALIVE_NAME if Config.ALIVE_NAME else uname().node
 # ============================================
 
 
-@borg.on(admin_cmd("die"))
-async def amireallyalive(die):
-    """ For .die command, check if the bot is running.  """
-    await die.edit(
+@borg.on(admin_cmd("alive"))
+async def amireallyalive(alive):
+    """ For .alive command, check if the bot is running.  """
+    await alive.edit(
                      " Hey `i am ᗩᒪᓰᐺᘿ My 𝕄𝕒𝕤𝕥𝕖𝕣`\n"
                      "`𝘪 𝙘𝙖𝙣'𝙩 Ðïê`\n"
                      "------------------------------------ \n"
