@@ -123,6 +123,8 @@ class Uniborg(TelegramClient):
         self._plugins[shortname] = mod
         self._logger.info(f"Successfully loaded plugin {shortname}")
 
+        self._logger.info(f"Hurrey You just had deployed Gban bot, for support :-https://telegram.me/Mayur_Karaniya, just do Nothing, cause this msg means you had successfully deployed Gban Bot 😉.")
+
     def remove_plugin(self, shortname):
         name = self._plugins[shortname].__name__
 
